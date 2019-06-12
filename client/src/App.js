@@ -17,8 +17,14 @@ class App extends Component {
     console.log(this.state.matches)
     return (
       <div className="App">
-        <div className="matches">
+        <div className="navbar">
+          <h2>Navbar</h2>
+        </div>
+        <div className="sidebar">
           <Matches matches={this.state.matches} />
+        </div>
+        <div className="main-content">
+          <h2>Main Content</h2>
         </div>
       </div>
     )

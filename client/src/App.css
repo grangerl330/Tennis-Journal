@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+.navbar {
+  background: lightgreen;
+  float: left;
+  width: 100vw;
+  height: 10vh;
+}
+
+.sidebar {
+  background: lightblue;
+  float: left;
+  width: 30vw;
+  height: 90vh;
+}
+
+.main-content {
+  background: lightgrey;
+  float: left;
+  width: 70vw;
+  height: 90vh;
+}
