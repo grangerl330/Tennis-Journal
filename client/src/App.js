@@ -1,5 +1,6 @@
 import React from 'react';
 import Matches from './components/Matches'
+import MatchService from './services/MatchService'
 import './App.css';
 
 let matches = [
@@ -9,10 +10,22 @@ let matches = [
 ]
 
 function App() {
+  constructor(){
+    super()
+
+    this.state = {
+      matches: []
+    }
+  }
+
+  componentDidMount() {
+    
+  }
+
   return (
     <div className="App">
       <div className="matches">
-        <Matches matches={matches} />
+        <Matches matches={this.state.matches} />
       </div>
     </div>
   );
