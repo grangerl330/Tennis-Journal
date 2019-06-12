@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import Matches from './components/Matches'
 import './App.css';
+
+let matches = [
+  {round: 128, id: 1, result: "won", score: "6-1, 6-1" },
+  {round: 64, id: 2, result: "won", score: "6-3, 6-4"},
+  {round: 32, id: 3, result: "lost", score: "7-5, 6-3"}
+]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="matches">
+        <Matches matches={matches} />
+      </div>
     </div>
   );
 }
