@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Matches from './components/Matches'
 import MatchService from './services/MatchService'
 import AddMatch from './components/AddMatch'
+import Navbar from './components/Navbar'
 import './App.css';
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="navbar">
-          <h2>Navbar</h2>
+          <Navbar />
         </div>
         <div className="sidebar">
           <Matches matches={this.state.matches} />
