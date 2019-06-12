@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Matches from './components/Matches'
+import MatchService from './services/MatchService'
 import './App.css';
 
 class App extends Component {
@@ -8,8 +9,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/matches')
-    .then(response => response.json())
+    MatchService.fetchMatches()
     .then(matches => this.setState({ matches: matches }))
   }
 
