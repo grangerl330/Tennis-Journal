@@ -18,6 +18,18 @@ class AddMovie extends Component {
     })
   }
 
+  handleOnSubmit = event => {
+    event.preventDefault()
+
+    const match = this.state
+    this.props.addMatch(match)
+    this.setState({
+      round: "",
+      result: "",
+      score: ""
+    })
+  }
+
   render() {
     return (
       <div>

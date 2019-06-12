@@ -15,9 +15,10 @@ class App extends Component {
   }
 
   addMatch = match => {
-    MatchService.createMatch(match).then(match => this.setState({
-      matches: [...this.state.matches, match]
-    }))
+    MatchService.createMatch(match).then(match => console.log("created match:", match))
+    // MatchService.createMatch(match).then(match => this.setState({
+    //   matches: [...this.state.matches, match]
+    // }))
   }
 
   render() {
