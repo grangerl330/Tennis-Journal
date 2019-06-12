@@ -13,9 +13,10 @@ class App extends Component {
     matches: []
   }
 
-
   componentDidMount() {
-
+    fetch('/matches')
+    .then(response => response.json())
+    .then(matches => this.setState({ matches }))
   }
 
   render() {
