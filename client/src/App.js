@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Matches from './components/Matches'
 import MatchService from './services/MatchService'
+import AddMatch from './components/AddMatch'
 import './App.css';
 
 class App extends Component {
@@ -11,6 +12,12 @@ class App extends Component {
   componentDidMount() {
     MatchService.fetchMatches()
     .then(matches => this.setState({ matches: matches }))
+  }
+
+  addMatch = match => {
+    MatchService.createMatch(match).then(match => this.setState({
+      matches: [...this.state.matches, match]
+    }))
   }
 
   render() {
@@ -24,7 +31,7 @@ class App extends Component {
           <Matches matches={this.state.matches} />
         </div>
         <div className="main-content">
-          <h2>Main Content</h2>
+          <AddMatch addMatch={this.addMatch} />
         </div>
       </div>
     )
