@@ -10,7 +10,7 @@ class App extends Component {
   componentDidMount() {
     fetch('/matches')
     .then(response => response.json())
-    .then(matches => this.setState({ matches }))
+    .then(matches => this.setState({ matches: matches }))
   }
 
   render() {
