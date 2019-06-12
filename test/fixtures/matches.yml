@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  round: MyString
+  result: MyString
+  score: MyString
+
+two:
+  round: MyString
+  result: MyString
+  score: MyString
