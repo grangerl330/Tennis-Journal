@@ -15,7 +15,7 @@ class App extends Component {
           <Matches />
         </div>
         <div className="main-content">
-          <MatchForm addMatch={this.addMatch} />
+          <MatchForm />
         </div>
       </div>
     )
