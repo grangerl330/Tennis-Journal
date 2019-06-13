@@ -1,7 +1,7 @@
 class CreateMatches < ActiveRecord::Migration[5.2]
   def change
     create_table :matches do |t|
-      t.string :round
+      t.integer :round
       t.string :result
       t.string :score
 

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_06_12_165107) do
   enable_extension "plpgsql"
 
   create_table "matches", force: :cascade do |t|
-    t.string "round"
+    t.integer "round"
     t.string "result"
     t.string "score"
     t.datetime "created_at", null: false
