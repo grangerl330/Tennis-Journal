@@ -4,6 +4,9 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.integer :round
       t.string :result
       t.string :score
+      t.date :date
+      t.time :time 
+      t.integer :tournament_id
 
       t.timestamps
     end

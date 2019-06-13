@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: 2019-06-13
+  location: MyString
+  draw_size: 1
+  points: 1
+  user_id: 1
+
+two:
+  title: MyString
+  date: 2019-06-13
+  location: MyString
+  draw_size: 1
+  points: 1
+  user_id: 1
