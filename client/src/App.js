@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Matches from './components/Matches'
-import AddMatch from './components/AddMatch'
+import MatchForm from './components/MatchForm'
 import Navbar from './components/Navbar'
 import './App.css';
 
@@ -15,12 +15,11 @@ class App extends Component {
           <Matches />
         </div>
         <div className="main-content">
-          <AddMatch addMatch={this.addMatch} />
+          <MatchForm addMatch={this.addMatch} />
         </div>
       </div>
     )
   }
 }
-
 
 export default App;

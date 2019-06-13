@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class AddMatch extends Component {
+class MatchForm extends Component {
   constructor(props){
     super(props)
 
@@ -54,4 +54,4 @@ class AddMatch extends Component {
   }
 }
 
-export default AddMatch
+export default MatchForm
