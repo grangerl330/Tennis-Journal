@@ -9,7 +9,7 @@ export const setMatches = matches => {
 // Asynchronous Action Creators
 export const fetchMatches = () => {
   return dispatch => {
-    return fetch('http://localhost:3001/api/matches')
+    return fetch('/matches')
     .then(response => response.json())
     .then(matches => dispatch(setMatches(matches)))
     .catch(console.log)
