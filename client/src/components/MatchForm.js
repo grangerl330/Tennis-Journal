@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addMatchToStore } from '../actions/matches'
+import { addMatchToStore, addMatchToDatabase } from '../actions/matches'
 import { connect } from 'react-redux'
 
 class MatchForm extends Component {
@@ -25,6 +25,7 @@ class MatchForm extends Component {
 
     const match = this.state
     this.props.addMatchToStore(match)
+    addMatchToDatabase(match)
     this.setState({
       round: "",
       result: "",

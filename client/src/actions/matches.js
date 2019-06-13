@@ -22,3 +22,20 @@ export const fetchMatches = () => {
     .catch(console.log)
   }
 }
+
+
+export const addMatchToDatabase = match => {
+  const request = {
+    method: 'POST',
+    body: JSON.stringify({
+      match: match
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return fetch('/matches', request)
+  .then(response => response.json())
+  .then(match => console.log(match))
+}
