@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Matches from './containers/Matches'
-import MatchForm from './containers/MatchForm'
+import MainContent from './components/MainContent'
+import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import './App.css';
 
@@ -12,10 +12,10 @@ class App extends Component {
           <Navbar />
         </div>
         <div className="sidebar">
-          <Matches />
+          <Sidebar />
         </div>
         <div className="main-content">
-          <MatchForm />
+          <MainContent />
         </div>
       </div>
     )
