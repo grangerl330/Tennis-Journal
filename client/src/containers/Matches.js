@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { fetchMatches } from '../actions/matches'
 import { connect } from 'react-redux'
 
