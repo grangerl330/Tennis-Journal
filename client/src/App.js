@@ -8,15 +8,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="navbar">
-          <Navbar />
-        </div>
-        <div className="sidebar">
-          <Sidebar />
-        </div>
-        <div className="main-content">
-          <MainContent />
-        </div>
+        <Navbar />
+        <Sidebar />
+        <MainContent />
       </div>
     )
   }

@@ -3,7 +3,9 @@ import MatchForm from '../containers/MatchForm'
 
 const MainContent = () => {
   return(
-    <MatchForm />
+    <div className="main-content">
+      <MatchForm />
+    </div>
   )
 }
 

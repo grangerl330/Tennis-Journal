@@ -3,7 +3,9 @@ import Matches from '../containers/Matches'
 
 const Sidebar = () => {
   return (
-    <Matches />
+    <div className="sidebar">
+      <Matches />
+    </div>
   )
 }
 
