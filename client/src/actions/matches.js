@@ -6,7 +6,7 @@ export const setMatches = matches => {
   }
 }
 
-export const addMatch = match => {
+export const addMatchToStore = match => {
   return {
     type: 'ADD_MATCH',
     match
