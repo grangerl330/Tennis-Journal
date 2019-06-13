@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class MatchForm extends Component {
   constructor(props){
@@ -54,4 +55,10 @@ class MatchForm extends Component {
   }
 }
 
-export default MatchForm
+const mapDispatchToProps = dispatch => {
+  return {
+    addMatch: match => dispatch({type: 'ADD_MATCH', match})
+  }
+}
+
+export default connect(null, mapDispatchToProps)(MatchForm)
