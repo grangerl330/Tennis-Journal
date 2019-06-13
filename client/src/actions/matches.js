@@ -6,6 +6,13 @@ export const setMatches = matches => {
   }
 }
 
+export const addMatch = match => {
+  return {
+    type: 'ADD_MATCH',
+    match
+  }
+}
+
 // Asynchronous Action Creators
 export const fetchMatches = () => {
   return dispatch => {
