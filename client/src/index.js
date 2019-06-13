@@ -5,9 +5,8 @@ import App from './App';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
+import matches from './reducers/matches'
 // import * as serviceWorker from './serviceWorker';
-
-const matches = () => []
 
 const reducer = combineReducers({
   matches
