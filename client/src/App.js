@@ -22,7 +22,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.matches)
     return (
       <div className="App">
         <div className="navbar">
