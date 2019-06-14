@@ -8,7 +8,7 @@ class Api::SessionsController < ApplicationController
       render json: @user
     else
       render json: {
-        error: "Invalid Credentials"
+        error: "Invalid Email or Password"
       }
     end
   end
