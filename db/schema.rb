@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.string "score"
     t.date "date"
     t.time "time"
+    t.string "notes"
     t.integer "tournament_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -31,6 +32,8 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.string "last_name"
     t.integer "age"
     t.string "handedness"
+    t.string "notes"
+    t.float "utr"
     t.integer "match_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,6 +44,8 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.date "start_date"
     t.date "end_date"
     t.string "location"
+    t.string "surface"
+    t.string "age_category"
     t.integer "draw_size"
     t.integer "points"
     t.integer "user_id"
