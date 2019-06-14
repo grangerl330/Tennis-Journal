@@ -7,3 +7,14 @@ export const setCurrentUser = user => {
 }
 
 // Asynchronous Action Creators
+export const login = credentials => {
+  return dispatch => {
+    return fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
+    })
+  }
+}
