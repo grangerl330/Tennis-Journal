@@ -58,7 +58,7 @@ export const getCurrentUser = () => {
     .then(response => response.json())
     .then(user => {
       if (user.error) {
-        alert(user.error)
+        console.log(user.error)
       } else {
         dispatch(setCurrentUser(user))
       }
