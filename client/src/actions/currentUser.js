@@ -38,6 +38,7 @@ export const login = credentials => {
 
 export const logout = () => {
   return dispatch => {
+    dispatch(clearCurrentUser())
     return fetch('/logout', {
       credntials: 'include',
       method: 'DELETE'
