@@ -1,4 +1,4 @@
 class Opponent < ApplicationRecord
-  belongs_to match
-  
+  belongs_to :match
+
 end
