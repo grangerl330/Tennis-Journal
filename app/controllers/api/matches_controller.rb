@@ -11,7 +11,9 @@ class Api::MatchesController < ApplicationController
     if @match.save
       render json: @match
     else
-      render json: {errors: {message: "This Match Failed To Save"}}
+      render json: {
+        error: "This Match Failed To Save"
+      }
     end
   end
 

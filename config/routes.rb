@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   post '/api/login', to: 'api/sessions#create'
   delete '/api/logout', to: 'api/sessions#destroy'
 
+  post '/api/signup', to: 'api/users#create'
+
   namespace :api do
     resources :matches
     resources :tournaments
