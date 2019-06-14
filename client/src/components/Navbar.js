@@ -1,9 +1,10 @@
 import React from 'react'
+import Logout from '../containers/Logout'
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <h2>Navbar</h2>
+      <Logout />
     </div>
   )
 }
