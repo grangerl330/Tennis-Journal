@@ -3,6 +3,7 @@ import MainContent from './components/MainContent'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import Login from './containers/Login'
+import Logout from './containers/Logout'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import './App.css';
@@ -14,15 +15,29 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <Login />
-        <Navbar />
-        <Sidebar />
-        <MainContent />
-      </div>
-    )
+    if (this.props.currentUser) {
+      return (
+        <div className="App">
+          <Logout />
+          <Navbar />
+          <Sidebar />
+          <MainContent />
+        </div>
+      )
+    } else {
+      return (
+        <div className="App">
+          <Login />
+        </div>
+      )
+    }
   }
 }
 
-export default connect(null, { getCurrentUser })(App);
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps, { getCurrentUser })(App);
