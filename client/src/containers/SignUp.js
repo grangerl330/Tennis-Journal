@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateLoginForm } from '../actions/loginForm'
-import { signup } from '../actions/signupForm'
+import { signup } from '../actions/newUser'
 
 const Signup = (props) => {
   const handleOnSubmit = event => {
