@@ -11,6 +11,7 @@ export const login = credentials => {
   console.log("credentials are", credentials)
   return dispatch => {
     return fetch('/login', {
+      credentials: 'include',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
