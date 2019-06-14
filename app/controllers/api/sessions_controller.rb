@@ -1,2 +1,7 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
+
+  def create
+    
+  end
+
 end
