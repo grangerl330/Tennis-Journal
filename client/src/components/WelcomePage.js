@@ -7,7 +7,7 @@ const WelcomePage = () => {
   return (
     <div className="Welcome-Page">
       <Login />
-        or
+        <h2>or</h2>
       <Signup />
     </div>
   )
