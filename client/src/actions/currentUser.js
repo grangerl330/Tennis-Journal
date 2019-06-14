@@ -28,3 +28,24 @@ export const login = credentials => {
     .catch(console.log)
   }
 }
+
+export const getCurrentUser = () => {
+  console.log("DISPATCHING GET CURRENT USER")
+  return dispatch => {
+    return fetch('/get_current_user', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(user => {
+      if (user.error) {
+        alert(user.error)
+      } else {
+        dispatch(setCurrentUser(user))
+      }
+    })
+    .catch(console.log)
+  }
+}
