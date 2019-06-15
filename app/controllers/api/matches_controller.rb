@@ -1,7 +1,7 @@
 class Api::MatchesController < ApplicationController
 
   def index
-    @matches = currentUser.matches 
+    @matches = current_user.matches
     render json: @matches
   end
 
