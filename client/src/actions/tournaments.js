@@ -6,10 +6,10 @@ export const setTournaments = tournaments => {
   }
 }
 
-export const addMatchToStore = match => {
+export const addTournamentToStore = tournament => {
   return {
     type: 'ADD_TOURNAMENT',
-    match
+    tournament
   }
 }
 
@@ -21,4 +21,20 @@ export const fetchTournaments = () => {
     .then(tournaments => dispatch(setTournaments(tournaments)))
     .catch(console.log)
   }
+}
+
+export const addTournamentToDatabase = tournament => {
+  const request = {
+    method: 'POST',
+    body: JSON.stringify({
+      tournament: tournament
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return fetch('/tournaments', request)
+  .then(response => response.json())
+  .then(tournament => console.log(tournament))
 }
