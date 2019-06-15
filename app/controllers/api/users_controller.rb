@@ -5,6 +5,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       render json: @user
+      session[:user_id] = @user.id
     else
       render json: {error: "Unable to create new user"}, status: 400
     end
