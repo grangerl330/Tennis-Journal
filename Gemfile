@@ -21,6 +21,8 @@ gem 'jwt'
 
 gem 'pry'
 
+gem 'active_model_serializers'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
