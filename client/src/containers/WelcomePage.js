@@ -1,6 +1,6 @@
 import React from 'react'
-import Login from '../containers/Login'
-import Signup from '../containers/SignUp'
+import Login from '../components/Login'
+import Signup from '../components/SignUp'
 
 const WelcomePage = () => {
   return (

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import MainContent from './components/MainContent'
-import Sidebar from './components/Sidebar'
-import Navbar from './components/Navbar'
-import WelcomePage from './components/WelcomePage'
+import MainContent from './containers/MainContent'
+import Sidebar from './containers/Sidebar'
+import Navbar from './containers/Navbar'
+import WelcomePage from './containers/WelcomePage'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import './App.css';

@@ -1,6 +1,6 @@
 import React from 'react'
-import Matches from '../containers/Matches'
-import Tournaments from '../containers/Tournaments'
+import Matches from '../components/Matches'
+import Tournaments from '../components/Tournaments'
 
 const Sidebar = () => {
   return (
