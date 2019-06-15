@@ -1,15 +1,8 @@
-import React, { Component } from 'react';
-import { fetchTournaments } from '../actions/tournaments'
-import { connect } from 'react-redux'
+import React from 'react';
 
-class Tournaments extends Component {
+const Tournaments = (props) => {
 
-  componentDidMount() {
-    this.props.fetchTournaments()
-  }
-
-  render() {
-    const renderTournaments = this.props.tournaments.map(tournament =>
+    const renderTournaments = props.tournaments.map(tournament =>
       <div key={tournament.id}>
         <p>{tournament.title}</p>
       </div>
@@ -21,13 +14,6 @@ class Tournaments extends Component {
         {renderTournaments}
       </div>
     )
-  }
 }
 
-const mapStateToProps = state => {
-  return {
-    tournaments: state.tournaments
-  }
-}
-
-export default connect(mapStateToProps, { fetchTournaments })(Tournaments)
+export default Tournaments
