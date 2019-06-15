@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { addMatchToStore, addMatchToDatabase } from '../actions/matches'
-import { connect } from 'react-redux'
 
 class MatchForm extends Component {
   constructor(){
@@ -25,7 +23,7 @@ class MatchForm extends Component {
 
     const match = this.state
     this.props.addMatchToStore(match)
-    addMatchToDatabase(match)
+    this.props.addMatchToDatabase(match)
     this.setState({
       round: "",
       result: "",
@@ -57,10 +55,4 @@ class MatchForm extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addMatchToStore: match => dispatch(addMatchToStore(match))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(MatchForm)
+export default MatchForm

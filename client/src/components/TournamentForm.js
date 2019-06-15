@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { addTournamentToStore, addTournamentToDatabase } from '../actions/tournaments'
-import { connect } from 'react-redux'
 
 class TournamentForm extends Component {
   constructor(){
@@ -31,7 +29,7 @@ class TournamentForm extends Component {
 
     const tournament = this.state
     this.props.addTournamentToStore(tournament)
-    addTournamentToDatabase(tournament)
+    this.props.addTournamentToDatabase(tournament)
     this.setState({
       title: "",
       start_date: "",
@@ -89,10 +87,4 @@ class TournamentForm extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addTournamentToStore: tournament => dispatch(addTournamentToStore(tournament))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(TournamentForm)
+export default TournamentForm
