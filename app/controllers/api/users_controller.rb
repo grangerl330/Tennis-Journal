@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
     if @user.save
       render json: @user
     else
-      render json: {error: "Unable to create a new user"}, status: 400
+      render json: {error: "Unable to create new user"}, status: 400
     end
   end
 
