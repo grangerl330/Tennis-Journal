@@ -11,6 +11,7 @@ class Tournaments extends Component {
   render() {
     const renderTournaments = this.props.tournaments.map(tournament =>
       <div key={tournament.id}>
+        <p>{tournament.title}</p>
       </div>
     )
 

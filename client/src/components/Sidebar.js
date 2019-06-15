@@ -5,6 +5,7 @@ import Tournaments from '../containers/Tournaments'
 const Sidebar = () => {
   return (
     <div className="sidebar">
+      <Matches />
       <Tournaments />
     </div>
   )
