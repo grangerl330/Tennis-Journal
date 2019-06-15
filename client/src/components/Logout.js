@@ -1,6 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { logout } from '../actions/currentUser'
 
 const Logout = ({ logout }) => {
   const handleOnSubmit = event => {
@@ -16,4 +14,4 @@ const Logout = ({ logout }) => {
   )
 }
 
-export default connect(null, { logout })(Logout)
+export default Logout
