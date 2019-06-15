@@ -7,6 +7,8 @@ class Api::MatchesController < ApplicationController
 
   def create
     @match = Match.new(match_params)
+    @match.user_id = current_user.id
+    @match.tournament_id = 1
 
     if @match.save
       render json: @match
@@ -20,6 +22,6 @@ class Api::MatchesController < ApplicationController
   private
 
   def match_params
-    params.require(:match).permit(:round, :result, :score)
+    params.require(:match).permit(:round, :result, :score, :date, :time, :notes, :tournament_id, :user_id)
   end
 end
