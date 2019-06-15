@@ -14,7 +14,13 @@ export const signup = newUserInfo => {
       body: JSON.stringify(newUserInfo)
     })
     .then(response => response.json())
-    .then(user => dispatch(setCurrentUser(user)))
+    .then(user => {
+      if (user.error) {
+        console.log(user.error)
+      } else {
+        dispatch(setCurrentUser(user))
+      }
+    })
     .catch(console.log)
   }
 }
