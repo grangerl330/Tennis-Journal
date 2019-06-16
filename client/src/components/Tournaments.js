@@ -1,10 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 
 const Tournaments = (props) => {
 
     const renderTournaments = props.tournaments.map(tournament =>
       <div key={tournament.id}>
-        <p>{tournament.title}</p>
+        <p><NavLink to={`/tournaments/${tournament.id}`}>{tournament.title}</NavLink></p>
       </div>
     )
 
