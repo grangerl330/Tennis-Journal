@@ -23,7 +23,6 @@ export const fetchMatches = () => {
   }
 }
 
-
 export const addMatchToDatabase = match => {
   const request = {
     method: 'POST',
@@ -35,7 +34,9 @@ export const addMatchToDatabase = match => {
     }
   }
 
-  return fetch('/matches', request)
-  .then(response => response.json())
-  .then(match => console.log(match))
+  return dispatch => {
+    return fetch('/matches', request)
+    .then(response => response.json())
+    .then(match => dispatch(addMatchToStore(match)))
+  }
 }

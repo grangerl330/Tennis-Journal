@@ -25,7 +25,6 @@ class MatchForm extends Component {
     event.preventDefault()
 
     const match = this.state
-    this.props.addMatchToStore(match)
     this.props.addMatchToDatabase(match)
     this.setState({
       round: "",

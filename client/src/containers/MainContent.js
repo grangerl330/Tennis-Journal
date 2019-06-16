@@ -1,8 +1,8 @@
 import React from 'react'
 import MatchForm from '../components/MatchForm'
-import { addMatchToStore, addMatchToDatabase } from '../actions/matches'
+import { addMatchToDatabase } from '../actions/matches'
 import TournamentForm from '../components/TournamentForm'
-import { addTournamentToStore, addTournamentToDatabase } from '../actions/tournaments'
+import { addTournamentToDatabase } from '../actions/tournaments'
 import TournamentCard from '../components/TournamentCard'
 import MatchCard from '../components/MatchCard'
 import { connect } from 'react-redux'
@@ -29,8 +29,8 @@ const MainContent = (props) => {
   return(
     <div className="main-content">
       <Switch>
-        <Route exact path='/matches/add-match' render={() => <MatchForm addMatchToStore={props.addMatchToStore} addMatchToDatabase={addMatchToDatabase}/>}/>
-        <Route exact path='/tournaments/add-tournament' render={() => <TournamentForm addTournamentToStore={props.addTournamentToStore} addTournamentToDatabase={addTournamentToDatabase}/>}/>
+        <Route exact path='/matches/add-match' render={() => <MatchForm addMatchToDatabase={props.addMatchToDatabase}/>}/>
+        <Route exact path='/tournaments/add-tournament' render={() => <TournamentForm addTournamentToDatabase={props.addTournamentToDatabase}/>}/>
 
         <Route exact path='/tournaments/:tournamentId' render={(props) => <TournamentCard id={props.match.params.tournamentId} currentTournament={currentTournament}/>}/>
         <Route exact path='/matches/:matchId' render={(props) => <MatchCard id={props.match.params.matchId} currentMatch={currentMatch}/>}/>
@@ -48,8 +48,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addTournamentToStore: tournament => dispatch(addTournamentToStore(tournament)),
-    addMatchToStore: match => dispatch(addMatchToStore(match))
+    addTournamentToDatabase: tournament => dispatch(addTournamentToDatabase(tournament)),
+    addMatchToDatabase: match => dispatch(addMatchToDatabase(match))
   }
 }
 

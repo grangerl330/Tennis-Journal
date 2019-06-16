@@ -34,7 +34,9 @@ export const addTournamentToDatabase = tournament => {
     }
   }
 
-  return fetch('/tournaments', request)
-  .then(response => response.json())
-  .then(tournament => console.log(tournament))
+  return dispatch => {
+    return fetch('/tournaments', request)
+    .then(response => response.json())
+    .then(tournament => dispatch(addTournamentToStore(tournament)))
+  }
 }
