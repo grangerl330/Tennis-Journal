@@ -8,7 +8,13 @@ const TournamentCard = (props) => {
     return (
       <div className="tournament-card">
         <h2>Tournament Card</h2>
-        {tournament.title}
+        <p>Start Date: {tournament.start_date}</p>
+        <p>End Date: {tournament.end_date}</p>
+        <p>Location: {tournament.location}</p>
+        <p>Surface: {tournament.surface}</p>
+        <p>Age Category: {tournament.age_category}</p>
+        <p>Draw Size: {tournament.draw_size}</p>
+        <p>Points: {tournament.points}</p>
       </div>
     )
   } else {

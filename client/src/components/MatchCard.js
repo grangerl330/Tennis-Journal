@@ -8,7 +8,12 @@ const MatchCard = (props) => {
     return (
       <div className="match-card">
         <h2>Match Card</h2>
-        {match.round}
+        <p>Round of {match.round}</p>
+        <p>Result: {match.result}</p>
+        <p>Score: {match.score}</p>
+        <p>Date: {match.date}</p>
+        <p>Time: {match.time}</p>
+        <p>Notes: {match.notes}</p>
       </div>
     )
   } else {
