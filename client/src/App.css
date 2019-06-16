@@ -9,6 +9,11 @@
   height: 10vh;
 }
 
+.navlink {
+  margin: 5px;
+  display: inline;
+}
+
 .sidebar {
   background: lightblue;
   float: left;

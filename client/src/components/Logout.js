@@ -8,7 +8,7 @@ const Logout = ({ logout }) => {
   }
 
   return (
-    <form onSubmit={handleOnSubmit}>
+    <form onSubmit={handleOnSubmit} className="navlink">
       <input type="submit" value="Log Out" />
     </form>
   )
