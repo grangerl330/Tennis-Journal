@@ -34,7 +34,7 @@ const MainContent = (props) => {
         <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm addTournamentToDatabase={props.addTournamentToDatabase}/>}/>
         <Route exact path='/tournaments/:tournamentId' render={(props) => <TournamentCard id={props.match.params.tournamentId} currentTournament={currentTournament}/>}/>
         <Route exact path='/matches/:matchId' render={(props) => <MatchCard id={props.match.params.matchId} currentMatch={currentMatch}/>}/>
-        <Route exact path='/profile' component={Profile}/>
+        <Route exact path='/profile' render={() => <Profile currentUser={props.currentUser}/>}/>
       </Switch>
     </div>
   )
@@ -43,7 +43,8 @@ const MainContent = (props) => {
 const mapStateToProps = state => {
   return {
     tournaments: state.tournaments,
-    matches: state.matches
+    matches: state.matches,
+    currentUser: state.currentUser
   }
 }
 
