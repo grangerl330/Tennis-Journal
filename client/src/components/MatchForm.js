@@ -40,23 +40,20 @@ class MatchForm extends Component {
         <form onSubmit={this.handleOnSubmit}>
           <h2>Add Match</h2>
           <p>
-            <label htmlFor="match-date">Date</label>
+            <label htmlFor="match-date">Date: </label>
             <input type="date" name="date" value={this.state.date} onChange={this.handleOnChange} />
           </p>
           <p>
-            <label htmlFor="match-time">Time</label>
+            <label htmlFor="match-time">Time: </label>
             <input type="time" name="time" value={this.state.time} onChange={this.handleOnChange} />
           </p>
           <p>
-            <label htmlFor="match-round">Round</label>
             <input type="text" name="round" value={this.state.round} onChange={this.handleOnChange} placeholder="Round"/>
           </p>
           <p>
-            <label htmlFor="match-result">Result</label>
             <input type="text" name="result" value={this.state.result} onChange={this.handleOnChange} placeholder="Result"/>
           </p>
           <p>
-            <label htmlFor="match-score">Score</label>
             <input type="text" name="score" value={this.state.score} onChange={this.handleOnChange} placeholder="Score"/>
           </p>
           <p>

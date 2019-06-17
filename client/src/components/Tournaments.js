@@ -5,7 +5,7 @@ const Tournaments = (props) => {
 
     const renderTournaments = props.tournaments.map(tournament =>
       <div key={tournament.id}>
-        <p><NavLink to={`/tournaments/${tournament.id}`}>{tournament.title}</NavLink></p>
+        <p><NavLink className="sidebarlink" to={`/tournaments/${tournament.id}`}>{tournament.title}</NavLink></p>
       </div>
     )
 

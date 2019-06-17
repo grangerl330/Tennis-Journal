@@ -3,27 +3,44 @@
 }
 
 .navbar {
-  background: lightgreen;
+  background: #2f376e;
+  color: white;
   float: left;
   width: 100vw;
-  height: 10vh;
+  height: 5vh;
+  padding: 20px 0;
 }
 
 .navlink {
   margin: 5px;
+  color: white;
   display: inline;
 }
 
+.sidebarlink {
+  margin: 5px;
+  color: white;
+}
+
 .sidebar {
-  background: lightblue;
+  background: #414b93;
+  color: white;
   float: left;
   width: 30vw;
   height: 90vh;
 }
 
 .main-content {
-  background: lightgrey;
+  background: #b9bee0;
+  color: #2f376e;
   float: left;
   width: 70vw;
   height: 90vh;
+}
+
+.Welcome-Page {
+  background: #b9bee0;
+  color: #2f376e;
+  width: 100vw;
+  height: 100vh;
 }
