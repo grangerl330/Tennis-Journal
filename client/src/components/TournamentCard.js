@@ -13,7 +13,7 @@ const TournamentCard = (props) => {
   if(tournament) {
     return (
       <div className="tournament-card">
-        <h2>Tournament Card</h2>
+        <h2>{tournament.title}</h2>
         <p>Start Date: {tournament.start_date}</p>
         <p>End Date: {tournament.end_date}</p>
         <p>Location: {tournament.location}</p>
