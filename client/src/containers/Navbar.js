@@ -9,8 +9,9 @@ const Navbar = (props) => {
     <div className="navbar">
       {`Welcome ${props.currentUser.first_name}`}
       <Logout logout={props.logout}/>
-      <NavLink to="/matches/add-match" className="navlink">Matches</NavLink>
-      <NavLink to="/tournaments/add-tournament" className="navlink">Tournaments</NavLink>
+      <NavLink to='/profile' className="navlink">Profile</NavLink>
+      <NavLink to="/matches/add_match" className="navlink">Matches</NavLink>
+      <NavLink to="/tournaments/add_tournament" className="navlink">Tournaments</NavLink>
     </div>
   )
 }

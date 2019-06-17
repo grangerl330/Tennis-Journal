@@ -5,6 +5,7 @@ import Navbar from './containers/Navbar'
 import WelcomePage from './containers/WelcomePage'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
+import { Switch, Route } from 'react-router-dom'
 import './App.css';
 
 class App extends Component {

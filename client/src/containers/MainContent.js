@@ -5,6 +5,7 @@ import TournamentForm from '../components/TournamentForm'
 import { addTournamentToDatabase } from '../actions/tournaments'
 import TournamentCard from '../components/TournamentCard'
 import MatchCard from '../components/MatchCard'
+import Profile from '../components/Profile'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 
@@ -29,11 +30,11 @@ const MainContent = (props) => {
   return(
     <div className="main-content">
       <Switch>
-        <Route exact path='/matches/add-match' render={() => <MatchForm addMatchToDatabase={props.addMatchToDatabase}/>}/>
-        <Route exact path='/tournaments/add-tournament' render={() => <TournamentForm addTournamentToDatabase={props.addTournamentToDatabase}/>}/>
-
+        <Route exact path='/matches/add_match' render={() => <MatchForm addMatchToDatabase={props.addMatchToDatabase}/>}/>
+        <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm addTournamentToDatabase={props.addTournamentToDatabase}/>}/>
         <Route exact path='/tournaments/:tournamentId' render={(props) => <TournamentCard id={props.match.params.tournamentId} currentTournament={currentTournament}/>}/>
         <Route exact path='/matches/:matchId' render={(props) => <MatchCard id={props.match.params.matchId} currentMatch={currentMatch}/>}/>
+        <Route exact path='/profile' component={Profile}/>
       </Switch>
     </div>
   )
