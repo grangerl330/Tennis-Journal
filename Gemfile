@@ -23,6 +23,10 @@ gem 'pry'
 
 gem 'active_model_serializers'
 
+## Use foreman for api/react server communication
+gem 'foreman'
+gem 'thor'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
