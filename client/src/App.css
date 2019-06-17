@@ -44,3 +44,14 @@
   width: 100vw;
   height: 100vh;
 }
+
+.welcome-message {
+  float: left;
+  color: white;
+  display: inline;
+}
+
+.logout {
+  float: left;
+  clear: both
+}

@@ -51,11 +51,11 @@ class TournamentForm extends Component {
             <input type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="Title"/>
           </p>
           <p>
-            <p>Start Date: </p>
+            Start Date:
             <input type="date" name="start_date" value={this.state.start_date} onChange={this.handleOnChange} placeholder="Start Date"/>
           </p>
           <p>
-            <p>End Date: </p>
+            End Date:
             <input type="date" name="end_date" value={this.state.end_date} onChange={this.handleOnChange} placeholder="End Date"/>
           </p>
           <p>
