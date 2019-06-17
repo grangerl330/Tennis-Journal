@@ -18,6 +18,16 @@ class Api::TournamentsController < ApplicationController
     end
   end
 
+  def destroy
+    @tournament = Tournament.find_by_id(params[:tournamentId])
+    @tournament.destroy
+
+    render json: {
+      notice: "Tournament Successfully Deleted",
+      tournamentId: params[:tournamentId]
+    }
+  end
+
   private
 
   def tournament_params

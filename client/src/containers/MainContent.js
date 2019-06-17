@@ -2,7 +2,7 @@ import React from 'react'
 import MatchForm from '../components/MatchForm'
 import { addMatchToDatabase, deleteMatchFromDatabase } from '../actions/matches'
 import TournamentForm from '../components/TournamentForm'
-import { addTournamentToDatabase } from '../actions/tournaments'
+import { addTournamentToDatabase, deleteTournamentFromDatabase } from '../actions/tournaments'
 import TournamentCard from '../components/TournamentCard'
 import MatchCard from '../components/MatchCard'
 import Profile from '../components/Profile'
@@ -32,8 +32,8 @@ const MainContent = (props) => {
       <Switch>
         <Route exact path='/matches/add_match' render={() => <MatchForm addMatchToDatabase={props.addMatchToDatabase}/>}/>
         <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm addTournamentToDatabase={props.addTournamentToDatabase}/>}/>
-        <Route exact path='/tournaments/:tournamentId' render={(props) => <TournamentCard id={props.match.params.tournamentId} currentTournament={currentTournament}/>}/>
-        <Route exact path='/matches/:matchId' render={(stuff) => <MatchCard id={stuff.match.params.matchId} currentMatch={currentMatch} deleteMatchFromDatabase={props.deleteMatchFromDatabase}/>}/>
+        <Route exact path='/tournaments/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={currentTournament} deleteTournamentFromDatabase={props.deleteTournamentFromDatabase}/>}/>
+        <Route exact path='/matches/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={currentMatch} deleteMatchFromDatabase={props.deleteMatchFromDatabase}/>}/>
         <Route exact path='/profile' render={() => <Profile currentUser={props.currentUser}/>}/>
       </Switch>
     </div>
@@ -52,7 +52,8 @@ const mapDispatchToProps = dispatch => {
   return {
     addTournamentToDatabase: tournament => dispatch(addTournamentToDatabase(tournament)),
     addMatchToDatabase: match => dispatch(addMatchToDatabase(match)),
-    deleteMatchFromDatabase: matchId => dispatch(deleteMatchFromDatabase(matchId))
+    deleteMatchFromDatabase: matchId => dispatch(deleteMatchFromDatabase(matchId)),
+    deleteTournamentFromDatabase: tournamentId => dispatch(deleteTournamentFromDatabase(tournamentId))
   }
 }
 

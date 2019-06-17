@@ -13,6 +13,13 @@ export const addTournamentToStore = tournament => {
   }
 }
 
+export const deleteTournamentFromStore = tournamentId => {
+  return {
+    type: 'DELETE_TOURNAMENT',
+    tournamentId
+  }
+}
+
 // Asynchronous Action Creators
 export const fetchTournaments = () => {
   return dispatch => {
@@ -38,5 +45,27 @@ export const addTournamentToDatabase = tournament => {
     return fetch('/tournaments', request)
     .then(response => response.json())
     .then(tournament => dispatch(addTournamentToStore(tournament)))
+  }
+}
+
+export const deleteTournamentFromDatabase = tournamentId => {
+  const request = {
+    method: 'DELETE',
+    body: JSON.stringify({
+      tournamentId: tournamentId
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return dispatch => {
+    return fetch(`/tournaments/${tournamentId}`, request)
+    .then(response => response.json())
+    .then(response => {
+      console.log(response.notice)
+      dispatch(deleteTournamentFromStore(response.tournamentId))
+      window.location.href = '/tournaments/add_tournament' //Need to figure out how to redirect to /matches/add_match and make react re-render
+    })
   }
 }

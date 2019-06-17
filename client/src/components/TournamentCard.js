@@ -4,6 +4,12 @@ const TournamentCard = (props) => {
   var tournamentId = parseInt(props.id)
   var tournament = props.currentTournament(tournamentId)
 
+  const handleOnSubmit = event => {
+    event.preventDefault()
+
+    props.deleteTournamentFromDatabase(tournamentId)
+  }
+
   if(tournament) {
     return (
       <div className="tournament-card">
@@ -15,6 +21,9 @@ const TournamentCard = (props) => {
         <p>Age Category: {tournament.age_category}</p>
         <p>Draw Size: {tournament.draw_size}</p>
         <p>Points: {tournament.points}</p>
+        <form onSubmit={handleOnSubmit}>
+          <input type="submit" value="Delete"/>
+        </form>
       </div>
     )
   } else {
