@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 const Navbar = (props) => {
   return (
     <div className="navbar">
-      <span className="welcome-message">{`Welcome To Tennis Journal, ${props.currentUser.first_name}`}</span>
+      <span className="welcome-message">{`Hello ${props.currentUser.first_name}!`} Welcome to Tennis Journal!</span>
       <Logout logout={props.logout}/>
       <NavLink to='/profile' className="navlink">Profile</NavLink>
       <NavLink to="/matches/add_match" className="navlink">Matches</NavLink>

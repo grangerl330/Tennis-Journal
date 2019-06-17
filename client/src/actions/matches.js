@@ -65,7 +65,6 @@ export const deleteMatchFromDatabase = matchId => {
     .then(response => {
       console.log(response.notice)
       dispatch(deleteMatchFromStore(response.matchId))
-      window.location.href = '/matches/add_match' //Need to figure out how to redirect to /matches/add_match and make react re-render 
     })
   }
 }

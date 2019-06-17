@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router'
 
 const TournamentCard = (props) => {
   var tournamentId = parseInt(props.id)
@@ -8,6 +9,7 @@ const TournamentCard = (props) => {
     event.preventDefault()
 
     props.deleteTournamentFromDatabase(tournamentId)
+    props.history.push('/tournaments/add_tournament')
   }
 
   if(tournament) {
@@ -32,4 +34,4 @@ const TournamentCard = (props) => {
 
 }
 
-export default TournamentCard
+export default withRouter(TournamentCard)

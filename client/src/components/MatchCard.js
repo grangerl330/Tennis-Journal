@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router'
 
 const MatchCard = (props) => {
   var matchId = parseInt(props.id)
@@ -8,6 +9,7 @@ const MatchCard = (props) => {
     event.preventDefault()
 
     props.deleteMatchFromDatabase(matchId)
+    props.history.push('/matches/add_match')
   }
 
   if(match) {
@@ -30,4 +32,4 @@ const MatchCard = (props) => {
 
 }
 
-export default MatchCard
+export default withRouter(MatchCard)

@@ -4,8 +4,8 @@ export default (state = [], action) => {
       return action.tournaments
     case 'ADD_TOURNAMENT':
       return [...state, action.tournament]
-      case 'DELETE_MATCH':
-        return state.filter(tournament => tournament.id !== action.tournamentId)
+    case 'DELETE_TOURNAMENT':
+      return state.filter(tournament => tournament.id !== action.tournamentId)
     default:
       return state
   }

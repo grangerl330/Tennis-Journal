@@ -65,7 +65,6 @@ export const deleteTournamentFromDatabase = tournamentId => {
     .then(response => {
       console.log(response.notice)
       dispatch(deleteTournamentFromStore(response.tournamentId))
-      window.location.href = '/tournaments/add_tournament' //Need to figure out how to redirect to /matches/add_match and make react re-render
     })
   }
 }
