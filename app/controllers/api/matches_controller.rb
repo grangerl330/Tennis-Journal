@@ -19,6 +19,16 @@ class Api::MatchesController < ApplicationController
     end
   end
 
+  def destroy
+    @match = Match.find_by_id(params[:matchId])
+    @match.destroy
+
+    render json: {
+      notice: "Match Successfully Deleted",
+      matchId: params[:matchId]
+    }
+  end
+
   private
 
   def match_params

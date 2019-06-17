@@ -4,6 +4,8 @@ export default (state = [], action) => {
       return action.matches
     case 'ADD_MATCH':
       return [...state, action.match]
+    case 'DELETE_MATCH':
+      return state.filter(match => match.id !== action.MatchId)
     default:
       return state
   }

@@ -4,6 +4,12 @@ const MatchCard = (props) => {
   var matchId = parseInt(props.id)
   var match = props.currentMatch(matchId)
 
+  const handleOnSubmit = event => {
+    event.preventDefault()
+
+    props.deleteMatchFromDatabase(matchId)
+  }
+
   if(match) {
     return (
       <div className="match-card">
@@ -14,6 +20,9 @@ const MatchCard = (props) => {
         <p>Date: {match.date}</p>
         <p>Time: {match.time}</p>
         <p>Notes: {match.notes}</p>
+        <form onSubmit={handleOnSubmit}>
+          <input type="submit" value="Delete"/>
+        </form>
       </div>
     )
   } else {

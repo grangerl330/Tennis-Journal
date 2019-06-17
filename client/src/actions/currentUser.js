@@ -40,7 +40,7 @@ export const logout = () => {
   return dispatch => {
     dispatch(clearCurrentUser())
     return fetch('/logout', {
-      credntials: 'include',
+      credentials: 'include',
       method: 'DELETE'
     })
   }

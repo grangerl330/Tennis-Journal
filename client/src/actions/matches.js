@@ -13,6 +13,13 @@ export const addMatchToStore = match => {
   }
 }
 
+export const deleteMatchFromStore = matchId => {
+  return {
+    type: 'DELETE_MATCH',
+    matchId
+  }
+}
+
 // Asynchronous Action Creators
 export const fetchMatches = () => {
   return dispatch => {
@@ -38,5 +45,27 @@ export const addMatchToDatabase = match => {
     return fetch('/matches', request)
     .then(response => response.json())
     .then(match => dispatch(addMatchToStore(match)))
+  }
+}
+
+export const deleteMatchFromDatabase = matchId => {
+  const request = {
+    method: 'DELETE',
+    body: JSON.stringify({
+      matchId: matchId
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return dispatch => {
+    return fetch(`/matches/${matchId}`, request)
+    .then(response => response.json())
+    .then(response => {
+      console.log(response.notice)
+      dispatch(deleteMatchFromStore(response.matchId))
+      window.location.href = '/matches/add_match' //Need to figure out how to redirect to /matches/add_match and make react re-render 
+    })
   }
 }

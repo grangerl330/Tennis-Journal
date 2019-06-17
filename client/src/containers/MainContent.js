@@ -1,6 +1,6 @@
 import React from 'react'
 import MatchForm from '../components/MatchForm'
-import { addMatchToDatabase } from '../actions/matches'
+import { addMatchToDatabase, deleteMatchFromDatabase } from '../actions/matches'
 import TournamentForm from '../components/TournamentForm'
 import { addTournamentToDatabase } from '../actions/tournaments'
 import TournamentCard from '../components/TournamentCard'
@@ -33,7 +33,7 @@ const MainContent = (props) => {
         <Route exact path='/matches/add_match' render={() => <MatchForm addMatchToDatabase={props.addMatchToDatabase}/>}/>
         <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm addTournamentToDatabase={props.addTournamentToDatabase}/>}/>
         <Route exact path='/tournaments/:tournamentId' render={(props) => <TournamentCard id={props.match.params.tournamentId} currentTournament={currentTournament}/>}/>
-        <Route exact path='/matches/:matchId' render={(props) => <MatchCard id={props.match.params.matchId} currentMatch={currentMatch}/>}/>
+        <Route exact path='/matches/:matchId' render={(stuff) => <MatchCard id={stuff.match.params.matchId} currentMatch={currentMatch} deleteMatchFromDatabase={props.deleteMatchFromDatabase}/>}/>
         <Route exact path='/profile' render={() => <Profile currentUser={props.currentUser}/>}/>
       </Switch>
     </div>
@@ -51,7 +51,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     addTournamentToDatabase: tournament => dispatch(addTournamentToDatabase(tournament)),
-    addMatchToDatabase: match => dispatch(addMatchToDatabase(match))
+    addMatchToDatabase: match => dispatch(addMatchToDatabase(match)),
+    deleteMatchFromDatabase: matchId => dispatch(deleteMatchFromDatabase(matchId))
   }
 }
 
