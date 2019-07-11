@@ -23,7 +23,7 @@ const Signup = (props) => {
         <p><input type="text" name="first_name" onChange={handleOnChange} value={props.signupFormData.firstName} placeholder="First Name" /></p>
         <p><input type="text" name="last_name" onChange={handleOnChange} value={props.signupFormData.lastName} placeholder="Last Name" /></p>
         <p><input type="text" name="email" onChange={handleOnChange} value={props.signupFormData.email} placeholder="email" /></p>
-        <p><input type="text" name="password" onChange={handleOnChange} value={props.signupFormData.password} placeholder="password" /></p>
+        <p><input type="password" name="password" onChange={handleOnChange} value={props.signupFormData.password} placeholder="password" /></p>
         <input type="submit" value="Log In" />
       </form>
     </div>
