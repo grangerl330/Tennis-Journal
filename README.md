@@ -24,7 +24,7 @@ Open http://localhost:3000 to view it in your browser
 
 Shut down the server by pressing ctrl + C
 
-* If you have issues you may need to install the React front end before starting the server. To do this, run the following:
+If you have issues you may need to install the React front end before starting the server. To do this, run the following:
 
 $ cd client  
 $ npm install  
