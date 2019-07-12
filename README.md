@@ -1,6 +1,6 @@
 # Tennis Journal README
 
-Ruby Version: 2.6.1
+Tennis Journal is an app designed to help tennis players that are competing in tournaments keep track of match statistics
 
 ## Running the App
 
