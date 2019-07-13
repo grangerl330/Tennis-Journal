@@ -5,13 +5,15 @@ import currentUser from './reducers/currentUser'
 import loginForm from './reducers/loginForm'
 import signupForm from './reducers/signupForm'
 import tournaments from './reducers/tournaments'
+import opponents from './reducers/opponents'
 
 const reducer = combineReducers({
   matches,
   currentUser,
   loginForm,
   signupForm,
-  tournaments
+  tournaments,
+  opponents
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
