@@ -12,6 +12,7 @@ const Navbar = (props) => {
       <NavLink to='/profile' className="navlink">Profile</NavLink>
       <NavLink to="/matches/add_match" className="navlink">Matches</NavLink>
       <NavLink to="/tournaments/add_tournament" className="navlink">Tournaments</NavLink>
+      <NavLink to="/opponents" className="navlink">Opponents</NavLink>
     </div>
   )
 }
