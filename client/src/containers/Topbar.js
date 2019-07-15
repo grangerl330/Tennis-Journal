@@ -3,8 +3,6 @@ import Logout from '../components/Logout'
 import { logout } from '../actions/currentUser'
 import { connect } from 'react-redux'
 import { NavLink, Switch, Route } from 'react-router-dom'
-import Tournaments from '../components/Tournaments'
-import { fetchTournaments } from '../actions/tournaments'
 
 const Topbar = (props) => {
   return (
