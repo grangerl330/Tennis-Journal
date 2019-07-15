@@ -4,9 +4,9 @@ import { logout } from '../actions/currentUser'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
-const Navbar = (props) => {
+const Topbar = (props) => {
   return (
-    <div className="navbar">
+    <div className="topbar">
       <span className="welcome-message">{`Hello ${props.currentUser.first_name}!`} Welcome to Tennis Journal!</span>
       <Logout logout={props.logout}/>
       <NavLink to='/profile' className="navlink">Profile</NavLink>
@@ -23,4 +23,4 @@ const mapStateToProps = ({ currentUser }) => {
   }
 }
 
-export default connect(mapStateToProps, { logout })(Navbar)
+export default connect(mapStateToProps, { logout })(Topbar)

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import MainContent from './containers/MainContent'
 import Sidebar from './containers/Sidebar'
-import Navbar from './containers/Navbar'
+import Topbar from './containers/Topbar'
 import WelcomePage from './containers/WelcomePage'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
@@ -17,7 +17,7 @@ class App extends Component {
     if (this.props.currentUser) {
       return (
         <div className="App">
-          <Navbar />
+          <Topbar />
           <Sidebar />
           <MainContent />
         </div>
