@@ -45,13 +45,28 @@
   height: 100vh;
 }
 
-.welcome-message {
+.topbar-logo {
   float: left;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.username-display {
+  float: right;
   color: white;
   display: inline;
+  margin-right: 20px;
+}
+
+.logout-display {
+  margin-top: 10px;
 }
 
 .logout {
   float: left;
   clear: both
+}
+
+.page-name-display {
+  font-size: 30px;
 }
