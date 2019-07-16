@@ -2,7 +2,7 @@ import React from 'react'
 
 const Profile = (props) => {
   return (
-    <div className="profile">
+    <div className="main-content-text">
       <h2>Profile Page</h2>
       <p>First Name: {props.currentUser.first_name}</p>
       <p>Last Name: {props.currentUser.last_name}</p>
