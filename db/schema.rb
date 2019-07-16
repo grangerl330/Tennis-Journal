@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.string "last_name"
     t.string "email"
     t.string "password_digest"
+    t.integer "utr"
+    t.string "record"
+    t.integer "ranking"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
