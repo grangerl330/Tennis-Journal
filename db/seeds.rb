@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users
-User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", password: "password")
-User.create(first_name: "User", last_name: "2", email: "user2@gmail.com", password: "password")
-User.create(first_name: "User", last_name: "3", email: "user3@gmail.com", password: "password")
+User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", password: "password", utr: 10, record: "", ranking: 23)
+User.create(first_name: "User", last_name: "2", email: "user2@gmail.com", password: "password", utr: 9, record: "", ranking: 32)
+User.create(first_name: "User", last_name: "3", email: "user3@gmail.com", password: "password", utr: 8, record: "", ranking: 56)
 
 #Tournaments
 Tournament.create(title: "Tournament 1", start_date: Date.new(2019,1,1), end_date: Date.new(2019,1,3), location: "Location 1", surface: "Hard", age_category: "16 and Under", draw_size: 128, points: 500, user_id: 1)
