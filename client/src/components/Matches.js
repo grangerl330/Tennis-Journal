@@ -10,8 +10,9 @@ const Matches = (props) => {
 
   return (
     <div>
-      <h2>Matches</h2>
+      <h2>Matches List</h2>
       {renderMatches}
+      <p><NavLink className="main-content-link" to={`/matches/add_match`}>Add Match</NavLink></p>
     </div>
   )
 }
