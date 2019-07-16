@@ -78,6 +78,7 @@ const mapStateToProps = state => {
   return {
     tournaments: state.tournaments,
     matches: state.matches,
+    opponents: state.opponents,
     currentUser: state.currentUser
   }
 }
