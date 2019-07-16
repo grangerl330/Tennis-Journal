@@ -11,11 +11,12 @@ const Topbar = (props) => {
         Tennis Journal
       </div>
       <div className="username-display">
-        {props.currentUser.first_name} {props.currentUser.last_name}
+        <NavLink to='/profile' className="navlink">{props.currentUser.first_name} {props.currentUser.last_name}</NavLink>
         <div className="logout-display">
           <Logout logout={props.logout}/>
         </div>
       </div>
+      <Route path='/profile' render={() => <div className="page-name-display">Profile</div>}/>
       <Route path='/tournaments' render={() => <div className="page-name-display">Tournaments</div>}/>
       <Route path='/matches' render={() => <div className="page-name-display">Matches</div>}/>
       <Route path='/opponents' render={() => <div className="page-name-display">Opponents</div>}/>
