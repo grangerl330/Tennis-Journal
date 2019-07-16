@@ -9,7 +9,7 @@ const Tournaments = (props) => {
     )
 
     return (
-      <div>
+      <div className="main-content-text">
         <h2>Tournaments List</h2>
         {renderTournaments}
         <p><NavLink className="main-content-link" to={`/tournaments/add_tournament`}>Add Tournament</NavLink></p>

@@ -25,7 +25,7 @@
   background: #414b93;
   color: white;
   float: left;
-  width: 20vw;
+  width: 15vw;
   height: 90vh;
 }
 
@@ -33,8 +33,12 @@
   background: #b9bee0;
   color: #2f376e;
   float: left;
-  width: 80vw;
+  width: 85vw;
   height: 90vh;
+}
+
+.main-content-text {
+  margin-right: 10vw;
 }
 
 .Welcome-Page {
