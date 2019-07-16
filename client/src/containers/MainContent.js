@@ -6,11 +6,11 @@ import { addTournamentToDatabase, deleteTournamentFromDatabase } from '../action
 import TournamentCard from '../components/TournamentCard'
 import MatchCard from '../components/MatchCard'
 import Profile from '../components/Profile'
-// import Matches from '../components/Matches'
+import Matches from '../components/Matches'
 import { fetchMatches } from '../actions/matches'
 import Tournaments from '../components/Tournaments'
 import { fetchTournaments } from '../actions/tournaments'
-// import Opponents from '../components/Opponents'
+import Opponents from '../components/Opponents'
 import { fetchOpponents } from '../actions/opponents'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
@@ -29,6 +29,8 @@ class MainContent extends Component {
       <div className="main-content">
         <Switch>
           <Route exact path='/tournaments' render={() => <Tournaments tournaments={this.props.tournaments}/>} />
+          <Route exact path='/matches' render={() => <Matches matches={this.props.matches}/>} />
+          <Route exact path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
           <Route exact path='/matches/add_match' render={() => <MatchForm addMatchToDatabase={this.props.addMatchToDatabase}/>}/>
           <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm addTournamentToDatabase={this.props.addTournamentToDatabase}/>}/>
           <Route exact path='/tournaments/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={currentTournament} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase}/>}/>
