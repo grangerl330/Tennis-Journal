@@ -54,6 +54,14 @@
   margin-left: 10px;
 }
 
+.logo-image {
+  margin-right: 10px;
+}
+
+.logo-text {
+  display: inline;
+}
+
 .username-display {
   float: right;
   color: white;

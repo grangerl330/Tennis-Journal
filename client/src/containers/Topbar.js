@@ -3,12 +3,16 @@ import Logout from '../components/Logout'
 import { logout } from '../actions/currentUser'
 import { connect } from 'react-redux'
 import { NavLink, Route } from 'react-router-dom'
+import logo from '../Logo.jpg'
 
 const Topbar = (props) => {
   return (
     <div className="topbar">
       <div className="topbar-logo">
-        Tennis Journal
+        <img src={logo} className="logo-image"/>
+        <div className="logo-text">
+          Tennis Journal
+        </div>
       </div>
       <div className="username-display">
         <NavLink to='/profile' className="navlink">{props.currentUser.first_name} {props.currentUser.last_name}</NavLink>
