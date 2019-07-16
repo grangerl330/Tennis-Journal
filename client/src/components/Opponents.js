@@ -10,7 +10,7 @@ const Opponents = (props) => {
   )
 
   return (
-    <div>
+    <div className="main-content-text">
       <h2>Opponents</h2>
       {renderOpponents}
     </div>
