@@ -8,12 +8,14 @@ import logo from '../Logo.jpg'
 const Topbar = (props) => {
   return (
     <div className="topbar">
-      <div className="topbar-logo">
-        <img src={logo} className="logo-image"/>
-        <div className="logo-text">
-          Tennis Journal
+      <NavLink to='/home' className="navlink">
+        <div className="topbar-logo">
+          <img src={logo} className="logo-image"/>
+          <div className="logo-text">
+            Tennis Journal
+          </div>
         </div>
-      </div>
+      </NavLink>
       <div className="username-display">
         <NavLink to='/profile' className="navlink">{props.currentUser.first_name} {props.currentUser.last_name}</NavLink>
         <div className="logout-display">
@@ -21,6 +23,7 @@ const Topbar = (props) => {
         </div>
       </div>
       <Route path='/profile' render={() => <div className="page-name-display">Profile</div>}/>
+      <Route path='/home' render={() => <div className="page-name-display">Home</div>}/>
       <Route path='/tournaments' render={() => <div className="page-name-display">Tournaments</div>}/>
       <Route path='/matches' render={() => <div className="page-name-display">Matches</div>}/>
       <Route path='/opponents' render={() => <div className="page-name-display">Opponents</div>}/>

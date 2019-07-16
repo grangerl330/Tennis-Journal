@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
+
 import Profile from '../components/Profile'
+import Home from '../components/Home'
 
 import Matches from '../components/Matches'
 import MatchCard from '../components/MatchCard'
@@ -78,6 +80,7 @@ class MainContent extends Component {
           <Route exact path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
           <Route exact path='/opponents/:opponentId' render={(urlData) => <OpponentCard id={urlData.match.params.opponentId} currentOpponent={this.state.currentOpponent}/>}/>
           <Route exact path='/profile' render={() => <Profile currentUser={this.props.currentUser}/>}/>
+          <Route exact path='/home' render={() => <Home currentUser={this.props.currentUser}/>}/>
         </Switch>
       </div>
     )
