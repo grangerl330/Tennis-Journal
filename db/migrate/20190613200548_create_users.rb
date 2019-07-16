@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :password_digest
       t.float :utr
-      t.string :record
+      t.string :match_record
       t.integer :ranking
 
       t.timestamps
