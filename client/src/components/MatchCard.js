@@ -14,7 +14,7 @@ const MatchCard = (props) => {
 
   if(match) {
     return (
-      <div className="match-card">
+      <div className="main-content-text">
         <h2>Round of {match.round}</h2>
         <p>Result: {match.result}</p>
         <p>Score: {match.score}</p>
