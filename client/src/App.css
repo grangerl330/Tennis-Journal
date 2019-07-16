@@ -38,7 +38,7 @@
 }
 
 .main-content-text {
-  margin-right: 7vw;
+  margin-right: 6vw;
 }
 
 .Welcome-Page {
@@ -80,4 +80,5 @@
 
 .page-name-display {
   font-size: 30px;
+  display: inline;
 }
