@@ -17,12 +17,44 @@ import { Switch, Route } from 'react-router-dom'
 
 
 class MainContent extends Component {
+  constructor() {
+    super();
+    this.state = {currentTournament: (id) => {
+      var selectedTournament = this.props.tournaments.find(tournament => {
+        return tournament.id === id
+      })
+
+      return selectedTournament
+    }, currentMatch: (id) => {
+      var selectedMatch = this.props.matches.find(match => {
+        return match.id === id
+      })
+
+      return selectedMatch
+    }};
+  }
 
   componentDidMount() {
     this.props.fetchMatches()
     this.props.fetchTournaments()
     this.props.fetchOpponents()
   }
+
+  // const currentTournament = (id) => {
+  //   var selectedTournament = this.props.tournaments.find(tournament => {
+  //     return tournament.id === id
+  //   })
+  //
+  //   return selectedTournament
+  // }
+
+  // const currentMatch = (id) => {
+  //   var selectedMatch = this.props.matches.find(match => {
+  //     return match.id === id
+  //   })
+  //
+  //   return selectedMatch
+  // }
 
   render() {
     return(
@@ -33,8 +65,8 @@ class MainContent extends Component {
           <Route exact path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
           <Route exact path='/matches/add_match' render={() => <MatchForm addMatchToDatabase={this.props.addMatchToDatabase}/>}/>
           <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm addTournamentToDatabase={this.props.addTournamentToDatabase}/>}/>
-          <Route exact path='/tournaments/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={currentTournament} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase}/>}/>
-          <Route exact path='/matches/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={currentMatch} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>
+          <Route exact path='/tournaments/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={this.state.currentTournament} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase}/>}/>
+          <Route exact path='/matches/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={this.state.currentMatch} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>
           <Route exact path='/profile' render={() => <Profile currentUser={this.props.currentUser}/>}/>
         </Switch>
       </div>
@@ -60,22 +92,6 @@ const mapDispatchToProps = dispatch => {
     fetchTournaments: () => {dispatch(fetchTournaments())},
     fetchOpponents: () => {dispatch(fetchOpponents())}
   }
-}
-
-const currentTournament = (id) => {
-  var selectedTournament = this.props.tournaments.find(tournament => {
-    return tournament.id === id
-  })
-
-  return selectedTournament
-}
-
-const currentMatch = (id) => {
-  var selectedMatch = this.props.matches.find(match => {
-    return match.id === id
-  })
-
-  return selectedMatch
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContent)
