@@ -1,10 +1,12 @@
 import React from 'react'
+import { withRouter } from 'react-router'
 
-const Logout = ({ logout }) => {
+const Logout = (props) => {
   const handleOnSubmit = event => {
     event.preventDefault()
 
-    logout()
+    props.logout()
+    props.history.push('/')
   }
 
   return (
@@ -16,4 +18,4 @@ const Logout = ({ logout }) => {
   )
 }
 
-export default Logout
+export default withRouter(Logout)
