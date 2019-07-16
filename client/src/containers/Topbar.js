@@ -2,7 +2,7 @@ import React from 'react'
 import Logout from '../components/Logout'
 import { logout } from '../actions/currentUser'
 import { connect } from 'react-redux'
-import { NavLink, Switch, Route } from 'react-router-dom'
+import { NavLink, Route } from 'react-router-dom'
 
 const Topbar = (props) => {
   return (
