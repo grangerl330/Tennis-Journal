@@ -75,8 +75,8 @@ class MainContent extends Component {
           <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm addTournamentToDatabase={this.props.addTournamentToDatabase}/>}/>
           <Route exact path='/tournaments/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={this.state.currentTournament} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase}/>}/>
           <Route exact path='/matches' render={() => <Matches matches={this.props.matches}/>} />
-          <Route exact path='/matches/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={this.state.currentMatch} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>
           <Route exact path='/matches/add_match' render={() => <MatchForm addMatchToDatabase={this.props.addMatchToDatabase}/>}/>
+          <Route exact path='/matches/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={this.state.currentMatch} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>
           <Route exact path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
           <Route exact path='/opponents/:opponentId' render={(urlData) => <OpponentCard id={urlData.match.params.opponentId} currentOpponent={this.state.currentOpponent}/>}/>
           <Route exact path='/profile' render={() => <Profile currentUser={this.props.currentUser}/>}/>
