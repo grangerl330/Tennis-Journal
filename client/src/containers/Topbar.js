@@ -10,7 +10,7 @@ const Topbar = (props) => {
     <div className="topbar">
       <NavLink to='/home' className="navlink">
         <div className="topbar-logo">
-          <img src={logo} className="logo-image"/>
+          <img src={logo} className="logo-image" alt="logo"/>
           <div className="logo-text">
             Tennis Journal
           </div>
