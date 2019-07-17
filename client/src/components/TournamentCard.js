@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment'
 import { withRouter } from 'react-router';
 
 const TournamentCard = (props) => {
@@ -16,8 +17,8 @@ const TournamentCard = (props) => {
     return (
       <div className="main-content-text">
         <h2>{tournament.title}</h2>
-        <p>Start Date: {tournament.start_date}</p>
-        <p>End Date: {tournament.end_date}</p>
+        <p>Start Date: {moment(tournament.start_date).format('MM/DD/YYYY')}</p>
+        <p>End Date: {moment(tournament.end_date).format('MM/DD/YYYY')}</p>
         <p>Location: {tournament.location}</p>
         <p>Surface: {tournament.surface}</p>
         <p>Age Category: {tournament.age_category}</p>

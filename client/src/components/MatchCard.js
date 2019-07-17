@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment'
 import { withRouter } from 'react-router'
 
 const MatchCard = (props) => {
@@ -18,8 +19,8 @@ const MatchCard = (props) => {
         <h2>Round of {match.round}</h2>
         <p>Result: {match.result}</p>
         <p>Score: {match.score}</p>
-        <p>Date: {match.date}</p>
-        <p>Time: {match.time}</p>
+        <p>Date: {moment(match.date).format('MM/DD/YYYY')}</p>
+        <p>Time: {moment(match.time).format('hh:mm a')}</p>
         <p>Notes: {match.notes}</p>
         <form onSubmit={handleOnSubmit}>
           <input type="submit" value="Delete"/>
