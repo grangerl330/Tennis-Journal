@@ -39,10 +39,18 @@ class MatchForm extends Component {
     this.props.history.push('/matches')
   }
 
+  closeWindowLink = () => {
+    if(this.props.tournamentId){
+      return <NavLink className="close-window-button" to={`/tournaments/${this.props.tournamentId}`}>x</NavLink>
+    } else {
+      return <NavLink className="close-window-button" to='/matches'>x</NavLink>
+    }
+  }
+
   render() {
     return (
       <div className="form-window">
-        <NavLink className="close-window-button" to={`/tournaments/${this.props.tournamentId}`}>x</NavLink>
+        {this.closeWindowLink()}
         <form onSubmit={this.handleOnSubmit} className="match-form-text">
           <h2>Add Match</h2>
           <p>
