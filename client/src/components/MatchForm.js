@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
 class MatchForm extends Component {
@@ -40,8 +41,9 @@ class MatchForm extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleOnSubmit} className="main-content-text">
+      <div className="form-window">
+        <NavLink className="close-window-button" to={`/tournaments/${this.props.tournamentId}`}>x</NavLink>
+        <form onSubmit={this.handleOnSubmit} className="match-form-text">
           <h2>Add Match</h2>
           <p>
             <label htmlFor="match-date">Date: </label>

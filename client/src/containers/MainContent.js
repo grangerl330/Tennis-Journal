@@ -73,7 +73,7 @@ class MainContent extends Component {
         <Switch>
           <Route exact path='/tournaments' render={() => <Tournaments tournaments={this.props.tournaments}/>} />
           <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm addTournamentToDatabase={this.props.addTournamentToDatabase}/>}/>
-          <Route exact path='/tournaments/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={this.state.currentTournament} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase} matches={tournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
+          <Route path='/tournaments/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={this.state.currentTournament} addMatchToDatabase={this.props.addMatchToDatabase} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase} matches={tournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
           <Route exact path='/matches' render={() => <Matches matches={this.props.matches}/>} />
           <Route exact path='/matches/add_match' render={() => <MatchForm addMatchToDatabase={this.props.addMatchToDatabase}/>}/>
           <Route exact path='/matches/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={this.state.currentMatch} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>

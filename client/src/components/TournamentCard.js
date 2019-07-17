@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment'
-import { NavLink } from 'react-router-dom'
+import MatchForm from './MatchForm'
+import { NavLink, Route } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
 const TournamentCard = (props) => {
@@ -38,6 +39,8 @@ const TournamentCard = (props) => {
           <h2>Matches</h2>
           {renderMatches}
         </div>
+        <NavLink to={`/tournaments/${tournament.id}/add_match`}>Add Match</NavLink>
+        <Route path='/tournaments/:tournamentId/add_match' render={() => <MatchForm tournamentId={tournament.id} addMatchToDatabase={props.addMatchToDatabase}/>} />
       </div>
     )
   } else {
