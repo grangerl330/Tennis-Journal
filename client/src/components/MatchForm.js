@@ -41,7 +41,7 @@ class MatchForm extends Component {
 
   closeWindowLink = () => {
     if(this.props.tournamentId){
-      return <NavLink className="close-window-button" to={`/tournaments/${this.props.tournamentId}`}>x</NavLink>
+      return <NavLink className="close-window-button" to={`/tournaments/view/${this.props.tournamentId}`}>x</NavLink>
     } else {
       return <NavLink className="close-window-button" to='/matches'>x</NavLink>
     }
