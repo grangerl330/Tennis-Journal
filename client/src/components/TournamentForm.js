@@ -45,7 +45,7 @@ class TournamentForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleOnSubmit}>
+        <form onSubmit={this.handleOnSubmit} className="main-content-text">
           <h2>Add Tournament</h2>
           <p>
             <input type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="Title"/>
