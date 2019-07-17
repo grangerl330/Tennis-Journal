@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment'
+import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
 const TournamentCard = (props) => {
@@ -12,6 +13,12 @@ const TournamentCard = (props) => {
     props.deleteTournamentFromDatabase(tournamentId)
     props.history.push('/tournaments/add_tournament')
   }
+
+  const renderMatches = props.matches.map(match =>
+    <div key={match.id}>
+      <p><NavLink className="main-content-link" to={`/matches/${match.id}`}>Round of {match.round}</NavLink></p>
+    </div>
+  )
 
   if(tournament) {
     return (
@@ -27,6 +34,10 @@ const TournamentCard = (props) => {
         <form onSubmit={handleOnSubmit}>
           <input type="submit" value="Delete"/>
         </form>
+        <div className="tournament-matches-list">
+          <h2>Matches</h2>
+          {renderMatches}
+        </div>
       </div>
     )
   } else {

@@ -38,7 +38,7 @@ class MainContent extends Component {
       return selectedMatch
     }, currentOpponent: (id) => {
       var selectedOpponent = this.props.opponents.find(opponent => {
-        return opponent.id == id
+        return opponent.id === id
       })
 
       return selectedOpponent
@@ -73,7 +73,7 @@ class MainContent extends Component {
         <Switch>
           <Route exact path='/tournaments' render={() => <Tournaments tournaments={this.props.tournaments}/>} />
           <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm addTournamentToDatabase={this.props.addTournamentToDatabase}/>}/>
-          <Route exact path='/tournaments/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={this.state.currentTournament} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase}/>}/>
+          <Route exact path='/tournaments/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={this.state.currentTournament} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase} matches={tournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
           <Route exact path='/matches' render={() => <Matches matches={this.props.matches}/>} />
           <Route exact path='/matches/add_match' render={() => <MatchForm addMatchToDatabase={this.props.addMatchToDatabase}/>}/>
           <Route exact path='/matches/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={this.state.currentMatch} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>
@@ -106,6 +106,14 @@ const mapDispatchToProps = dispatch => {
     fetchTournaments: () => {dispatch(fetchTournaments())},
     fetchOpponents: () => {dispatch(fetchOpponents())}
   }
+}
+
+const tournamentMatches = (matches, id) => {
+  var filteredMatches = matches.filter(match => {
+    return match.tournament_id === parseInt(id)
+  })
+
+  return filteredMatches
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContent)
