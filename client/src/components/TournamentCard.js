@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 
 const TournamentCard = (props) => {
   var tournamentId = parseInt(props.id)
