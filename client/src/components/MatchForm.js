@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
 
 class MatchForm extends Component {
   constructor(){
@@ -30,8 +31,11 @@ class MatchForm extends Component {
       round: "",
       result: "",
       score: "",
-      date: ""
+      date: "",
+      notes: ""
     })
+
+    this.props.history.push('/matches')
   }
 
   render() {
@@ -66,4 +70,4 @@ class MatchForm extends Component {
   }
 }
 
-export default MatchForm
+export default withRouter(MatchForm)

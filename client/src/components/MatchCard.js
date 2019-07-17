@@ -9,7 +9,7 @@ const MatchCard = (props) => {
     event.preventDefault()
 
     props.deleteMatchFromDatabase(matchId)
-    props.history.push('/matches/add_match')
+    props.history.push('/matches')
   }
 
   if(match) {
