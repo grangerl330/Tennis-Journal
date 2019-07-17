@@ -51,7 +51,7 @@ class MatchForm extends Component {
     return (
       <div className="form-window">
         {this.closeWindowLink()}
-        <form onSubmit={this.handleOnSubmit} className="match-form-text">
+        <form onSubmit={this.handleOnSubmit} className="form-text">
           <h2>Add Match</h2>
           <p>
             <label htmlFor="match-date">Date: </label>

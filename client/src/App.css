@@ -86,7 +86,7 @@
 .form-window {
   background: white;
   width: 30vw;
-  height: 50vh;
+  height: 55vh;
   text-align: center;
   position: absolute;
   z-index: 1;
@@ -97,7 +97,7 @@
   border: 1px solid #888;
 }
 
-.match-form-text {
+.form-text {
 
 }
 

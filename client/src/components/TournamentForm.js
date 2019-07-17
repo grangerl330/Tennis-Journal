@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 class TournamentForm extends Component {
   constructor(){
@@ -44,8 +45,9 @@ class TournamentForm extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleOnSubmit} className="main-content-text">
+      <div className="form-window">
+        <NavLink className="close-window-button" to='/tournaments'>x</NavLink>
+        <form onSubmit={this.handleOnSubmit} className="form-text">
           <h2>Add Tournament</h2>
           <p>
             <input type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="Title"/>
