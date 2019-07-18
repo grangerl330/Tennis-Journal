@@ -13,6 +13,13 @@ export const addMatchToStore = match => {
   }
 }
 
+export const updateMatchInStore = match => {
+  return {
+    type: 'UPDATE_MATCH',
+    match
+  }
+}
+
 export const deleteMatchFromStore = matchId => {
   return {
     type: 'DELETE_MATCH',
@@ -62,7 +69,7 @@ export const editMatchInDatabase = match => {
   return dispatch => {
     return fetch('/matches/update', request)
     .then(response => response.json())
-    .then(match => console.log(match))
+    .then(match => dispatch(updateMatchInStore(match)))
   }
 }
 

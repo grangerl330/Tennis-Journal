@@ -4,6 +4,8 @@ export default (state = [], action) => {
       return action.matches
     case 'ADD_MATCH':
       return [...state, action.match]
+    case 'UPDATE_MATCH':
+      return [...state.filter(match => match.id !== action.match.id), action.match]
     case 'UPDATE_TOURNAMENT':
       const newState = state.map(match => {
         if(match.tournament.id === action.tournament.id){
