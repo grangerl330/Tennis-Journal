@@ -38,7 +38,7 @@ class MatchForm extends Component {
       tournament_id: ""
     })
 
-    this.props.history.push('/matches')
+    this.props.history.push(`/tournaments/view/${this.props.tournamentId}`)
   }
 
   closeWindowLink = () => {
