@@ -52,7 +52,11 @@ class MatchForm extends Component {
       tournament_id: ""
     })
 
-    this.props.history.push(`/tournaments/view/${this.props.tournamentId}`)
+    if(this.props.edit){
+      this.props.history.push(`/matches/view/${this.props.currentMatch.id}`)
+    } else {
+      this.props.history.push(`/tournaments/view/${this.props.tournamentId}`)
+    }
   }
 
   formHeader = () => {
