@@ -43,12 +43,28 @@ class TournamentForm extends Component {
     })
   }
 
+  formHeader = () => {
+    if(this.props.add) {
+      return <h2>Add Tournament</h2>
+    } else {
+      return <h2>Edit Tournament</h2>
+    }
+  }
+
+  formButton = () => {
+    if(this.props.add) {
+      return <button>Add Tournament</button>
+    } else {
+      return <button>Edit Tournament</button>
+    }
+  }
+
   render() {
     return (
       <div className="form-window">
         <NavLink className="close-window-button" to='/tournaments'>x</NavLink>
         <form onSubmit={this.handleOnSubmit} className="form-text">
-          <h2>Add Tournament</h2>
+          {this.formHeader()}
           <p>
             <input type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="Title"/>
           </p>
@@ -75,7 +91,7 @@ class TournamentForm extends Component {
           <p>
             <input type="text" name="points" value={this.state.points} onChange={this.handleOnChange} placeholder="Points"/>
           </p>
-          <button>Add Tournament</button>
+          {this.formButton()}
         </form>
       </div>
     )
