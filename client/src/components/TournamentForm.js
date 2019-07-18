@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import { withRouter } from 'react-router';
 
 class TournamentForm extends Component {
   constructor(props){
@@ -60,6 +61,8 @@ class TournamentForm extends Component {
       user_id: "",
       id: ""
     })
+
+    this.props.history.push(`/tournaments/view/${this.props.tournament.id}`)
   }
 
   formHeader = () => {
@@ -125,4 +128,4 @@ class TournamentForm extends Component {
   }
 }
 
-export default TournamentForm
+export default withRouter(TournamentForm)
