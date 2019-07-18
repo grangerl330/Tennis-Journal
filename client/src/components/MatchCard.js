@@ -6,7 +6,7 @@ import { withRouter } from 'react-router'
 
 const MatchCard = (props) => {
   var matchId = parseInt(props.id)
-  var match = props.currentMatch(matchId)
+  var currentMatch = props.currentMatch(matchId)
 
   const handleOnSubmit = event => {
     event.preventDefault()
@@ -15,20 +15,20 @@ const MatchCard = (props) => {
     props.history.push('/matches')
   }
 
-  if(match) {
+  if(currentMatch) {
     return (
       <div className="main-content-text">
-        <h2>Round of {match.round}</h2>
-        <NavLink to={`/matches/view/${match.id}/edit`}>Edit</NavLink>
-        <p>Result: {match.result}</p>
-        <p>Score: {match.score}</p>
-        <p>Date: {moment(match.date).format('MM/DD/YYYY')}</p>
-        <p>Time: {moment(match.time).format('hh:mm a')}</p>
-        <p>Notes: {match.notes}</p>
+        <h2>Round of {currentMatch.round}</h2>
+        <NavLink to={`/currentMatches/view/${currentMatch.id}/edit`}>Edit</NavLink>
+        <p>Result: {currentMatch.result}</p>
+        <p>Score: {currentMatch.score}</p>
+        <p>Date: {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
+        <p>Time: {moment(currentMatch.time).format('hh:mm a')}</p>
+        <p>Notes: {currentMatch.notes}</p>
         <form onSubmit={handleOnSubmit}>
           <input type="submit" value="Delete"/>
         </form>
-        <Route path='/matches/view/:matchId/edit' render={() => <MatchForm matchId={match.id} sendMatchToDatabase={props.editMatchInDatabase} edit="edit"/>} />
+        <Route path='/matches/view/:matchId/edit' render={() => <MatchForm currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} edit="edit"/>} />
       </div>
     )
   } else {

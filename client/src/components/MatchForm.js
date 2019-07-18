@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import moment from 'moment'
 import { withRouter } from 'react-router'
 
 class MatchForm extends Component {
@@ -14,6 +15,19 @@ class MatchForm extends Component {
       score: "",
       notes: "",
       tournament_id: props.tournamentId
+    }
+  }
+
+  componentDidMount(){
+    if(this.props.edit){
+      this.setState({
+        date: this.props.currentMatch.date,
+        time: moment(this.props.currentMatch.time).format('HH:mm:ss'),
+        round: this.props.currentMatch.round,
+        result: this.props.currentMatch.result,
+        score: this.props.currentMatch.score,
+        notes: this.props.currentMatch.notes,
+      })
     }
   }
 
@@ -41,6 +55,22 @@ class MatchForm extends Component {
     this.props.history.push(`/tournaments/view/${this.props.tournamentId}`)
   }
 
+  formHeader = () => {
+    if(this.props.add) {
+      return <h2>Add Match</h2>
+    } else {
+      return <h2>Edit Match</h2>
+    }
+  }
+
+  formButton = () => {
+    if(this.props.add) {
+      return <button>Add Match</button>
+    } else {
+      return <button>Edit Match</button>
+    }
+  }
+
   closeWindowLink = () => {
     if(this.props.tournamentId){
       return <NavLink className="close-window-button" to={`/tournaments/view/${this.props.tournamentId}`}>x</NavLink>
@@ -54,7 +84,7 @@ class MatchForm extends Component {
       <div className="form-window">
         {this.closeWindowLink()}
         <form onSubmit={this.handleOnSubmit} className="form-text">
-          <h2>Add Match</h2>
+          {this.formHeader()}
           <p>
             <label htmlFor="match-date">Date: </label>
             <input type="date" name="date" value={this.state.date} onChange={this.handleOnChange} />
@@ -75,7 +105,7 @@ class MatchForm extends Component {
           <p>
             <textarea name="notes" value={this.state.notes} onChange={this.handleOnChange} placeholder="Notes">Notes</textarea>
           </p>
-          <button>Add Match</button>
+          {this.formButton()}
         </form>
       </div>
     )
