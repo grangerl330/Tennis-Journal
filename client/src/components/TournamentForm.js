@@ -29,7 +29,7 @@ class TournamentForm extends Component {
     event.preventDefault()
 
     const tournament = this.state
-    this.props.addTournamentToDatabase(tournament)
+    this.props.sendTournamentToDatabase(tournament)
     this.setState({
       title: "",
       start_date: "",

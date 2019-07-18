@@ -14,7 +14,7 @@ const Matches = (props) => {
       <h2>Matches List</h2>
       {renderMatches}
       <p><NavLink className="main-content-link" to={`/matches/add_match`}>Add Match</NavLink></p>
-      <Route exact path='/matches/add_match' render={() => <MatchForm addMatchToDatabase={props.addMatchToDatabase}/>}/>
+      <Route exact path='/matches/add_match' render={() => <MatchForm sendMatchToDatabase={props.addMatchToDatabase}/>}/>
     </div>
   )
 }

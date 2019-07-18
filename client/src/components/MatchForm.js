@@ -27,7 +27,7 @@ class MatchForm extends Component {
     event.preventDefault()
 
     const match = this.state
-    this.props.addMatchToDatabase(match)
+    this.props.sendMatchToDatabase(match)
     this.setState({
       round: "",
       result: "",
