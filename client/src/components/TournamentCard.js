@@ -18,7 +18,7 @@ const TournamentCard = (props) => {
 
   const renderMatches = props.matches.map(match =>
     <div key={match.id}>
-      <p><NavLink className="main-content-link" to={`/matches/${match.id}`}>Round of {match.round}</NavLink></p>
+      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>Round of {match.round}</NavLink></p>
     </div>
   )
 
