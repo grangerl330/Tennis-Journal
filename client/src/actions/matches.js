@@ -48,6 +48,24 @@ export const addMatchToDatabase = match => {
   }
 }
 
+export const editMatchInDatabase = match => {
+  const request = {
+    method: 'PATCH',
+    body: JSON.stringify({
+      match: match
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return dispatch => {
+    return fetch('/matches/update', request)
+    .then(response => response.json())
+    .then(match => console.log(match))
+  }
+}
+
 export const deleteMatchFromDatabase = matchId => {
   const request = {
     method: 'DELETE',

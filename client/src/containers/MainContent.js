@@ -8,7 +8,7 @@ import Home from '../components/Home'
 import Matches from '../components/Matches'
 import MatchCard from '../components/MatchCard'
 import { fetchMatches } from '../actions/matches'
-import { addMatchToDatabase, deleteMatchFromDatabase } from '../actions/matches'
+import { addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase } from '../actions/matches'
 
 import Tournaments from '../components/Tournaments'
 import TournamentCard from '../components/TournamentCard'
@@ -71,7 +71,7 @@ class MainContent extends Component {
         <Switch>
           <Route path='/tournaments/view/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={this.state.currentTournament} addMatchToDatabase={this.props.addMatchToDatabase} editTournamentInDatabase={this.props.editTournamentInDatabase} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase} matches={tournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
           <Route path='/tournaments' render={() => <Tournaments tournaments={this.props.tournaments} addTournamentToDatabase={this.props.addTournamentToDatabase} />} />
-          <Route exact path='/matches/view/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={this.state.currentMatch} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>
+          <Route path='/matches/view/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={this.state.currentMatch} editMatchInDatabase={this.props.editMatchInDatabase} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>
           <Route path='/matches' render={() => <Matches matches={this.props.matches} addMatchToDatabase={this.props.addMatchToDatabase}/>} />
           <Route exact path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
           <Route exact path='/opponents/:opponentId' render={(urlData) => <OpponentCard id={urlData.match.params.opponentId} currentOpponent={this.state.currentOpponent}/>}/>
@@ -97,6 +97,7 @@ const mapDispatchToProps = dispatch => {
     addTournamentToDatabase: tournament => dispatch(addTournamentToDatabase(tournament)),
     editTournamentInDatabase: tournament => dispatch(editTournamentInDatabase(tournament)),
     addMatchToDatabase: match => dispatch(addMatchToDatabase(match)),
+    editMatchInDatabase: match => dispatch(editMatchInDatabase(match)),
     deleteMatchFromDatabase: matchId => dispatch(deleteMatchFromDatabase(matchId)),
     deleteTournamentFromDatabase: tournamentId => dispatch(deleteTournamentFromDatabase(tournamentId)),
     fetchMatches: () => {dispatch(fetchMatches())},
