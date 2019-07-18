@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
 class TournamentForm extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
 
     this.state = {
       title: "",
@@ -15,6 +15,22 @@ class TournamentForm extends Component {
       draw_size: "",
       points: "",
       user_id: ""
+    }
+  }
+
+  componentDidMount(){
+    if(this.props.edit){
+      this.setState({
+        title: this.props.tournament.title,
+        start_date: this.props.tournament.start_date,
+        end_date: this.props.tournament.end_date,
+        location: this.props.tournament.location,
+        surface: this.props.tournament.surface,
+        age_category: this.props.tournament.age_category,
+        draw_size: this.props.tournament.draw_size,
+        points: this.props.tournament.points,
+        user_id: this.props.tournament.user_id
+      })
     }
   }
 

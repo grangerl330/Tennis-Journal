@@ -43,7 +43,7 @@ const TournamentCard = (props) => {
         </div>
         <NavLink to={`/tournaments/view/${tournament.id}/add_match`}>Add Match</NavLink>
         <Route path='/tournaments/view/:tournamentId/add_match' render={() => <MatchForm tournamentId={tournament.id} addMatchToDatabase={props.addMatchToDatabase}/>} />
-        <Route path='/tournaments/view/:tournamentId/edit' render={() => <TournamentForm tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase}/>} />
+        <Route path='/tournaments/view/:tournamentId/edit' render={() => <TournamentForm tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} edit="edit"/>} />
       </div>
     )
   } else {
