@@ -8,7 +8,6 @@ class Api::MatchesController < ApplicationController
   def create
     @match = Match.new(match_params)
     @match.user_id = current_user.id
-    @match.tournament_id = 1
 
     if @match.save
       render json: @match

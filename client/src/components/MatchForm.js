@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
 class MatchForm extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
 
     this.state = {
       date: "",
@@ -12,7 +12,8 @@ class MatchForm extends Component {
       round: "",
       result: "",
       score: "",
-      notes: ""
+      notes: "",
+      tournament_id: props.tournamentId
     }
   }
 
@@ -33,7 +34,8 @@ class MatchForm extends Component {
       result: "",
       score: "",
       date: "",
-      notes: ""
+      notes: "",
+      tournament_id: ""
     })
 
     this.props.history.push('/matches')
