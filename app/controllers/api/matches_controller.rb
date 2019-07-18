@@ -18,6 +18,18 @@ class Api::MatchesController < ApplicationController
     end
   end
 
+  def update
+    @match = Match.find_by_id(params[:match][:id])
+
+    if @match.update(match_params)
+      render json: @match
+    else
+      render json: {
+        error: "This Match Failed To Update"
+      }
+    end
+  end
+
   def destroy
     @match = Match.find_by_id(params[:matchId])
     @match.destroy
