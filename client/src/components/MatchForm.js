@@ -14,6 +14,7 @@ class MatchForm extends Component {
       result: "",
       score: "",
       notes: "",
+      id: "",
       tournament_id: props.tournamentId
     }
   }
@@ -27,6 +28,7 @@ class MatchForm extends Component {
         result: this.props.currentMatch.result,
         score: this.props.currentMatch.score,
         notes: this.props.currentMatch.notes,
+        id: this.props.currentMatch.id
       })
     }
   }
