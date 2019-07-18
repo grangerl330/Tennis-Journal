@@ -13,6 +13,13 @@ export const addTournamentToStore = tournament => {
   }
 }
 
+export const updateTournamentInStore = tournament => {
+  return {
+    type: 'UPDATE_TOURNAMENT',
+    tournament
+  }
+}
+
 export const deleteTournamentFromStore = tournamentId => {
   return {
     type: 'DELETE_TOURNAMENT',
@@ -62,7 +69,7 @@ export const editTournamentInDatabase = tournament => {
   return dispatch => {
     return fetch('/tournaments/update', request)
     .then(response => response.json())
-    .then(tournament => dispatch(addTournamentToStore(tournament)))
+    .then(tournament => dispatch(updateTournamentInStore(tournament)))
   }
 }
 

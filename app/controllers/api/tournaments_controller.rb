@@ -20,7 +20,14 @@ class Api::TournamentsController < ApplicationController
 
   def update
     @tournament = Tournament.find_by_id(params[:tournament][:id])
-    @tournament.update(tournament_params)
+    
+    if @tournament.update(tournament_params)
+      render json: @tournament
+    else
+      render json: {
+        error: "This Tournament Failed To Update"
+      }
+    end
   end
 
   def destroy
