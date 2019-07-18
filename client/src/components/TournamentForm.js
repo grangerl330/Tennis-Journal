@@ -59,10 +59,18 @@ class TournamentForm extends Component {
     }
   }
 
+  formCloseWindowButton = () => {
+    if(this.props.add) {
+      return <NavLink className="close-window-button" to='/tournaments'>x</NavLink>
+    } else {
+      return <NavLink className="close-window-button" to={`/tournaments/view/${this.props.tournamentId}`}>x</NavLink>
+    }
+  }
+
   render() {
     return (
       <div className="form-window">
-        <NavLink className="close-window-button" to='/tournaments'>x</NavLink>
+        {this.formCloseWindowButton()}
         <form onSubmit={this.handleOnSubmit} className="form-text">
           {this.formHeader()}
           <p>
