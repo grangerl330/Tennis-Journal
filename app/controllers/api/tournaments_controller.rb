@@ -18,6 +18,11 @@ class Api::TournamentsController < ApplicationController
     end
   end
 
+  def update
+    @tournament = Tournament.find_by_id(params[:tournament][:id])
+    @tournament.update(tournament_params)
+  end
+
   def destroy
     @tournament = Tournament.find_by_id(params[:tournamentId])
     @tournament.destroy

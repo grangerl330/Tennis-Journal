@@ -50,7 +50,7 @@ export const addTournamentToDatabase = tournament => {
 
 export const editTournamentInDatabase = tournament => {
   const request = {
-    method: 'POST',
+    method: 'PATCH',
     body: JSON.stringify({
       tournament: tournament
     }),
@@ -60,7 +60,7 @@ export const editTournamentInDatabase = tournament => {
   }
 
   return dispatch => {
-    return fetch('/tournaments/edit', request)
+    return fetch('/tournaments/update', request)
     .then(response => response.json())
     .then(tournament => dispatch(addTournamentToStore(tournament)))
   }

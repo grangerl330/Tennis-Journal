@@ -95,6 +95,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     addTournamentToDatabase: tournament => dispatch(addTournamentToDatabase(tournament)),
+    editTournamentInDatabase: tournament => dispatch(editTournamentInDatabase(tournament)),
     addMatchToDatabase: match => dispatch(addMatchToDatabase(match)),
     deleteMatchFromDatabase: matchId => dispatch(deleteMatchFromDatabase(matchId)),
     deleteTournamentFromDatabase: tournamentId => dispatch(deleteTournamentFromDatabase(tournamentId)),

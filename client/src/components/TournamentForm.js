@@ -14,7 +14,8 @@ class TournamentForm extends Component {
       age_category: "",
       draw_size: "",
       points: "",
-      user_id: ""
+      user_id: "",
+      id: ""
     }
   }
 
@@ -29,7 +30,8 @@ class TournamentForm extends Component {
         age_category: this.props.tournament.age_category,
         draw_size: this.props.tournament.draw_size,
         points: this.props.tournament.points,
-        user_id: this.props.tournament.user_id
+        user_id: this.props.tournament.user_id,
+        id: this.props.tournament.id
       })
     }
   }
@@ -55,7 +57,8 @@ class TournamentForm extends Component {
       age_category: "",
       draw_size: "",
       points: "",
-      user_id: ""
+      user_id: "",
+      id: ""
     })
   }
 
