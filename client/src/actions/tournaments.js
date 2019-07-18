@@ -48,6 +48,24 @@ export const addTournamentToDatabase = tournament => {
   }
 }
 
+export const editTournamentInDatabase = tournament => {
+  const request = {
+    method: 'POST',
+    body: JSON.stringify({
+      tournament: tournament
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return dispatch => {
+    return fetch('/tournaments/edit', request)
+    .then(response => response.json())
+    .then(tournament => dispatch(addTournamentToStore(tournament)))
+  }
+}
+
 export const deleteTournamentFromDatabase = tournamentId => {
   const request = {
     method: 'DELETE',
