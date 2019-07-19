@@ -75,6 +75,7 @@ export const getCurrentUser = () => {
 }
 
 export const updateCurrentUserInDatabase = user => {
+  debugger
   const request = {
     method: 'PATCH',
     body: JSON.stringify({

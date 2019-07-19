@@ -8,7 +8,8 @@ class ProfileForm extends Component {
     this.state = {
       first_name: props.currentUser.first_name,
       last_name: props.currentUser.last_name,
-      email: props.currentUser.email
+      email: props.currentUser.email,
+      id: props.currentUser.id
     }
   }
 

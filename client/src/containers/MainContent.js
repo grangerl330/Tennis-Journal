@@ -107,7 +107,7 @@ const mapDispatchToProps = dispatch => {
     fetchMatches: () => {dispatch(fetchMatches())},
     fetchTournaments: () => {dispatch(fetchTournaments())},
     fetchOpponents: () => {dispatch(fetchOpponents())},
-    updateCurrentUserInDatabase: () => {dispatch(updateCurrentUserInDatabase())}
+    updateCurrentUserInDatabase: user => {dispatch(updateCurrentUserInDatabase(user))}
   }
 }
 
