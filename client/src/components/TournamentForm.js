@@ -96,30 +96,54 @@ class TournamentForm extends Component {
         <form onSubmit={this.handleOnSubmit} className="form-text">
           {this.formHeader()}
           <p>
-            <input type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="Title"/>
+            <label htmlFor="tournament-title">Title: </label>
+            <input type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="name of tournament"/>
           </p>
           <p>
-            Start Date:
+            <label htmlFor="tournament-start_date">Start Date: </label>
             <input type="date" name="start_date" value={this.state.start_date} onChange={this.handleOnChange} placeholder="Start Date"/>
           </p>
           <p>
-            End Date:
+            <label htmlFor="tournament-end_date">End Date: </label>
             <input type="date" name="end_date" value={this.state.end_date} onChange={this.handleOnChange} placeholder="End Date"/>
           </p>
           <p>
-            <input type="text" name="location" value={this.state.location} onChange={this.handleOnChange} placeholder="Location"/>
+            <label htmlFor="tournament-location">Location: </label>
+            <input type="text" name="location" value={this.state.location} onChange={this.handleOnChange} placeholder="name of club"/>
           </p>
           <p>
-            <input type="text" name="surface" value={this.state.surface} onChange={this.handleOnChange} placeholder="Surface"/>
+            <label htmlFor="tournament-surface">Surface: </label>
+            <select name="surface" onChange={this.handleOnChange}>
+              <option value="Clay">Clay</option>
+              <option value="Hard">Hard</option>
+              <option value="Grass">Grass</option>
+              <option value="Carpet">Carpet</option>
+            </select>
           </p>
           <p>
-            <input type="text" name="age_category" value={this.state.age_category} onChange={this.handleOnChange} placeholder="Age Category"/>
+            <label htmlFor="tournament-age_category">Division: </label>
+            <select name="age_category" onChange={this.handleOnChange}>
+              <option value="12 and Under">12 and Under</option>
+              <option value="14 and Under">14 and Under</option>
+              <option value="16 and Under">16 and Under</option>
+              <option value="18 and Under">18 and Under</option>
+            </select>
           </p>
           <p>
-            <input type="text" name="draw_size" value={this.state.draw_size} onChange={this.handleOnChange} placeholder="Draw Size"/>
+            <label htmlFor="tournament-draw_size">Draw Size: </label>
+            <select name="draw_size" onChange={this.handleOnChange}>
+              <option value="128">128</option>
+              <option value="64">64</option>
+              <option value="32">32</option>
+              <option value="16">16</option>
+              <option value="8">8</option>
+              <option value="4">4</option>
+              <option value="2">2</option>
+            </select>
           </p>
           <p>
-            <input type="text" name="points" value={this.state.points} onChange={this.handleOnChange} placeholder="Points"/>
+            <label htmlFor="tournament-points">Points: </label>
+            <input type="text" name="points" value={this.state.points} onChange={this.handleOnChange} placeholder="points gained"/>
           </p>
           {this.formButton()}
         </form>
