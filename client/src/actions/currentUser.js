@@ -6,13 +6,6 @@ export const setCurrentUser = user => {
   }
 }
 
-export const updateCurrentUser = user => {
-  return {
-    type: 'UPDATE_CURRENT_USER',
-    user
-  }
-}
-
 export const clearCurrentUser = () => {
   return {
     type: 'CLEAR_CURRENT_USER'
@@ -75,7 +68,6 @@ export const getCurrentUser = () => {
 }
 
 export const updateCurrentUserInDatabase = user => {
-  debugger
   const request = {
     method: 'PATCH',
     body: JSON.stringify({
@@ -89,6 +81,6 @@ export const updateCurrentUserInDatabase = user => {
   return dispatch => {
     return fetch('/users/update', request)
     .then(response => response.json())
-    .then(user => dispatch(updateCurrentUser(user)))
+    .then(user => console.log(user))
   }
 }
