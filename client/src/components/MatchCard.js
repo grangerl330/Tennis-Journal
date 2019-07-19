@@ -19,6 +19,7 @@ const MatchCard = (props) => {
     return (
       <div className="main-content-text">
         <h2>Round of {currentMatch.round}</h2>
+        <NavLink to={`/tournaments/view/${currentMatch.tournament.id}`} className="match-tournament-link">{currentMatch.tournament.title}</NavLink>
         <NavLink to={`/matches/view/${currentMatch.id}/edit`}>Edit</NavLink>
         <p>Result: {currentMatch.result}</p>
         <p>Score: {currentMatch.score}</p>

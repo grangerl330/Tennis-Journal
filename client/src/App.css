@@ -106,3 +106,9 @@
   font-size: 18px;
   margin-top: -20px;
 }
+
+.match-tournament-link {
+  display: block; /* makes this link appear on its own line */
+  margin-bottom: 10px;
+  margin-top: -15px;
+}
