@@ -124,7 +124,7 @@ class MatchForm extends Component {
           </p>
           <p>
             <label htmlFor="match-notes" className="notes-label">Notes: </label>
-            <textarea name="notes" value={this.state.notes} onChange={this.handleOnChange} placeholder="Notes">Notes</textarea>
+            <textarea name="notes" value={this.state.notes} onChange={this.handleOnChange} placeholder="Notes about the match">Notes:</textarea>
           </p>
           {this.formButton()}
         </form>
