@@ -81,6 +81,6 @@ export const updateCurrentUserInDatabase = user => {
   return dispatch => {
     return fetch('/users/update', request)
     .then(response => response.json())
-    .then(user => console.log(user))
+    .then(user => setCurrentUser(user))
   }
 }
