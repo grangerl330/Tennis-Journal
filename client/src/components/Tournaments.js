@@ -3,7 +3,8 @@ import { NavLink, Route } from 'react-router-dom'
 import TournamentForm from './TournamentForm'
 
 const Tournaments = (props) => {
-    const renderTournaments = props.tournaments.map(tournament =>
+    const sortedTournaments = props.tournaments.sort(function(a,b) {return parseFloat(a.id) - parseFloat(b.id)})
+    const renderTournaments = sortedTournaments.map(tournament =>
       <div key={tournament.id}>
         <p><NavLink className="main-content-link" to={`/tournaments/view/${tournament.id}`}>{tournament.title}</NavLink></p>
       </div>
