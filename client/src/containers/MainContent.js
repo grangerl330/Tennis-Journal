@@ -23,10 +23,7 @@ import OpponentCard from '../components/OpponentCard'
 import { fetchOpponents } from '../actions/opponents'
 
 class MainContent extends Component {
-  constructor() {
-    super();
-  }
-
+  
   componentDidMount() {
     this.props.fetchMatches()
     this.props.fetchTournaments()
