@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { updateCurrentUserInDatabase } from '../actions/currentUser'
 
 class ProfileForm extends Component {
   constructor(props){
@@ -22,7 +23,7 @@ class ProfileForm extends Component {
     event.preventDefault()
 
     const user = this.state
-    this.props.sendUserToDatabase(user)
+    updateCurrentUserInDatabase(user)
   }
 
   render(){

@@ -6,6 +6,13 @@ export const setCurrentUser = user => {
   }
 }
 
+export const updateCurrentUser = user => {
+  return {
+    type: 'UPDATE_CURRENT_USER',
+    user
+  }
+}
+
 export const clearCurrentUser = () => {
   return {
     type: 'CLEAR_CURRENT_USER'
@@ -64,5 +71,23 @@ export const getCurrentUser = () => {
       }
     })
     .catch(console.log)
+  }
+}
+
+export const updateCurrentUserInDatabase = user => {
+  const request = {
+    method: 'PATCH',
+    body: JSON.stringify({
+      user: user
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return dispatch => {
+    return fetch('/users/update', request)
+    .then(response => response.json())
+    .then(user => dispatch(updateCurrentUser(user)))
   }
 }
