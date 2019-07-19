@@ -25,25 +25,6 @@ import { fetchOpponents } from '../actions/opponents'
 class MainContent extends Component {
   constructor() {
     super();
-    this.state = {currentTournament: (id) => {
-      var selectedTournament = this.props.tournaments.find(tournament => {
-        return tournament.id === id
-      })
-
-      return selectedTournament
-    }, currentMatch: (id) => {
-      var selectedMatch = this.props.matches.find(match => {
-        return match.id === id
-      })
-
-      return selectedMatch
-    }, currentOpponent: (id) => {
-      var selectedOpponent = this.props.opponents.find(opponent => {
-        return opponent.id === id
-      })
-
-      return selectedOpponent
-    }}
   }
 
   componentDidMount() {
@@ -52,32 +33,40 @@ class MainContent extends Component {
     this.props.fetchOpponents()
   }
 
-  // const currentTournament = (id) => {
-  //   var selectedTournament = this.props.tournaments.find(tournament => {
-  //     return tournament.id === id
-  //   })
-  //
-  //   return selectedTournament
-  // }
+  currentTournament = (id) => {
+    var selectedTournament = this.props.tournaments.find(tournament => {
+      return tournament.id === id
+    })
 
-  // const currentMatch = (id) => {
-  //   var selectedMatch = this.props.matches.find(match => {
-  //     return match.id === id
-  //   })
-  //
-  //   return selectedMatch
-  // }
+    return selectedTournament
+  }
+
+  currentMatch = (id) => {
+    var selectedMatch = this.props.matches.find(match => {
+      return match.id === id
+    })
+
+    return selectedMatch
+  }
+
+  currentOpponent = (id) => {
+    var selectedOpponent = this.props.opponents.find(opponent => {
+      return opponent.id === id
+    })
+
+    return selectedOpponent
+  }
 
   render() {
     return(
       <div className="main-content">
         <Switch>
-          <Route path='/tournaments/view/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={this.state.currentTournament} addMatchToDatabase={this.props.addMatchToDatabase} editTournamentInDatabase={this.props.editTournamentInDatabase} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase} matches={tournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
+          <Route path='/tournaments/view/:tournamentId' render={(urlData) => <TournamentCard id={urlData.match.params.tournamentId} currentTournament={this.currentTournament} addMatchToDatabase={this.props.addMatchToDatabase} editTournamentInDatabase={this.props.editTournamentInDatabase} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase} matches={tournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
           <Route path='/tournaments' render={() => <Tournaments tournaments={this.props.tournaments} addTournamentToDatabase={this.props.addTournamentToDatabase} />} />
-          <Route path='/matches/view/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={this.state.currentMatch} editMatchInDatabase={this.props.editMatchInDatabase} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>
+          <Route path='/matches/view/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={this.currentMatch} editMatchInDatabase={this.props.editMatchInDatabase} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>
           <Route path='/matches' render={() => <Matches matches={this.props.matches} addMatchToDatabase={this.props.addMatchToDatabase}/>} />
           <Route exact path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
-          <Route exact path='/opponents/:opponentId' render={(urlData) => <OpponentCard id={urlData.match.params.opponentId} currentOpponent={this.state.currentOpponent}/>}/>
+          <Route exact path='/opponents/:opponentId' render={(urlData) => <OpponentCard id={urlData.match.params.opponentId} currentOpponent={this.currentOpponent}/>}/>
           <Route exact path='/profile/edit' render={() => <ProfileForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>}/>
           <Route exact path='/profile' render={() => <Profile currentUser={this.props.currentUser}/>}/>
           <Route exact path='/home' render={() => <Home currentUser={this.props.currentUser}/>}/>
