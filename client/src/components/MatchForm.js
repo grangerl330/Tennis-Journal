@@ -100,15 +100,30 @@ class MatchForm extends Component {
             <input type="time" name="time" value={this.state.time} onChange={this.handleOnChange} />
           </p>
           <p>
-            <input type="text" name="round" value={this.state.round} onChange={this.handleOnChange} placeholder="Round"/>
+            <label htmlFor="match-round">Round: </label>
+            <select name="round" onChange={this.handleOnChange}>
+              <option value="128">128</option>
+              <option value="64">64</option>
+              <option value="32">32</option>
+              <option value="16">16</option>
+              <option value="8">Quarterfinal</option>
+              <option value="4">Semifinal</option>
+              <option value="2">Final</option>
+            </select>
           </p>
           <p>
-            <input type="text" name="result" value={this.state.result} onChange={this.handleOnChange} placeholder="Result"/>
+            <label htmlFor="match-round">Result: </label>
+            <select name="result" onChange={this.handleOnChange}>
+              <option value="Won">Won</option>
+              <option value="Lost">Lost</option>
+            </select>
           </p>
           <p>
-            <input type="text" name="score" value={this.state.score} onChange={this.handleOnChange} placeholder="Score"/>
+            <label htmlFor="match-score">Score: </label>
+            <input type="text" name="score" value={this.state.score} onChange={this.handleOnChange} placeholder="ex: 6-1, 6-0"/>
           </p>
           <p>
+            <label htmlFor="match-notes" className="notes-label">Notes: </label>
             <textarea name="notes" value={this.state.notes} onChange={this.handleOnChange} placeholder="Notes">Notes</textarea>
           </p>
           {this.formButton()}

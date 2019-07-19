@@ -112,3 +112,12 @@
   margin-bottom: 10px;
   margin-top: -15px;
 }
+
+.notes-label {
+  display: block;
+}
+
+textarea {
+  width: 200px;
+  height: 75px;
+}
