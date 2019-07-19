@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { updateCurrentUserInDatabase } from '../actions/currentUser'
+import { withRouter } from 'react-router';
 
 class ProfileForm extends Component {
   constructor(props){
@@ -23,14 +23,16 @@ class ProfileForm extends Component {
     event.preventDefault()
 
     const user = this.state
-    updateCurrentUserInDatabase(user)
+    this.props.updateCurrentUserInDatabase(user)
+
+    this.props.history.push('/profile')
   }
 
   render(){
     return(
       <div className="form-window">
         <h2>Edit Profile</h2>
-        <form onSubmit={this.handleOnSubmit}>
+        <form onSubmit={this.handleOnSubmit} className="form-text">
           <p>
             <label>First Name:</label>
             <input type="text" name="first_name" value={this.state.first_name} onChange={this.handleOnChange}/>
@@ -50,4 +52,4 @@ class ProfileForm extends Component {
   }
 }
 
-export default ProfileForm
+export default withRouter(ProfileForm)
