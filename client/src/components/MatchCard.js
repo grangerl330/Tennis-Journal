@@ -23,7 +23,7 @@ const MatchCard = (props) => {
         <p>Result: {currentMatch.result}</p>
         <p>Score: {currentMatch.score}</p>
         <p>Date: {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
-        <p>Time: {moment(currentMatch.time).format('hh:mm a')}</p>
+        <p>Time: {moment.utc(currentMatch.time).format('hh:mm a')}</p>
         <p>Notes: {currentMatch.notes}</p>
         <form onSubmit={handleOnSubmit}>
           <input type="submit" value="Delete"/>

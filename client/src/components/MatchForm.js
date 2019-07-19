@@ -23,7 +23,7 @@ class MatchForm extends Component {
     if(this.props.edit){
       this.setState({
         date: this.props.currentMatch.date,
-        time: moment(this.props.currentMatch.time).format('HH:mm:ss'),
+        time: moment.utc(this.props.currentMatch.time).format('HH:mm:ss'),
         round: this.props.currentMatch.round,
         result: this.props.currentMatch.result,
         score: this.props.currentMatch.score,
