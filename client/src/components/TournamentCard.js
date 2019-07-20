@@ -16,9 +16,21 @@ const TournamentCard = (props) => {
     props.history.push('/tournaments/add_tournament')
   }
 
+  const match_round = (match) => {
+    if(match.round > 8){
+      return `Round of ${match.round}`
+    } else if(match.round === 8){
+      return "Quarterfinal"
+    } else if(match.round === 4){
+      return "Semifinal"
+    } else if(match.round === 2){
+      return "Final"
+    }
+  }
+
   const renderMatches = props.matches.map(match =>
     <div key={match.id}>
-      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>Round of {match.round}</NavLink></p>
+      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>{match_round(match)}</NavLink></p>
     </div>
   )
 
