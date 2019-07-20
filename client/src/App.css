@@ -102,6 +102,15 @@
   height: 30vh;
 }
 
+.match-form {
+  height: 62vh;
+}
+
+.profile-input {
+  width: 75px;
+  margin-right: 5px;
+}
+
 .form-text {
 
 }

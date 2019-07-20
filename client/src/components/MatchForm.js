@@ -15,7 +15,9 @@ class MatchForm extends Component {
       score: "",
       notes: "",
       id: "",
-      tournament_id: props.tournamentId
+      tournament_id: props.tournamentId,
+      opponent_first_name: "",
+      opponent_last_name: ""
     }
   }
 
@@ -87,10 +89,15 @@ class MatchForm extends Component {
 
   render() {
     return (
-      <div className="form-window">
+      <div className={`form-window match-form`}>
         {this.closeWindowLink()}
         <form onSubmit={this.handleOnSubmit} className="form-text">
           {this.formHeader()}
+          <p>
+            <label>vs:</label>
+            <input type="text" name="opponent_first_name" value={this.state.opponent_first_name} onChange={this.handleOnChange} placeholder="first name" className="profile-input"/>
+            <input type="text" name="opponent_last_name" value={this.state.opponent_last_name} onChange={this.handleOnChange} placeholder="last name" className="profile-input"/>
+          </p>
           <p>
             <label htmlFor="match-date">Date: </label>
             <input type="date" name="date" value={this.state.date} onChange={this.handleOnChange} />
