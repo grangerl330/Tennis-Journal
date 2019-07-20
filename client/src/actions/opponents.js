@@ -1,5 +1,6 @@
 // Synchronous Action Creators
 export const setOpponents = opponents => {
+  debugger
   return {
     type: 'SET_OPPONENTS',
     opponents
