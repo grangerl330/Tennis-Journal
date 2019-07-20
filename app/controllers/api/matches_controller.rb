@@ -7,6 +7,9 @@ class Api::MatchesController < ApplicationController
 
   def create
     @match = Match.new(match_params)
+    @match.build_opponent
+    @match.opponent.first_name = params[:match][:opponent_first_name]
+    @match.opponent.last_name = params[:match][:opponent_last_name]
     @match.user_id = current_user.id
 
     if @match.save

@@ -17,7 +17,7 @@ class MatchForm extends Component {
       id: "",
       tournament_id: props.tournamentId,
       opponent_first_name: "",
-      opponent_last_name: ""
+      opponent_last_name:""
     }
   }
 
