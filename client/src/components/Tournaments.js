@@ -1,9 +1,10 @@
 import React from 'react';
+import moment from 'moment'
 import { NavLink, Route } from 'react-router-dom'
 import TournamentForm from './TournamentForm'
 
 const Tournaments = (props) => {
-    const sortedTournaments = props.tournaments.sort(function(a,b) {return parseFloat(a.id) - parseFloat(b.id)})
+    const sortedTournaments = props.tournaments.sort(function(a,b) {return moment(a.start_date) - moment(b.start_date)})
     const renderTournaments = sortedTournaments.map(tournament =>
       <div key={tournament.id}>
         <p><NavLink className="main-content-link" to={`/tournaments/view/${tournament.id}`}>{tournament.title}</NavLink></p>
