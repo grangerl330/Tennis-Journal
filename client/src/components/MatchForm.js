@@ -114,6 +114,7 @@ class MatchForm extends Component {
           <p>
             <label htmlFor="match-round">Round: </label>
             <select name="round" onChange={this.handleOnChange}>
+              <option value="" selected disabled hidden></option>
               <option value="128">128</option>
               <option value="64">64</option>
               <option value="32">32</option>
@@ -126,6 +127,7 @@ class MatchForm extends Component {
           <p>
             <label htmlFor="match-round">Result: </label>
             <select name="result" onChange={this.handleOnChange}>
+              <option value="" selected disabled hidden></option>
               <option value="Won">Won</option>
               <option value="Lost">Lost</option>
             </select>
