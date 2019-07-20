@@ -1,9 +1,10 @@
 import React from 'react';
+import moment from 'moment'
 import { NavLink, Route } from 'react-router-dom'
 import MatchForm from './MatchForm'
 
 const Matches = (props) => {
-  const sortedMatches = props.matches.sort(function(a,b) {return parseFloat(a.id) - parseFloat(b.id)})
+  const sortedMatches = props.matches.sort(function(a,b) {return moment(a.date) - moment(b.date)})
 
   const match_round_display = (match) => {
     if(match.round > 8){
