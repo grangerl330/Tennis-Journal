@@ -4,9 +4,22 @@ import MatchForm from './MatchForm'
 
 const Matches = (props) => {
   const sortedMatches = props.matches.sort(function(a,b) {return parseFloat(a.id) - parseFloat(b.id)})
+
+  const match_round = (match) => {
+    if(match.round > 8){
+      return `Round of ${match.round}`
+    } else if(match.round === 8){
+      return "Quarterfinal"
+    } else if(match.round === 4){
+      return "Semifinal"
+    } else if(match.round === 2){
+      return "Final"
+    }
+  }
+
   const renderMatches = sortedMatches.map(match =>
     <div key={match.id}>
-      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>{match.tournament.title} - Round of {match.round}</NavLink></p>
+      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>{match.tournament.title} - {match_round(match)}</NavLink></p>
     </div>
   )
 
