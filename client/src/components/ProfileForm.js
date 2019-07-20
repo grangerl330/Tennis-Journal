@@ -31,7 +31,7 @@ class ProfileForm extends Component {
 
   render(){
     return(
-      <div className="form-window">
+      <div className={`form-window profile-form`}>
         <h2>Edit Profile</h2>
         <form onSubmit={this.handleOnSubmit} className="form-text">
           <p>
