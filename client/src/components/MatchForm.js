@@ -30,7 +30,9 @@ class MatchForm extends Component {
         result: this.props.currentMatch.result,
         score: this.props.currentMatch.score,
         notes: this.props.currentMatch.notes,
-        id: this.props.currentMatch.id
+        id: this.props.currentMatch.id,
+        opponent_first_name: this.props.currentMatch.opponent.first_name,
+        opponent_last_name:this.props.currentMatch.opponent.last_name
       })
     }
   }
@@ -53,7 +55,10 @@ class MatchForm extends Component {
       score: "",
       date: "",
       notes: "",
-      tournament_id: ""
+      tournament_id: "",
+      id: "",
+      opponent_first_name: "",
+      opponent_last_name:""
     })
 
     if(this.props.edit){
