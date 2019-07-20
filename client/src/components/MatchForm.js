@@ -92,12 +92,6 @@ class MatchForm extends Component {
     }
   }
 
-  default_menu_option = () => {
-    if(this.props.add) {
-      return <option value="" selected disabled hidden></option>
-    }
-  }
-
   render() {
     return (
       <div className={`form-window match-form`}>
@@ -119,8 +113,8 @@ class MatchForm extends Component {
           </p>
           <p>
             <label htmlFor="match-round">Round: </label>
-            <select name="round" onChange={this.handleOnChange}>
-              {this.default_menu_option()}
+            <select name="round" value={this.state.round} onChange={this.handleOnChange}>
+              <option disabled hidden></option>
               <option value="128">128</option>
               <option value="64">64</option>
               <option value="32">32</option>
@@ -132,8 +126,8 @@ class MatchForm extends Component {
           </p>
           <p>
             <label htmlFor="match-round">Result: </label>
-            <select name="result" onChange={this.handleOnChange}>
-              {this.default_menu_option()}
+            <select name="result" value={this.state.result} onChange={this.handleOnChange}>
+              <option disabled hidden></option>
               <option value="Won">Won</option>
               <option value="Lost">Lost</option>
             </select>
