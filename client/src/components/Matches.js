@@ -5,7 +5,7 @@ import MatchForm from './MatchForm'
 const Matches = (props) => {
   const sortedMatches = props.matches.sort(function(a,b) {return parseFloat(a.id) - parseFloat(b.id)})
 
-  const match_round = (match) => {
+  const match_round_display = (match) => {
     if(match.round > 8){
       return `Round of ${match.round}`
     } else if(match.round === 8){
@@ -19,7 +19,7 @@ const Matches = (props) => {
 
   const renderMatches = sortedMatches.map(match =>
     <div key={match.id}>
-      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>{match.tournament.title} - {match_round(match)}</NavLink></p>
+      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>{match.tournament.title} - {match_round_display(match)}</NavLink></p>
     </div>
   )
 
