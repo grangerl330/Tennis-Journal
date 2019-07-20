@@ -21,6 +21,7 @@ const MatchCard = (props) => {
         <h2>Round of {currentMatch.round}</h2>
         <NavLink to={`/tournaments/view/${currentMatch.tournament.id}`} className="match-tournament-link">{currentMatch.tournament.title}</NavLink>
         <NavLink to={`/matches/view/${currentMatch.id}/edit`}>Edit</NavLink>
+        <p>vs: {currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</p>
         <p>Result: {currentMatch.result}</p>
         <p>Score: {currentMatch.score}</p>
         <p>Date: {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
