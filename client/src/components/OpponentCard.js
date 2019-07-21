@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import OpponentForm from './OpponentForm'
+import { NavLink, Route } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
 const OpponentCard = (props) => {
@@ -32,6 +33,7 @@ const OpponentCard = (props) => {
         <p>Plays: {opponent.handedness} handed</p>
         <p>UTR: {opponent.utr}</p>
         <p>Notes: {opponent.notes}</p>
+        <Route path='/opponents/view/:opponentId/edit' render={() => <OpponentForm editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />} />
       </div>
     )
   } else {

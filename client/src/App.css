@@ -106,6 +106,10 @@
   height: 62vh;
 }
 
+.opponent-form {
+  height: 57vh;
+}
+
 .profile-input {
   width: 75px;
   margin-right: 5px;
