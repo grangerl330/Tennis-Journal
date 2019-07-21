@@ -22,6 +22,7 @@ const OpponentCard = (props) => {
     return (
       <div className="main-content-text">
         <h2>{opponent.first_name} {opponent.last_name}</h2>
+        <NavLink to={`/opponents/view/${opponent.id}/edit`}>Edit</NavLink>
         <p>
           <NavLink to={`/tournaments/view/${opponent.match.tournament.id}`}>{opponent.match.tournament.title}</NavLink>
           -
