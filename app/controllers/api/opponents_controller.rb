@@ -9,7 +9,7 @@ class Api::OpponentsController < ApplicationController
     @opponent = Opponent.find_by_id(params[:opponent][:id])
 
     if @opponent.update(opponent_params)
-      render json: @opponent
+      render json: @opponent, include: "match,match.tournament"
     else
       render json: {
         error: "This Opponent Failed To Update"
