@@ -20,6 +20,6 @@ class Api::OpponentsController < ApplicationController
   private
 
   def opponent_params
-    params.require(:opponent).permit(:first_name, :last_name, :age, :handedness, :utr, :notes)
+    params.require(:opponent).permit(:first_name, :last_name, :age, :handedness, :utr, :notes, :match_id)
   end
 end
