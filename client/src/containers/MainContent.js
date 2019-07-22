@@ -20,7 +20,7 @@ import { addTournamentToDatabase, editTournamentInDatabase, deleteTournamentFrom
 
 import Opponents from '../components/Opponents'
 import OpponentCard from '../components/OpponentCard'
-import { fetchOpponents } from '../actions/opponents'
+import { fetchOpponents, editOpponentInDatabase } from '../actions/opponents'
 
 class MainContent extends Component {
 
@@ -62,7 +62,7 @@ class MainContent extends Component {
           <Route path='/tournaments' render={() => <Tournaments tournaments={this.props.tournaments} addTournamentToDatabase={this.props.addTournamentToDatabase} />} />
           <Route path='/matches/view/:matchId' render={(urlData) => <MatchCard id={urlData.match.params.matchId} currentMatch={this.currentMatch} editMatchInDatabase={this.props.editMatchInDatabase} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase}/>}/>
           <Route path='/matches' render={() => <Matches matches={this.props.matches} addMatchToDatabase={this.props.addMatchToDatabase}/>} />
-          <Route path='/opponents/view/:opponentId' render={(urlData) => <OpponentCard id={urlData.match.params.opponentId} currentOpponent={this.currentOpponent}/>}/>
+          <Route path='/opponents/view/:opponentId' render={(urlData) => <OpponentCard id={urlData.match.params.opponentId} currentOpponent={this.currentOpponent} editOpponentInDatabase={this.props.editOpponentInDatabase}/>}/>
           <Route path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
           <Route exact path='/profile/edit' render={() => <ProfileForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>}/>
           <Route exact path='/profile' render={() => <Profile currentUser={this.props.currentUser}/>}/>
@@ -90,6 +90,7 @@ const mapDispatchToProps = dispatch => {
     editMatchInDatabase: match => dispatch(editMatchInDatabase(match)),
     deleteMatchFromDatabase: matchId => dispatch(deleteMatchFromDatabase(matchId)),
     deleteTournamentFromDatabase: tournamentId => dispatch(deleteTournamentFromDatabase(tournamentId)),
+    editOpponentInDatabase: opponent => dispatch(editOpponentInDatabase(opponent)),
     fetchMatches: () => {dispatch(fetchMatches())},
     fetchTournaments: () => {dispatch(fetchTournaments())},
     fetchOpponents: () => {dispatch(fetchOpponents())},
