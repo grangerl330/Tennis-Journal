@@ -1,10 +1,12 @@
 import React from 'react'
+import { withRouter } from 'react-router';
 
 const Signup = (props) => {
   const handleOnSubmit = event => {
     event.preventDefault()
 
     props.signup(props.signupFormData)
+    props.history.push('/home')
   }
 
   const handleOnChange = event => {
@@ -30,4 +32,4 @@ const Signup = (props) => {
   )
 }
 
-export default Signup
+export default withRouter(Signup)

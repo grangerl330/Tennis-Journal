@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router';
 
 const Login = (props) => {
 
@@ -15,6 +16,7 @@ const Login = (props) => {
     event.preventDefault()
 
     props.login(props.loginFormData)
+    props.history.push('/home')
   }
 
   return (
@@ -29,4 +31,4 @@ const Login = (props) => {
   )
 }
 
-export default Login
+export default withRouter(Login)
