@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:user][:id])
-  
+
     if @user.update(user_params)
       render json:  @user
     else

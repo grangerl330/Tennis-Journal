@@ -9,7 +9,9 @@ export const signup = newUserInfo => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newUserInfo)
+      body: JSON.stringify({
+        user: newUserInfo
+      })
     })
     .then(response => response.json())
     .then(user => {
