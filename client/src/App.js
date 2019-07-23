@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import MainContent from './containers/MainContent'
 import Sidebar from './containers/Sidebar'
 import Topbar from './containers/Topbar'
-import WelcomePage from './containers/WelcomePage'
+import LoginPage from './containers/LoginPage'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import './App.css';
@@ -25,7 +25,7 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <WelcomePage />
+          <LoginPage />
         </div>
       )
     }

@@ -7,7 +7,7 @@ import { updateSignupForm } from '../actions/signupForm'
 import { signup } from '../actions/newUser'
 import { connect } from 'react-redux'
 
-const WelcomePage = (props) => {
+const LoginPage = (props) => {
   return (
     <div className="Welcome-Page">
       <Login loginFormData={props.loginFormData} updateLoginForm={props.updateLoginForm} login={props.login}/>
@@ -24,4 +24,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateLoginForm, login, updateSignupForm, signup })(WelcomePage)
+export default connect(mapStateToProps, { updateLoginForm, login, updateSignupForm, signup })(LoginPage)
