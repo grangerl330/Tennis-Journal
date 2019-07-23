@@ -20,7 +20,7 @@ const Matches = (props) => {
 
   const renderMatches = sortedMatches.map(match =>
     <div key={match.id}>
-      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>{match.tournament.title} - {match_round_display(match)}</NavLink></p>
+      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>{match_round_display(match)} - {match.tournament.title}</NavLink></p>
     </div>
   )
 
