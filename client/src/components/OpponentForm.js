@@ -51,7 +51,7 @@ class OpponentForm extends Component {
       notes: ""
     })
 
-    this.props.history.push(`/opponents`)
+    this.props.history.push(`/opponents/view/${this.props.opponent.id}`)
   }
 
   render(){
