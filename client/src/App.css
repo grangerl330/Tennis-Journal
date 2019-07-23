@@ -110,6 +110,9 @@
   height: 57vh;
 }
 
+.stats-form {
+  height: 25vh;
+}
 .profile-input {
   width: 75px;
   margin-right: 5px;

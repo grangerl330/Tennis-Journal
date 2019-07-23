@@ -74,7 +74,7 @@ class MainContent extends Component {
           <Route path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
           <Route exact path='/profile/edit' render={() => <ProfileForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>}/>
           <Route exact path='/profile' render={() => <Profile currentUser={this.props.currentUser}/>}/>
-          <Route exact path='/home' render={() => <Home currentUser={this.props.currentUser}/>}/>
+          <Route path='/home' render={() => <Home currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>}/>
         </Switch>
       </div>
     )
