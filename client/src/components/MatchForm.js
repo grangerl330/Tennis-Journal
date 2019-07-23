@@ -92,6 +92,52 @@ class MatchForm extends Component {
     }
   }
 
+  switchStatement = () => {
+    if(this.props.add){
+      return this.props.tournament.draw_size
+    } else {
+      return this.props.currentMatch.tournament.draw_size
+    }
+  }
+
+  roundOptions = () => {
+    switch(this.switchStatement()){
+      case 128:
+        return [128, 64, 32, 16, 'Quarterfinal', 'Semifinal', 'Final']
+      case 64:
+        return [64, 32, 16, 'Quarterfinal', 'Semifinal', 'Final']
+      case 32:
+        return [32, 16, 'Quarterfinal', 'Semifinal', 'Final']
+      case 16:
+        return [16, 'Quarterfinal', 'Semifinal', 'Final']
+      case 8:
+        return ['Quarterfinal', 'Semifinal', 'Final']
+      case 4:
+        return ['Semifinal', 'Final']
+      case 2:
+        return ['Final']
+      default:
+        return []
+    }
+  }
+
+  roundOptionsDisplay = () => {
+    var displayOptions = []
+    var createdMatchRounds = []
+    this.props.matches.forEach(match => {createdMatchRounds.push(match.round)})
+    var roundOptions = this.roundOptions().filter(option => {
+      return !createdMatchRounds.includes(option)
+    })
+    var key = 1
+
+    roundOptions.forEach(option => {
+      displayOptions.push(<option value={`${option}`} key={`${key}`}>{option}</option>)
+      key += 1
+    })
+
+    return displayOptions
+  }
+
   render() {
     return (
       <div className={`form-window match-form`}>
@@ -115,13 +161,7 @@ class MatchForm extends Component {
             <label htmlFor="match-round">Round: </label>
             <select name="round" value={this.state.round} onChange={this.handleOnChange}>
               <option disabled hidden></option>
-              <option value="128">128</option>
-              <option value="64">64</option>
-              <option value="32">32</option>
-              <option value="16">16</option>
-              <option value="8">Quarterfinal</option>
-              <option value="4">Semifinal</option>
-              <option value="2">Final</option>
+              {this.roundOptionsDisplay()}
             </select>
           </p>
           <p>

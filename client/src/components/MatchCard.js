@@ -28,6 +28,8 @@ const MatchCard = (props) => {
   }
 
   if(currentMatch) {
+    var tournamentMatches = props.findTournamentMatches(props.matches, currentMatch.tournament.id)
+
     return (
       <div className="main-content-text">
         <h2>{match_round_display(currentMatch)}</h2>
@@ -42,7 +44,7 @@ const MatchCard = (props) => {
         <form onSubmit={handleOnSubmit}>
           <input type="submit" value="Delete"/>
         </form>
-        <Route path='/matches/view/:matchId/edit' render={() => <MatchForm currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} edit="edit"/>} />
+        <Route path='/matches/view/:matchId/edit' render={() => <MatchForm currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>} />
       </div>
     )
   } else {
