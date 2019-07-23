@@ -2,8 +2,6 @@ import { setCurrentUser } from './currentUser'
 
 // Asynchronous Action Creators
 export const signup = newUserInfo => {
-  console.log("New User info is", newUserInfo)
-
   return dispatch => {
     return fetch('/signup', {
       credentials: 'include',
