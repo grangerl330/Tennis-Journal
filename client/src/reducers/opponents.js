@@ -6,6 +6,8 @@ export default (state = [], action) => {
       var opponent = action.match.opponent
       opponent.tournament = action.match.tournament
       return [...state, opponent]
+    case 'DELETE_MATCH':
+      return state.filter(opponent => opponent.id !== action.opponentId)
     case 'UPDATE_OPPONENT':
       return [...state.filter(opponent => opponent.id !== action.opponent.id), action.opponent]
     default:

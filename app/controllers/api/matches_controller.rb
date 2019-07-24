@@ -42,7 +42,8 @@ class Api::MatchesController < ApplicationController
 
     render json: {
       notice: "Match Successfully Deleted",
-      matchId: params[:matchId]
+      matchId: params[:matchId],
+      opponentId: @match.opponent.id
     }
   end
 

@@ -20,10 +20,11 @@ export const updateMatchInStore = match => {
   }
 }
 
-export const deleteMatchFromStore = matchId => {
+export const deleteMatchFromStore = (matchId, opponentId) => {
   return {
     type: 'DELETE_MATCH',
-    matchId
+    matchId,
+    opponentId
   }
 }
 
@@ -89,7 +90,7 @@ export const deleteMatchFromDatabase = matchId => {
     .then(response => response.json())
     .then(response => {
       console.log(response.notice)
-      dispatch(deleteMatchFromStore(response.matchId))
+      dispatch(deleteMatchFromStore(response.matchId, response.opponentId))
     })
   }
 }
