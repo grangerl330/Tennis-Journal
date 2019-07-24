@@ -10,6 +10,7 @@ class Api::TournamentsController < ApplicationController
     @tournament.user_id = current_user.id
 
     if @tournament.save
+      current_user.update_points
       render json: @tournament
     else
       render json: {
@@ -22,6 +23,7 @@ class Api::TournamentsController < ApplicationController
     @tournament = Tournament.find_by_id(params[:tournament][:id])
 
     if @tournament.update(tournament_params)
+      current_user.update_points
       render json: @tournament
     else
       render json: {
@@ -33,6 +35,7 @@ class Api::TournamentsController < ApplicationController
   def destroy
     @tournament = Tournament.find_by_id(params[:tournamentId])
     @tournament.destroy
+    current_user.update_points
     match_ids = @tournament.matches.map {|match| match.id}
     opponent_ids = @tournament.matches.map {|match| match.opponent.id}
 
