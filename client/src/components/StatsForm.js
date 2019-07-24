@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
-class UserStatsForm extends Component {
+class StatsForm extends Component {
   constructor(props){
     super(props)
 
@@ -50,4 +50,4 @@ class UserStatsForm extends Component {
   }
 }
 
-export default withRouter(UserStatsForm)
+export default withRouter(StatsForm)

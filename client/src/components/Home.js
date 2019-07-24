@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import UserStatsForm from './UserStatsForm'
+import StatsForm from './StatsForm'
 import { NavLink, Route } from 'react-router-dom'
 
 class Home extends Component {
@@ -14,7 +14,7 @@ class Home extends Component {
         <p>Current Ranking: {this.props.currentUser.ranking}</p>
         <p>UTR: {this.props.currentUser.utr}</p>
         <NavLink to={`/home/edit_stats`}>Edit Stats</NavLink>
-        <Route path='/home/edit_stats' render={() => <UserStatsForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>} />
+        <Route path='/home/edit_stats' render={() => <StatsForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>} />
       </div>
     )
   }
