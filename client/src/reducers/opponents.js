@@ -8,6 +8,8 @@ export default (state = [], action) => {
       return [...state, opponent]
     case 'DELETE_MATCH':
       return state.filter(opponent => opponent.id !== action.opponentId)
+    case 'DELETE_TOURNAMENT':
+      return state.filter(opponent => !action.opponentIds.includes(opponent.id))
     case 'UPDATE_OPPONENT':
       return [...state.filter(opponent => opponent.id !== action.opponent.id), action.opponent]
     default:

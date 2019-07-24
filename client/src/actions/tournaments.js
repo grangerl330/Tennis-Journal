@@ -20,10 +20,12 @@ export const updateTournamentInStore = tournament => {
   }
 }
 
-export const deleteTournamentFromStore = tournamentId => {
+export const deleteTournamentFromStore = (tournamentId, matchIds, opponentIds) => {
   return {
     type: 'DELETE_TOURNAMENT',
-    tournamentId
+    tournamentId,
+    matchIds,
+    opponentIds
   }
 }
 
@@ -89,7 +91,7 @@ export const deleteTournamentFromDatabase = tournamentId => {
     .then(response => response.json())
     .then(response => {
       console.log(response.notice)
-      dispatch(deleteTournamentFromStore(response.tournamentId))
+      dispatch(deleteTournamentFromStore(response.tournamentId, response.matchIds, response.opponentIds))
     })
   }
 }

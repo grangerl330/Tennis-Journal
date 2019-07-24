@@ -7,7 +7,7 @@ export default (state = [], action) => {
     case 'UPDATE_MATCH':
       return [...state.filter(match => match.id !== action.match.id), action.match]
     case 'UPDATE_TOURNAMENT':
-      const newState = state.map(match => {
+      var newState = state.map(match => {
         if(match.tournament.id === action.tournament.id){
           match.tournament = action.tournament
         }
@@ -15,6 +15,8 @@ export default (state = [], action) => {
         return match
       })
       return newState
+    case 'DELETE_TOURNAMENT':
+      return state.filter(match => !action.matchIds.includes(match.id))
     case 'DELETE_MATCH':
       return state.filter(match => match.id !== action.matchId)
     default:
