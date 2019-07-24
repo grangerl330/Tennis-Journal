@@ -7,6 +7,7 @@ import ProfileForm from '../components/ProfileForm'
 import { updateCurrentUserInDatabase } from '../actions/currentUser'
 
 import Home from '../components/Home'
+import { getCurrentUser } from '../actions/currentUser'
 
 import Matches from '../components/Matches'
 import MatchCard from '../components/MatchCard'
@@ -74,7 +75,7 @@ class MainContent extends Component {
           <Route path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
           <Route exact path='/profile/edit' render={() => <ProfileForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>}/>
           <Route exact path='/profile' render={() => <Profile currentUser={this.props.currentUser}/>}/>
-          <Route path='/home' render={() => <Home currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>}/>
+          <Route path='/home' render={() => <Home currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} getCurrentUser={this.props.getCurrentUser}/>}/>
         </Switch>
       </div>
     )
@@ -102,7 +103,8 @@ const mapDispatchToProps = dispatch => {
     fetchMatches: () => {dispatch(fetchMatches())},
     fetchTournaments: () => {dispatch(fetchTournaments())},
     fetchOpponents: () => {dispatch(fetchOpponents())},
-    updateCurrentUserInDatabase: user => {dispatch(updateCurrentUserInDatabase(user))}
+    updateCurrentUserInDatabase: user => {dispatch(updateCurrentUserInDatabase(user))},
+    getCurrentUser: () => {dispatch(getCurrentUser())}
   }
 }
 

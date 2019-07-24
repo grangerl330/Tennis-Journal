@@ -2,6 +2,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.update_match_record
 
     if @user.save
       render json: @user
@@ -13,6 +14,7 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:user][:id])
+    @user.update_match_record
 
     if @user.update(user_params)
       render json:  @user

@@ -13,6 +13,7 @@ class Api::MatchesController < ApplicationController
     @match.user_id = current_user.id
 
     if @match.save
+      current_user.update_match_record
       render json: @match
     else
       render json: {
@@ -25,6 +26,7 @@ class Api::MatchesController < ApplicationController
     @match = Match.find_by_id(params[:match][:id])
 
     if @match.update(match_params)
+      current_user.update_match_record
       render json: @match
     else
       render json: {
@@ -36,7 +38,8 @@ class Api::MatchesController < ApplicationController
   def destroy
     @match = Match.find_by_id(params[:matchId])
     @match.destroy
-
+    current_user.update_match_record
+    
     render json: {
       notice: "Match Successfully Deleted",
       matchId: params[:matchId]

@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
 import UserStatsForm from './UserStatsForm'
 import { NavLink, Route } from 'react-router-dom'
 
-const Home = (props) => {
-  return (
-    <div className="main-content-text">
-      <p>Record: {props.currentUser.match_record}</p>
-      <p>Current Ranking: {props.currentUser.ranking}</p>
-      <p>UTR: {props.currentUser.utr}</p>
-      <NavLink to={`/home/edit_stats`}>Edit Stats</NavLink>
-      <Route path='/home/edit_stats' render={() => <UserStatsForm currentUser={props.currentUser} updateCurrentUserInDatabase={props.updateCurrentUserInDatabase}/>} />
-    </div>
-  )
+class Home extends Component {
+  componentDidMount(){
+    this.props.getCurrentUser()
+  }
+
+  render() {
+    return (
+      <div className="main-content-text">
+        <p>Record: {this.props.currentUser.match_record}</p>
+        <p>Current Ranking: {this.props.currentUser.ranking}</p>
+        <p>UTR: {this.props.currentUser.utr}</p>
+        <NavLink to={`/home/edit_stats`}>Edit Stats</NavLink>
+        <Route path='/home/edit_stats' render={() => <UserStatsForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>} />
+      </div>
+    )
+  }
 }
 
 export default Home
