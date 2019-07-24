@@ -131,8 +131,12 @@ class MatchForm extends Component {
     var key = 1
 
     roundOptions.forEach(option => {
-      displayOptions.push(<option value={`${this.round_name_to_number(option)}`} key={`${key}`}>{option}</option>)
-      key += 1
+      if(parseInt(option) > 8){
+        displayOptions.push(<option value={`${option}`} key={`${key}`}>{option}</option>)
+      } else {
+        displayOptions.push(<option value={`${this.round_name_to_number(option)}`} key={`${key}`}>{option}</option>)
+      }
+        key += 1
     })
 
     return displayOptions

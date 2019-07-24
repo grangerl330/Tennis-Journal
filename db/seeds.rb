@@ -12,6 +12,7 @@ User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", passwo
 #Tournaments
 Tournament.create(title: "Tournament 1", start_date: Date.new(2019,1,1), end_date: Date.new(2019,1,3), location: "Tennis Club 1", surface: "Hard", age_category: "16 and Under", draw_size: 128, points: 500, user_id: 1)
 Tournament.create(title: "Tournament 2", start_date: Date.new(2019,2,1), end_date: Date.new(2019,2,3), location: "Tennis Club 2", surface: "Clay", age_category: "16 and Under", draw_size: 64, points: 200, user_id: 1)
+Tournament.create(title: "Tournament 3", start_date: Date.new(2019,3,1), end_date: Date.new(2019,3,3), location: "Tennis Club 3", surface: "Grass", age_category: "16 and Under", draw_size: 16, points: 0, user_id: 1)
 
 #Matches
 Match.create(round: 128, result: "Won", score: "6-0, 6-0", date: Date.new(2019,1,1), time: Time.new(2019,1,1,10,0,0), notes: "", tournament_id: "1", user_id: "1")
