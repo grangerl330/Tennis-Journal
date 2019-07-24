@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.float "utr"
     t.string "match_record"
     t.integer "ranking"
+    t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users
-User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", password: "password", utr: 10, match_record: "", ranking: 23)
+User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", password: "password", utr: 10, match_record: "", ranking: 23, points: 0)
 
 #Tournaments
 Tournament.create(title: "Tournament 1", start_date: Date.new(2019,1,1), end_date: Date.new(2019,1,3), location: "Tennis Club 1", surface: "Hard", age_category: "16 and Under", draw_size: 128, points: 500, user_id: 1)

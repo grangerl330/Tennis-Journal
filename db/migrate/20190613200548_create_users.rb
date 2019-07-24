@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.float :utr
       t.string :match_record
       t.integer :ranking
+      t.integer :points
 
       t.timestamps
     end
