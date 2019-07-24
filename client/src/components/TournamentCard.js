@@ -13,7 +13,7 @@ const TournamentCard = (props) => {
     event.preventDefault()
 
     props.deleteTournamentFromDatabase(tournamentId)
-    props.history.push('/tournaments/add_tournament')
+    props.history.push('/tournaments')
   }
 
   const match_round_display = (match) => {
