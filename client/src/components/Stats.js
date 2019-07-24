@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import StatsForm from './StatsForm'
 import { NavLink, Route } from 'react-router-dom'
 
-class Home extends Component {
+class Stats extends Component {
   componentDidMount(){
     this.props.getCurrentUser()
   }
@@ -20,4 +20,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default Stats

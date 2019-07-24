@@ -8,7 +8,7 @@ import logo from '../Logo.jpg'
 const Topbar = (props) => {
   return (
     <div className="topbar">
-      <NavLink to='/home' className="navlink">
+      <NavLink to='/stats' className="navlink">
         <div className="topbar-logo">
           <img src={logo} className="logo-image" alt="logo"/>
           <div className="logo-text">
@@ -23,7 +23,7 @@ const Topbar = (props) => {
         </div>
       </div>
       <Route path='/profile' render={() => <div className="page-name-display">Profile</div>}/>
-      <Route path='/home' render={() => <div className="page-name-display">Home</div>}/>
+      <Route path='/stats' render={() => <div className="page-name-display">Stats</div>}/>
       <Route path='/tournaments' render={() => <div className="page-name-display">Tournaments</div>}/>
       <Route path='/matches' render={() => <div className="page-name-display">Matches</div>}/>
       <Route path='/opponents' render={() => <div className="page-name-display">Opponents</div>}/>

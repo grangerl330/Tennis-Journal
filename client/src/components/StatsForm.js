@@ -32,7 +32,7 @@ class StatsForm extends Component {
   render(){
     return(
       <div className={`form-window stats-form`}>
-        <NavLink className="close-window-button" to='/home'>x</NavLink>
+        <NavLink className="close-window-button" to='/stats'>x</NavLink>
         <h2>Edit Your Stats</h2>
         <form onSubmit={this.handleOnSubmit} className="form-text">
           <p>

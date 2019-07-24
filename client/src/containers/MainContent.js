@@ -6,7 +6,7 @@ import Profile from '../components/Profile'
 import ProfileForm from '../components/ProfileForm'
 import { updateCurrentUserInDatabase } from '../actions/currentUser'
 
-import Home from '../components/Home'
+import Stats from '../components/Stats'
 import { getCurrentUser } from '../actions/currentUser'
 
 import Matches from '../components/Matches'
@@ -75,7 +75,7 @@ class MainContent extends Component {
           <Route path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
           <Route exact path='/profile/edit' render={() => <ProfileForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>}/>
           <Route exact path='/profile' render={() => <Profile currentUser={this.props.currentUser}/>}/>
-          <Route path='/home' render={() => <Home currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} getCurrentUser={this.props.getCurrentUser}/>}/>
+          <Route path='/stats' render={() => <Stats currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} getCurrentUser={this.props.getCurrentUser}/>}/>
         </Switch>
       </div>
     )
