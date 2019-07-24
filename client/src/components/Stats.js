@@ -13,8 +13,8 @@ class Stats extends Component {
         <p>Record: {this.props.currentUser.match_record}</p>
         <p>Current Ranking: {this.props.currentUser.ranking}</p>
         <p>UTR: {this.props.currentUser.utr}</p>
-        <NavLink to={`/home/edit_stats`}>Edit Stats</NavLink>
-        <Route path='/home/edit_stats' render={() => <StatsForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>} />
+        <NavLink to={`/stats/edit`}>Edit</NavLink>
+        <Route path='/stats/edit' render={() => <StatsForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>} />
       </div>
     )
   }
