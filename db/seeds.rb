@@ -21,6 +21,7 @@ Match.create(round: 32, result: "Won", score: "6-4, 6-1", date: Date.new(2019,1,
 Match.create(round: 64, result: "Won", score: "7-6(2), 7-6(4)", date: Date.new(2019,2,1), time: Time.new(2019,1,1,10,0,0), notes: "", tournament_id: "2", user_id: "1")
 Match.create(round: 32, result: "Won", score: "6-3, 6-3", date: Date.new(2019,2,2), time: Time.new(2019,1,2,14,30,0), notes: "", tournament_id: "2", user_id: "1")
 Match.create(round: 16, result: "Won", score: "7-5, 6-0", date: Date.new(2019,2,3), time: Time.new(2019,1,3,13,45,0), notes: "", tournament_id: "2", user_id: "1")
+Match.create(round: 16, result: "Lost", score: "6-0, 6-0", date: Date.new(2019,3,1), time: Time.new(2019,1,3,13,45,0), notes: "Lost to the GOAT", tournament_id: "3", user_id: "1")
 
 #Opponents
 Opponent.create(first_name: "Opponent", last_name: "1", age: 15, handedness: "Right", notes: "", utr: 9, match_id: 1)
@@ -29,3 +30,4 @@ Opponent.create(first_name: "Opponent", last_name: "3", age: 14, handedness: "Ri
 Opponent.create(first_name: "Opponent", last_name: "4", age: 14, handedness: "Right", notes: "", utr: 9, match_id: 4)
 Opponent.create(first_name: "Opponent", last_name: "5", age: 16, handedness: "Left", notes: "", utr: 10, match_id: 5)
 Opponent.create(first_name: "Opponent", last_name: "6", age: 16, handedness: "Right", notes: "", utr: 11, match_id: 6)
+Opponent.create(first_name: "Roger", last_name: "Federer", age: 37, handedness: "Right", notes: "The GOAT", utr: 16, match_id: 7)
