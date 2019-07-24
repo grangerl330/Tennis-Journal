@@ -39,7 +39,7 @@ class Api::MatchesController < ApplicationController
     @match = Match.find_by_id(params[:matchId])
     @match.destroy
     current_user.update_match_record
-    
+
     render json: {
       notice: "Match Successfully Deleted",
       matchId: params[:matchId]

@@ -70,19 +70,20 @@ class OpponentForm extends Component {
           </p>
           <p>
             <label htmlFor="opponent-age">Age: </label>
-            <input type="text" name="age" value={this.state.age} onChange={this.handleOnChange} />
+            <input type="text" name="age" value={this.state.age || ''} onChange={this.handleOnChange} />
           </p>
           <p>
             <label htmlFor="opponent-handedness">Plays: </label>
-            <input type="text" name="handedness" value={this.state.handedness} onChange={this.handleOnChange} />
+            <input type="text" name="handedness" value={this.state.handedness || ''} onChange={this.handleOnChange} />
+            Handed
           </p>
           <p>
             <label htmlFor="opponent-utr">UTR: </label>
-            <input type="text" name="utr" value={this.state.utr} onChange={this.handleOnChange} />
+            <input type="text" name="utr" value={this.state.utr || ''} onChange={this.handleOnChange} />
           </p>
           <p>
             <label htmlFor="opponent-notes" className="notes-label">Notes: </label>
-            <textarea name="notes" value={this.state.notes} onChange={this.handleOnChange} />
+            <textarea name="notes" value={this.state.notes || ''} onChange={this.handleOnChange} />
           </p>
           <button>Edit Opponent</button>
         </form>
