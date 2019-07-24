@@ -26,7 +26,7 @@ class StatsForm extends Component {
     const user = this.state
     this.props.updateCurrentUserInDatabase(user)
 
-    this.props.history.push('/home')
+    this.props.history.push('/stats')
   }
 
   render(){

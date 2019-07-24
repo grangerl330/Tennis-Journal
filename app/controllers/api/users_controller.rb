@@ -15,6 +15,7 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find_by_id(params[:user][:id])
     @user.update_match_record
+    @user.update_points
 
     if @user.update(user_params)
       render json:  @user
@@ -28,6 +29,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :utr, :match_record, :ranking)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :utr, :match_record, :ranking, :points)
   end
 end

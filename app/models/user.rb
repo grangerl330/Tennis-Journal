@@ -17,6 +17,6 @@ class User < ApplicationRecord
 
   def update_points
     all_points = self.tournaments.map {|tournament| tournament.points}
-    self.points = all_points.sum
+    self.update(points: all_points.sum)
   end
 end
