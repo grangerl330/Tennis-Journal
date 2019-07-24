@@ -5,6 +5,7 @@ export default (state = [], action) => {
     case 'ADD_MATCH':
       var opponent = action.match.opponent
       opponent.tournament = action.match.tournament
+      opponent.match = action.match
       return [...state, opponent]
     case 'DELETE_MATCH':
       return state.filter(opponent => opponent.id !== action.opponentId)
