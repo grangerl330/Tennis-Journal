@@ -131,11 +131,24 @@ class MatchForm extends Component {
     var key = 1
 
     roundOptions.forEach(option => {
-      displayOptions.push(<option value={`${option}`} key={`${key}`}>{option}</option>)
+      displayOptions.push(<option value={`${this.round_name_to_number(option)}`} key={`${key}`}>{option}</option>)
       key += 1
     })
 
     return displayOptions
+  }
+
+  round_name_to_number = (round) => {
+    switch(round){
+      case 'Quarterfinal':
+        return 8
+      case 'Semifinal':
+        return 4
+      case 'Final':
+        return 2
+      default:
+        return ""
+    }
   }
 
   render() {
