@@ -3,6 +3,8 @@ import MainContent from './containers/MainContent'
 import Sidebar from './containers/Sidebar'
 import Topbar from './containers/Topbar'
 import LoginPage from './containers/LoginPage'
+import WelcomeWindow from './components/WelcomeWindow'
+import { Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import './App.css';
@@ -17,6 +19,7 @@ class App extends Component {
     if (this.props.currentUser) {
       return (
         <div className="App">
+          <Route path='/welcome' render={() => <WelcomeWindow />}/>
           <Topbar />
           <Sidebar />
           <MainContent />
