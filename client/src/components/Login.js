@@ -17,7 +17,7 @@ const Login = (props) => {
 
     props.login(props.loginFormData)
 
-    if(props.tutorial){
+    if(props.welcome){
       props.history.push('/welcome')
     } else {
       props.history.push('/stats')
