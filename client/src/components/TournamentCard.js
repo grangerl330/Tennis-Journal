@@ -45,7 +45,7 @@ const TournamentCard = (props) => {
         <p>Surface: {tournament.surface}</p>
         <p>Age Category: {tournament.age_category}</p>
         <p>Draw Size: {tournament.draw_size}</p>
-        <p>Points: {tournament.points}</p>
+        <p>Points Gained: {tournament.points}</p>
         <form onSubmit={handleOnSubmit}>
           <input type="submit" value="Delete"/>
         </form>
