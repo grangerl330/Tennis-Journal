@@ -12,7 +12,7 @@ const Logout = (props) => {
   return (
     <div className="logout">
       <form onSubmit={handleOnSubmit}>
-        <input type="submit" value="Log Out" />
+        <input type="submit" value="Log Out" className="button" />
       </form>
     </div>
   )

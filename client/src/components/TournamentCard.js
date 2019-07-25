@@ -38,7 +38,7 @@ const TournamentCard = (props) => {
     return (
       <div className="main-content-text">
         <h2>{tournament.title}</h2>
-        <NavLink to={`/tournaments/view/${tournament.id}/edit`}>Edit</NavLink>
+        <NavLink to={`/tournaments/view/${tournament.id}/edit`} className="button">Edit</NavLink>
         <p>Start Date: {moment(tournament.start_date).format('MM/DD/YYYY')}</p>
         <p>End Date: {moment(tournament.end_date).format('MM/DD/YYYY')}</p>
         <p>Location: {tournament.location}</p>
@@ -47,13 +47,13 @@ const TournamentCard = (props) => {
         <p>Draw Size: {tournament.draw_size}</p>
         <p>Points Gained: {tournament.points}</p>
         <form onSubmit={handleOnSubmit}>
-          <input type="submit" value="Delete"/>
+          <input type="submit" value="Delete" className="button"/>
         </form>
         <div className="tournament-matches-list">
           <h2>Matches</h2>
           {renderMatches}
         </div>
-        <NavLink to={`/tournaments/view/${tournament.id}/add_match`}>Add Match</NavLink>
+        <NavLink to={`/tournaments/view/${tournament.id}/add_match`} className="button">Add Match</NavLink>
         <Route path='/tournaments/view/:tournamentId/add_match' render={() => <MatchForm tournamentId={tournament.id} sendMatchToDatabase={props.addMatchToDatabase} matches={props.matches} tournament={tournament} add="add"/>} />
         <Route path='/tournaments/view/:tournamentId/edit' render={() => <TournamentForm tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} edit="edit"/>} />
       </div>

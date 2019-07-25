@@ -34,7 +34,7 @@ const MatchCard = (props) => {
       <div className="main-content-text">
         <h2>{match_round_display(currentMatch)}</h2>
         <NavLink to={`/tournaments/view/${currentMatch.tournament.id}`} className="match-tournament-link">{currentMatch.tournament.title}</NavLink>
-        <NavLink to={`/matches/view/${currentMatch.id}/edit`}>Edit</NavLink>
+        <NavLink to={`/matches/view/${currentMatch.id}/edit`} className="button">Edit</NavLink>
         <p>vs: <NavLink to={`/opponents/view/${currentMatch.opponent.id}`}>{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></p>
         <p>Result: {currentMatch.result}</p>
         <p>Score: {currentMatch.score}</p>
@@ -42,7 +42,7 @@ const MatchCard = (props) => {
         <p>Time: {moment.utc(currentMatch.time).format('hh:mm a')}</p>
         <p>Notes: {currentMatch.notes}</p>
         <form onSubmit={handleOnSubmit}>
-          <input type="submit" value="Delete"/>
+          <input type="submit" value="Delete" className="button"/>
         </form>
         <Route path='/matches/view/:matchId/edit' render={() => <MatchForm currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>} />
       </div>

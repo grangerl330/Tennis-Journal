@@ -14,7 +14,7 @@ class Stats extends Component {
         <p>Current Ranking: {this.props.currentUser.ranking}</p>
         <p>UTR: {this.props.currentUser.utr}</p>
         <p>Points: {this.props.currentUser.points}</p>
-        <NavLink to={`/stats/edit`}>Edit</NavLink>
+        <NavLink to={`/stats/edit`} className="button">Edit</NavLink>
         <Route path='/stats/edit' render={() => <StatsForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>} />
       </div>
     )

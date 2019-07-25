@@ -14,7 +14,7 @@ const Tournaments = (props) => {
     return (
       <div className="main-content-text">
         {renderTournaments}
-        <p><NavLink className="main-content-link" to={`/tournaments/add_tournament`}>Add Tournament</NavLink></p>
+        <p><NavLink className="button" to={`/tournaments/add_tournament`}>Add Tournament</NavLink></p>
         <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm sendTournamentToDatabase={props.addTournamentToDatabase} add="add"/>}/>
       </div>
     )
