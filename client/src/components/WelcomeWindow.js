@@ -21,7 +21,7 @@ const WelcomeWindow = () => {
           The All Matches and All Opponents lists will automatically populate when new matches are created
         </p>
         <p>
-          Click the stats link to see a summary of all your stats. This list will update when tournaments and matches are updated or created
+          Click the stats link to see a summary of all your stats. Record and Points will update when tournaments and matches are updated or created
         </p>
         <p>
           To view your profile, click your name in the top left corner
