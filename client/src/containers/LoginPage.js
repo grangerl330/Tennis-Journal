@@ -12,7 +12,7 @@ const LoginPage = (props) => {
     <div className="login-Page">
       <Login loginFormData={props.loginFormData} updateLoginForm={props.updateLoginForm} login={props.login} welcome={props.welcome}/>
       <h2>or</h2>
-      <Signup signupFormData={props.signupFormData} updateSignupForm={props.updateSignupForm} signup={props.signup}/>
+      <Signup signupFormData={props.signupFormData} updateSignupForm={props.updateSignupForm} signup={props.signup} welcome={props.welcome}/>
     </div>
   )
 }
