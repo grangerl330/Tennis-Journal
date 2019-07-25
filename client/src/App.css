@@ -41,7 +41,7 @@
   margin-right: 6vw;
 }
 
-.Welcome-Page {
+.login-Page {
   background: #b9bee0;
   color: #2f376e;
   width: 100vw;
@@ -136,6 +136,21 @@
 
 .notes-label {
   display: block;
+}
+
+.welcome-window {
+  background: white;
+  width: 50vw;
+  height: 70vh;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  top: 15%;
+  left: 30%;
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 textarea {

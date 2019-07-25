@@ -9,8 +9,8 @@ import { connect } from 'react-redux'
 
 const LoginPage = (props) => {
   return (
-    <div className="Welcome-Page">
-      <Login loginFormData={props.loginFormData} updateLoginForm={props.updateLoginForm} login={props.login}/>
+    <div className="login-Page">
+      <Login loginFormData={props.loginFormData} updateLoginForm={props.updateLoginForm} login={props.login} tutorial={props.tutorial}/>
       <h2>or</h2>
       <Signup signupFormData={props.signupFormData} updateSignupForm={props.updateSignupForm} signup={props.signup}/>
     </div>
@@ -20,7 +20,8 @@ const LoginPage = (props) => {
 const mapStateToProps = state => {
   return {
     loginFormData: state.loginForm,
-    signupFormData: state.signupForm
+    signupFormData: state.signupForm,
+    tutorial: state.tutorial
   }
 }
 

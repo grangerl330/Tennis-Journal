@@ -16,7 +16,12 @@ const Login = (props) => {
     event.preventDefault()
 
     props.login(props.loginFormData)
-    props.history.push('/stats')
+
+    if(props.tutorial){
+      props.history.push('/welcome')
+    } else {
+      props.history.push('/stats')
+    }
   }
 
   return (

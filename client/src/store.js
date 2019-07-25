@@ -6,6 +6,7 @@ import loginForm from './reducers/loginForm'
 import signupForm from './reducers/signupForm'
 import tournaments from './reducers/tournaments'
 import opponents from './reducers/opponents'
+import welcomeWindow from './reducers/welcomeWindow'
 
 const reducer = combineReducers({
   matches,
@@ -13,7 +14,8 @@ const reducer = combineReducers({
   loginForm,
   signupForm,
   tournaments,
-  opponents
+  opponents,
+  welcomeWindow
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
