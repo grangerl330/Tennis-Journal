@@ -7,7 +7,7 @@ const Profile = (props) => {
       <p>First Name: {props.currentUser.first_name}</p>
       <p>Last Name: {props.currentUser.last_name}</p>
       <p>Email: {props.currentUser.email}</p>
-      <NavLink to="/profile/edit">Edit Profile</NavLink>
+      <NavLink to="/profile/edit" className="button">Edit</NavLink>
     </div>
   )
 }
