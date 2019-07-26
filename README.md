@@ -42,11 +42,6 @@ After starting this app, you can run `rails c` for an interactive prompt that wi
 The page will reload if you make edits on the front end in the client folder.
 You will also see any lint errors in the console.
 
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-MIT © Luke Granger
-
 ## Code of Conduct
 
 Everyone interacting in the Tennis Journal project’s codebases, issue trackers, chat rooms and mailing lists are expected to follow the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
