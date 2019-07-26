@@ -31,6 +31,10 @@
   border-radius: 3px;
 }
 
+.welcome-window-button {
+  margin-right: 7px;
+}
+
 .sidebar {
   background: #414b93;
   color: white;
@@ -148,7 +152,7 @@
   background: white;
   color: #2f376e;
   width: 60vw;
-  height: 45vh;
+  height: 20vh;
   text-align: center;
   position: absolute;
   z-index: 1;
@@ -170,7 +174,7 @@
 }
 
 .welcome-window-text {
-  text-align: left;
+  text-align: center;
 }
 
 .current-ranking-display{
@@ -195,7 +199,7 @@
 .message-display{
   display: block;
   font-style: italic;
-  font-size: 13px;
+  font-size: 15px;
   margin-top: 40px;
 }
 
