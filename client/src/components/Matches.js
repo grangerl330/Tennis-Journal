@@ -26,7 +26,12 @@ const Matches = (props) => {
 
   const message = () => {
     if(!props.matches.length > 0){
-      return <span className="message-display">* This list will populate automatically when a new match is added</span>
+      return (
+        <div className="message-display">
+          <p>* This list will populate automatically when a new match is added</p>
+          <p>Add a new match by clicking the Add Match button on an individual Tournament view page</p>
+        </div>
+      )
     }
   }
 
