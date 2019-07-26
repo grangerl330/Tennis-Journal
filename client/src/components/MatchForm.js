@@ -163,8 +163,8 @@ class MatchForm extends Component {
           {this.formHeader()}
           <p>
             <label>vs:</label>
-            <input type="text" name="opponent_first_name" value={this.state.opponent_first_name} onChange={this.handleOnChange} placeholder="first name" className="profile-input"/>
-            <input type="text" name="opponent_last_name" value={this.state.opponent_last_name} onChange={this.handleOnChange} placeholder="last name" className="profile-input"/>
+            <input type="text" name="opponent_first_name" value={this.state.opponent_first_name} onChange={this.handleOnChange} placeholder="first name" className="profile-input" required/>
+            <input type="text" name="opponent_last_name" value={this.state.opponent_last_name} onChange={this.handleOnChange} placeholder="last name" className="profile-input" required/>
           </p>
           <p>
             <label htmlFor="match-date">Date: </label>
@@ -176,7 +176,7 @@ class MatchForm extends Component {
           </p>
           <p>
             <label htmlFor="match-round">Round: </label>
-            <select name="round" value={this.state.round} onChange={this.handleOnChange}>
+            <select name="round" value={this.state.round} onChange={this.handleOnChange} required>
               <option disabled hidden></option>
               {this.roundOptionsDisplay()}
             </select>

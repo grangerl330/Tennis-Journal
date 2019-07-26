@@ -24,9 +24,9 @@ const OpponentCard = (props) => {
       <div className="main-content-text">
         <h2>{opponent.first_name} {opponent.last_name}</h2>
         <p>
-          <NavLink to={`/tournaments/view/${opponent.match.tournament.id}`}>{opponent.match.tournament.title}</NavLink>
+          <NavLink to={`/tournaments/view/${opponent.match.tournament.id}`} className="main-content-link">{opponent.match.tournament.title}</NavLink>
           -
-          <NavLink to={`/matches/view/${opponent.match.id}`}>{match_round_display(opponent.match)}</NavLink>
+          <NavLink to={`/matches/view/${opponent.match.id}`} className="main-content-link">{match_round_display(opponent.match)}</NavLink>
         </p>
         <p>Age: {opponent.age}</p>
         <p>Plays: {opponent.handedness} handed</p>

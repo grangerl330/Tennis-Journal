@@ -34,7 +34,7 @@ const MatchCard = (props) => {
       <div className="main-content-text">
         <h2>{match_round_display(currentMatch)}</h2>
         <NavLink to={`/tournaments/view/${currentMatch.tournament.id}`} className="match-tournament-link">{currentMatch.tournament.title}</NavLink>
-        <p>vs: <NavLink to={`/opponents/view/${currentMatch.opponent.id}`}>{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></p>
+        <p>vs: <NavLink to={`/opponents/view/${currentMatch.opponent.id}`} className="main-content-link">{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></p>
         <p>Result: {currentMatch.result}</p>
         <p>Score: {currentMatch.score}</p>
         <p>Date: {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
