@@ -62,7 +62,7 @@ class TournamentForm extends Component {
       id: ""
     })
 
-    this.props.history.push(`/tournaments`)
+    this.props.history.push(`/tournaments/${tournament.id}`)
   }
 
   formHeader = () => {
