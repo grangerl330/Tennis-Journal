@@ -17,11 +17,8 @@ const Login = (props) => {
 
     props.login(props.loginFormData)
 
-    if(props.welcome){
-      props.history.push('/welcome')
-    } else {
-      props.history.push('/stats')
-    }
+
+    props.history.push('/stats')
   }
 
   return (

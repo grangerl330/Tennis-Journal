@@ -6,12 +6,8 @@ const Signup = (props) => {
     event.preventDefault()
 
     props.signup(props.signupFormData)
-    
-    if(props.welcome){
-      props.history.push('/welcome')
-    } else {
-      props.history.push('/stats')
-    }
+
+    props.history.push('/welcome')
   }
 
   const handleOnChange = event => {
