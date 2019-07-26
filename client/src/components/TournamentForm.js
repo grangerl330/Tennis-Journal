@@ -129,6 +129,7 @@ class TournamentForm extends Component {
               <option value="14 and Under">14 and Under</option>
               <option value="16 and Under">16 and Under</option>
               <option value="18 and Under">18 and Under</option>
+              <option value="Men's Division">Men's Division</option>
             </select>
           </p>
           <p>

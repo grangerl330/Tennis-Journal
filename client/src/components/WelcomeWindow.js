@@ -12,14 +12,16 @@ const WelcomeWindow = (props) => {
       case 2:
         return <span>Add a new tournament by clicking the Tournaments link in the side bar.</span>
       case 3:
-        return <span>Add a new match to that tournament using the Add Match link.</span>
+        return <span>After a Tournament has been created, view that tournament by clicking its link.</span>
       case 4:
-        return <span>The All Matches and All Opponents lists will automatically populate when new matches are created.</span>
+        return <span>Add a new match to that tournament using the Add Match link.</span>
       case 5:
-        return <span>Click the stats link to see a summary of all your stats. Record and Points will update when tournaments and matches are updated or created.</span>
+        return <span>The All Matches and All Opponents lists will automatically populate when new matches are created.</span>
       case 6:
-        return <span>To view your profile, click your name in the top right corner.</span>
+        return <span>Click the stats link to see a summary of all your stats. Record and Points will update when tournaments and matches are updated or created.</span>
       case 7:
+        return <span>To view your profile, click your name in the top right corner.</span>
+      case 8:
         return <span>Get started by adding a new Tournament.</span>
       default:
         return ""
