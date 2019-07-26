@@ -38,7 +38,6 @@ const TournamentCard = (props) => {
     return (
       <div className="main-content-text">
         <h2>{tournament.title}</h2>
-        <NavLink to={`/tournaments/view/${tournament.id}/edit`} className="button">Edit</NavLink>
         <p>Start Date: {moment(tournament.start_date).format('MM/DD/YYYY')}</p>
         <p>End Date: {moment(tournament.end_date).format('MM/DD/YYYY')}</p>
         <p>Location: {tournament.location}</p>
@@ -46,6 +45,7 @@ const TournamentCard = (props) => {
         <p>Age Category: {tournament.age_category}</p>
         <p>Draw Size: {tournament.draw_size}</p>
         <p>Points Gained: {tournament.points}</p>
+        <p><NavLink to={`/tournaments/view/${tournament.id}/edit`} className="button">Edit</NavLink></p>
         <form onSubmit={handleOnSubmit}>
           <input type="submit" value="Delete" className="button"/>
         </form>

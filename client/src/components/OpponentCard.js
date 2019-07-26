@@ -23,7 +23,6 @@ const OpponentCard = (props) => {
     return (
       <div className="main-content-text">
         <h2>{opponent.first_name} {opponent.last_name}</h2>
-        <NavLink to={`/opponents/view/${opponent.id}/edit`}>Edit</NavLink>
         <p>
           <NavLink to={`/tournaments/view/${opponent.match.tournament.id}`}>{opponent.match.tournament.title}</NavLink>
           -
@@ -33,6 +32,7 @@ const OpponentCard = (props) => {
         <p>Plays: {opponent.handedness} handed</p>
         <p>UTR: {opponent.utr}</p>
         <p>Notes: {opponent.notes}</p>
+        <p><NavLink to={`/opponents/view/${opponent.id}/edit`} className="button">Edit</NavLink></p>
         <Route path='/opponents/view/:opponentId/edit' render={() => <OpponentForm editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />} />
       </div>
     )
