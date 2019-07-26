@@ -23,7 +23,7 @@ const Topbar = (props) => {
         </div>
       </div>
       <Route path='/profile' render={() => <div className="page-name-display">Profile</div>}/>
-      <Route path='/stats' render={() => <div className="page-name-display">Stats</div>}/>
+      <Route path='/stats' render={() => <div className="page-name-display">My Stats</div>}/>
       <Route path='/tournaments' render={() => <div className="page-name-display">Tournaments</div>}/>
       <Route path='/matches' render={() => <div className="page-name-display">Matches</div>}/>
       <Route path='/opponents' render={() => <div className="page-name-display">Opponents</div>}/>
