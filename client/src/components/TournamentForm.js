@@ -113,7 +113,8 @@ class TournamentForm extends Component {
           </p>
           <p>
             <label htmlFor="tournament-surface">Surface: </label>
-            <select name="surface" onChange={this.handleOnChange}>
+            <select name="surface" onChange={this.handleOnChange} value={this.state.surface}>
+              <option disabled hidden></option>
               <option value="Clay">Clay</option>
               <option value="Hard">Hard</option>
               <option value="Grass">Grass</option>
@@ -122,7 +123,8 @@ class TournamentForm extends Component {
           </p>
           <p>
             <label htmlFor="tournament-age_category">Division: </label>
-            <select name="age_category" onChange={this.handleOnChange}>
+            <select name="age_category" onChange={this.handleOnChange} value={this.state.age_category}>
+              <option disabled hidden></option>
               <option value="12 and Under">12 and Under</option>
               <option value="14 and Under">14 and Under</option>
               <option value="16 and Under">16 and Under</option>
@@ -131,7 +133,8 @@ class TournamentForm extends Component {
           </p>
           <p>
             <label htmlFor="tournament-draw_size">Draw Size: </label>
-            <select name="draw_size" onChange={this.handleOnChange}>
+            <select name="draw_size" onChange={this.handleOnChange} value={this.state.draw_size}>
+              <option disabled hidden></option>
               <option value="128">128</option>
               <option value="64">64</option>
               <option value="32">32</option>
