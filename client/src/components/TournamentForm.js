@@ -97,11 +97,11 @@ class TournamentForm extends Component {
           {this.formHeader()}
           <p>
             <label htmlFor="tournament-title">Title: </label>
-            <input type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="name of tournament"/>
+            <input type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="name of tournament" required/>
           </p>
           <p>
             <label htmlFor="tournament-start_date">Start Date: </label>
-            <input type="date" name="start_date" value={this.state.start_date} onChange={this.handleOnChange} placeholder="Start Date"/>
+            <input type="date" name="start_date" value={this.state.start_date} onChange={this.handleOnChange} placeholder="Start Date" required/>
           </p>
           <p>
             <label htmlFor="tournament-end_date">End Date: </label>
@@ -123,7 +123,7 @@ class TournamentForm extends Component {
           </p>
           <p>
             <label htmlFor="tournament-age_category">Division: </label>
-            <select name="age_category" onChange={this.handleOnChange} value={this.state.age_category}>
+            <select name="age_category" onChange={this.handleOnChange} value={this.state.age_category} required>
               <option disabled hidden></option>
               <option value="12 and Under">12 and Under</option>
               <option value="14 and Under">14 and Under</option>
@@ -133,7 +133,7 @@ class TournamentForm extends Component {
           </p>
           <p>
             <label htmlFor="tournament-draw_size">Draw Size: </label>
-            <select name="draw_size" onChange={this.handleOnChange} value={this.state.draw_size}>
+            <select name="draw_size" onChange={this.handleOnChange} value={this.state.draw_size} required>
               <option disabled hidden></option>
               <option value="128">128</option>
               <option value="64">64</option>

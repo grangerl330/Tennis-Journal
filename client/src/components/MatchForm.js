@@ -183,7 +183,7 @@ class MatchForm extends Component {
           </p>
           <p>
             <label htmlFor="match-round">Result: </label>
-            <select name="result" value={this.state.result} onChange={this.handleOnChange}>
+            <select name="result" value={this.state.result} onChange={this.handleOnChange} required>
               <option disabled hidden></option>
               <option value="Won">Won</option>
               <option value="Lost">Lost</option>
