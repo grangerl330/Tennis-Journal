@@ -173,6 +173,25 @@
   text-align: left;
 }
 
+.current-ranking-display{
+  margin-right: -220px;
+  margin-left: 3px;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.utr-display{
+  margin-right: -150px;
+  margin-left: 3px;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.instructions-display{
+  font-style: italic;
+  font-size: 13px;
+}
+
 textarea {
   width: 200px;
   height: 75px;
