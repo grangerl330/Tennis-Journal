@@ -4,7 +4,7 @@ import Sidebar from './containers/Sidebar'
 import Topbar from './containers/Topbar'
 import LoginPage from './containers/LoginPage'
 import WelcomeWindow from './components/WelcomeWindow'
-import { Switch, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import './App.css';
