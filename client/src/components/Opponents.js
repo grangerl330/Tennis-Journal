@@ -8,9 +8,16 @@ const Opponents = (props) => {
     </div>
   )
 
+  const message = () => {
+    if(!props.opponents.length > 0){
+      return <span className="message-display">* This list will populate automatically when a new match is added</span>
+    }
+  }
+
   return (
     <div className="main-content-text">
       {renderOpponents}
+      {message()}
     </div>
   )
 }

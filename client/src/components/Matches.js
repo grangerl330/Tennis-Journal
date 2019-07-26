@@ -24,9 +24,16 @@ const Matches = (props) => {
     </div>
   )
 
+  const message = () => {
+    if(!props.matches.length > 0){
+      return <span className="message-display">* This list will populate automatically when a new match is added</span>
+    }
+  }
+
   return (
     <div className="main-content-text">
       {renderMatches}
+      {message()}
       <Route exact path='/matches/add_match' render={() => <MatchForm sendMatchToDatabase={props.addMatchToDatabase} add="add"/>}/>
     </div>
   )

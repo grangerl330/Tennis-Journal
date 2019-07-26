@@ -8,7 +8,7 @@ const WelcomeWindow = () => {
       <div className="welcome-window-background">
       </div>
       <div className="welcome-window">
-        <NavLink className="close-window-button" to={`/stats`}>x</NavLink>
+        <NavLink className="close-window-button" to={`/tournaments`}>x</NavLink>
         <h2>Welcome To Tennis Journal!</h2>
         <div className="welcome-window-text">
           <p>
@@ -28,6 +28,9 @@ const WelcomeWindow = () => {
           </p>
           <p>
             To view your profile, click your name in the top right corner.
+          </p>
+          <p>
+            Get started by adding a new Tournament.
           </p>
         </div>
       </div>

@@ -192,6 +192,13 @@
   font-size: 13px;
 }
 
+.message-display{
+  display: block;
+  font-style: italic;
+  font-size: 13px;
+  margin-top: 40px;
+}
+
 textarea {
   width: 200px;
   height: 75px;
