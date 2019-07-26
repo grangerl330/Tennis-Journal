@@ -3,7 +3,7 @@ import Logout from '../components/Logout'
 import { logout } from '../actions/currentUser'
 import { connect } from 'react-redux'
 import { NavLink, Route } from 'react-router-dom'
-import logo from '../Logo.jpg'
+import logo from '../images/Logo.jpg'
 
 const Topbar = (props) => {
   return (
