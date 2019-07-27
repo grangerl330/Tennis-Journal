@@ -34,10 +34,12 @@ class Api::TournamentsController < ApplicationController
 
   def destroy
     @tournament = Tournament.find_by_id(params[:tournamentId])
-    @tournament.destroy
-    current_user.update_points
     match_ids = @tournament.matches.map {|match| match.id}
     opponent_ids = @tournament.matches.map {|match| match.opponent.id}
+    @tournament.matches.each {|match| match.destroy}
+    @tournament.destroy
+    current_user.update_points
+    current_user.update_match_record
 
     render json: {
       notice: "Tournament Successfully Deleted",
