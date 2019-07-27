@@ -1,5 +1,10 @@
 import React from 'react';
 import { welcomeOff, welcomeOn, increasePosition, decreasePosition, resetPosition } from '../actions/welcomeWindow'
+import welcomeWindow2 from '../images/WelcomeWindow2.png'
+import welcomeWindow3 from '../images/WelcomeWindow3.png'
+import welcomeWindow4 from '../images/WelcomeWindow4.png'
+import welcomeWindow5 from '../images/WelcomeWindow5.png'
+import welcomeWindow6 from '../images/WelcomeWindow6.png'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -8,21 +13,46 @@ const WelcomeWindow = (props) => {
   const renderedText = () => {
     switch(props.welcomeWindow.position){
       case 1:
-        return <span>This app is designed to help you keep track of tournaments, matches, and stats.</span>
+        return <p>This app is designed to help you keep track of tournaments, matches, and stats.</p>
       case 2:
-        return <span>Add a new tournament by clicking the Tournaments link in the side bar.</span>
+        return (
+          <>
+            <p>Add a new tournament by clicking the Tournaments link in the side bar.</p>
+            <img src={welcomeWindow2} className="logo-image" alt="logo"/>
+          </>
+        )
       case 3:
-        return <span>After a Tournament has been created, view that tournament by clicking its link.</span>
+        return (
+          <>
+            <p>After a Tournament has been created, view that tournament by clicking its link.</p>
+            <img src={welcomeWindow3} className="logo-image" alt="logo"/>
+          </>
+        )
       case 4:
-        return <span>Add a new match to that tournament using the Add Match link.</span>
+        return (
+          <>
+            <p>Add a new match to that tournament using the Add Match link.</p>
+            <img src={welcomeWindow4} className="logo-image" alt="logo"/>
+          </>
+        )
       case 5:
-        return <span>The All Matches and All Opponents lists will automatically populate when new matches are created.</span>
+        return <p>The All Matches and All Opponents lists will automatically populate when new matches are created.</p>
       case 6:
-        return <span>Click the stats link to see a summary of all your stats. Record and Points will update when tournaments and matches are updated or created.</span>
+        return (
+          <>
+            <p>Click the My Stats link to see a summary of all your stats. Record and Points will update when tournaments and matches are updated or created.</p>
+            <img src={welcomeWindow5} className="logo-image" alt="logo"/>
+          </>
+        )
       case 7:
-        return <span>To view your profile, click your name in the top right corner.</span>
+        return (
+          <>
+            <p>To view your profile, click your name in the top right corner.</p>
+            <img src={welcomeWindow6} className="logo-image" alt="logo"/>
+          </>
+        )
       case 8:
-        return <span>Get started by adding a new Tournament.</span>
+        return <p>Get started by adding a new Tournament.</p>
       default:
         return ""
     }
