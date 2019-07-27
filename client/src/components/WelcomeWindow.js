@@ -47,7 +47,7 @@ const WelcomeWindow = (props) => {
   const buttonDisplay = () => {
     if(props.welcomeWindow.position === 1) {
       return <button onClick={handleOnClickNext} className="button">Next</button>
-    } else if(props.welcomeWindow.position < 7) {
+    } else if(props.welcomeWindow.position < 8) {
       return (
         <>
           <button onClick={handleOnClickBack} className="button welcome-window-button">Back</button>
