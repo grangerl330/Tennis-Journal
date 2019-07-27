@@ -40,8 +40,8 @@ const MatchCard = (props) => {
         <p>Date: {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
         <p>Time: {moment.utc(currentMatch.time).format('hh:mm a')}</p>
         <p>Notes: {currentMatch.notes}</p>
-        <p><NavLink to={`/matches/view/${currentMatch.id}/edit`} className="button">Edit</NavLink></p>
-        <form onSubmit={handleOnSubmit}>
+        <NavLink to={`/matches/view/${currentMatch.id}/edit`} className="button inline">Edit</NavLink>
+        <form onSubmit={handleOnSubmit} className="inline">
           <input type="submit" value="Delete" className="button"/>
         </form>
         <Route path='/matches/view/:matchId/edit' render={() => <MatchForm currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>} />

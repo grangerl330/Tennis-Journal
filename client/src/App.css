@@ -211,6 +211,11 @@
   margin-left: 40px;
 }
 
+.inline {
+  display: inline;
+  margin-right: 10px;
+}
+
 textarea {
   width: 200px;
   height: 75px;

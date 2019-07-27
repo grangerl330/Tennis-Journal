@@ -45,8 +45,8 @@ const TournamentCard = (props) => {
         <p>Age Category: {tournament.age_category}</p>
         <p>Draw Size: {tournament.draw_size}</p>
         <p>Points Gained: {tournament.points}</p>
-        <p><NavLink to={`/tournaments/view/${tournament.id}/edit`} className="button">Edit</NavLink></p>
-        <form onSubmit={handleOnSubmit}>
+        <NavLink to={`/tournaments/view/${tournament.id}/edit`} className="button inline">Edit</NavLink>
+        <form onSubmit={handleOnSubmit} className="inline">
           <input type="submit" value="Delete" className="button"/>
         </form>
         <div className="tournament-matches-list">
