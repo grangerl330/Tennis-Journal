@@ -198,11 +198,17 @@
   font-size: 13px;
 }
 
-.message-display{
+.message-display {
   display: block;
   font-style: italic;
   font-size: 15px;
   margin-top: 40px;
+}
+
+.tutorial-link {
+  position: absolute;
+  bottom: 0;
+  margin-left: 40px;
 }
 
 textarea {
