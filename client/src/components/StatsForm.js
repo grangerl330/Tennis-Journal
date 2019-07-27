@@ -43,7 +43,7 @@ class StatsForm extends Component {
             <label>UTR:</label>
             <input type="text" name="utr" value={this.state.utr} onChange={this.handleOnChange}/>
           </p>
-          <button>Update Stats</button>
+          <button>Save Stats</button>
         </form>
       </div>
     )

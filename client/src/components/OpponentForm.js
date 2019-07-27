@@ -85,7 +85,7 @@ class OpponentForm extends Component {
             <label htmlFor="opponent-notes" className="notes-label">Notes: </label>
             <textarea name="notes" value={this.state.notes || ''} onChange={this.handleOnChange} />
           </p>
-          <button>Edit Opponent</button>
+          <button>Save Opponent</button>
         </form>
       </div>
     )

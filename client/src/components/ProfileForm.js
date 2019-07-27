@@ -48,7 +48,7 @@ class ProfileForm extends Component {
             <label>Email:</label>
             <input type="text" name="email" value={this.state.email} onChange={this.handleOnChange}/>
           </p>
-          <button>Update Profile</button>
+          <button>Save Profile</button>
         </form>
       </div>
     )

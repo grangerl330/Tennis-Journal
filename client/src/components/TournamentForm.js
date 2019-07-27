@@ -77,7 +77,7 @@ class TournamentForm extends Component {
     if(this.props.add) {
       return <button>Add Tournament</button>
     } else {
-      return <button>Edit Tournament</button>
+      return <button>Save Tournament</button>
     }
   }
 

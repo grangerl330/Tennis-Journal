@@ -80,7 +80,7 @@ class MatchForm extends Component {
     if(this.props.add) {
       return <button>Add Match</button>
     } else {
-      return <button>Edit Match</button>
+      return <button>Save Match</button>
     }
   }
 
