@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .topbar {
   background: #2f376e;
   color: white;
@@ -9,6 +5,7 @@
   width: 100vw;
   height: 5vh;
   padding: 20px 0;
+  text-align: center;
 }
 
 .navlink {
@@ -42,6 +39,7 @@
   float: left;
   width: 15vw;
   height: 90vh;
+  text-align: center;
 }
 
 .main-content {
@@ -54,6 +52,7 @@
 
 .main-content-text {
   margin-right: 10.2vw;
+  text-align: center;
 }
 
 .login-Page {

@@ -38,13 +38,13 @@ const TournamentCard = (props) => {
     return (
       <div className="main-content-text">
         <h2>{tournament.title}</h2>
-        <p>Start Date: {moment(tournament.start_date).format('MM/DD/YYYY')}</p>
-        <p>End Date: {moment(tournament.end_date).format('MM/DD/YYYY')}</p>
-        <p>Location: {tournament.location}</p>
-        <p>Surface: {tournament.surface}</p>
-        <p>Age Category: {tournament.age_category}</p>
-        <p>Draw Size: {tournament.draw_size}</p>
-        <p>Points Gained: {tournament.points}</p>
+        <p><b>Start Date:</b> {moment(tournament.start_date).format('MM/DD/YYYY')}</p>
+        <p><b>End Date:</b> {moment(tournament.end_date).format('MM/DD/YYYY')}</p>
+        <p><b>Location:</b> {tournament.location}</p>
+        <p><b>Surface:</b> {tournament.surface}</p>
+        <p><b>Age Category:</b> {tournament.age_category}</p>
+        <p><b>Draw Size:</b> {tournament.draw_size}</p>
+        <p><b>Points Gained:</b> {tournament.points}</p>
         <NavLink to={`/tournaments/view/${tournament.id}/edit`} className="button inline">Edit</NavLink>
         <form onSubmit={handleOnSubmit} className="inline">
           <input type="submit" value="Delete" className="button"/>
