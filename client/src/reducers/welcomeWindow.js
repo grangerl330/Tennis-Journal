@@ -1,14 +1,9 @@
 const initialState = {
-  position: 1,
-  on: true
+  position: 1
 }
 
 export default (state = initialState, action) => {
   switch(action.type) {
-    case 'WELCOME_OFF':
-      return {...state, on: false}
-    case 'WELCOME_ON':
-      return {...state, on: true }
     case 'INCREASE_POSITION':
       return {...state, position: state.position + 1}
     case 'DECREASE_POSITION':

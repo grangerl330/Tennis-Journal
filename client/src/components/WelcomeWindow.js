@@ -1,5 +1,5 @@
 import React from 'react';
-import { welcomeOff, welcomeOn, increasePosition, decreasePosition, resetPosition } from '../actions/welcomeWindow'
+import { increasePosition, decreasePosition, resetPosition } from '../actions/welcomeWindow'
 import welcomeWindow2 from '../images/WelcomeWindow2.png'
 import welcomeWindow3 from '../images/WelcomeWindow3.png'
 import welcomeWindow4 from '../images/WelcomeWindow4.png'
@@ -113,8 +113,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    welcomeOff: () => dispatch(welcomeOff()),
-    welcomeOn: () => dispatch(welcomeOn()),
     increasePosition: () => dispatch(increasePosition()),
     decreasePosition: () => dispatch(decreasePosition()),
     resetPosition: () => dispatch(resetPosition())
