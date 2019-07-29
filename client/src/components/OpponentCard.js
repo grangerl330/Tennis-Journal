@@ -28,10 +28,10 @@ const OpponentCard = (props) => {
           -
           <NavLink to={`/matches/view/${opponent.match.id}`} className="main-content-link">{match_round_display(opponent.match)}</NavLink>
         </p>
-        <p>Age: {opponent.age}</p>
-        <p>Plays: {opponent.handedness} handed</p>
-        <p>UTR: {opponent.utr}</p>
-        <p>Notes: {opponent.notes}</p>
+        <p><b>Age:</b> {opponent.age}</p>
+        <p><b>Plays:</b> {opponent.handedness} handed</p>
+        <p><b>UTR:</b> {opponent.utr}</p>
+        <p><b>Notes:</b> {opponent.notes}</p>
         <p><NavLink to={`/opponents/view/${opponent.id}/edit`} className="button">Edit</NavLink></p>
         <Route path='/opponents/view/:opponentId/edit' render={() => <OpponentForm editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />} />
       </div>

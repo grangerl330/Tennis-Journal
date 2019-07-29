@@ -34,12 +34,12 @@ const MatchCard = (props) => {
       <div className="main-content-text">
         <h2>{match_round_display(currentMatch)}</h2>
         <NavLink to={`/tournaments/view/${currentMatch.tournament.id}`} className="match-tournament-link">{currentMatch.tournament.title}</NavLink>
-        <p>vs: <NavLink to={`/opponents/view/${currentMatch.opponent.id}`} className="main-content-link">{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></p>
-        <p>Result: {currentMatch.result}</p>
-        <p>Score: {currentMatch.score}</p>
-        <p>Date: {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
-        <p>Time: {moment.utc(currentMatch.time).format('hh:mm a')}</p>
-        <p>Notes: {currentMatch.notes}</p>
+        <p><b>vs:</b> <NavLink to={`/opponents/view/${currentMatch.opponent.id}`} className="main-content-link">{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></p>
+        <p><b>Result:</b> {currentMatch.result}</p>
+        <p><b>Score:</b> {currentMatch.score}</p>
+        <p><b>Date:</b> {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
+        <p><b>Time:</b> {moment.utc(currentMatch.time).format('hh:mm a')}</p>
+        <p><b>Notes:</b> {currentMatch.notes}</p>
         <NavLink to={`/matches/view/${currentMatch.id}/edit`} className="button inline">Edit</NavLink>
         <form onSubmit={handleOnSubmit} className="inline">
           <input type="submit" value="Delete" className="button"/>

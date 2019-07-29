@@ -20,10 +20,10 @@ class Stats extends Component {
   render() {
     return (
       <div className="main-content-text">
-        <p>Record: {this.props.currentUser.match_record}</p>
-        <p>Current Ranking: {this.props.currentUser.ranking}</p>
-        <p>UTR: {this.props.currentUser.utr}</p>
-        <p>Points: {this.props.currentUser.points}</p>
+        <p><b>Record:</b> {this.props.currentUser.match_record}</p>
+        <p><b>Current Ranking:</b> {this.props.currentUser.ranking}</p>
+        <p><b>UTR:</b> {this.props.currentUser.utr}</p>
+        <p><b>Points:</b> {this.props.currentUser.points}</p>
         <p>{this.instructions()}</p>
         <NavLink to={`/stats/edit`} className="button">Edit</NavLink>
         <Route path='/stats/edit' render={() => <StatsForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>} />
