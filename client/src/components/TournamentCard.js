@@ -38,8 +38,7 @@ const TournamentCard = (props) => {
     return (
       <div className="main-content-text">
         <h2>{tournament.title}</h2>
-        <p><b>Start Date:</b> {moment(tournament.start_date).format('MM/DD/YYYY')}</p>
-        <p><b>End Date:</b> {moment(tournament.end_date).format('MM/DD/YYYY')}</p>
+        <p><b>Dates:</b> {moment(tournament.start_date).format('MM/DD/YYYY')} - {moment(tournament.end_date).format('MM/DD/YYYY')}</p>
         <p><b>Location:</b> {tournament.location}</p>
         <p><b>Surface:</b> {tournament.surface}</p>
         <p><b>Age Category:</b> {tournament.age_category}</p>
