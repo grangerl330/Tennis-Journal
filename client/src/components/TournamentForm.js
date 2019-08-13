@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import closeWindowImg from '../images/close-window.png'
 import { withRouter } from 'react-router';
 
 class TournamentForm extends Component {
@@ -83,9 +84,17 @@ class TournamentForm extends Component {
 
   formCloseWindowButton = () => {
     if(this.props.add) {
-      return <NavLink className="close-window-button" to='/tournaments'>x</NavLink>
+      return (
+        <NavLink className="close-window-button" to='/tournaments'>
+          <img src={closeWindowImg} alt="Close Window"/>
+        </NavLink>
+      )
     } else {
-      return <NavLink className="close-window-button" to={`/tournaments/view/${this.props.tournamentId}`}>x</NavLink>
+      return (
+        <NavLink className="close-window-button" to={`/tournaments/view/${this.props.tournamentId}`}>
+          <img src={closeWindowImg} alt="Close Window"/>
+        </NavLink>
+      )
     }
   }
 

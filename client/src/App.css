@@ -135,8 +135,9 @@
 
 .close-window-button {
   float: right;
+  margin-right: -1vw;
   font-size: 18px;
-  margin-top: -20px;
+  margin-top: -2vh;
 }
 
 .match-tournament-link {

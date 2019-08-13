@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
+import closeWindowImg from '../images/close-window.png'
 import { withRouter } from 'react-router'
 
 class MatchForm extends Component {
@@ -86,9 +87,17 @@ class MatchForm extends Component {
 
   closeWindowLink = () => {
     if(this.props.tournamentId){
-      return <NavLink className="close-window-button" to={`/tournaments/view/${this.props.tournamentId}`}>x</NavLink>
+      return (
+        <NavLink className="close-window-button" to={`/tournaments/view/${this.props.tournamentId}`}>
+          <img src={closeWindowImg} alt="Close Window"/>
+        </NavLink>
+      )
     } else {
-      return <NavLink className="close-window-button" to={`/matches/view/${this.props.currentMatch.id}`}>x</NavLink>
+      return (
+        <NavLink className="close-window-button" to={`/matches/view/${this.props.currentMatch.id}`}>
+          <img src={closeWindowImg} alt="Close Window"/>
+        </NavLink>
+      )
     }
   }
 

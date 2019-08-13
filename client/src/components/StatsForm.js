@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import closeWindowImg from '../images/close-window.png'
 import { withRouter } from 'react-router';
 
 class StatsForm extends Component {
@@ -32,7 +33,9 @@ class StatsForm extends Component {
   render(){
     return(
       <div className={`form-window stats-form`}>
-        <NavLink className="close-window-button" to='/stats'>x</NavLink>
+        <NavLink className="close-window-button" to='/stats'>
+          <img src={closeWindowImg} alt="Close Window"/>
+        </NavLink>
         <h2>Edit Your Stats</h2>
         <form onSubmit={this.handleOnSubmit} className="form-text">
           <p>

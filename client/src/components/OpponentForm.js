@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import closeWindowImg from '../images/close-window.png'
 import { withRouter } from 'react-router';
 
 class OpponentForm extends Component {
@@ -57,7 +58,9 @@ class OpponentForm extends Component {
   render(){
     return (
       <div className={`form-window opponent-form`}>
-        <NavLink className="close-window-button" to={`/opponents/view/${this.props.opponent.id}`}>x</NavLink>
+        <NavLink className="close-window-button" to={`/opponents/view/${this.props.opponent.id}`}>
+          <img src={closeWindowImg} alt="Close Window"/>
+        </NavLink>
         <h2>Edit Opponent</h2>
         <form onSubmit={this.handleOnSubmit} className="form-text">
           <p>
