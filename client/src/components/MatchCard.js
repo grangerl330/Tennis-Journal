@@ -1,6 +1,8 @@
 import React from 'react';
 import moment from 'moment'
 import MatchForm from './MatchForm'
+import deleteBin from '../images/delete-bin.png'
+import editPencil from '../images/edit-pencil.png'
 import { NavLink, Route } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
@@ -20,7 +22,7 @@ const MatchCard = (props) => {
     }
   }
 
-  const handleOnSubmit = event => {
+  const deleteMatch = event => {
     event.preventDefault()
 
     props.deleteMatchFromDatabase(matchId)
@@ -40,10 +42,8 @@ const MatchCard = (props) => {
         <p><b>Date:</b> {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
         <p><b>Time:</b> {moment.utc(currentMatch.time).format('hh:mm a')}</p>
         <p><b>Notes:</b> {currentMatch.notes}</p>
-        <NavLink to={`/matches/view/${currentMatch.id}/edit`} className="button inline">Edit</NavLink>
-        <form onSubmit={handleOnSubmit} className="inline">
-          <input type="submit" value="Delete" className="button"/>
-        </form>
+        <NavLink to={`/matches/view/${currentMatch.id}/edit`} className="inline"><img src={editPencil} alt="Edit Match"/></NavLink>
+        <img src={deleteBin} alt="Delete Match" onClick={() => { if(window.confirm('Are you sure you want to delete this match?')) deleteMatch()}} className="delete"/>
         <Route path='/matches/view/:matchId/edit' render={() => <MatchForm currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>} />
       </div>
     )
