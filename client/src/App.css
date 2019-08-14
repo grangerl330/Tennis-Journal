@@ -215,6 +215,10 @@
   margin-right: 10px;
 }
 
+.delete {
+  cursor: pointer;
+}
+
 textarea {
   width: 200px;
   height: 75px;

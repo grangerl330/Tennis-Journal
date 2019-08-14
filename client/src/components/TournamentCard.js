@@ -3,13 +3,15 @@ import moment from 'moment'
 import MatchForm from './MatchForm'
 import TournamentForm from './TournamentForm'
 import { NavLink, Route } from 'react-router-dom'
+import deleteBin from '../images/delete-bin.png'
+import editPencil from '../images/edit-pencil.png'
 import { withRouter } from 'react-router';
 
 const TournamentCard = (props) => {
   var tournamentId = parseInt(props.id)
   var tournament = props.currentTournament(tournamentId)
 
-  const handleOnSubmit = event => {
+  const deleteTournament = event => {
     event.preventDefault()
 
     props.deleteTournamentFromDatabase(tournamentId)
@@ -44,10 +46,8 @@ const TournamentCard = (props) => {
         <p><b>Age Category:</b> {tournament.age_category}</p>
         <p><b>Draw Size:</b> {tournament.draw_size}</p>
         <p><b>Points Gained:</b> {tournament.points}</p>
-        <NavLink to={`/tournaments/view/${tournament.id}/edit`} className="button inline">Edit</NavLink>
-        <form onSubmit={handleOnSubmit} className="inline">
-          <input type="submit" value="Delete" className="button"/>
-        </form>
+        <NavLink to={`/tournaments/view/${tournament.id}/edit`} className="inline"><img src={editPencil} alt="Edit Tournament"/></NavLink>
+        <img src={deleteBin} alt="Delete Tournament" onClick={() => { if(window.confirm('Are you sure you want to delete this tournament?')) deleteTournament()}} className="delete"/>
         <div className="tournament-matches-list">
           <h2>Matches</h2>
           {renderMatches}
