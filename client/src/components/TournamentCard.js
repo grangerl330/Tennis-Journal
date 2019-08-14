@@ -12,8 +12,6 @@ const TournamentCard = (props) => {
   var tournament = props.currentTournament(tournamentId)
 
   const deleteTournament = event => {
-    event.preventDefault()
-
     props.deleteTournamentFromDatabase(tournamentId)
     props.history.push('/tournaments')
   }

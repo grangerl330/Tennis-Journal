@@ -23,8 +23,6 @@ const MatchCard = (props) => {
   }
 
   const deleteMatch = event => {
-    event.preventDefault()
-
     props.deleteMatchFromDatabase(matchId)
     props.history.push('/matches')
   }
