@@ -37,15 +37,19 @@ const TournamentCard = (props) => {
   if(tournament) {
     return (
       <div className="main-content-text">
-        <h2>{tournament.title}</h2>
+        <div className="title-display">
+          <h2>{tournament.title}</h2>
+          <div className="title-icons">
+            <NavLink to={`/tournaments/view/${tournament.id}/edit`} className="inline"><img src={editPencil} alt="Edit Tournament"/></NavLink>
+            <img src={deleteBin} alt="Delete Tournament" onClick={() => { if(window.confirm('Are you sure you want to delete this tournament?')) deleteTournament()}} className="delete"/>
+          </div>
+        </div>
         <p><b>Dates:</b> {moment(tournament.start_date).format('MM/DD/YYYY')} - {moment(tournament.end_date).format('MM/DD/YYYY')}</p>
         <p><b>Location:</b> {tournament.location}</p>
         <p><b>Surface:</b> {tournament.surface}</p>
         <p><b>Age Category:</b> {tournament.age_category}</p>
         <p><b>Draw Size:</b> {tournament.draw_size}</p>
         <p><b>Points Gained:</b> {tournament.points}</p>
-        <NavLink to={`/tournaments/view/${tournament.id}/edit`} className="inline"><img src={editPencil} alt="Edit Tournament"/></NavLink>
-        <img src={deleteBin} alt="Delete Tournament" onClick={() => { if(window.confirm('Are you sure you want to delete this tournament?')) deleteTournament()}} className="delete"/>
         <div className="tournament-matches-list">
           <h2>Matches</h2>
           {renderMatches}

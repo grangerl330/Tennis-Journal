@@ -217,6 +217,15 @@
 
 .delete {
   cursor: pointer;
+  margin-left: -1vw
+}
+
+.title-icons {
+  display: inline;
+  position: absolute;
+  left: 62%;
+  bottom: 82%;
+  margin-left: .5vw;
 }
 
 textarea {

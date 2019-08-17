@@ -32,7 +32,13 @@ const MatchCard = (props) => {
 
     return (
       <div className="main-content-text">
-        <h2>{match_round_display(currentMatch)}</h2>
+        <div className="title-display">
+          <h2>{match_round_display(currentMatch)}</h2>
+          <div className="title-icons">
+            <NavLink to={`/matches/view/${currentMatch.id}/edit`} className="inline"><img src={editPencil} alt="Edit Match"/></NavLink>
+            <img src={deleteBin} alt="Delete Match" onClick={() => { if(window.confirm('Are you sure you want to delete this match?')) deleteMatch()}} className="delete"/>
+          </div>
+        </div>
         <NavLink to={`/tournaments/view/${currentMatch.tournament.id}`} className="match-tournament-link">{currentMatch.tournament.title}</NavLink>
         <p><b>vs:</b> <NavLink to={`/opponents/view/${currentMatch.opponent.id}`} className="main-content-link">{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></p>
         <p><b>Result:</b> {currentMatch.result}</p>
@@ -40,8 +46,6 @@ const MatchCard = (props) => {
         <p><b>Date:</b> {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
         <p><b>Time:</b> {moment.utc(currentMatch.time).format('hh:mm a')}</p>
         <p><b>Notes:</b> {currentMatch.notes}</p>
-        <NavLink to={`/matches/view/${currentMatch.id}/edit`} className="inline"><img src={editPencil} alt="Edit Match"/></NavLink>
-        <img src={deleteBin} alt="Delete Match" onClick={() => { if(window.confirm('Are you sure you want to delete this match?')) deleteMatch()}} className="delete"/>
         <Route path='/matches/view/:matchId/edit' render={() => <MatchForm currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>} />
       </div>
     )
