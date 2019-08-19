@@ -223,8 +223,8 @@
 .title-icons {
   display: inline;
   position: absolute;
-  left: 62%;
-  bottom: 82%;
+  left: 60vw;
+  bottom: 82vh;
   margin-left: .5vw;
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment'
+import plusIcon from '../images/plus-icon.png'
 import { NavLink, Route } from 'react-router-dom'
 import TournamentForm from './TournamentForm'
 
@@ -15,7 +16,7 @@ const Tournaments = (props) => {
     return (
       <div className="main-content-text">
         {renderTournaments}
-        <p><NavLink className="button" to={`/tournaments/add_tournament`}>Add Tournament</NavLink></p>
+        <p><NavLink to={`/tournaments/add_tournament`}><img src={plusIcon} alt="Add Match"/></NavLink></p>
         <Route exact path='/tournaments/add_tournament' render={() => <TournamentForm sendTournamentToDatabase={props.addTournamentToDatabase} add="add"/>}/>
       </div>
     )
