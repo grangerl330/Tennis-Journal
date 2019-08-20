@@ -10,9 +10,9 @@ Please fork and clone this repo then run:
 
 $ bundle install
 
-and
+$ rake db:create
 
-$ rake db:create && rake db:migrate
+$ rake db:migrate
 
 To start the servers on your local machine, run:
 
