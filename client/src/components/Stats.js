@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StatsForm from './StatsForm'
+import editPencil from '../images/edit-pencil.png'
 import { NavLink, Route } from 'react-router-dom'
 
 class Stats extends Component {
@@ -25,7 +26,7 @@ class Stats extends Component {
         <p><b>UTR:</b> {this.props.currentUser.utr}</p>
         <p><b>Points:</b> {this.props.currentUser.points}</p>
         <p>{this.instructions()}</p>
-        <NavLink to={`/stats/edit`} className="button">Edit</NavLink>
+        <NavLink to={`/stats/edit`}><img src={editPencil} alt="Edit Stats"/></NavLink>
         <Route path='/stats/edit' render={() => <StatsForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>} />
       </div>
     )
