@@ -5,6 +5,7 @@ import welcomeWindow3 from '../images/WelcomeWindow3.png'
 import welcomeWindow4 from '../images/WelcomeWindow4.png'
 import welcomeWindow5 from '../images/WelcomeWindow5.png'
 import welcomeWindow6 from '../images/WelcomeWindow6.png'
+import closeWindowImg from '../images/close-window.png'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -94,7 +95,7 @@ const WelcomeWindow = (props) => {
       <div className="welcome-window-background">
       </div>
       <div className="welcome-window">
-        <NavLink className="close-window-button" to={`/tournaments`}>x</NavLink>
+        <NavLink className="close-window-button" to={`/tournaments`}><img src={closeWindowImg} alt="Close Window"/></NavLink>
         <h2>Welcome To Tennis Journal!</h2>
         <div className="welcome-window-text">
           <p>{renderedText()}</p>
