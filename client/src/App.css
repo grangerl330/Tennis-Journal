@@ -215,17 +215,21 @@
   margin-right: 10px;
 }
 
-.delete {
-  cursor: pointer;
-  margin-left: -1vw
+.title-display {
+  
 }
 
-.title-icons {
-  display: inline;
+.edit-icon {
   position: absolute;
-  left: 60vw;
-  bottom: 82vh;
-  margin-left: .5vw;
+  left: 60.5%;
+  bottom: 81.5%;
+}
+
+.delete-icon {
+  position: absolute;
+  left: 62.5%;
+  bottom: 82%;
+  cursor: pointer;
 }
 
 textarea {
