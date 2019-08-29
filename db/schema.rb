@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.integer "age"
     t.string "handedness"
     t.string "notes"
+    t.string "strengths"
+    t.string "weaknesses"
     t.float "utr"
     t.integer "match_id"
     t.datetime "created_at", null: false
