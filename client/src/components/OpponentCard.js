@@ -1,5 +1,6 @@
 import React from 'react';
 import OpponentForm from './OpponentForm'
+import editPencil from '../images/edit-pencil.png'
 import { NavLink, Route } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
@@ -34,7 +35,7 @@ const OpponentCard = (props) => {
         <p><b>Plays:</b> {opponent.handedness} handed</p>
         <p><b>UTR:</b> {opponent.utr}</p>
         <p><b>Notes:</b> {opponent.notes}</p>
-        <p><NavLink to={`/opponents/view/${opponent.id}/edit`} className="button">Edit</NavLink></p>
+        <p><NavLink to={`/opponents/view/${opponent.id}/edit`} ><img src={editPencil} alt="Edit Opponent"/></NavLink></p>
         <Route path='/opponents/view/:opponentId/edit' render={() => <OpponentForm editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />} />
       </div>
     )
