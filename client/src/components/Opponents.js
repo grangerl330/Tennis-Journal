@@ -21,6 +21,7 @@ const Opponents = (props) => {
 
   return (
     <div className="main-content-text">
+      <h1>Opponents</h1>
       {renderOpponents}
       {message()}
     </div>

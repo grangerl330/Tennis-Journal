@@ -37,6 +37,7 @@ const Matches = (props) => {
 
   return (
     <div className="main-content-text">
+      <h1>Matches</h1>
       {renderMatches}
       {message()}
       <Route exact path='/matches/add_match' render={() => <MatchForm sendMatchToDatabase={props.addMatchToDatabase} add="add"/>}/>

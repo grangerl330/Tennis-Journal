@@ -21,6 +21,7 @@ class Stats extends Component {
   render() {
     return (
       <div className="main-content-text">
+        <h1>Stats</h1>
         <p><b>Record:</b> {this.props.currentUser.match_record}</p>
         <p><b>Current Ranking:</b> {this.props.currentUser.ranking}</p>
         <p><b>UTR:</b> {this.props.currentUser.utr}</p>
