@@ -151,7 +151,7 @@
   display: block;
 }
 
-.welcome-window {
+.tutorial-text {
   background: white;
   color: #2f376e;
   width: 60vw;
@@ -159,15 +159,31 @@
   text-align: center;
   position: absolute;
   z-index: 1;
-  top: 15%;
-  left: 25%;
   overflow: auto;
   padding: 20px;
   border: 1px solid #888;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.welcome-window-background {
+.tutorial-1 {
+  top: 15%;
+  left: 25%;
+}
+
+.tutorial-2 {
+  top: 6.5%;
+  left: 20%;
+}
+
+
+
+.tutorial-2-image {
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+}
+
+.tutorial-background {
   background: #606060;
   width: 100vw;
   height: 100vh;
@@ -216,7 +232,7 @@
 }
 
 .title-display {
-  
+
 }
 
 .edit-icon {
@@ -230,6 +246,16 @@
   left: 62.5%;
   bottom: 82%;
   cursor: pointer;
+}
+
+.add-tournament-highlight {
+  width: 9vw;
+  height: 5vh;
+  position: fixed;
+  bottom: 83vh;
+  left: 3vw;
+  z-index: 1;
+  line-height: 34px;
 }
 
 textarea {

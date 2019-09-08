@@ -1,6 +1,6 @@
 import React from 'react';
 import { increasePosition, decreasePosition, resetPosition } from '../actions/welcomeWindow'
-import welcomeWindow2 from '../images/WelcomeWindow2.png'
+import tutorial2 from '../images/tutorial2.png'
 import welcomeWindow3 from '../images/WelcomeWindow3.png'
 import welcomeWindow4 from '../images/WelcomeWindow4.png'
 import welcomeWindow5 from '../images/WelcomeWindow5.png'
@@ -14,12 +14,23 @@ const WelcomeWindow = (props) => {
   const renderedText = () => {
     switch(props.welcomeWindow.position){
       case 1:
-        return <p>This app is designed to help you keep track of tournaments, matches, and stats.</p>
+        return (
+          <div className="tutorial-text tutorial-1">
+            {tutorialCloseButton()}
+            <h2>Welcome To Tennis Journal!</h2>
+            <p>This app is designed to help you keep track of tournaments, matches, and stats.</p>
+            {buttonDisplay()}
+          </div>
+        )
       case 2:
         return (
           <>
-            <p>Add a new tournament by clicking the Tournaments link in the side bar.</p>
-            <img src={welcomeWindow2} className="logo-image" alt="logo"/>
+            <img src={tutorial2} alt="tutorial window 2" className="tutorial-2-image"/>
+            <div className="tutorial-text tutorial-2">
+              {tutorialCloseButton()}
+              <p>Add a new tournament by clicking the Tournaments link in the side bar.</p>
+              {buttonDisplay()}
+            </div>
           </>
         )
       case 3:
@@ -59,6 +70,10 @@ const WelcomeWindow = (props) => {
     }
   }
 
+  const tutorialCloseButton = () => {
+    return <NavLink className="close-window-button" to={`/tournaments`}><img src={closeWindowImg} alt="Close Window"/></NavLink>
+  }
+
   const handleOnClickNext = event => {
     event.preventDefault()
 
@@ -92,16 +107,9 @@ const WelcomeWindow = (props) => {
 
   return (
     <div>
-      <div className="welcome-window-background">
+      <div className="tutorial-background">
       </div>
-      <div className="welcome-window">
-        <NavLink className="close-window-button" to={`/tournaments`}><img src={closeWindowImg} alt="Close Window"/></NavLink>
-        <h2>Welcome To Tennis Journal!</h2>
-        <div className="welcome-window-text">
-          <p>{renderedText()}</p>
-        </div>
-        {buttonDisplay()}
-      </div>
+      {renderedText()}
     </div>
   )
 }
