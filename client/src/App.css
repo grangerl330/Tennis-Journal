@@ -175,12 +175,22 @@
   left: 20%;
 }
 
-
+.tutorial-3 {
+  top: 43%;
+  left: 22%;
+}
 
 .tutorial-2-image {
   position: absolute;
   z-index: 1;
   top: 10%;
+}
+
+.tutorial-3-image {
+  position: absolute;
+  z-index: 1;
+  top: 16%;
+  left: 43%;
 }
 
 .tutorial-background {

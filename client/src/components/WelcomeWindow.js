@@ -1,7 +1,7 @@
 import React from 'react';
 import { increasePosition, decreasePosition, resetPosition } from '../actions/welcomeWindow'
 import tutorial2 from '../images/tutorial2.png'
-import welcomeWindow3 from '../images/WelcomeWindow3.png'
+import tutorial3 from '../images/tutorial3.png'
 import welcomeWindow4 from '../images/WelcomeWindow4.png'
 import welcomeWindow5 from '../images/WelcomeWindow5.png'
 import welcomeWindow6 from '../images/WelcomeWindow6.png'
@@ -36,8 +36,12 @@ const WelcomeWindow = (props) => {
       case 3:
         return (
           <>
-            <p>After a Tournament has been created, view that tournament by clicking its link.</p>
-            <img src={welcomeWindow3} className="logo-image" alt="logo"/>
+            <img src={tutorial3} alt="tutorial window 2" className="tutorial-3-image"/>
+            <div className="tutorial-text tutorial-3">
+              {tutorialCloseButton()}
+              <p>After a Tournament has been created, view that tournament by clicking its link.</p>
+              {buttonDisplay()}
+            </div>
           </>
         )
       case 4:
