@@ -2,7 +2,7 @@ import React from 'react';
 import { increasePosition, decreasePosition, resetPosition } from '../actions/welcomeWindow'
 import tutorial2 from '../images/tutorial2.png'
 import tutorial3 from '../images/tutorial3.png'
-import welcomeWindow4 from '../images/WelcomeWindow4.png'
+import tutorial4 from '../images/tutorial4.png'
 import welcomeWindow5 from '../images/WelcomeWindow5.png'
 import welcomeWindow6 from '../images/WelcomeWindow6.png'
 import closeWindowImg from '../images/close-window.png'
@@ -47,8 +47,12 @@ const WelcomeWindow = (props) => {
       case 4:
         return (
           <>
-            <p>Add a new match to that tournament using the Add Match link.</p>
-            <img src={welcomeWindow4} className="logo-image" alt="logo"/>
+            <img src={tutorial4} alt="tutorial window 4" className="tutorial-4-image"/>
+            <div className="tutorial-text tutorial-4">
+              {tutorialCloseButton()}
+              <p>Add a new match to that tournament by clicking the plus icon on the tournament view page.</p>
+              {buttonDisplay()}
+            </div>
           </>
         )
       case 5:
