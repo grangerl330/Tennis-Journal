@@ -12,8 +12,8 @@ const Opponents = (props) => {
     if(!props.opponents.length > 0){
       return (
         <div className="message-display">
-          <p>* This list will populate automatically when a new match is added</p>
-          <p>Add a new match by clicking the Add Match button on an individual Tournament view page</p>
+          <p>* This list will populate automatically when a new match is added and opponent information is entered</p>
+          <p>Add a new match by clicking the plus icon under "Matches" on a Tournament's view page</p>
         </div>
       )
     }
