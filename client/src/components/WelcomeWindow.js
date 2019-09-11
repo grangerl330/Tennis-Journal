@@ -3,7 +3,7 @@ import { increasePosition, decreasePosition, resetPosition } from '../actions/we
 import tutorial2 from '../images/tutorial2.png'
 import tutorial3 from '../images/tutorial3.png'
 import tutorial4 from '../images/tutorial4.png'
-import welcomeWindow5 from '../images/WelcomeWindow5.png'
+import tutorial5 from '../images/tutorial5.png'
 import welcomeWindow6 from '../images/WelcomeWindow6.png'
 import closeWindowImg from '../images/close-window.png'
 import { NavLink } from 'react-router-dom'
@@ -56,12 +56,21 @@ const WelcomeWindow = (props) => {
           </>
         )
       case 5:
-        return <p>The All Matches and All Opponents lists will automatically populate when new matches are created.</p>
+        return (
+          <>
+            <img src={tutorial5} alt="tutorial window 5" className="tutorial-5-image"/>
+            <div className="tutorial-text tutorial-5">
+              {tutorialCloseButton()}
+              <p>The All Matches and All Opponents lists will automatically populate when new matches are created.</p>
+              {buttonDisplay()}
+            </div>
+          </>
+        )
       case 6:
         return (
           <>
             <p>Click the My Stats link to see a summary of all your stats. Record and Points will update when tournaments and matches are updated or created.</p>
-            <img src={welcomeWindow5} className="logo-image" alt="logo"/>
+            <img src={welcomeWindow6} className="logo-image" alt="logo"/>
           </>
         )
       case 7:
