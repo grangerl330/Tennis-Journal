@@ -1,5 +1,5 @@
 import React from 'react';
-import { increasePosition, decreasePosition, resetPosition } from '../actions/welcomeWindow'
+import { increasePosition, decreasePosition, resetPosition } from '../actions/tutorial'
 import tutorial2 from '../images/tutorial2.png'
 import tutorial3 from '../images/tutorial3.png'
 import tutorial4 from '../images/tutorial4.png'
@@ -9,7 +9,7 @@ import closeWindowImg from '../images/close-window.png'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-const WelcomeWindow = (props) => {
+const Tutorial = (props) => {
 
   const renderedText = () => {
     switch(props.welcomeWindow.position){
@@ -145,4 +145,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WelcomeWindow)
+export default connect(mapStateToProps, mapDispatchToProps)(Tutorial)
