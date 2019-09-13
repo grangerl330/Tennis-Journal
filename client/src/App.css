@@ -217,6 +217,18 @@
   left: 1%;
 }
 
+.tutorial-6 {
+  top: 22%;
+  left: 17%;
+}
+
+.tutorial-6-image {
+  position: absolute;
+  z-index: 1;
+  top: 27%;
+  left: 2%;
+}
+
 .tutorial-background {
   background: #606060;
   width: 100vw;

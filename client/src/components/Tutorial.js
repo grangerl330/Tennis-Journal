@@ -4,7 +4,7 @@ import tutorial2 from '../images/tutorial2.png'
 import tutorial3 from '../images/tutorial3.png'
 import tutorial4 from '../images/tutorial4.png'
 import tutorial5 from '../images/tutorial5.png'
-import welcomeWindow6 from '../images/WelcomeWindow6.png'
+import tutorial6 from '../images/tutorial6.png'
 import closeWindowImg from '../images/close-window.png'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -69,15 +69,19 @@ const Tutorial = (props) => {
       case 6:
         return (
           <>
-            <p>Click the My Stats link to see a summary of all your stats. Record and Points will update when tournaments and matches are updated or created.</p>
-            <img src={welcomeWindow6} className="logo-image" alt="logo"/>
+            <img src={tutorial6} alt="tutorial window 6" className="tutorial-6-image"/>
+            <div className="tutorial-text tutorial-6">
+              {tutorialCloseButton()}
+              <p>Click the My Stats link to see a summary of all your stats.</p>
+              {buttonDisplay()}
+            </div>
           </>
         )
       case 7:
         return (
           <>
             <p>To view your profile, click your name in the top right corner.</p>
-            <img src={welcomeWindow6} className="logo-image" alt="logo"/>
+            <img src={tutorial6} className="logo-image" alt="logo"/>
           </>
         )
       case 8:
