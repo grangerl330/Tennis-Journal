@@ -19,7 +19,7 @@ class App extends Component {
     if (this.props.currentUser) {
       return (
         <div className="App">
-          <Route path='/welcome' render={() => <Tutorial />}/>
+          <Route path='/tutorial' render={() => <Tutorial />}/>
           <Topbar />
           <Sidebar />
           <MainContent />

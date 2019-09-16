@@ -8,7 +8,7 @@ const Sidebar = () => {
       <p><NavLink to="/matches" className="navlink">All Matches</NavLink></p>
       <p><NavLink to="/opponents" className="navlink">All Opponents</NavLink></p>
       <p><NavLink to="/stats" className="navlink">My Stats</NavLink></p>
-      <p className="tutorial-link"><NavLink to="/welcome" className="navlink">View Tutorial</NavLink></p>
+      <p className="tutorial-link"><NavLink to="/tutorial" className="navlink">View Tutorial</NavLink></p>
     </div>
   )
 }

@@ -14,7 +14,7 @@ import { connect } from 'react-redux'
 const Tutorial = (props) => {
 
   const renderedText = () => {
-    switch(props.welcomeWindow.position){
+    switch(props.tutorial.position){
       case 1:
         return (
           <div className="tutorial-text tutorial-1">
@@ -137,9 +137,9 @@ const Tutorial = (props) => {
   }
 
   const buttonDisplay = () => {
-    if(props.welcomeWindow.position === 1) {
+    if(props.tutorial.position === 1) {
       return <button onClick={handleOnClickNext} className="button">Next</button>
-    } else if(props.welcomeWindow.position < 9) {
+    } else if(props.tutorial.position < 9) {
       return (
         <>
           <button onClick={handleOnClickBack} className="button welcome-window-button">Back</button>
@@ -167,7 +167,7 @@ const Tutorial = (props) => {
 
 const mapStateToProps = state => {
   return {
-    welcomeWindow: state.welcomeWindow
+    tutorial: state.tutorial
   }
 }
 
