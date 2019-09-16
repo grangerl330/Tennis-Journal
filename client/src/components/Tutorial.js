@@ -92,17 +92,25 @@ const Tutorial = (props) => {
         )
       case 8:
         return (
-            <>
-              <img src={tutorial8} alt="tutorial window 8" className="tutorial-8-image"/>
-              <div className="tutorial-text tutorial-8">
-                {tutorialCloseButton()}
-                <p>To view your profile, click your name in the top right corner.</p>
-                {buttonDisplay()}
-              </div>
-            </>
+          <>
+            <img src={tutorial8} alt="tutorial window 8" className="tutorial-8-image"/>
+            <div className="tutorial-text tutorial-8">
+              {tutorialCloseButton()}
+              <p>To view your profile, click your name in the top right corner.</p>
+              {buttonDisplay()}
+            </div>
+          </>
         )
       case 9:
-        return <p>Get started by adding a new Tournament.</p>
+        return (
+          <>
+            <div className="tutorial-text tutorial-9">
+              {tutorialCloseButton()}
+              <p>Get started by adding a new Tournament.</p>
+              {buttonDisplay()}
+            </div>
+          </>
+        )
       default:
         return ""
     }
@@ -139,7 +147,12 @@ const Tutorial = (props) => {
         </>
       )
     } else {
-      return <NavLink to={'/tournaments'} className="button" onClick={handleOnClickLink}>Get started</NavLink>
+      return (
+        <>
+          <button onClick={handleOnClickBack} className="button welcome-window-button">Back</button>
+          <NavLink to={'/tournaments'} className="button" onClick={handleOnClickLink}>Get started</NavLink>
+        </>
+      )
     }
   }
 
