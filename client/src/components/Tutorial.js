@@ -5,6 +5,7 @@ import tutorial3 from '../images/tutorial3.png'
 import tutorial4 from '../images/tutorial4.png'
 import tutorial5 from '../images/tutorial5.png'
 import tutorial6 from '../images/tutorial6.png'
+import tutorial7 from '../images/tutorial7.png'
 import tutorial8 from '../images/tutorial8.png'
 import closeWindowImg from '../images/close-window.png'
 import { NavLink } from 'react-router-dom'
@@ -78,6 +79,17 @@ const Tutorial = (props) => {
             </div>
           </>
         )
+      case 7:
+        return (
+          <>
+            <img src={tutorial7} alt="tutorial window 7" className="tutorial-7-image"/>
+            <div className="tutorial-text tutorial-7">
+              {tutorialCloseButton()}
+              <p>Record and Points will update automatically when matches and tournaments are added or updated</p>
+              {buttonDisplay()}
+            </div>
+          </>
+        )
       case 8:
         return (
             <>
@@ -119,7 +131,7 @@ const Tutorial = (props) => {
   const buttonDisplay = () => {
     if(props.welcomeWindow.position === 1) {
       return <button onClick={handleOnClickNext} className="button">Next</button>
-    } else if(props.welcomeWindow.position < 8) {
+    } else if(props.welcomeWindow.position < 9) {
       return (
         <>
           <button onClick={handleOnClickBack} className="button welcome-window-button">Back</button>

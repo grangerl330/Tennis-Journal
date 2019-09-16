@@ -230,11 +230,23 @@
 }
 
 .tutorial-7 {
+  top: 60%;
+  left: 30%;
+}
+
+.tutorial-7-image {
+  position: absolute;
+  z-index: 1;
+  top: 15%;
+  left: 45%;
+}
+
+.tutorial-8 {
   top: 2%;
   left: 27%;
 }
 
-.tutorial-7-image {
+.tutorial-8-image {
   position: absolute;
   z-index: 1;
   top: .7%;
