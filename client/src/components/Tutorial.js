@@ -117,7 +117,7 @@ const Tutorial = (props) => {
   }
 
   const tutorialCloseButton = () => {
-    return <NavLink className="close-window-button" to={`/tournaments`}><img src={closeWindowImg} alt="Close Window"/></NavLink>
+    return <NavLink className="close-window-button" to={`/tournaments`} onClick={handleOnClickLink}><img src={closeWindowImg} alt="Close Window"/></NavLink>
   }
 
   const handleOnClickNext = event => {
