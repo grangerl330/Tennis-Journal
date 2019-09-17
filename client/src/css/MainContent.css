@@ -1,0 +1,63 @@
+.main-content {
+  background: #b9bee0;
+  color: #2f376e;
+  float: left;
+  width: 85vw;
+  height: 90vh;
+}
+
+.main-content-text {
+  margin-right: 7.5vw;
+  text-align: center;
+}
+
+.main-content-link {
+  margin: 5px;
+  color: blue;
+}
+
+.edit-icon {
+  position: absolute;
+  left: 60.5%;
+  bottom: 81.5%;
+}
+
+.delete-icon {
+  position: absolute;
+  left: 62.5%;
+  bottom: 82%;
+  cursor: pointer;
+}
+
+.instructions-display{
+  font-style: italic;
+  font-size: 13px;
+}
+
+.message-display {
+  display: block;
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 40px;
+}
+
+.utr-display{
+  margin-right: -150px;
+  margin-left: 3px;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.current-ranking-display{
+  margin-right: -220px;
+  margin-left: 3px;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.match-tournament-link {
+  display: block; /* makes this link appear on its own line */
+  margin-bottom: 10px;
+  margin-top: -15px;
+  color: blue;
+}

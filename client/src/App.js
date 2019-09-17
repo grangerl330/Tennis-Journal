@@ -7,7 +7,14 @@ import Tutorial from './components/Tutorial'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
-import './App.css';
+import './css/App.css'
+import './css/Topbar.css'
+import './css/Tutorial.css'
+import './css/Sidebar.css'
+import './css/MainContent.css'
+import './css/Forms.css'
+import './css/LoginPage.css'
+
 
 class App extends Component {
 
