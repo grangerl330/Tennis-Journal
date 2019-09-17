@@ -35,10 +35,11 @@
 }
 
 .message-display {
-  display: block;
+  position: absolute;
   font-style: italic;
   font-size: 15px;
-  margin-top: 40px;
+  top: 20%;
+  left: 29%;
 }
 
 .utr-display{
