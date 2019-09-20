@@ -17,7 +17,7 @@ const Tutorial = (props) => {
     switch(props.tutorial.position){
       case 1:
         return (
-          <div className="tutorial-text tutorial-1">
+          <div className="tutorial-text tutorial-1-text">
             {tutorialCloseButton()}
             <h2>Welcome To Tennis Journal!</h2>
             <p>This app is designed to help you keep track of tournaments, matches, and stats.</p>
@@ -28,7 +28,7 @@ const Tutorial = (props) => {
         return (
           <>
             <img src={tutorial2} alt="tutorial window 2" className="tutorial-2-image"/>
-            <div className="tutorial-text tutorial-2">
+            <div className="tutorial-text tutorial-2-text">
               {tutorialCloseButton()}
               <p>Add a new tournament by clicking the Tournaments link in the side bar.</p>
               {buttonDisplay()}
@@ -39,7 +39,7 @@ const Tutorial = (props) => {
         return (
           <>
             <img src={tutorial3} alt="tutorial window 2" className="tutorial-3-image"/>
-            <div className="tutorial-text tutorial-3">
+            <div className="tutorial-text tutorial-3-text">
               {tutorialCloseButton()}
               <p>After a Tournament has been created, view that tournament by clicking its link.</p>
               {buttonDisplay()}
@@ -50,7 +50,7 @@ const Tutorial = (props) => {
         return (
           <>
             <img src={tutorial4} alt="tutorial window 4" className="tutorial-4-image"/>
-            <div className="tutorial-text tutorial-4">
+            <div className="tutorial-text tutorial-4-text">
               {tutorialCloseButton()}
               <p>Add a new match to that tournament by clicking the plus icon on the tournament view page.</p>
               {buttonDisplay()}
@@ -61,7 +61,7 @@ const Tutorial = (props) => {
         return (
           <>
             <img src={tutorial5} alt="tutorial window 5" className="tutorial-5-image"/>
-            <div className="tutorial-text tutorial-5">
+            <div className="tutorial-text tutorial-5-text">
               {tutorialCloseButton()}
               <p>The All Matches and All Opponents lists will automatically populate when new matches are created.</p>
               {buttonDisplay()}
@@ -72,7 +72,7 @@ const Tutorial = (props) => {
         return (
           <>
             <img src={tutorial6} alt="tutorial window 6" className="tutorial-6-image"/>
-            <div className="tutorial-text tutorial-6">
+            <div className="tutorial-text tutorial-6-text">
               {tutorialCloseButton()}
               <p>Click the My Stats link to see a summary of all your stats.</p>
               {buttonDisplay()}
@@ -83,7 +83,7 @@ const Tutorial = (props) => {
         return (
           <>
             <img src={tutorial7} alt="tutorial window 7" className="tutorial-7-image"/>
-            <div className="tutorial-text tutorial-7">
+            <div className="tutorial-text tutorial-7-text">
               {tutorialCloseButton()}
               <p>Record and Points will update automatically when matches and tournaments are added or updated</p>
               {buttonDisplay()}
@@ -94,7 +94,7 @@ const Tutorial = (props) => {
         return (
           <>
             <img src={tutorial8} alt="tutorial window 8" className="tutorial-8-image"/>
-            <div className="tutorial-text tutorial-8">
+            <div className="tutorial-text tutorial-8-text">
               {tutorialCloseButton()}
               <p>To view your profile, click your name in the top right corner.</p>
               {buttonDisplay()}
@@ -104,7 +104,7 @@ const Tutorial = (props) => {
       case 9:
         return (
           <>
-            <div className="tutorial-text tutorial-9">
+            <div className="tutorial-text tutorial-9-text">
               {tutorialCloseButton()}
               <p>Get started by adding a new Tournament.</p>
               {buttonDisplay()}
