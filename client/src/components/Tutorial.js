@@ -142,14 +142,14 @@ const Tutorial = (props) => {
     } else if(props.tutorial.position < 9) {
       return (
         <>
-          <button onClick={handleOnClickBack} className="button welcome-window-button">Back</button>
+          <button onClick={handleOnClickBack} className="button tutorial-button">Back</button>
           <button onClick={handleOnClickNext} className="button">Next</button>
         </>
       )
     } else {
       return (
         <>
-          <button onClick={handleOnClickBack} className="button welcome-window-button">Back</button>
+          <button onClick={handleOnClickBack} className="button tutorial-button">Back</button>
           <NavLink to={'/tournaments'} className="button" onClick={handleOnClickLink}>Get started</NavLink>
         </>
       )
