@@ -40,7 +40,7 @@ const TournamentCard = (props) => {
       <div className="main-content-text">
         <div className="title-display">
           <h2>{tournament.title}</h2>
-          <div className="icons">
+          <div className="icons-tournament">
             <NavLink to={`/tournaments/view/${tournament.id}/edit`} className="edit-icon"><img src={editPencil} alt="Edit Tournament"/></NavLink>
             <img src={deleteBin} alt="Delete Tournament" className="delete-icon" onClick={() => { if(window.confirm('Are you sure you want to delete this tournament?')) deleteTournament()}} />
           </div>

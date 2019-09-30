@@ -34,8 +34,10 @@ const MatchCard = (props) => {
       <div className="main-content-text">
         <div className="title-display">
           <h2>{match_round_display(currentMatch)}</h2>
-          <NavLink to={`/matches/view/${currentMatch.id}/edit`} className="edit-icon"><img src={editPencil} alt="Edit Match"/></NavLink>
-          <img src={deleteBin} alt="Delete Match" className="delete-icon" onClick={() => { if(window.confirm('Are you sure you want to delete this match?')) deleteMatch()}} />
+          <div className="icons-match">
+            <NavLink to={`/matches/view/${currentMatch.id}/edit`} className="edit-icon"><img src={editPencil} alt="Edit Match"/></NavLink>
+            <img src={deleteBin} alt="Delete Match" className="delete-icon" onClick={() => { if(window.confirm('Are you sure you want to delete this match?')) deleteMatch()}} />
+          </div>
         </div>
         <NavLink to={`/tournaments/view/${currentMatch.tournament.id}`} className="match-tournament-link">{currentMatch.tournament.title}</NavLink>
         <p><b>vs:</b> <NavLink to={`/opponents/view/${currentMatch.opponent.id}`} className="main-content-link">{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></p>

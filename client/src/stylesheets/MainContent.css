@@ -15,9 +15,15 @@
   color: blue;
 }
 
-.icons {
+.icons-tournament {
   position: absolute;
-  left: 63%;
+  left: 64%;
+  top: 14%;
+}
+
+.icons-match {
+  position: absolute;
+  left: 63.5%;
   top: 14%;
 }
 /* .edit-icon {
