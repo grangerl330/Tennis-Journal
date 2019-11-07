@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import MainContent from './containers/MainContent'
 import Navbar from './containers/Navbar'
 import LoginPage from './containers/LoginPage'
-import Tutorial from './components/Tutorial'
-import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 // import './stylesheets/App.css'
@@ -24,15 +22,14 @@ class App extends Component {
   render() {
     if (this.props.currentUser) {
       return (
-        <div className="App">
-          <Route path='/tutorial' render={() => <Tutorial />}/>
+        <div id="App">
           <Navbar />
           <MainContent />
         </div>
       )
     } else {
       return (
-        <div className="App">
+        <div id="App">
           <LoginPage />
         </div>
       )

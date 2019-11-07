@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 
 const Navbar = (props) => {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top py-3">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark py-3">
       <div className="container-fluid">
         <NavbarBrand />
         <div className="collapse navbar-collapse" id="navbarCollapse">
