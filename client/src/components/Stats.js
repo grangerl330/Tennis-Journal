@@ -1,35 +1,72 @@
 import React, { Component } from 'react'
-import StatsForm from './StatsForm'
-import editPencil from '../images/edit-pencil.png'
-import { NavLink, Route } from 'react-router-dom'
+import StatsFormModal from './StatsFormModal'
 
 class Stats extends Component {
   componentDidMount(){
     this.props.getCurrentUser()
   }
 
-  instructions = () => {
-    if(!this.props.currentUser.ranking && !this.props.currentUser.utr){
-      return <span className="instructions-display">* Enter your Current Ranking and UTR by clicking Edit</span>
-    } else if(!this.props.currentUser.ranking){
-      return <span className="instructions-display">* Enter your Current Ranking by clicking Edit</span>
-    } else if(!this.props.currentUser.utr){
-      return <span className="instructions-display">* Enter your UTR by clicking Edit</span>
+  currentRankingDisplay = () => {
+    if(!this.props.currentUser.ranking) {
+      return <span>* Enter your Current Ranking by clicking the edit icon</span>
+    } else {
+      return <span>{this.props.currentUser.ranking}</span>
+    }
+  }
+
+  utrDisplay = () => {
+    if(!this.props.currentUser.utr) {
+      return <span>* Enter your UTR by clicking the edit icon</span>
+    } else {
+      return <span>{this.props.currentUser.utr}</span>
+    }
+  }
+
+  pointsDisplay = () => {
+    if(!this.props.currentUser.points) {
+      return <span>* Points will update automatically when a tournament is added.</span>
+    } else {
+      return <span>{this.props.currentUser.points}</span>
     }
   }
 
   render() {
     return (
-      <div className="main-content-text">
-        <h1>Stats</h1>
-        <p><b>Record:</b> {this.props.currentUser.match_record}</p>
-        <p><b>Current Ranking:</b> {this.props.currentUser.ranking}</p>
-        <p><b>UTR:</b> {this.props.currentUser.utr}</p>
-        <p><b>Points:</b> {this.props.currentUser.points}</p>
-        <p>{this.instructions()}</p>
-        <NavLink to={`/stats/edit`}><img src={editPencil} alt="Edit Stats"/></NavLink>
-        <Route path='/stats/edit' render={() => <StatsForm currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>} />
-      </div>
+      <section id="home-page">
+        <div className="container-fluid py-2 bg-info text-white mb-4">
+          <div className="row">
+            <div className="col text-center">
+              <h1>
+                <i className="fas fa-home"></i> Home
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div className="container-fluid px-4">
+          <div className="row justify-content-center">
+            <div className="col-md-1">
+              <h3>Stats</h3>
+              <button className="btn btn-block" data-toggle="modal" data-target="#editStatsModal">
+                <i className="fas fa-edit"></i>
+              </button>
+            </div>
+            <div className="col-md-2">
+              <p><b>Record:</b> {this.props.currentUser.match_record}</p>
+            </div>
+            <div className="col-md-3">
+              <p><b>Current Ranking:</b> {this.currentRankingDisplay()}</p>
+            </div>
+            <div className="col-md-3">
+              <p><b>UTR:</b> {this.utrDisplay()}</p>
+            </div>
+            <div className="col-md-3">
+              <p><b>Points:</b> {this.pointsDisplay()}</p>
+            </div>
+          </div>
+        </div>
+        <StatsFormModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>
+      </section>
     )
   }
 }
