@@ -44,7 +44,7 @@ const Profile = (props) => {
           </div>
         </div>
       </div>
-      <PasswordModal currentUser={props.currentUser} />
+      <PasswordModal currentUser={props.currentUser} updateCurrentUserPasswordInDatabase={props.updateCurrentUserPasswordInDatabase} />
     </section>
   )
 }

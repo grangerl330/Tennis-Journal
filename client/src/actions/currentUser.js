@@ -83,3 +83,22 @@ export const updateCurrentUserInDatabase = user => {
     .then(user => dispatch(setCurrentUser(user)))
   }
 }
+
+export const updateCurrentUserPasswordInDatabase = (user, newPassword) => {
+  const request = {
+    method: 'PATCH',
+    body: JSON.stringify({
+      user: user,
+      newPassword: newPassword
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return dispatch => {
+    return fetch('/users/update_password', request)
+    .then(response => response.json())
+    .then(user => dispatch(setCurrentUser(user)))
+  }
+}

@@ -26,6 +26,20 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update_password
+    @user = User.find_by_id(params[:user][:id])
+
+    if @user.update(password: params[:newPassword])
+      render json: {
+        message: "Password successfully changed"
+      }
+    else
+      render json: {
+        error: "Password could not be changed"
+      }
+    end
+  end
+
   private
 
   def user_params

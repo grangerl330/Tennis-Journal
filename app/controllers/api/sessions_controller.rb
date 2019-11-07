@@ -23,6 +23,20 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  def authenticate_password
+    @user = User.find_by_id(params[:user][:id])
+    
+    if @user.authenticate(params[:currentPassword])
+      render json: {
+        isValid: true
+      }
+    else
+      render json: {
+        isValid: false
+      }
+    end
+  end
+
   def destroy
     session.clear
     render json: {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 
 import Profile from '../components/Profile'
-import { updateCurrentUserInDatabase } from '../actions/currentUser'
+import { updateCurrentUserInDatabase, updateCurrentUserPasswordInDatabase } from '../actions/currentUser'
 
 import Stats from '../components/Stats'
 import { getCurrentUser } from '../actions/currentUser'
@@ -72,7 +72,7 @@ class MainContent extends Component {
           <Route path='/matches' render={() => <Matches matches={this.props.matches} addMatchToDatabase={this.props.addMatchToDatabase}/>} />
           <Route path='/opponents/view/:opponentId' render={(urlData) => <OpponentCard id={urlData.match.params.opponentId} currentOpponent={this.currentOpponent} editOpponentInDatabase={this.props.editOpponentInDatabase}/>}/>
           <Route path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
-          <Route exact path='/profile' render={() => <Profile currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>}/>
+          <Route exact path='/profile' render={() => <Profile currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} updateCurrentUserPasswordInDatabase={this.props.updateCurrentUserPasswordInDatabase}/>}/>
           <Route path='/stats' render={() => <Stats currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} getCurrentUser={this.props.getCurrentUser}/>}/>
         </Switch>
       </div>
@@ -102,6 +102,7 @@ const mapDispatchToProps = dispatch => {
     fetchTournaments: () => {dispatch(fetchTournaments())},
     fetchOpponents: () => {dispatch(fetchOpponents())},
     updateCurrentUserInDatabase: user => {dispatch(updateCurrentUserInDatabase(user))},
+    updateCurrentUserPasswordInDatabase: (user, newPassword) => {dispatch(updateCurrentUserPasswordInDatabase(user, newPassword))},
     getCurrentUser: () => {dispatch(getCurrentUser())}
   }
 }
