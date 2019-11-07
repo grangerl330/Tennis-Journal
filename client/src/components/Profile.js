@@ -1,5 +1,6 @@
 import React from 'react'
 import ProfileForm from './ProfileForm'
+import PasswordModal from './PasswordModal'
 
 const Profile = (props) => {
   return (
@@ -17,12 +18,12 @@ const Profile = (props) => {
       <div className="container mb-4">
         <div className="row justify-content-center">
           <div className="col-md-3">
-            <button className="btn btn-success btn-block">
+            <button className="btn btn-success btn-block" data-toggle="modal" data-target="#changePasswordModal">
               <i className="fas fa-lock"></i> Change Password
             </button>
           </div>
           <div className="col-md-3">
-            <button className="btn btn-danger btn-block">
+            <button className="btn btn-danger btn-block" data-toggle="modal" data-target="deleteAccount">
               <i className="fas fa-trash"></i> Delete Account
             </button>
           </div>
@@ -43,14 +44,8 @@ const Profile = (props) => {
           </div>
         </div>
       </div>
+      <PasswordModal currentUser={props.currentUser} />
     </section>
-
-    // <div className="main-content-text">
-    //   <p><b>First Name:</b> {props.currentUser.first_name}</p>
-    //   <p><b>Last Name:</b> {props.currentUser.last_name}</p>
-    //   <p><b>Email:</b> {props.currentUser.email}</p>
-    //   <NavLink to="/profile/edit"><img src={editPencil} alt="Edit Profile"/></NavLink>
-    // </div>
   )
 }
 
