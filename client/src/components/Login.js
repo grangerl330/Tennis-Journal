@@ -22,13 +22,27 @@ const Login = (props) => {
   }
 
   return (
-    <div className="Login-Form">
-      <h2>Log In</h2>
-      <form onSubmit={handleOnSubmit}>
-        <p><input type="text" name="email" onChange={handleOnChange} value={props.loginFormData.email} placeholder="email" /></p>
-        <p><input type="password" name="password" onChange={handleOnChange} value={props.loginFormData.password} placeholder="password" /></p>
-        <input type="submit" value="Log In" />
-      </form>
+    <div className="row" id="login">
+      <div className="col-md-6 mx-auto">
+        <div className="card">
+          <div className="card-header">
+            <h4>Login</h4>
+          </div>
+          <div className="card-body">
+            <form onSubmit={handleOnSubmit}>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input className="form-control" type="text" name="email" onChange={handleOnChange} value={props.loginFormData.email} placeholder="email" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input className="form-control" type="password" name="password" onChange={handleOnChange} value={props.loginFormData.password} placeholder="password" />
+              </div>
+              <input className="btn btn-primary btn-block" type="submit" value="Login" />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
