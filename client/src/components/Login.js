@@ -38,7 +38,7 @@ const Login = (props) => {
                 <label htmlFor="password">Password</label>
                 <input className="form-control" type="password" name="password" onChange={handleOnChange} value={props.loginFormData.password} placeholder="password" />
               </div>
-              <input className="btn btn-primary btn-block" type="submit" value="Login" />
+              <input className="btn btn-dark btn-block" type="submit" value="Login" />
             </form>
           </div>
         </div>

@@ -20,15 +20,35 @@ const Signup = (props) => {
   }
 
   return (
-    <div className="Signup-Form">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleOnSubmit}>
-        <p><input type="text" name="first_name" onChange={handleOnChange} value={props.signupFormData.firstName} placeholder="First Name" /></p>
-        <p><input type="text" name="last_name" onChange={handleOnChange} value={props.signupFormData.lastName} placeholder="Last Name" /></p>
-        <p><input type="text" name="email" onChange={handleOnChange} value={props.signupFormData.email} placeholder="email" /></p>
-        <p><input type="password" name="password" onChange={handleOnChange} value={props.signupFormData.password} placeholder="password" /></p>
-        <input type="submit" value="Log In" />
-      </form>
+    <div className="row" id="login">
+      <div className="col-md-6 mx-auto">
+        <div className="card">
+          <div className="card-header">
+            <h4>Sign Up</h4>
+          </div>
+          <div className="card-body">
+            <form onSubmit={handleOnSubmit}>
+              <div className="form-group">
+                <label htmlFor="First Name">First Name</label>
+                <input className="form-control" type="text" name="first_name" onChange={handleOnChange} value={props.signupFormData.firstName} placeholder="First Name" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="Last Name">Last Name</label>
+                <p><input className="form-control" type="text" name="last_name" onChange={handleOnChange} value={props.signupFormData.lastName} placeholder="Last Name" /></p>
+              </div>
+              <div className="form-group">
+                <label htmlFor="Email">Email</label>
+                <p><input className="form-control" type="text" name="email" onChange={handleOnChange} value={props.signupFormData.email} placeholder="Email" /></p>
+              </div>
+              <div className="form-group">
+                <label htmlFor="Password">Password</label>
+                <p><input className="form-control" type="password" name="password" onChange={handleOnChange} value={props.signupFormData.password} placeholder="Password" /></p>
+              </div>
+                <input className="btn btn-dark btn-block" type="submit" value="Sign Up" />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
