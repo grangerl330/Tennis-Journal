@@ -4,8 +4,6 @@ import NavbarRight from '../components/NavbarRight'
 import NavbarLinks from '../components/NavbarLinks'
 import { logout } from '../actions/currentUser'
 import { connect } from 'react-redux'
-import { NavLink, Route } from 'react-router-dom'
-import logo from '../images/Logo.jpg'
 
 const Navbar = (props) => {
   return (

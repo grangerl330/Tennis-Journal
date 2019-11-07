@@ -18,7 +18,7 @@ const Login = (props) => {
     props.login(props.loginFormData)
 
 
-    props.history.push('/stats')
+    props.history.push('/home')
   }
 
   return (

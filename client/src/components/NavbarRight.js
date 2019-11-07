@@ -13,9 +13,9 @@ const NavbarRight = (props) => {
   return (
     <ul className="navbar-nav ml-auto">
       <li className="nav-item dropdown mr-3">
-        <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">
+        <button href="#" className="btn btn-link nav-link dropdown-toggle" data-toggle="dropdown">
           <i className="fas fa-user"></i> Welcome {props.currentUser.first_name} {props.currentUser.last_name}
-        </a>
+        </button>
         <div className="dropdown-menu">
           <NavLink to='/profile' className="dropdown-item">
             <i className="fas fa-user-circle"></i> Profile
