@@ -1,6 +1,7 @@
 import React from 'react'
 import ProfileForm from './ProfileForm'
 import PasswordModal from './PasswordModal'
+import DeleteAccountModal from './DeleteAccountModal'
 
 const Profile = (props) => {
   return (
@@ -23,7 +24,7 @@ const Profile = (props) => {
             </button>
           </div>
           <div className="col-md-3">
-            <button className="btn btn-danger btn-block" data-toggle="modal" data-target="deleteAccount">
+            <button className="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteAccountModal">
               <i className="fas fa-trash"></i> Delete Account
             </button>
           </div>
@@ -38,13 +39,14 @@ const Profile = (props) => {
                 <h4>Edit Profile</h4>
               </div>
               <div className="card-body">
-                <ProfileForm currentUser={props.currentUser} updateCurrentUserInDatabase={props.updateCurrentUserInDatabase}/>
+                <ProfileForm currentUser={props.currentUser} updateCurrentUserInDatabase={props.updateCurrentUserInDatabase} />
               </div>
             </div>
           </div>
         </div>
       </div>
       <PasswordModal currentUser={props.currentUser} updateCurrentUserPasswordInDatabase={props.updateCurrentUserPasswordInDatabase} />
+      <DeleteAccountModal currentUser={props.currentUser} deleteCurrentUserFromDatabase={props.deleteCurrentUserFromDatabase}/>
     </section>
   )
 }

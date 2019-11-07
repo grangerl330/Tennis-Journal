@@ -102,3 +102,22 @@ export const updateCurrentUserPasswordInDatabase = (user, newPassword) => {
     .then(user => dispatch(setCurrentUser(user)))
   }
 }
+
+export const deleteCurrentUserFromDatabase = user => {
+  const request = {
+    method: 'DELETE',
+    body: JSON.stringify({
+      user: user
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return dispatch => {
+    dispatch(clearCurrentUser())
+    return fetch('/users/delete', request)
+    .then(response => response.json())
+    .then(response => console.log(response.notice))
+  }
+}

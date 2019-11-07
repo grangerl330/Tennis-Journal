@@ -40,6 +40,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find_by_id(params[:user][:id])
+    @user.destroy
+
+    render json: {
+      notice: "Account successfully deleted"
+    }
+  end
+
   private
 
   def user_params
