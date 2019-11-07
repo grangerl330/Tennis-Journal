@@ -1,5 +1,6 @@
 import React from 'react'
 import Login from '../components/Login'
+import NavbarBrand from '../components/NavbarBrand'
 import { updateLoginForm } from '../actions/loginForm'
 import { login } from '../actions/currentUser'
 import Signup from '../components/SignUp'
@@ -10,6 +11,11 @@ import { connect } from 'react-redux'
 const LoginPage = (props) => {
   return (
     <div className="section" id="loginpage">
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark py-3">
+        <div className="container-fluid">
+          <NavbarBrand />
+        </div>
+      </nav>
       <div className="container my-5">
         <Login loginFormData={props.loginFormData} updateLoginForm={props.updateLoginForm} login={props.login} welcome={props.welcome}/>
         <div className="row my-3" id="login">

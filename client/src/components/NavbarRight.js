@@ -20,9 +20,6 @@ const NavbarRight = (props) => {
           <NavLink to='/profile' className="dropdown-item">
             <i className="fas fa-user-circle"></i> Edit Profile
           </NavLink>
-          <NavLink to='/stats' className="dropdown-item">
-            <i className="fas fa-clipboard-list"></i> Stats
-          </NavLink>
         </div>
       </li>
       <li className= "nav-item">
