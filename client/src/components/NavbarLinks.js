@@ -12,10 +12,10 @@ const NavbarLinks = (props) => {
         <NavLink to="/tournaments" className="nav-link">Tournaments</NavLink>
       </li>
       <li className="nav-item">
-        <NavLink to="/matches" className="nav-link">All Matches</NavLink>
+        <NavLink to="/matches" className="nav-link">Matches</NavLink>
       </li>
       <li className="nav-item">
-        <NavLink to="/opponents" className="nav-link">All Opponents</NavLink>
+        <NavLink to="/opponents" className="nav-link">Opponents</NavLink>
       </li>
     </ul>
   )
