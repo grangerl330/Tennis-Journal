@@ -1,4 +1,6 @@
 // Override default variables before the import
-
+.card-stats {
+  height: 120px;
+}
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

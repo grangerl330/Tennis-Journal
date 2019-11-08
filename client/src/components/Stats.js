@@ -44,31 +44,45 @@ class Stats extends Component {
         </div>
 
         <div className="container-fluid px-4">
-          <div className="row justify-content-center">
-            <div className="col-md-5">
+          <div className="row justify-content-center mt-2">
+            <div className="col-md-3">
+              <div className="card card-stats d-flex border border-secondary">
+                <div className="card-body d-flex align-items-center justify-content-center">
+                  <h5 className="card-text"><b>Record:</b> {this.props.currentUser.match_record}</h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="card card-stats d-flex border border-secondary">
+                <div className="card-body d-flex align-items-center justify-content-center">
+                  <h5 className="card-text"><b>Current Ranking:</b> {this.currentRankingDisplay()}</h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="card card-stats d-flex border border-secondary">
+                <div className="card-body d-flex align-items-center justify-content-center">
+                  <h5 className="card-text"><b>UTR:</b> {this.utrDisplay()}</h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="card card-stats d-flex border border-secondary">
+                <div className="card-body d-flex align-items-center justify-content-center">
+                  <h5 className="card-text"><b>Points:</b> {this.pointsDisplay()}</h5>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="row justify-content-center">
-            <div className="col-md-1">
-              <h3>Stats</h3>
-              <button className="btn btn-block" data-toggle="modal" data-target="#editStatsModal">
-                <i className="fas fa-edit"></i>
-              </button>
-            </div>
+          <div className="row mt-3">
             <div className="col-md-2">
-              <p><b>Record:</b> {this.props.currentUser.match_record}</p>
-            </div>
-            <div className="col-md-3">
-              <p><b>Current Ranking:</b> {this.currentRankingDisplay()}</p>
-            </div>
-            <div className="col-md-3">
-              <p><b>UTR:</b> {this.utrDisplay()}</p>
-            </div>
-            <div className="col-md-3">
-              <p><b>Points:</b> {this.pointsDisplay()}</p>
+              <button className="btn" data-toggle="modal" data-target="#editStatsModal">
+                <i className="fas fa-edit"></i><span className="ml-2 font-italic">Edit Stats</span>
+              </button>
             </div>
           </div>
         </div>
+
         <StatsFormModal currentUser={this.props.currentUser} />
       </section>
     )
