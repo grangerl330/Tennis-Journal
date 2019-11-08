@@ -10,15 +10,14 @@ const Tournaments = (props) => {
       <div className="col-md-2 mb-4" key={tournament.id}>
         <div className="card card-tournament d-flex border border-secondary">
           <div className="card-body d-flex align-items-center justify-content-center">
-              <p className="card-text"><NavLink className="btn btn-block p-0 text-dark" to={`/tournaments/view/${tournament.id}`}>{tournament.title} {moment(tournament.start_date).format('MM/DD/YYYY')}</NavLink></p>
+              <p className="card-text"><NavLink className="btn btn-block p-0 text-dark" to={`/tournaments/${tournament.id}`}>{tournament.title} {moment(tournament.start_date).format('MM/DD/YYYY')}</NavLink></p>
           </div>
         </div>
       </div>
     )
 
     return (
-
-      <section id="home-page">
+      <section id="tournaments-page">
         <div className="container-fluid py-2 bg-info text-white mb-4">
           <div className="row">
             <div className="col text-center">
@@ -32,7 +31,7 @@ const Tournaments = (props) => {
         <div className="container">
           <div className="row justify-content-center mt-4">
             <div className="col-md-3">
-              <button className="btn btn-dark btn-block" data-toggle="modal" data-target="#addTournamentModal">
+              <button className="btn btn-dark btn-block" data-toggle="modal" data-target="#tournamentFormModal">
                 <i className="fas fa-plus"></i> Add Tournament
               </button>
             </div>

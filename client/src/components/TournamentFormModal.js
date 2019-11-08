@@ -68,43 +68,35 @@ class TournamentFormModal extends Component {
 
   formHeader = () => {
     if(this.props.add) {
-      return <h2>Add Tournament</h2>
+      return <h5 className="modal-title">Add A New Tournament</h5>
     } else {
-      return <h2>Edit Tournament</h2>
+      return <h5 className="modal-title">Edit Tournament</h5>
     }
   }
 
   formButton = () => {
     if(this.props.add) {
-      return <button>Add Tournament</button>
-    } else {
-      return <button>Save Tournament</button>
-    }
-  }
-
-  formCloseWindowButton = () => {
-    if(this.props.add) {
       return (
-        <NavLink className="close-window-button" to='/tournaments'>
-          <img src={closeWindowImg} alt="Close Window"/>
-        </NavLink>
+        <div className="form-group d-flex justify-content-center">
+          <input className="btn btn-dark" type="submit" value="Add Tournament"/>
+        </div>
       )
     } else {
       return (
-        <NavLink className="close-window-button" to={`/tournaments/view/${this.props.tournamentId}`}>
-          <img src={closeWindowImg} alt="Close Window"/>
-        </NavLink>
+        <div className="form-group d-flex justify-content-center">
+          <input className="btn btn-dark" type="submit" value="Update Tournament"/>
+        </div>
       )
     }
   }
 
   render() {
     return (
-      <div className="modal fade" id="addTournamentModal">
+      <div className="modal modal-tournament fade mt-3" id="tournamentFormModal">
         <div className="modal-dialog modal-lg">
           <div className="modal-content">
             <div className="modal-header bg-info text-white">
-              <h5 className="modal-title">Add A New Tournament</h5>
+              {this.formHeader()}
               <button className="close" data-dismiss="modal">
                 <i className="fas fa-times"></i>
               </button>
@@ -165,9 +157,7 @@ class TournamentFormModal extends Component {
                   <label htmlFor="tournament-points">Points: </label>
                   <input className="form-control" type="text" name="points" value={this.state.points} onChange={this.handleOnChange} placeholder="Points Gained"/>
                 </div>
-                <div className="form-group d-flex justify-content-center">
-                  <input className="btn btn-dark" type="submit" value="Add Tournament"/>
-                </div>
+                {this.formButton()}
               </form>
             </div>
           </div>
