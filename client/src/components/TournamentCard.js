@@ -1,9 +1,9 @@
 import React from 'react';
 import moment from 'moment'
-import MatchForm from './MatchForm'
+import MatchFormModal from './MatchFormModal'
 import TournamentFormModal from './TournamentFormModal'
 import DeleteTournamentModal from './DeleteTournamentModal'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
 const TournamentCard = (props) => {
@@ -107,7 +107,7 @@ const TournamentCard = (props) => {
             {renderMatches}
           </div>
         </div>
-          <Route path='/tournaments/view/:tournamentId/add_match' render={() => <MatchForm tournamentId={tournament.id} sendMatchToDatabase={props.addMatchToDatabase} matches={props.matches} tournament={tournament} add="add"/>} />
+          <MatchFormModal tournamentId={tournament.id} sendMatchToDatabase={props.addMatchToDatabase} matches={props.matches} tournament={tournament} add="add"/>
           <TournamentFormModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} edit="edit"/>
           <DeleteTournamentModal tournamentId={tournament.id} deleteTournament={deleteTournament} />
       </section>

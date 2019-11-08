@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment'
-import MatchForm from './MatchForm'
+import MatchFormModal from './MatchFormModal'
 import deleteBin from '../images/delete-bin.png'
 import editPencil from '../images/edit-pencil.png'
 import { NavLink, Route } from 'react-router-dom'
@@ -46,7 +46,7 @@ const MatchCard = (props) => {
         <p><b>Date:</b> {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
         <p><b>Time:</b> {moment.utc(currentMatch.time).format('hh:mm a')}</p>
         <p><b>Notes:</b> {currentMatch.notes}</p>
-        <Route path='/matches/view/:matchId/edit' render={() => <MatchForm currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>} />
+        <Route path='/matches/view/:matchId/edit' render={() => <MatchFormModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>} />
       </div>
     )
   } else {

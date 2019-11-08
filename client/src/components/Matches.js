@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment'
 import { NavLink, Route } from 'react-router-dom'
-import MatchForm from './MatchForm'
+import MatchFormModal from './MatchFormModal'
 
 const Matches = (props) => {
   const sortedMatches = props.matches.sort(function(a,b) {return moment(a.date) - moment(b.date)})
@@ -40,7 +40,7 @@ const Matches = (props) => {
       <h1>Matches</h1>
       {renderMatches}
       {message()}
-      <Route exact path='/matches/add_match' render={() => <MatchForm sendMatchToDatabase={props.addMatchToDatabase} add="add"/>}/>
+      <Route exact path='/matches/add_match' render={() => <MatchFormModal sendMatchToDatabase={props.addMatchToDatabase} add="add"/>}/>
     </div>
   )
 }

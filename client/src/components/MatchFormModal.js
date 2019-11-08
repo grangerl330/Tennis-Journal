@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
 import moment from 'moment'
-import closeWindowImg from '../images/close-window.png'
 import { withRouter } from 'react-router'
 
-class MatchForm extends Component {
+class MatchFormModal extends Component {
   constructor(props){
     super(props)
 
@@ -79,24 +77,16 @@ class MatchForm extends Component {
 
   formButton = () => {
     if(this.props.add) {
-      return <button>Add Match</button>
-    } else {
-      return <button>Save Match</button>
-    }
-  }
-
-  closeWindowLink = () => {
-    if(this.props.tournamentId){
       return (
-        <NavLink className="close-window-button" to={`/tournaments/view/${this.props.tournamentId}`}>
-          <img src={closeWindowImg} alt="Close Window"/>
-        </NavLink>
+        <div className="form-group d-flex justify-content-center">
+          <input className="btn btn-dark" data-dismiss="modal" type="submit" value="Add Match"/>
+        </div>
       )
     } else {
       return (
-        <NavLink className="close-window-button" to={`/matches/view/${this.props.currentMatch.id}`}>
-          <img src={closeWindowImg} alt="Close Window"/>
-        </NavLink>
+        <div className="form-group d-flex justify-content-center">
+          <input className="btn btn-dark" data-dismiss="modal" type="submit" value="Update Match"/>
+        </div>
       )
     }
   }
@@ -166,51 +156,61 @@ class MatchForm extends Component {
 
   render() {
     return (
-      <div className={`form-window match-form`}>
-        {this.closeWindowLink()}
-        <form onSubmit={this.handleOnSubmit} className="form-text">
-          {this.formHeader()}
-          <p>
-            <label>vs:</label>
-            <input type="text" name="opponent_first_name" value={this.state.opponent_first_name} onChange={this.handleOnChange} placeholder="first name" className="profile-input" required/>
-            <input type="text" name="opponent_last_name" value={this.state.opponent_last_name} onChange={this.handleOnChange} placeholder="last name" className="profile-input" required/>
-          </p>
-          <p>
-            <label htmlFor="match-date">Date: </label>
-            <input type="date" name="date" value={this.state.date} onChange={this.handleOnChange} />
-          </p>
-          <p>
-            <label htmlFor="match-time">Time: </label>
-            <input type="time" name="time" value={this.state.time} onChange={this.handleOnChange} />
-          </p>
-          <p>
-            <label htmlFor="match-round">Round: </label>
-            <select name="round" value={this.state.round} onChange={this.handleOnChange} required>
-              <option disabled hidden></option>
-              {this.roundOptionsDisplay()}
-            </select>
-          </p>
-          <p>
-            <label htmlFor="match-round">Result: </label>
-            <select name="result" value={this.state.result} onChange={this.handleOnChange} required>
-              <option disabled hidden></option>
-              <option value="Won">Won</option>
-              <option value="Lost">Lost</option>
-            </select>
-          </p>
-          <p>
-            <label htmlFor="match-score">Score: </label>
-            <input type="text" name="score" value={this.state.score} onChange={this.handleOnChange} placeholder="ex: 6-1, 6-0"/>
-          </p>
-          <p>
-            <label htmlFor="match-notes" className="notes-label">Notes: </label>
-            <textarea name="notes" value={this.state.notes} onChange={this.handleOnChange} placeholder="Notes about the match">Notes:</textarea>
-          </p>
-          {this.formButton()}
-        </form>
+      <div className="modal fade mt-3" id="matchFormModal">
+        <div className="modal-dialog modal-lg">
+          <div className="modal-content">
+            <div className="modal-header bg-info text-white">
+              {this.formHeader()}
+              <button className="close" data-dismiss="modal">
+                <i className="fas fa-times"></i>
+              </button>
+            </div>
+            <div className="modal-body">
+              <form onSubmit={this.handleOnSubmit}>
+                <div className="form-group">
+                  <label htmlFor="Opponent Names">vs:</label>
+                  <input className="form-control mb-3" type="text" name="opponent_first_name" value={this.state.opponent_first_name} onChange={this.handleOnChange} placeholder="Opponent's First Name" required/>
+                  <input className="form-control" type="text" name="opponent_last_name" value={this.state.opponent_last_name} onChange={this.handleOnChange} placeholder="Opponent's Last Name" required/>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="Match Date">Date: </label>
+                  <input className="form-control" type="date" name="date" value={this.state.date} onChange={this.handleOnChange} />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="Match Time">Time: </label>
+                  <input className="form-control" type="time" name="time" value={this.state.time} onChange={this.handleOnChange} />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="Match Round">Round: </label>
+                  <select className="form-control" name="round" value={this.state.round} onChange={this.handleOnChange} required>
+                    <option disabled hidden></option>
+                    {this.roundOptionsDisplay()}
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="Match Result">Result: </label>
+                  <select className="form-control" name="result" value={this.state.result} onChange={this.handleOnChange} required>
+                    <option disabled hidden></option>
+                    <option value="Won">Won</option>
+                    <option value="Lost">Lost</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="Match Score">Score: </label>
+                  <input className="form-control" type="text" name="score" value={this.state.score} onChange={this.handleOnChange} placeholder="ex: 6-1, 6-0"/>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="Match Notes">Notes: </label>
+                  <textarea className="form-control" name="notes" value={this.state.notes} onChange={this.handleOnChange} placeholder="Notes about the match">Notes:</textarea>
+                </div>
+                {this.formButton()}
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
 }
 
-export default withRouter(MatchForm)
+export default withRouter(MatchFormModal)

@@ -90,7 +90,7 @@ class TournamentFormModal extends Component {
 
   render() {
     return (
-      <div className="modal modal-tournament fade mt-3" id="tournamentFormModal">
+      <div className="modal fade mt-3" id="tournamentFormModal">
         <div className="modal-dialog modal-lg">
           <div className="modal-content">
             <div className="modal-header bg-info text-white">
