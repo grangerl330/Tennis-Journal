@@ -8,7 +8,7 @@ class Stats extends Component {
 
   currentRankingDisplay = () => {
     if(!this.props.currentUser.ranking) {
-      return <span>* Enter your Current Ranking by clicking the edit icon</span>
+      return <span className="font-italic">* Enter your Current Ranking by clicking the edit icon</span>
     } else {
       return <span>{this.props.currentUser.ranking}</span>
     }
@@ -16,7 +16,7 @@ class Stats extends Component {
 
   utrDisplay = () => {
     if(!this.props.currentUser.utr) {
-      return <span>* Enter your UTR by clicking the edit icon</span>
+      return <span className="font-italic">* Enter your UTR by clicking the edit icon</span>
     } else {
       return <span>{this.props.currentUser.utr}</span>
     }
@@ -24,7 +24,7 @@ class Stats extends Component {
 
   pointsDisplay = () => {
     if(!this.props.currentUser.points) {
-      return <span>* Points will update automatically when a tournament is added.</span>
+      return <span className="font-italic">* Points will update automatically when a tournament is added.</span>
     } else {
       return <span>{this.props.currentUser.points}</span>
     }

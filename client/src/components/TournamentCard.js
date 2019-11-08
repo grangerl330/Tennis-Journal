@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment'
 import MatchForm from './MatchForm'
-import TournamentForm from './TournamentForm'
+import TournamentFormModal from './TournamentFormModal'
 import { NavLink, Route } from 'react-router-dom'
 import deleteBin from '../images/delete-bin.png'
 import editPencil from '../images/edit-pencil.png'
@@ -57,7 +57,7 @@ const TournamentCard = (props) => {
         </div>
         <NavLink to={`/tournaments/view/${tournament.id}/add_match`}><img src={plusIcon} alt="Add Tournament"/></NavLink>
         <Route path='/tournaments/view/:tournamentId/add_match' render={() => <MatchForm tournamentId={tournament.id} sendMatchToDatabase={props.addMatchToDatabase} matches={props.matches} tournament={tournament} add="add"/>} />
-        <Route path='/tournaments/view/:tournamentId/edit' render={() => <TournamentForm tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} edit="edit"/>} />
+        <Route path='/tournaments/view/:tournamentId/edit' render={() => <TournamentFormModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} edit="edit"/>} />
       </div>
     )
   } else {
