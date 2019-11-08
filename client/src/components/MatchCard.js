@@ -1,8 +1,7 @@
 import React from 'react';
 import moment from 'moment'
 import MatchFormModal from './MatchFormModal'
-import deleteBin from '../images/delete-bin.png'
-import editPencil from '../images/edit-pencil.png'
+import DeleteMatchModal from './DeleteMatchModal'
 import { NavLink, Route } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
@@ -24,35 +23,68 @@ const MatchCard = (props) => {
 
   const deleteMatch = event => {
     props.deleteMatchFromDatabase(matchId)
-    props.history.push('/matches')
+    props.history.push(`/tournaments/${currentMatch.tournament.id}`)
   }
 
   if(currentMatch) {
     var tournamentMatches = props.findTournamentMatches(props.matches, currentMatch.tournament.id)
 
     return (
-      <div className="main-content-text">
-        <div className="title-display">
-          <h2>{match_round_display(currentMatch)}</h2>
-          <div className="icons-match">
-            <NavLink to={`/matches/view/${currentMatch.id}/edit`} className="edit-icon"><img src={editPencil} alt="Edit Match"/></NavLink>
-            <img src={deleteBin} alt="Delete Match" className="delete-icon" onClick={() => { if(window.confirm('Are you sure you want to delete this match?')) deleteMatch()}} />
+      <section id="match-card-page">
+        <div className="container-fluid py-2 bg-info text-white mb-4">
+          <div className="row">
+            <div className="col text-center">
+              <h1>
+                <i className="fas fa-trophy"></i> {match_round_display(currentMatch)} - <NavLink className="text-white" to={`/tournaments/${currentMatch.tournament.id}`}>{currentMatch.tournament.title}</NavLink>
+              </h1>
+            </div>
           </div>
         </div>
-        <NavLink to={`/tournaments/view/${currentMatch.tournament.id}`} className="match-tournament-link">{currentMatch.tournament.title}</NavLink>
-        <p><b>vs:</b> <NavLink to={`/opponents/view/${currentMatch.opponent.id}`} className="main-content-link">{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></p>
-        <p><b>Result:</b> {currentMatch.result}</p>
-        <p><b>Score:</b> {currentMatch.score}</p>
-        <p><b>Date:</b> {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
-        <p><b>Time:</b> {moment.utc(currentMatch.time).format('hh:mm a')}</p>
-        <p><b>Notes:</b> {currentMatch.notes}</p>
-        <Route path='/matches/view/:matchId/edit' render={() => <MatchFormModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>} />
-      </div>
+
+        <div className="container-fluid px-4">
+          <div className="row justify-content-center mt-2">
+            <div className="col-md-2">
+              <p><b>vs:</b> <NavLink to={`/opponents/view/${currentMatch.opponent.id}`} className="main-content-link">{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></p>
+            </div>
+            <div className="col-md-2">
+              <p><b>Result:</b> {currentMatch.result}</p>
+            </div>
+            <div className="col-md-2">
+              <p><b>Score:</b> {currentMatch.score}</p>
+            </div>
+            <div className="col-md-2">
+              <p><b>Date:</b> {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
+            </div>
+            <div className="col-md-2">
+              <p><b>Time:</b> {moment.utc(currentMatch.time).format('hh:mm a')}</p>
+            </div>
+            <div className="col-md-2">
+              <p><b>Notes:</b> {currentMatch.notes}</p>
+            </div>
+          </div>
+          <div className="row mt-3">
+            <div className="col-md-2">
+              <button className="btn" data-toggle="modal" data-target="#matchFormModal">
+                <i className="fas fa-edit"></i><span className="ml-2 font-italic">Edit Match</span>
+              </button>
+            </div>
+            <div className="col-md-3">
+              <button className="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteMatchModal">
+                <i className="fas fa-trash"></i> Delete Match
+              </button>
+            </div>
+          </div>
+        </div>
+          <MatchFormModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
+          <DeleteMatchModal matchId={currentMatch.id} deleteMatch={deleteMatch} />
+      </section>
     )
   } else {
     return <h3>Loading...</h3>
   }
 
 }
+
+
 
 export default withRouter(MatchCard)

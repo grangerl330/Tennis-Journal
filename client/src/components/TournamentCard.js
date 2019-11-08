@@ -41,7 +41,7 @@ const TournamentCard = (props) => {
 
   if(tournament) {
     return (
-      <section id="tournaments-page">
+      <section id="tournament-card-page">
         <div className="container-fluid py-2 bg-info text-white mb-4">
           <div className="row">
             <div className="col text-center">
