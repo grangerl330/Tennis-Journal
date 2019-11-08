@@ -45,9 +45,7 @@ const TournamentCard = (props) => {
         <div className="container-fluid py-2 bg-info text-white mb-4">
           <div className="row">
             <div className="col text-center">
-              <h1>
-                <i className="fas fa-trophy"></i> {tournament.title}
-              </h1>
+              <h1>{tournament.title}</h1>
             </div>
           </div>
         </div>

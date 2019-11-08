@@ -203,7 +203,7 @@ class MatchFormModal extends Component {
                   <label htmlFor="Match Notes">Notes: </label>
                   <textarea className="form-control" name="notes" value={this.state.notes} onChange={this.handleOnChange} placeholder="Notes about the match">Notes:</textarea>
                 </div>
-                <div className="form-group form-group-md text-center">
+                <div className="form-group text-center">
                   {this.formButton()}
                 </div>
               </form>

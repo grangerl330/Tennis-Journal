@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import StatsFormModal from './StatsFormModal'
 
-class Stats extends Component {
+class Home extends Component {
   componentDidMount(){
     this.props.getCurrentUser()
   }
@@ -87,4 +87,4 @@ class Stats extends Component {
   }
 }
 
-export default Stats
+export default Home
