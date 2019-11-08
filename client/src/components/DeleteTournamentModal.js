@@ -21,8 +21,8 @@ const DeleteTournamentModal = (props) => {
             <p>Are you sure you want to delete this tournament?</p>
           </div>
           <div className="modal-footer justify-content-center">
-            <button className="btn btn-danger mr-4" data-dismiss="modal">No</button>
-            <button className="btn btn-success" data-dismiss="modal" onClick={deleteTournament}>Yes</button>
+            <button className="btn btn-danger btn-block mr-4" data-dismiss="modal">No</button>
+            <button className="btn btn-success btn-block" data-dismiss="modal" onClick={deleteTournament}>Yes</button>
           </div>
         </div>
       </div>

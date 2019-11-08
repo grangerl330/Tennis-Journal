@@ -4,9 +4,6 @@ import MatchForm from './MatchForm'
 import TournamentFormModal from './TournamentFormModal'
 import DeleteTournamentModal from './DeleteTournamentModal'
 import { NavLink, Route } from 'react-router-dom'
-import deleteBin from '../images/delete-bin.png'
-import editPencil from '../images/edit-pencil.png'
-import plusIcon from '../images/plus-icon.png'
 import { withRouter } from 'react-router';
 
 const TournamentCard = (props) => {
@@ -33,7 +30,7 @@ const TournamentCard = (props) => {
   const renderMatches = props.matches.map(match =>
     <div className="col-md-2 mb-4" key={match.id}>
       <div className="card card-tournament d-flex border border-secondary">
-        <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/matches/view/${match.id}`}>
+        <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/matches/${match.id}`}>
           <div className="card-body d-flex align-items-center justify-content-center h-100">
               <p className="card-text text-center">{match_round_display(match)}</p>
           </div>
@@ -93,11 +90,11 @@ const TournamentCard = (props) => {
         <div className="container-fluid mt-5">
           <div className="row justify-content-center mt-4">
             <div className="col-md-3 text-center">
-              <h2>Matches</h2>
+              <h1>Matches</h1>
             </div>
           </div>
           <div className="row justify-content-center mt-4">
-            <div className="col-md-3">
+            <div className="col-md-2">
               <button className="btn btn-dark btn-block" data-toggle="modal" data-target="#matchFormModal">
                 <i className="fas fa-plus"></i> Add Match
               </button>

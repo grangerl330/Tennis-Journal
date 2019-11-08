@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
-import closeWindowImg from '../images/close-window.png'
 import { withRouter } from 'react-router';
 
 class TournamentFormModal extends Component {
