@@ -78,13 +78,13 @@ class MatchFormModal extends Component {
   formButton = () => {
     if(this.props.add) {
       return (
-        <button className="btn btn-dark" data-dismiss="modal" onClick={this.handleOnSubmit}>
+        <button className="btn btn-dark btn-block" data-dismiss="modal" onClick={this.handleOnSubmit}>
           Add Match
         </button>
       )
     } else {
       return (
-        <button className="btn btn-dark" data-dismiss="modal" onClick={this.handleOnSubmit}>
+        <button className="btn btn-dark btn-block" data-dismiss="modal" onClick={this.handleOnSubmit}>
           Update Match
         </button>
       )
@@ -203,7 +203,9 @@ class MatchFormModal extends Component {
                   <label htmlFor="Match Notes">Notes: </label>
                   <textarea className="form-control" name="notes" value={this.state.notes} onChange={this.handleOnChange} placeholder="Notes about the match">Notes:</textarea>
                 </div>
-                {this.formButton()}
+                <div className="form-group form-group-md text-center">
+                  {this.formButton()}
+                </div>
               </form>
             </div>
           </div>

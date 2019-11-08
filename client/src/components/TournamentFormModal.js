@@ -75,15 +75,15 @@ class TournamentFormModal extends Component {
   formButton = () => {
     if(this.props.add) {
       return (
-        <div className="form-group d-flex justify-content-center" onClick={this.handleOnSubmit}>
-          <input className="btn btn-dark" data-dismiss="modal" type="submit" value="Add Tournament"/>
-        </div>
+        <button className="btn btn-dark btn-block" data-dismiss="modal" onClick={this.handleOnSubmit}>
+          Add Tournament
+        </button>
       )
     } else {
       return (
-        <div className="form-group d-flex justify-content-center" onClick={this.handleOnSubmit}>
-          <input className="btn btn-dark" data-dismiss="modal" type="submit" value="Update Tournament"/>
-        </div>
+        <button className="btn btn-dark btn-block" data-dismiss="modal" onClick={this.handleOnSubmit}>
+          Update Tournament
+        </button>
       )
     }
   }
@@ -155,7 +155,9 @@ class TournamentFormModal extends Component {
                   <label htmlFor="tournament-points">Points: </label>
                   <input className="form-control" type="text" name="points" value={this.state.points} onChange={this.handleOnChange} placeholder="Points Gained"/>
                 </div>
-                {this.formButton()}
+                <div className="form-group text-center">
+                  {this.formButton()}
+                </div>
               </form>
             </div>
           </div>
