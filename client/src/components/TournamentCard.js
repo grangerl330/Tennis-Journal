@@ -31,8 +31,14 @@ const TournamentCard = (props) => {
   }
 
   const renderMatches = props.matches.map(match =>
-    <div key={match.id}>
-      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>{match_round_display(match)}</NavLink></p>
+    <div className="col-md-2 mb-4" key={match.id}>
+      <div className="card card-tournament d-flex border border-secondary">
+        <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/matches/view/${match.id}`}>
+          <div className="card-body d-flex align-items-center justify-content-center h-100">
+              <p className="card-text text-center">{match_round_display(match)}</p>
+          </div>
+        </NavLink>
+      </div>
     </div>
   )
 
@@ -83,11 +89,27 @@ const TournamentCard = (props) => {
             </div>
           </div>
         </div>
-          <div className="tournament-matches-list">
-            <h2>Matches</h2>
+
+        <div className="container-fluid mt-5">
+          <div className="row justify-content-center mt-4">
+            <div className="col-md-3 text-center">
+              <h2>Matches</h2>
+            </div>
+          </div>
+          <div className="row justify-content-center mt-4">
+            <div className="col-md-3">
+              <button className="btn btn-dark btn-block" data-toggle="modal" data-target="#matchFormModal">
+                <i className="fas fa-plus"></i> Add Match
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="row justify-content-center mt-4">
             {renderMatches}
           </div>
-          <NavLink to={`/tournaments/view/${tournament.id}/add_match`}><img src={plusIcon} alt="Add Tournament"/></NavLink>
+        </div>
           <Route path='/tournaments/view/:tournamentId/add_match' render={() => <MatchForm tournamentId={tournament.id} sendMatchToDatabase={props.addMatchToDatabase} matches={props.matches} tournament={tournament} add="add"/>} />
           <TournamentFormModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} edit="edit"/>
           <DeleteTournamentModal tournamentId={tournament.id} deleteTournament={deleteTournament} />

@@ -63,7 +63,7 @@ class TournamentFormModal extends Component {
       id: ""
     })
 
-    this.props.history.push(`/tournaments/view/${tournament.id}`)
+    this.props.history.push(`/tournaments/${tournament.id}`)
   }
 
   formHeader = () => {
@@ -78,13 +78,13 @@ class TournamentFormModal extends Component {
     if(this.props.add) {
       return (
         <div className="form-group d-flex justify-content-center">
-          <input className="btn btn-dark" type="submit" value="Add Tournament"/>
+          <input className="btn btn-dark" data-dismiss="modal" type="submit" value="Add Tournament"/>
         </div>
       )
     } else {
       return (
         <div className="form-group d-flex justify-content-center">
-          <input className="btn btn-dark" type="submit" value="Update Tournament"/>
+          <input className="btn btn-dark" data-dismiss="modal" type="submit" value="Update Tournament"/>
         </div>
       )
     }

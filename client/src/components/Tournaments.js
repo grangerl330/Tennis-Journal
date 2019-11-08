@@ -9,9 +9,11 @@ const Tournaments = (props) => {
     const renderTournaments = sortedTournaments.map(tournament =>
       <div className="col-md-2 mb-4" key={tournament.id}>
         <div className="card card-tournament d-flex border border-secondary">
-          <div className="card-body d-flex align-items-center justify-content-center">
-              <p className="card-text"><NavLink className="btn btn-block p-0 text-dark" to={`/tournaments/${tournament.id}`}>{tournament.title} {moment(tournament.start_date).format('MM/DD/YYYY')}</NavLink></p>
-          </div>
+          <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/tournaments/${tournament.id}`}>
+            <div className="card-body d-flex align-items-center justify-content-center h-100">
+                <p className="card-text text-center">{tournament.title} {moment(tournament.start_date).format('MM/DD/YYYY')}</p>
+            </div>
+          </NavLink>
         </div>
       </div>
     )
