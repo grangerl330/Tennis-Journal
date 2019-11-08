@@ -45,6 +45,10 @@ class Stats extends Component {
 
         <div className="container-fluid px-4">
           <div className="row justify-content-center">
+            <div className="col-md-5">
+            </div>
+          </div>
+          <div className="row justify-content-center">
             <div className="col-md-1">
               <h3>Stats</h3>
               <button className="btn btn-block" data-toggle="modal" data-target="#editStatsModal">
@@ -65,7 +69,7 @@ class Stats extends Component {
             </div>
           </div>
         </div>
-        <StatsFormModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>
+        <StatsFormModal currentUser={this.props.currentUser} />
       </section>
     )
   }
