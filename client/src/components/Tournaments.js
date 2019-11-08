@@ -7,8 +7,12 @@ const Tournaments = (props) => {
     const sortedTournaments = props.tournaments.sort(function(a,b) {return moment(a.start_date) - moment(b.start_date)})
 
     const renderTournaments = sortedTournaments.map(tournament =>
-      <div key={tournament.id}>
-        <p><NavLink className="main-content-link" to={`/tournaments/view/${tournament.id}`}>{tournament.title}</NavLink></p>
+      <div className="col-md-2 mb-4" key={tournament.id}>
+        <div className="card card-tournament d-flex border border-secondary">
+          <div className="card-body d-flex align-items-center justify-content-center">
+              <p className="card-text"><NavLink className="btn btn-block p-0 text-dark" to={`/tournaments/view/${tournament.id}`}>{tournament.title} {moment(tournament.start_date).format('MM/DD/YYYY')}</NavLink></p>
+          </div>
+        </div>
       </div>
     )
 
@@ -35,7 +39,11 @@ const Tournaments = (props) => {
           </div>
         </div>
 
-        {renderTournaments}
+        <div className="container">
+          <div className="row justify-content-center mt-4">
+            {renderTournaments}
+          </div>
+        </div>
         <TournamentFormModal sendTournamentToDatabase={props.addTournamentToDatabase} add="add"/>
       </section>
     )

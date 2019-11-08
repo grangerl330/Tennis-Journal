@@ -31,7 +31,7 @@ class TournamentFormModal extends Component {
         surface: this.props.tournament.surface,
         age_category: this.props.tournament.age_category,
         draw_size: this.props.tournament.draw_size,
-        points: this.props.tournament.points,
+        points: this.props.tournament.points || 0,
         user_id: this.props.tournament.user_id,
         id: this.props.tournament.id
       })
@@ -110,7 +110,7 @@ class TournamentFormModal extends Component {
               </button>
             </div>
             <div className="modal-body">
-              <form>
+              <form onSubmit={this.handleOnSubmit}>
                 <div className="form-group">
                   <label htmlFor="Tournament Title">Title: </label>
                   <input className="form-control" type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="Name Of Tournament" required/>
@@ -165,10 +165,10 @@ class TournamentFormModal extends Component {
                   <label htmlFor="tournament-points">Points: </label>
                   <input className="form-control" type="text" name="points" value={this.state.points} onChange={this.handleOnChange} placeholder="Points Gained"/>
                 </div>
+                <div className="form-group d-flex justify-content-center">
+                  <input className="btn btn-dark" type="submit" value="Add Tournament"/>
+                </div>
               </form>
-            </div>
-            <div className="modal-footer justify-content-center">
-              <button className="btn btn-dark" data-dismiss="modal" onClick={this.handleOnSubmit}>Add Tournament</button>
             </div>
           </div>
         </div>
