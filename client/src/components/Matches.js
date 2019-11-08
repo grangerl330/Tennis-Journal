@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment'
 import { NavLink, Route } from 'react-router-dom'
-import MatchFormModal from './MatchFormModal'
 
 const Matches = (props) => {
   const sortedMatches = props.matches.sort(function(a,b) {return moment(a.date) - moment(b.date)})
@@ -19,8 +18,14 @@ const Matches = (props) => {
   }
 
   const renderMatches = sortedMatches.map(match =>
-    <div key={match.id}>
-      <p><NavLink className="main-content-link" to={`/matches/view/${match.id}`}>{match_round_display(match)} - {match.tournament.title} - {match.result}</NavLink></p>
+    <div className="col-md-2 mb-4" key={match.id}>
+      <div className="card card-tournament d-flex border border-secondary">
+        <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/matches/${match.id}`}>
+          <div className="card-body d-flex align-items-center justify-content-center h-100">
+              <p className="card-text text-center">{match_round_display(match)}  {match.tournament.title}  {match.result}</p>
+          </div>
+        </NavLink>
+      </div>
     </div>
   )
 
@@ -36,12 +41,24 @@ const Matches = (props) => {
   }
 
   return (
-    <div className="main-content-text">
-      <h1>Matches</h1>
-      {renderMatches}
-      {message()}
-      <Route exact path='/matches/add_match' render={() => <MatchFormModal sendMatchToDatabase={props.addMatchToDatabase} add="add"/>}/>
-    </div>
+    <section id="matches-page">
+      <div className="container-fluid py-2 bg-info text-white mb-4">
+        <div className="row">
+          <div className="col text-center">
+            <h1>
+              <i className="fas fa-trophy"></i> Matches
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="row justify-content-center mt-4">
+          {message()}
+          {renderMatches}
+        </div>
+      </div>
+    </section>
   )
 }
 
