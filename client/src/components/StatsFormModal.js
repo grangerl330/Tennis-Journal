@@ -52,7 +52,7 @@ class StatsFormModal extends Component {
               </form>
             </div>
             <div className="modal-footer justify-content-center">
-              <button className="btn btn-info" data-dismiss="modal" onClick={this.handleOnSubmit}>Update Stats</button>
+              <button className="btn btn-dark" data-dismiss="modal" onClick={this.handleOnSubmit}>Update Stats</button>
             </div>
           </div>
         </div>
