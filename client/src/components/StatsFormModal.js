@@ -50,6 +50,7 @@ class StatsFormModal extends Component {
                   <input className="form-control" type="text" name="utr" value={this.state.utr || "Enter Your UTR"} onChange={this.handleOnChange} />
                 </div>
               </form>
+              <p className="font-italic">* The <b>Record</b> and <b>Points</b> windows automatically update when matches and tournaments are added or updated</p>
             </div>
             <div className="modal-footer justify-content-center">
               <button className="btn btn-dark" data-dismiss="modal" onClick={this.handleOnSubmit}>Update Stats</button>
