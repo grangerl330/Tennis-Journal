@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Matches = (props) => {
   const sortedMatches = props.matches.sort(function(a,b) {return moment(a.date) - moment(b.date)})
@@ -45,9 +45,7 @@ const Matches = (props) => {
       <div className="container-fluid py-2 bg-info text-white mb-4">
         <div className="row">
           <div className="col text-center">
-            <h1>
-              <i className="fas fa-trophy"></i> Matches
-            </h1>
+            <h1>Matches</h1>
           </div>
         </div>
       </div>

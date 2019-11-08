@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment'
 import MatchFormModal from './MatchFormModal'
 import DeleteMatchModal from './DeleteMatchModal'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
 const MatchCard = (props) => {
@@ -35,7 +35,7 @@ const MatchCard = (props) => {
           <div className="row">
             <div className="col text-center">
               <h1>
-                <i className="fas fa-trophy"></i> {match_round_display(currentMatch)} - <NavLink className="text-white" to={`/tournaments/${currentMatch.tournament.id}`}>{currentMatch.tournament.title}</NavLink>
+                {match_round_display(currentMatch)} - <NavLink className="text-white" to={`/tournaments/${currentMatch.tournament.id}`}>{currentMatch.tournament.title}</NavLink>
               </h1>
             </div>
           </div>
@@ -74,7 +74,12 @@ const MatchCard = (props) => {
         </div>
         <div className="row mt-4">
           <div className="col">
-            <p><b>Notes:</b> {currentMatch.notes}</p>
+            <h3>Notes:</h3>
+          </div>
+        </div>
+        <div className="row mt-1">
+          <div className="col">
+            {currentMatch.notes}
           </div>
         </div>
           <MatchFormModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>

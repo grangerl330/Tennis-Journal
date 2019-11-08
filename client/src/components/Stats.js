@@ -36,9 +36,7 @@ class Stats extends Component {
         <div className="container-fluid py-2 bg-info text-white mb-4">
           <div className="row">
             <div className="col text-center">
-              <h1>
-                <i className="fas fa-home"></i> Home
-              </h1>
+              <h1>Home</h1>
             </div>
           </div>
         </div>

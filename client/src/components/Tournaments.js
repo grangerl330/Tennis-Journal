@@ -23,9 +23,7 @@ const Tournaments = (props) => {
         <div className="container-fluid py-2 bg-info text-white mb-4">
           <div className="row">
             <div className="col text-center">
-              <h1>
-                <i className="fas fa-trophy"></i> Tournaments
-              </h1>
+              <h1>Tournaments</h1>
             </div>
           </div>
         </div>

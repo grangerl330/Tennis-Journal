@@ -9,9 +9,7 @@ const Profile = (props) => {
       <div className="container-fluid py-2 bg-info text-white mb-4">
         <div className="row">
           <div className="col text-center">
-            <h1>
-              <i className="fas fa-user"></i> Edit Profile
-            </h1>
+            <h1>Edit Profile</h1>
           </div>
         </div>
       </div>
