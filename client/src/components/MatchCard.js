@@ -58,9 +58,6 @@ const MatchCard = (props) => {
             <div className="col-md-2">
               <p><b>Time:</b> {moment.utc(currentMatch.time).format('hh:mm a')}</p>
             </div>
-            <div className="col-md-2">
-              <p><b>Notes:</b> {currentMatch.notes}</p>
-            </div>
           </div>
           <div className="row mt-3">
             <div className="col-md-2">
@@ -73,6 +70,11 @@ const MatchCard = (props) => {
                 <i className="fas fa-trash"></i> Delete Match
               </button>
             </div>
+          </div>
+        </div>
+        <div className="row mt-4">
+          <div className="col">
+            <p><b>Notes:</b> {currentMatch.notes}</p>
           </div>
         </div>
           <MatchFormModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>

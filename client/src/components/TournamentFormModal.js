@@ -75,13 +75,13 @@ class TournamentFormModal extends Component {
   formButton = () => {
     if(this.props.add) {
       return (
-        <div className="form-group d-flex justify-content-center">
+        <div className="form-group d-flex justify-content-center" onClick={this.handleOnSubmit}>
           <input className="btn btn-dark" data-dismiss="modal" type="submit" value="Add Tournament"/>
         </div>
       )
     } else {
       return (
-        <div className="form-group d-flex justify-content-center">
+        <div className="form-group d-flex justify-content-center" onClick={this.handleOnSubmit}>
           <input className="btn btn-dark" data-dismiss="modal" type="submit" value="Update Tournament"/>
         </div>
       )
@@ -100,7 +100,7 @@ class TournamentFormModal extends Component {
               </button>
             </div>
             <div className="modal-body">
-              <form onSubmit={this.handleOnSubmit}>
+              <form>
                 <div className="form-group">
                   <label htmlFor="Tournament Title">Title: </label>
                   <input className="form-control" type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="Name Of Tournament" required/>

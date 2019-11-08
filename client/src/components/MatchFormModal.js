@@ -61,9 +61,9 @@ class MatchFormModal extends Component {
     })
 
     if(this.props.edit){
-      this.props.history.push(`/matches/view/${this.props.currentMatch.id}`)
+      this.props.history.push(`/matches/${this.props.currentMatch.id}`)
     } else {
-      this.props.history.push(`/tournaments/view/${this.props.tournamentId}`)
+      this.props.history.push(`/tournaments/${this.props.tournamentId}`)
     }
   }
 
@@ -78,15 +78,15 @@ class MatchFormModal extends Component {
   formButton = () => {
     if(this.props.add) {
       return (
-        <div className="form-group d-flex justify-content-center">
-          <input className="btn btn-dark" data-dismiss="modal" type="submit" value="Add Match"/>
-        </div>
+        <button className="btn btn-dark" data-dismiss="modal" onClick={this.handleOnSubmit}>
+          Add Match
+        </button>
       )
     } else {
       return (
-        <div className="form-group d-flex justify-content-center">
-          <input className="btn btn-dark" data-dismiss="modal" type="submit" value="Update Match"/>
-        </div>
+        <button className="btn btn-dark" data-dismiss="modal" onClick={this.handleOnSubmit}>
+          Update Match
+        </button>
       )
     }
   }
@@ -166,7 +166,7 @@ class MatchFormModal extends Component {
               </button>
             </div>
             <div className="modal-body">
-              <form onSubmit={this.handleOnSubmit}>
+              <form>
                 <div className="form-group">
                   <label htmlFor="Opponent Names">vs:</label>
                   <input className="form-control mb-3" type="text" name="opponent_first_name" value={this.state.opponent_first_name} onChange={this.handleOnChange} placeholder="Opponent's First Name" required/>
