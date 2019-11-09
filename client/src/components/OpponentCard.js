@@ -1,6 +1,6 @@
 import React from 'react';
 import OpponentFormModal from './OpponentFormModal'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
 const OpponentCard = (props) => {
