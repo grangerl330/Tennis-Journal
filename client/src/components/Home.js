@@ -49,7 +49,7 @@ class Home extends Component {
                 <div className="card-body">
                   <div className="row justify-content-center">
                     <div className="col-md-4 pb-0 pt-2">
-                      <i className="fas fa-clipboard-list fa-3x"></i>
+                      <i className="fas fa-clipboard-list fa-3x home-icon"></i>
                     </div>
                     <div className="col-md-3 mx-0 px-0 text-center">
                       <h3 className="card-title">{this.props.currentUser.match_record}</h3>
@@ -65,7 +65,7 @@ class Home extends Component {
                   <div className="card-body">
                     <div className="row justify-content-center">
                       <div className="col-md-4 pb-0 pt-2 text">
-                        <i className="fas fa-list-ol fa-3x"></i>
+                        <i className="fas fa-list-ol fa-3x home-icon"></i>
                       </div>
                       <div className="col-md-7 mx-0 px-0 text-center">
                         <h3 className="card-title">{this.currentRankingDisplay()}</h3>
@@ -98,7 +98,7 @@ class Home extends Component {
                 <div className="card-body">
                   <div className="row justify-content-center">
                     <div className="col-md-4 mx-0 pb-0 pt-2">
-                      <i className="far fa-dot-circle fa-3x"></i>
+                      <i className="far fa-dot-circle fa-3x home-icon"></i>
                     </div>
                     <div className="col-md-3 mx-0 px-0 text-center">
                       <h3 className="card-title">{this.pointsDisplay()}</h3>
