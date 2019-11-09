@@ -1,4 +1,14 @@
 // Override default variables before the import
+html, body {
+  min-height: 100vh;
+  height: 100%;
+}
+
+#App {
+  min-height: 90vh;
+  height: 100%
+}
+
 .card-stats {
   height: 120px;
 }
