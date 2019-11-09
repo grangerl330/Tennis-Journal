@@ -4,14 +4,6 @@ import Navbar from './containers/Navbar'
 import LoginPage from './containers/LoginPage'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
-// import './stylesheets/App.css'
-// import './stylesheets/Topbar.css'
-// import './stylesheets/Tutorial.css'
-// import './stylesheets/Sidebar.css'
-// import './stylesheets/MainContent.css'
-// import './stylesheets/Forms.css'
-// import './stylesheets/LoginPage.css'
-
 
 class App extends Component {
 

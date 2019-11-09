@@ -1,6 +1,5 @@
 import React from 'react';
 import OpponentFormModal from './OpponentFormModal'
-import editPencil from '../images/edit-pencil.png'
 import { NavLink, Route } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
