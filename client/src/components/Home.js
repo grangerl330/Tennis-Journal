@@ -48,14 +48,14 @@ class Home extends Component {
               <div className="card card-stats text-center border-0">
                 <div className="card-body">
                   <div className="row justify-content-center">
-                    <div className="col-3 col-md-6 pb-0 pt-2 text-right">
+                    <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
                       <i className="fas fa-clipboard-list fa-3x home-icon"></i>
                     </div>
-                    <div className="col-6 mx-0 px-0 text-center">
-                      <div className="row justify-content-center">
+                    <div className="col-6 mx-0 px-0">
+                      <div className="row justify-content-center mx-0">
                         <h3 className="card-title">{this.props.currentUser.match_record}</h3>
                       </div>
-                      <div className="row justify-content-center">
+                      <div className="row justify-content-center mx-0">
                         <p className="card-text font-italic">Record</p>
                       </div>
                     </div>
@@ -68,14 +68,14 @@ class Home extends Component {
                 <button className="btn" data-toggle="modal" data-target="#editStatsModal">
                   <div className="card-body">
                     <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 pb-0 pt-2 text-right">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
                         <i className="fas fa-list-ol fa-3x home-icon"></i>
                       </div>
-                      <div className="col-6 mx-0 px-0 text-center">
-                        <div className="row justify-content-center">
+                      <div className="col-6 mx-0 pl-4 px-lg-0">
+                        <div className="row justify-content-center mx-0">
                           <h3 className="card-title">{this.currentRankingDisplay()}</h3>
                         </div>
-                        <div className="row justify-content-center">
+                        <div className="row justify-content-center mx-0">
                           <p className="card-text font-italic">Ranking</p>
                         </div>
                       </div>
@@ -89,14 +89,14 @@ class Home extends Component {
                 <button className="btn" data-toggle="modal" data-target="#editStatsModal">
                   <div className="card-body">
                     <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 pb-0 pt-2 text-right">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
                         <img src={utrIcon} alt="utr-icon"/>
                       </div>
-                      <div className="col-6 mx-0 px-0 text-center">
-                        <div className="row justify-content-center">
+                      <div className="col-6 mx-0 pl-4 px-lg-0">
+                        <div className="row justify-content-center mx-0">
                           <h3 className="card-title">{this.utrDisplay()}</h3>
                         </div>
-                        <div className="row justify-content-center">
+                        <div className="row justify-content-center mx-0">
                           <p className="card-text font-italic">UTR</p>
                         </div>
                       </div>
@@ -109,14 +109,14 @@ class Home extends Component {
               <div className="card card-stats text-center border-0">
                 <div className="card-body">
                   <div className="row justify-content-center">
-                    <div className="col-3 col-md-6 pb-0 pt-2 text-right">
+                    <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
                       <i className="far fa-dot-circle fa-3x home-icon"></i>
                     </div>
-                    <div className="col-6 mx-0 px-0 text-center">
-                      <div className="row justify-content-center">
+                    <div className="col-6 mx-0 px-0">
+                      <div className="row justify-content-center mx-0">
                         <h3 className="card-title">{this.pointsDisplay()}</h3>
                       </div>
-                      <div className="row justify-content-center">
+                      <div className="row justify-content-center mx-0">
                         <p className="card-text font-italic">Points</p>
                       </div>
                     </div>
