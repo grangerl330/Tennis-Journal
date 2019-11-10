@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './custom.scss';
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 import App from './App';
-import Footer from './containers/Footer'
 import { Provider } from 'react-redux'
 import store from './store.js'
 import { BrowserRouter as Router } from 'react-router-dom'

@@ -7,7 +7,7 @@ const Tournaments = (props) => {
     const sortedTournaments = props.tournaments.sort(function(a,b) {return moment(a.start_date) - moment(b.start_date)})
 
     const renderTournaments = sortedTournaments.map(tournament =>
-      <div className="col-md-2 mb-4" key={tournament.id}>
+      <div className="col-md-2 mb-4 mr-0 mr-md-5 mr-lg-0" key={tournament.id}>
         <div className="card card-tournament d-flex border border-secondary">
           <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/tournaments/${tournament.id}`}>
             <div className="card-body d-flex align-items-center justify-content-center h-100">

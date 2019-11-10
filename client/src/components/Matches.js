@@ -18,7 +18,7 @@ const Matches = (props) => {
   }
 
   const renderMatches = sortedMatches.map(match =>
-    <div className="col-md-2 mb-4" key={match.id}>
+    <div className="col-md-2 mb-4 mr-0 mr-md-5 mr-lg-0" key={match.id}>
       <div className="card card-tournament d-flex border border-secondary">
         <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/matches/${match.id}`}>
           <div className="card-body d-flex align-items-center justify-content-center h-100">

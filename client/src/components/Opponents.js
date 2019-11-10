@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const Opponents = (props) => {
   const renderOpponents = props.opponents.map(opponent =>
-    <div className="col-md-2 mb-4" key={opponent.id}>
+    <div className="col-md-2 mb-4 mr-0 mr-md-5 mr-lg-0" key={opponent.id}>
       <div className="card card-tournament d-flex border border-secondary">
         <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/opponents/view/${opponent.id}`}>
           <div className="card-body d-flex align-items-center justify-content-center h-100">
