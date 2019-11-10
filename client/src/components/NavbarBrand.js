@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
-import logo from '../images/Logo.jpg'
+import logo from '../images/Logo.png'
 
 const NavbarBrand = (props) => {
   return (
