@@ -65,7 +65,7 @@ class Home extends Component {
             </div>
             <div className="col-md-3">
               <div className="card card-stats text-center border-0">
-                <button className="btn" data-toggle="modal" data-target="#editStatsModal">
+                <button className="btn py-0" data-toggle="modal" data-target="#editStatsModal">
                   <div className="card-body">
                     <div className="row justify-content-center">
                       <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
@@ -86,7 +86,7 @@ class Home extends Component {
             </div>
             <div className="col-md-3">
               <div className="card card-stats text-center border-0">
-                <button className="btn" data-toggle="modal" data-target="#editStatsModal">
+                <button className="btn py-0" data-toggle="modal" data-target="#editStatsModal">
                   <div className="card-body">
                     <div className="row justify-content-center">
                       <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
