@@ -7,7 +7,7 @@ const Tournaments = (props) => {
     const sortedTournaments = props.tournaments.sort(function(a,b) {return moment(a.start_date) - moment(b.start_date)})
 
     const renderTournaments = sortedTournaments.map(tournament =>
-      <div className="col-auto mb-3" key={tournament.id}>
+      <div className="col-auto px-0 mb-3" key={tournament.id}>
         <div className="card card-tournament pt-3 border border-secondary" key={tournament.id}>
           <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/tournaments/${tournament.id}`}>
             <div className="card-body text-center">
@@ -40,7 +40,7 @@ const Tournaments = (props) => {
         </div>
 
         <div className="container">
-          <div className="card-deck mt-4">
+          <div className="card-deck mt-4 d-flex justify-content-center">
             {renderTournaments}
           </div>
         </div>
