@@ -54,7 +54,7 @@ const TournamentCard = (props) => {
         </div>
 
         <div className="container-fluid px-4">
-          <label className="btn w-100" data-toggle="modal" data-target="#tournamentFormModal">
+          <button className="btn w-100" data-toggle="modal" data-target="#tournamentFormModal">
             <div className="row justify-content-center mt-2">
               <div className="col-md-2">
                 <div className="card card-stats text-center border-0">
@@ -171,7 +171,7 @@ const TournamentCard = (props) => {
                 </div>
               </div>
             </div>
-          </label>
+          </button>
         </div>
 
         <div className="container-fluid my-5">

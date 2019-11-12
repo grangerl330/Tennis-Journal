@@ -43,29 +43,29 @@ class Home extends Component {
         </div>
 
         <div className="container-fluid px-4">
-          <div className="row justify-content-center mt-2">
-            <div className="col-md-3">
-              <div className="card card-stats text-center border-0">
-                <div className="card-body">
-                  <div className="row justify-content-center">
-                    <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
-                      <i className="fas fa-clipboard-list fa-3x home-icon"></i>
-                    </div>
-                    <div className="col-6 mx-0 px-0">
-                      <div className="row justify-content-center mx-0">
-                        <h3 className="card-title">{this.props.currentUser.match_record}</h3>
+          <button className="btn w-100" data-toggle="modal" data-target="#editStatsModal">
+            <div className="row justify-content-center mt-2">
+              <div className="col-md-3">
+                <div className="card card-stats text-center border-0">
+                  <div className="card-body">
+                    <div className="row justify-content-center">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
+                        <i className="fas fa-clipboard-list fa-3x home-icon"></i>
                       </div>
-                      <div className="row justify-content-center mx-0">
-                        <p className="card-text font-italic">Record</p>
+                      <div className="col-6 mx-0 px-0">
+                        <div className="row justify-content-center mx-0">
+                          <h3 className="card-title">{this.props.currentUser.match_record}</h3>
+                        </div>
+                        <div className="row justify-content-center mx-0">
+                          <p className="card-text font-italic">Record</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card card-stats text-center border-0">
-                <button className="btn py-0" data-toggle="modal" data-target="#editStatsModal">
+              <div className="col-md-3">
+                <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
                       <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
@@ -81,12 +81,10 @@ class Home extends Component {
                       </div>
                     </div>
                   </div>
-                </button>
+                </div>
               </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card card-stats text-center border-0">
-                <button className="btn py-0" data-toggle="modal" data-target="#editStatsModal">
+              <div className="col-md-3">
+                <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
                       <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
@@ -102,29 +100,29 @@ class Home extends Component {
                       </div>
                     </div>
                   </div>
-                </button>
+                </div>
               </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card card-stats text-center border-0">
-                <div className="card-body">
-                  <div className="row justify-content-center">
-                    <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
-                      <i className="far fa-dot-circle fa-3x home-icon"></i>
-                    </div>
-                    <div className="col-6 mx-0 px-0">
-                      <div className="row justify-content-center mx-0">
-                        <h3 className="card-title">{this.pointsDisplay()}</h3>
+              <div className="col-md-3">
+                <div className="card card-stats text-center border-0">
+                  <div className="card-body">
+                    <div className="row justify-content-center">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
+                        <i className="far fa-dot-circle fa-3x home-icon"></i>
                       </div>
-                      <div className="row justify-content-center mx-0">
-                        <p className="card-text font-italic">Points</p>
+                      <div className="col-6 mx-0 px-0">
+                        <div className="row justify-content-center mx-0">
+                          <h3 className="card-title">{this.pointsDisplay()}</h3>
+                        </div>
+                        <div className="row justify-content-center mx-0">
+                          <p className="card-text font-italic">Points</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </button>
         </div>
 
         <StatsFormModal currentUser={this.props.currentUser} />
