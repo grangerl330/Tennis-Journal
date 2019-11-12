@@ -2,6 +2,8 @@ import React from 'react';
 import moment from 'moment'
 import MatchFormModal from './MatchFormModal'
 import DeleteMatchModal from './DeleteMatchModal'
+import headToHeadIcon from '../images/head-to-head.png'
+import scoreboardIcon from '../images/scoreboard.png'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
@@ -42,44 +44,127 @@ const MatchCard = (props) => {
         </div>
 
         <div className="container-fluid px-4">
-          <div className="row justify-content-center mt-2">
-            <div className="col-md-2">
-              <p><b>vs:</b> <NavLink to={`/opponents/view/${currentMatch.opponent.id}`} className="main-content-link">{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></p>
+          <button className="btn w-100" data-toggle="modal" data-target="#matchFormModal">
+            <div className="row justify-content-center mt-2">
+              <div className="col-md-2">
+                <div className="card card-stats text-center border-0">
+                  <div className="card-body">
+                    <div className="row justify-content-center">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-left">
+                        <img src={headToHeadIcon} alt="head-to-head-icon"/>
+                      </div>
+                      <div className="col-6 mx-0 px-0">
+                        <div className="row justify-content-center mx-0">
+                          <h5 className="card-title"><NavLink to={`/opponents/view/${currentMatch.opponent.id}`} className="main-content-link">{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</NavLink></h5>
+                        </div>
+                        <div className="row justify-content-center mx-0">
+                          <p className="card-text font-italic">vs</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-2">
+                <div className="card card-stats text-center border-0">
+                  <div className="card-body">
+                    <div className="row justify-content-center">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-left">
+                        <i className="fas fa-clipboard-check fa-3x home-icon"></i>
+                      </div>
+                      <div className="col-6 mx-0 px-0">
+                        <div className="row justify-content-center mx-0">
+                          <h5 className="card-title">{currentMatch.result}</h5>
+                        </div>
+                        <div className="row justify-content-center mx-0">
+                          <p className="card-text font-italic">Result</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-2">
+                <div className="card card-stats text-center border-0">
+                  <div className="card-body">
+                    <div className="row justify-content-center">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-left">
+                        <img src={scoreboardIcon} alt="scoreboard-icon"/>
+                      </div>
+                      <div className="col-6 mx-0 px-0">
+                        <div className="row justify-content-center mx-0">
+                          <h5 className="card-title">{currentMatch.score}</h5>
+                        </div>
+                        <div className="row justify-content-center mx-0">
+                          <p className="card-text font-italic">Score</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-2">
+                <div className="card card-stats text-center border-0">
+                  <div className="card-body">
+                    <div className="row justify-content-center">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-left">
+                        <i className="fas fa-calendar-alt fa-3x home-icon"></i>
+                      </div>
+                      <div className="col-6 mx-0 px-0">
+                        <div className="row justify-content-center mx-0">
+                          <h5 className="card-title">{moment(currentMatch.date).format('MM/DD/YY')}</h5>
+                        </div>
+                        <div className="row justify-content-center mx-0">
+                          <p className="card-text font-italic">Date</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-2">
+                <div className="card card-stats text-center border-0">
+                  <div className="card-body">
+                    <div className="row justify-content-center">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-left">
+                        <i className="fas fa-clock fa-3x home-icon"></i>
+                      </div>
+                      <div className="col-6 mx-0 px-0">
+                        <div className="row justify-content-center mx-0">
+                          <h5 className="card-title">{moment.utc(currentMatch.time).format('hh:mm a')}</h5>
+                        </div>
+                        <div className="row justify-content-center mx-0">
+                          <p className="card-text font-italic">Time</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="col-md-2">
-              <p><b>Result:</b> {currentMatch.result}</p>
-            </div>
-            <div className="col-md-2">
-              <p><b>Score:</b> {currentMatch.score}</p>
-            </div>
-            <div className="col-md-2">
-              <p><b>Date:</b> {moment(currentMatch.date).format('MM/DD/YYYY')}</p>
-            </div>
-            <div className="col-md-2">
-              <p><b>Time:</b> {moment.utc(currentMatch.time).format('hh:mm a')}</p>
+          </button>
+        </div>
+
+        <div className="container-fluid">
+          <div className="row mt-4">
+            <div className="col">
+              <h3>Notes:</h3>
             </div>
           </div>
-          <div className="row mt-3">
-            <div className="col-md-2">
-              <button className="btn" data-toggle="modal" data-target="#matchFormModal">
-                <i className="fas fa-edit"></i><span className="ml-2 font-italic">Edit Match</span>
-              </button>
+          <div className="row mt-1">
+            <div className="col">
+              {currentMatch.notes}
             </div>
+          </div>
+        </div>
+
+        <div className="container-fluid">
+          <div className="row my-5 justify-content-center">
             <div className="col-md-3">
               <button className="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteMatchModal">
                 <i className="fas fa-trash"></i> Delete Match
               </button>
             </div>
-          </div>
-        </div>
-        <div className="row mt-4">
-          <div className="col">
-            <h3>Notes:</h3>
-          </div>
-        </div>
-        <div className="row mt-1">
-          <div className="col">
-            {currentMatch.notes}
           </div>
         </div>
           <MatchFormModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
