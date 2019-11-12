@@ -19,7 +19,7 @@ const Matches = (props) => {
 
   const renderMatches = sortedMatches.map(match =>
     <div className="col-auto px-0 mb-3" key={match.id}>
-      <div className="card card-tournament pt-3 border border-secondary">
+      <div className="card card-tournament border border-secondary">
         <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/matches/${match.id}`}>
           <div className="card-body text-center">
               <h5 className="card-text">{match_round_display(match)}</h5>

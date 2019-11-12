@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom'
 
 const Opponents = (props) => {
   const renderOpponents = props.opponents.map(opponent =>
-    <div className="col-md-2 mb-4 mr-0 mr-md-5 mr-lg-0" key={opponent.id}>
-      <div className="card card-tournament d-flex border border-secondary">
+    <div className="col-auto px-0 mb-3" key={opponent.id}>
+      <div className="card card-tournament border border-secondary">
         <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/opponents/view/${opponent.id}`}>
-          <div className="card-body d-flex align-items-center justify-content-center h-100">
-              <p className="card-text text-center">{opponent.first_name} {opponent.last_name}</p>
+          <div className="card-body h-100 text-center">
+              <h5 className="card-text">{opponent.first_name} {opponent.last_name}</h5>
           </div>
         </NavLink>
       </div>
@@ -36,7 +36,7 @@ const Opponents = (props) => {
       </div>
 
       <div className="container">
-        <div className="row justify-content-center mt-4">
+        <div className="card-deck mt-4 d-flex justify-content-center">
           {message()}
           {renderOpponents}
         </div>
