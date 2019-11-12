@@ -8,7 +8,7 @@ const Tournaments = (props) => {
 
     const renderTournaments = sortedTournaments.map(tournament =>
       <div className="col-auto px-0 mb-3" key={tournament.id}>
-        <div className="card card-tournament pt-3 border border-secondary" key={tournament.id}>
+        <div className="card card-tournament pt-3 border border-secondary">
           <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/tournaments/${tournament.id}`}>
             <div className="card-body text-center">
                 <h5 className="card-text">{tournament.title}</h5>
