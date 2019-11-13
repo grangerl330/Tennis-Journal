@@ -55,7 +55,7 @@ class OpponentFormModal extends Component {
 
   render(){
     return (
-      <div className="modal fade mt-3" id="matchFormModal">
+      <div className="modal fade mt-3" id="opponentFormModal">
         <div className="modal-dialog modal-lg">
           <div className="modal-content">
             <div className="modal-header bg-info text-white">

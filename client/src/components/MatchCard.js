@@ -93,7 +93,7 @@ const MatchCard = (props) => {
                         <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-center">
                           <img src={scoreboardIcon} alt="scoreboard-icon"/>
                         </div>
-                        <div className="col-6 mx-0 px-0">
+                        <div className="col-6 mx-0 px-0 px-lg-2">
                           <div className="row justify-content-center mx-0">
                             <h5 className="card-title">{currentMatch.score}</h5>
                           </div>
