@@ -85,7 +85,7 @@ const MatchCard = (props) => {
                   </div>
                 </button>
               </div>
-              <div className="col-md-2 mx-md-4 mx-lg-0 px-0 px-lg-3">
+              <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
                 <button className="btn w-100" data-toggle="modal" data-target="#matchFormModal">
                   <div className="card card-stats text-center border-0">
                     <div className="card-body">
@@ -93,7 +93,7 @@ const MatchCard = (props) => {
                         <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-center">
                           <img src={scoreboardIcon} alt="scoreboard-icon"/>
                         </div>
-                        <div className="col-6 mx-0 px-0 px-lg-2">
+                        <div className="col-6 mx-0 px-0 pr-lg-1">
                           <div className="row justify-content-center mx-0">
                             <h5 className="card-title">{currentMatch.score}</h5>
                           </div>
