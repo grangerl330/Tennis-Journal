@@ -43,14 +43,14 @@ const MatchCard = (props) => {
           </div>
         </div>
 
-        <div className="container-fluid px-4">
+        <div className="container-fluid px-0">
           <button className="btn w-100" data-toggle="modal" data-target="#matchFormModal">
             <div className="row justify-content-center mt-2">
-              <div className="col-md-2">
+              <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-left">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-center">
                         <img src={headToHeadIcon} alt="head-to-head-icon"/>
                       </div>
                       <div className="col-6 mx-0 px-0">
@@ -65,11 +65,11 @@ const MatchCard = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-left">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-right">
                         <i className="fas fa-clipboard-check fa-3x home-icon"></i>
                       </div>
                       <div className="col-6 mx-0 px-0">
@@ -84,11 +84,11 @@ const MatchCard = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2 mx-md-4 mx-lg-0 px-0 px-lg-3">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-left">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-center">
                         <img src={scoreboardIcon} alt="scoreboard-icon"/>
                       </div>
                       <div className="col-6 mx-0 px-0">
@@ -103,12 +103,12 @@ const MatchCard = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-left">
-                        <i className="fas fa-calendar-alt fa-3x home-icon"></i>
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-center">
+                        <i className="fas fa-calendar-day fa-3x home-icon"></i>
                       </div>
                       <div className="col-6 mx-0 px-0">
                         <div className="row justify-content-center mx-0">
@@ -122,11 +122,11 @@ const MatchCard = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-left">
+                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-center">
                         <i className="fas fa-clock fa-3x home-icon"></i>
                       </div>
                       <div className="col-6 mx-0 px-0">
@@ -148,7 +148,7 @@ const MatchCard = (props) => {
         <div className="container-fluid">
           <div className="row mt-4">
             <div className="col">
-              <h3>Notes:</h3>
+              <h1>Notes:</h1>
             </div>
           </div>
           <div className="row mt-1">
