@@ -36,6 +36,8 @@ class Signup extends Component {
 
 
       this.props.history.push('/home')
+    } else {
+      this.props.history.push('/')
     }
   }
 
@@ -69,10 +71,6 @@ class Signup extends Component {
   render() {
     const emailInputClass = classNames('form-control',
       { 'is-invalid': !this.state.emailIsValid }
-    );
-
-    const passwordInputClass = classNames('form-control',
-      { 'is-invalid': !this.state.passwordIsValid }
     );
 
     const passwordConfirmationInputClass = classNames('form-control',
@@ -109,7 +107,7 @@ class Signup extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="password-confirmation">Confirm Password</label>
-                  <input className={passwordConfirmationInputClass} type="password" name="passwordConfirmation" onChange={this.handleOnChange} value={this.state.passwordConfirmation} placeholder="Password Confirmation" />
+                  <input className={passwordConfirmationInputClass} type="password" name="passwordConfirmation" onChange={this.handleOnChange} value={this.state.passwordConfirmation} placeholder="Confirm Password" />
                   <div className="invalid-feedback">
                     Password Does Not Match
                   </div>
