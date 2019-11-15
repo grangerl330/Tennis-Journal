@@ -15,7 +15,7 @@ export const clearCurrentUser = () => {
 // Asynchronous Action Creators
 export const login = credentials => {
   return dispatch => {
-    return fetch('/login', {
+    return fetch('/api/login', {
       credentials: 'include',
       method: 'POST',
       headers: {
@@ -38,7 +38,7 @@ export const login = credentials => {
 export const logout = () => {
   return dispatch => {
     dispatch(clearCurrentUser())
-    return fetch('/logout', {
+    return fetch('/api/logout', {
       credentials: 'include',
       method: 'DELETE'
     })
@@ -47,7 +47,7 @@ export const logout = () => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch('/get_current_user', {
+    return fetch('/api/get_current_user', {
       credentials: 'include',
       method: 'GET',
       headers: {
@@ -78,7 +78,7 @@ export const updateCurrentUserInDatabase = user => {
   }
 
   return dispatch => {
-    return fetch('/users/update', request)
+    return fetch('/api/users/update', request)
     .then(response => response.json())
     .then(user => dispatch(setCurrentUser(user)))
   }
@@ -97,7 +97,7 @@ export const updateCurrentUserPasswordInDatabase = (user, newPassword) => {
   }
 
   return dispatch => {
-    return fetch('/users/update_password', request)
+    return fetch('/api/users/update_password', request)
     .then(response => response.json())
     .then(user => dispatch(setCurrentUser(user)))
   }
@@ -116,7 +116,7 @@ export const deleteCurrentUserFromDatabase = user => {
 
   return dispatch => {
     dispatch(clearCurrentUser())
-    return fetch('/users/delete', request)
+    return fetch('/api/users/delete', request)
     .then(response => response.json())
     .then(response => console.log(response.notice))
   }

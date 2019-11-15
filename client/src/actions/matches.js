@@ -31,7 +31,7 @@ export const deleteMatchFromStore = (matchId, opponentId) => {
 // Asynchronous Action Creators
 export const fetchMatches = () => {
   return dispatch => {
-    return fetch('/matches')
+    return fetch('/api/matches')
     .then(response => response.json())
     .then(matches => dispatch(setMatches(matches)))
     .catch(console.log)
@@ -50,7 +50,7 @@ export const addMatchToDatabase = match => {
   }
 
   return dispatch => {
-    return fetch('/matches', request)
+    return fetch('/api/matches', request)
     .then(response => response.json())
     .then(match => dispatch(addMatchToStore(match)))
   }
@@ -68,7 +68,7 @@ export const editMatchInDatabase = match => {
   }
 
   return dispatch => {
-    return fetch('/matches/update', request)
+    return fetch('/api/matches/update', request)
     .then(response => response.json())
     .then(match => dispatch(updateMatchInStore(match)))
   }
@@ -86,7 +86,7 @@ export const deleteMatchFromDatabase = matchId => {
   }
 
   return dispatch => {
-    return fetch(`/matches/${matchId}`, request)
+    return fetch(`/api/matches/${matchId}`, request)
     .then(response => response.json())
     .then(response => {
       console.log(response.notice)

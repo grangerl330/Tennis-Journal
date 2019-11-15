@@ -3,7 +3,7 @@ import { setCurrentUser } from './currentUser'
 // Asynchronous Action Creators
 export const signup = newUserInfo => {
   return dispatch => {
-    return fetch('/signup', {
+    return fetch('/api/signup', {
       credentials: 'include',
       method: 'POST',
       headers: {

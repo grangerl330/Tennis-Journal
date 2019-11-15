@@ -32,7 +32,7 @@ export const deleteTournamentFromStore = (tournamentId, matchIds, opponentIds) =
 // Asynchronous Action Creators
 export const fetchTournaments = () => {
   return dispatch => {
-    return fetch('/tournaments')
+    return fetch('/api/tournaments')
     .then(response => response.json())
     .then(tournaments => dispatch(setTournaments(tournaments)))
     .catch(console.log)
@@ -51,7 +51,7 @@ export const addTournamentToDatabase = tournament => {
   }
 
   return dispatch => {
-    return fetch('/tournaments', request)
+    return fetch('/api/tournaments', request)
     .then(response => response.json())
     .then(tournament => dispatch(addTournamentToStore(tournament)))
   }
@@ -69,7 +69,7 @@ export const editTournamentInDatabase = tournament => {
   }
 
   return dispatch => {
-    return fetch('/tournaments/update', request)
+    return fetch('/api/tournaments/update', request)
     .then(response => response.json())
     .then(tournament => dispatch(updateTournamentInStore(tournament)))
   }
@@ -87,7 +87,7 @@ export const deleteTournamentFromDatabase = tournamentId => {
   }
 
   return dispatch => {
-    return fetch(`/tournaments/${tournamentId}`, request)
+    return fetch(`/api/tournaments/${tournamentId}`, request)
     .then(response => response.json())
     .then(response => {
       console.log(response.notice)

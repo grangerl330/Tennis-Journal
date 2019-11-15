@@ -16,7 +16,7 @@ export const updateOpponentInStore = opponent => {
 // Asynchronous Action Creators
 export const fetchOpponents = () => {
   return dispatch => {
-    return fetch('/opponents')
+    return fetch('/api/opponents')
     .then(response => response.json())
     .then(opponents => dispatch(setOpponents(opponents)))
     .catch(console.log)
@@ -35,7 +35,7 @@ export const editOpponentInDatabase = opponent => {
   }
 
   return dispatch => {
-    return fetch('/opponents/update', request)
+    return fetch('/api/opponents/update', request)
     .then(response => response.json())
     .then(opponent => dispatch(updateOpponentInStore(opponent)))
   }
