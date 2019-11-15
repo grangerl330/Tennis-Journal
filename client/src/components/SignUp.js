@@ -59,14 +59,14 @@ class Signup extends Component {
       isValid = false;
     }
 
-    if(this.calculatePasswordStrength() < 4) {
+    if(this.calculatePasswordStrength() < 4 && this.state.password !== "") {
       this.setState({
         passwordIsValid: false
       })
         isValid = false;
     }
 
-    if(this.state.password !== this.state.passwordConfirmation) {
+    if(this.state.passwordConfirmation !== "" && this.state.password !== this.state.passwordConfirmation) {
       this.setState({
         passwordConfirmationIsValid: false
       })
@@ -79,6 +79,7 @@ class Signup extends Component {
   resetValidations = () => {
     this.setState({
       emailIsValid: true,
+      passwordIsValid: true,
       passwordConfirmationIsValid: true
     })
   }
