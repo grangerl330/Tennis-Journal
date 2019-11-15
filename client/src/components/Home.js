@@ -9,25 +9,25 @@ class Home extends Component {
 
   currentRankingDisplay = () => {
     if(!this.props.currentUser.ranking) {
-      return <span className="font-italic">* Enter your Current Ranking by clicking the edit icon</span>
+      return <span className="card-title font-weight-bold ml-1">* Enter Your Current Ranking by clicking here</span>
     } else {
-      return <span className="font-bold">{this.props.currentUser.ranking}</span>
+      return <h3 className="card-title">{this.props.currentUser.ranking}</h3>
     }
   }
 
   utrDisplay = () => {
     if(!this.props.currentUser.utr) {
-      return <span className="font-italic">* Enter your UTR by clicking the edit icon</span>
+      return <span className="card-title font-weight-bold ml-1">* Enter your UTR by clicking here</span>
     } else {
-      return <span className="font-bold">{this.props.currentUser.utr}</span>
+      return <h3 className="card-title">{this.props.currentUser.utr}</h3>
     }
   }
 
   pointsDisplay = () => {
     if(!this.props.currentUser.points) {
-      return <span className="font-italic">* Points will update automatically when a tournament is added.</span>
+      return <span className="card-title font-weight-bold ml-1">* Points will update automatically when a tournament is added</span>
     } else {
-      return <span className="font-bold">{this.props.currentUser.points}</span>
+      return <h3 className="card-title">{this.props.currentUser.points}</h3>
     }
   }
 
@@ -73,7 +73,7 @@ class Home extends Component {
                       </div>
                       <div className="col-6 mx-0 pl-4 px-lg-0">
                         <div className="row justify-content-center mx-0">
-                          <h3 className="card-title">{this.currentRankingDisplay()}</h3>
+                          {this.currentRankingDisplay()}
                         </div>
                         <div className="row justify-content-center mx-0">
                           <p className="card-text font-italic">Ranking</p>
@@ -92,7 +92,7 @@ class Home extends Component {
                       </div>
                       <div className="col-6 mx-0 pl-4 px-lg-0">
                         <div className="row justify-content-center mx-0">
-                          <h3 className="card-title">{this.utrDisplay()}</h3>
+                          {this.utrDisplay()}
                         </div>
                         <div className="row justify-content-center mx-0">
                           <p className="card-text font-italic">UTR</p>
@@ -111,7 +111,7 @@ class Home extends Component {
                       </div>
                       <div className="col-6 mx-0 px-0">
                         <div className="row justify-content-center mx-0">
-                          <h3 className="card-title">{this.pointsDisplay()}</h3>
+                          {this.pointsDisplay()}
                         </div>
                         <div className="row justify-content-center mx-0">
                           <p className="card-text font-italic">Points</p>
