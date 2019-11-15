@@ -50,7 +50,7 @@ class OpponentFormModal extends Component {
       notes: ""
     })
 
-    this.props.history.push(`/opponents/view/${this.props.opponent.id}`)
+    this.props.history.push(`/opponents/${this.props.opponent.id}`)
   }
 
   render(){
