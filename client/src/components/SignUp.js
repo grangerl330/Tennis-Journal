@@ -118,21 +118,21 @@ class Signup extends Component {
                   <label htmlFor="email">Email</label>
                   <input className={emailInputClass} type="text" name="email" onChange={this.handleOnChange} value={this.state.email} placeholder="Email" />
                   <div className="invalid-feedback">
-                    Not a valid email address
+                    Please enter a valid email address
                   </div>
                 </div>
                 <div className="form-group">
                   <label htmlFor="Password">Password</label>
                   <input className={passwordInputClass} type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" />
                   <div className="invalid-feedback">
-                    Password Is Not Strong Enough
+                    Password is not strong enough
                   </div>
                 </div>
                 <div className="form-group">
                   <label htmlFor="password-confirmation">Confirm Password</label>
                   <input className={passwordConfirmationInputClass} type="password" name="passwordConfirmation" onChange={this.handleOnChange} value={this.state.passwordConfirmation} placeholder="Confirm Password" />
                   <div className="invalid-feedback">
-                    Password Does Not Match
+                    Password does not match
                   </div>
                 </div>
                   <input className="btn btn-dark btn-block" type="submit" value="Sign Up" />
