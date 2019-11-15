@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import validator from 'validator'
+import zxcvbn from 'zxcvbn'
 import { withRouter } from 'react-router';
 
 class Signup extends Component {
@@ -14,6 +15,7 @@ class Signup extends Component {
       email: "",
       emailIsValid: true,
       password: "",
+      passwordIsValid: true,
       passwordConfirmation: "",
       passwordConfirmationIsValid: true
     }
@@ -24,6 +26,12 @@ class Signup extends Component {
     this.setState({
       [name]: value
     })
+  }
+
+  calculatePasswordStrength = event => {
+    const evaluation = zxcvbn(this.state.password)
+
+    return evaluation.score
   }
 
   handleOnSubmit = event => {
@@ -51,6 +59,13 @@ class Signup extends Component {
       isValid = false;
     }
 
+    if(this.calculatePasswordStrength() < 4) {
+      this.setState({
+        passwordIsValid: false
+      })
+        isValid = false;
+    }
+
     if(this.state.password !== this.state.passwordConfirmation) {
       this.setState({
         passwordConfirmationIsValid: false
@@ -73,6 +88,10 @@ class Signup extends Component {
       { 'is-invalid': !this.state.emailIsValid }
     );
 
+    const passwordInputClass = classNames('form-control',
+      { 'is-invalid': !this.state.passwordIsValid }
+    );
+
     const passwordConfirmationInputClass = classNames('form-control',
       { 'is-invalid': !this.state.passwordConfirmationIsValid }
     );
@@ -92,7 +111,7 @@ class Signup extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="Last Name">Last Name</label>
-                  <p><input className="form-control" type="text" name="last_name" onChange={this.handleOnChange} value={this.state.lastName} placeholder="Last Name" /></p>
+                  <input className="form-control" type="text" name="last_name" onChange={this.handleOnChange} value={this.state.lastName} placeholder="Last Name" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
@@ -103,7 +122,10 @@ class Signup extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="Password">Password</label>
-                  <p><input className="form-control" type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" /></p>
+                  <input className={passwordInputClass} type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" />
+                  <div className="invalid-feedback">
+                    Password Is Not Strong Enough
+                  </div>
                 </div>
                 <div className="form-group">
                   <label htmlFor="password-confirmation">Confirm Password</label>
