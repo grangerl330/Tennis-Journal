@@ -24,9 +24,13 @@ class Api::SessionsController < ApplicationController
   end
 
   def authenticate_password
-    @user = User.find_by_id(params[:user][:id])
-    
-    if @user.authenticate(params[:currentPassword])
+    if params[:user]
+      @user = User.find_by_id(params[:user][:id])
+    elsif params[:email]
+      @user = User.find_by(email: params[:email])
+    end
+
+    if @user.authenticate(params[:password])
       render json: {
         isValid: true
       }

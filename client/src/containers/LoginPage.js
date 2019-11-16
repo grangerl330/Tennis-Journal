@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from '../components/Login'
 import NavbarBrand from '../components/NavbarBrand'
-import { updateLoginForm } from '../actions/loginForm'
+import { updateLoginForm, authenticatePassword } from '../actions/loginForm'
 import { login } from '../actions/currentUser'
 import Signup from '../components/SignUp'
 import { updateSignupForm } from '../actions/signupForm'
@@ -17,7 +17,7 @@ const LoginPage = (props) => {
         </div>
       </nav>
       <div className="container my-5">
-        <Login loginFormData={props.loginFormData} updateLoginForm={props.updateLoginForm} login={props.login} welcome={props.welcome}/>
+        <Login authenticatePassword={props.authenticatePassword} login={props.login} />
         <div className="row my-3" id="login">
           <div className="col-md-6 mx-auto text-center">
             <h2>or</h2>
@@ -38,4 +38,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateLoginForm, login, updateSignupForm, signup })(LoginPage)
+export default connect(mapStateToProps, { updateLoginForm, login, updateSignupForm, signup, authenticatePassword })(LoginPage)

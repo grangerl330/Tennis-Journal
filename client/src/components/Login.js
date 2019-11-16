@@ -28,14 +28,51 @@ class Login extends Component {
 
     this.resetValidations()
 
-    if (this.formIsValid()) {
-      this.props.login(this.state)
+    fetch('/api/authenticate_password', {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password
+      })
+    })
+    .then(response => response.json())
+    .then(response => {
+      if(response.isValid === false) {
+        this.setState({
+          passwordIsValid: false
+        })
+      } else {
+        this.props.login(this.state)
 
+        this.props.history.push('/home')
+      }
+    })
+  }
 
-      this.props.history.push('/home')
-    } else {
-      this.props.history.push('/')
-    }
+  authenticatePassword = (email, password) => {
+    fetch('/api/authenticate_password', {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    })
+    .then(response => response.json())
+    .then(response => {
+      if(response.isValid === false) {
+        this.setState({
+          passwordIsValid: false
+        })
+      }
+    })
   }
 
   formIsValid = () => {
@@ -45,6 +82,13 @@ class Login extends Component {
     this.setState({
       emailIsValid: false
     })
+      isValid = false;
+    }
+
+    if (this.state.passwordIsValid === false) {
+      this.setState({
+        passwordIsValid: false
+      })
       isValid = false;
     }
 
@@ -81,12 +125,15 @@ class Login extends Component {
                   <label htmlFor="email">Email</label>
                   <input className={emailInputClass} type="text" name="email" onChange={this.handleOnChange} value={this.state.email} placeholder="Email" />
                   <div className="invalid-feedback">
-                    Not a valid email address
+                    Please enter a valid email address
                   </div>
                 </div>
                 <div className="form-group">
                   <label htmlFor="password">Password</label>
                   <input className={passwordInputClass} type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" />
+                  <div className="invalid-feedback">
+                    Password is incorrect
+                  </div>
                 </div>
                 <input className="btn btn-dark btn-block" type="submit" value="Login" />
               </form>
