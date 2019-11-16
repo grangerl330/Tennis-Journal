@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   render() {
-    if (this.props.currentUser) {
+    if (this.props.currentUser && !this.props.currentUser.error) {
       return (
         <>
         <div id="App">
