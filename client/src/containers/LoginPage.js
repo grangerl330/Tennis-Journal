@@ -13,7 +13,7 @@ const LoginPage = (props) => {
     <div className="section" id="login-page">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
         <div className="container-fluid">
-          <NavbarBrand />
+          <NavbarBrand login={true}/>
           <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span className="navbar-toggler-icon"></span>
           </button>
