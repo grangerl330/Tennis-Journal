@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment'
-import MatchFormModal from './MatchFormModal'
 import TournamentDatesModal from './modals/TournamentDatesModal'
 import TournamentLocationModal from './modals/TournamentLocationModal'
 import TournamentDivisionModal from './modals/TournamentDivisionModal'
@@ -200,9 +199,9 @@ const TournamentCard = (props) => {
           </div>
           <div className="row mt-4">
             <div className="col-md-2">
-              <button className="btn btn-dark btn-block" data-toggle="modal" data-target="#matchFormModal">
+              <NavLink to={`/tournaments/${tournament.id}/add`} className="btn btn-dark btn-block">
                 <i className="fas fa-plus"></i> Add Match
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -233,7 +232,6 @@ const TournamentCard = (props) => {
           <TournamentDrawSizeModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
           <TournamentPointsModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
           <TournamentTitleModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
-          <MatchFormModal tournamentId={tournament.id} sendMatchToDatabase={props.addMatchToDatabase} matches={props.matches} tournament={tournament} add="add"/>
           <DeleteTournamentModal tournamentId={tournament.id} deleteTournament={deleteTournament} />
       </section>
     )

@@ -106,30 +106,6 @@ class TournamentForm extends Component {
     return isValid
   }
 
-  formHeader = () => {
-    if(this.props.add) {
-      return <h5>Add A New Tournament</h5>
-    } else {
-      return <h5>Edit Tournament</h5>
-    }
-  }
-
-  formButton = () => {
-    if(this.props.add) {
-      return (
-        <button className="btn btn-dark btn-block" onClick={this.handleOnSubmit}>
-          Add Tournament
-        </button>
-      )
-    } else {
-      return (
-        <button className="btn btn-dark btn-block" onClick={this.handleOnSubmit}>
-          Update Tournament
-        </button>
-      )
-    }
-  }
-
   render() {
     const titleInputClass = classNames('form-control',
       { 'is-invalid': !this.state.titleIsValid }
@@ -240,7 +216,9 @@ class TournamentForm extends Component {
                       </div>
                     </div>
                       <div className="form-group text-center">
-                        {this.formButton()}
+                        <button className="btn btn-dark btn-block" onClick={this.handleOnSubmit}>
+                          Add Tournament
+                        </button>
                       </div>
                     </form>
                 </div>
