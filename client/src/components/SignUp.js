@@ -99,7 +99,7 @@ class Signup extends Component {
 
     return (
       <div className="row" id="login">
-        <div className="col-md-6 mx-auto">
+        <div className="col mx-auto">
           <div className="card">
             <div className="card-header">
               <h4>Sign Up</h4>

@@ -9,6 +9,30 @@ html, body {
   height: 100%
 }
 
+#login-page-header {
+  background: url(./images/tennis-court-stock-photo-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+
+  .fas {
+    color: #333;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .dark-overlay {
+    position: absolute;
+    top: 10;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(0,0,0,0.7);
+  }
+}
+
 .card-stats {
   height: 120px;
 }
@@ -19,6 +43,12 @@ html, body {
 
 .home-icon {
   color: #17a2b8
+}
+
+.h3 {
+  .login {
+
+  }
 }
 
 // Import Bootstrap and its default variables

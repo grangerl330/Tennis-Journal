@@ -89,13 +89,13 @@ class NavbarLogin extends Component {
       <div className="navbar-nav ml-auto">
         <form className="form-inline" onSubmit={this.handleOnSubmit}>
           <div className="form-row">
-            <div className="col-5-form">
+            <div className="col-5-form mb-2 mb-md-0">
               <input className={emailInputClass} type="text" name="email" onChange={this.handleOnChange} value={this.state.email} placeholder="Email" />
               <div className="invalid-feedback">
                 Please enter a valid email address
               </div>
             </div>
-            <div className="col-5-form mr-1">
+            <div className="col-5-form">
               <input className={passwordInputClass} type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" />
               <div className="invalid-feedback">
                 Password is incorrect
@@ -103,7 +103,7 @@ class NavbarLogin extends Component {
             </div>
             <div className="col-2-form">
               <input className="btn btn-secondary my-2 my-sm-0" type="submit" value="Login" />
-            </div>  
+            </div>
           </div>
           </form>
       </div>

@@ -10,6 +10,9 @@ const Navbar = (props) => {
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark py-3">
       <div className="container-fluid">
         <NavbarBrand />
+        <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span className="navbar-toggler-icon"></span>
+        </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <NavbarLinks />
           <NavbarRight logout={props.logout} currentUser={props.currentUser} />
