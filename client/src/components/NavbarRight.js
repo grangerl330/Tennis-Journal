@@ -17,7 +17,7 @@ const NavbarRight = (props) => {
           <i className="fas fa-user"></i> Welcome {props.currentUser.first_name} {props.currentUser.last_name}
         </button>
         <div className="dropdown-menu">
-          <NavLink to='/profile' className="dropdown-item">
+          <NavLink to='/profile/edit' className="dropdown-item">
             <i className="fas fa-user-circle"></i> Edit Profile
           </NavLink>
         </div>

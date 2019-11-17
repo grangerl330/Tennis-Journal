@@ -32,9 +32,9 @@ const Tournaments = (props) => {
         <div className="container">
           <div className="row justify-content-center mt-4">
             <div className="col-md-3">
-              <button className="btn btn-dark btn-block" data-toggle="modal" data-target="#tournamentFormModal">
+              <NavLink to="/tournaments/add" className="btn btn-dark btn-block">
                 <i className="fas fa-plus"></i> Add Tournament
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
