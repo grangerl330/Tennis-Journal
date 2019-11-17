@@ -58,7 +58,7 @@ const MatchCard = (props) => {
         <div className="container-fluid px-0">
             <div className="row justify-content-center mt-2">
               <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
-                <NavLink to={`/opponents/${currentMatch.opponent.id}`} className="btn w-100">
+                <NavLink to={`/opponents/${currentMatch.opponent.id}`} className="btn w-100 shadow-none">
                   <div className="card card-stats text-center border-0">
                     <div className="card-body">
                       <div className="row justify-content-center">
@@ -79,7 +79,7 @@ const MatchCard = (props) => {
                 </NavLink>
               </div>
               <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
-                <button className="btn w-100" data-toggle="modal" data-target="#matchResultModal">
+                <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#matchResultModal">
                   <div className="card card-stats text-center border-0">
                     <div className="card-body">
                       <div className="row justify-content-center">
@@ -100,7 +100,7 @@ const MatchCard = (props) => {
                 </button>
               </div>
               <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
-                <button className="btn w-100" data-toggle="modal" data-target="#matchScoreModal">
+                <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#matchScoreModal">
                   <div className="card card-stats text-center border-0">
                     <div className="card-body">
                       <div className="row justify-content-center">
@@ -121,7 +121,7 @@ const MatchCard = (props) => {
                 </button>
               </div>
               <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
-                <button className="btn w-100" data-toggle="modal" data-target="#matchDateModal">
+                <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#matchDateModal">
                   <div className="card card-stats text-center border-0">
                     <div className="card-body">
                       <div className="row justify-content-center">
@@ -142,7 +142,7 @@ const MatchCard = (props) => {
                 </button>
               </div>
               <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
-                <button className="btn w-100" data-toggle="modal" data-target="#matchTimeModal">
+                <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#matchTimeModal">
                   <div className="card card-stats text-center border-0">
                     <div className="card-body">
                       <div className="row justify-content-center">
@@ -167,14 +167,14 @@ const MatchCard = (props) => {
 
         <div className="container-fluid">
             <div className="row mt-4">
-            <button className="btn" data-toggle="modal" data-target="#matchNotesModal">
+            <button className="btn shadow-none" data-toggle="modal" data-target="#matchNotesModal">
               <div className="col">
                 <h1>Notes:</h1>
               </div>
             </button>
             </div>
             <div className="row mt-1">
-              <button className="btn text-left" data-toggle="modal" data-target="#matchNotesModal">
+              <button className="btn shadow-none text-left" data-toggle="modal" data-target="#matchNotesModal">
                 <div className="col">
                   {currentMatch.notes}
                 </div>

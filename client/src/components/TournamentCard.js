@@ -52,7 +52,7 @@ const TournamentCard = (props) => {
       <section id="tournament-card-page">
         <div className="container-fluid py-2 bg-info mb-4">
           <div className="row">
-            <button className="btn w-100 px-0 text-white" data-toggle="modal" data-target="#tournamentTitleModal">
+            <button className="btn w-100 shadow-none px-0 text-white" data-toggle="modal" data-target="#tournamentTitleModal">
               <div className="col text-center">
                 <h1>{tournament.title}</h1>
               </div>
@@ -63,7 +63,7 @@ const TournamentCard = (props) => {
         <div className="container-fluid px-4">
           <div className="row justify-content-center mt-2">
             <div className="col-md-2">
-              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentDatesModal">
+              <button className="btn w-100 shadow-none px-0" data-toggle="modal" data-target="#tournamentDatesModal">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
@@ -84,7 +84,7 @@ const TournamentCard = (props) => {
               </button>
             </div>
             <div className="col-md-2">
-              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentLocationModal">
+              <button className="btn w-100 shadow-none px-0" data-toggle="modal" data-target="#tournamentLocationModal">
                 <div className="card card-stats text-center border-0">
                     <div className="card-body">
                       <div className="row justify-content-center">
@@ -105,7 +105,7 @@ const TournamentCard = (props) => {
               </button>
             </div>
             <div className="col-md-2">
-              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentDivisionModal">
+              <button className="btn w-100 shadow-none px-0" data-toggle="modal" data-target="#tournamentDivisionModal">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
@@ -126,7 +126,7 @@ const TournamentCard = (props) => {
               </button>
             </div>
             <div className="col-md-2">
-              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentSurfaceModal">
+              <button className="btn w-100 shadow-none px-0" data-toggle="modal" data-target="#tournamentSurfaceModal">
                 <div className="card card-stats text-center border-0">
                     <div className="card-body">
                       <div className="row justify-content-center">
@@ -147,7 +147,7 @@ const TournamentCard = (props) => {
               </button>
             </div>
             <div className="col-md-2">
-              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentDrawSizeModal">
+              <button className="btn w-100 shadow-none px-0" data-toggle="modal" data-target="#tournamentDrawSizeModal">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
@@ -168,7 +168,7 @@ const TournamentCard = (props) => {
               </button>
             </div>
             <div className="col-md-2">
-              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentPointsModal">
+              <button className="btn w-100 shadow-none px-0" data-toggle="modal" data-target="#tournamentPointsModal">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
