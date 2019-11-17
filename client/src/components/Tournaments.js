@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment'
 import { NavLink } from 'react-router-dom'
-import TournamentFormModal from './TournamentFormModal'
 
 const Tournaments = (props) => {
     const sortedTournaments = props.tournaments.sort(function(a,b) {return moment(a.start_date) - moment(b.start_date)})
@@ -44,7 +43,7 @@ const Tournaments = (props) => {
             {renderTournaments}
           </div>
         </div>
-        <TournamentFormModal sendTournamentToDatabase={props.addTournamentToDatabase} add="add"/>
+
       </section>
     )
 }

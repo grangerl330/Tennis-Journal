@@ -172,14 +172,14 @@ class TournamentForm extends Component {
                           <label htmlFor="Tournament Title">Title: </label>
                           <input className={titleInputClass} type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="Name Of Tournament" required/>
                           <div className="invalid-feedback">
-                            You must enter a title
+                            Tournament must have a title
                           </div>
                         </div>
                         <div className="form-group">
                           <label htmlFor="Tournament Start Date">Start Date: </label>
                           <input className={startDateInputClass} type="date" name="start_date" value={this.state.start_date} onChange={this.handleOnChange} placeholder="Start Date" required/>
                           <div className="invalid-feedback">
-                            You must enter a start date
+                            Tournament must have a start date
                           </div>
                         </div>
                         <div className="form-group">
@@ -201,9 +201,10 @@ class TournamentForm extends Component {
                             <option value="16 and Under">16 and Under</option>
                             <option value="18 and Under">18 and Under</option>
                             <option value="Men's Division">Men's Division</option>
+                            <option value="Women's Division">Women's Division</option>
                           </select>
                           <div className="invalid-feedback">
-                            You must enter a division
+                            Tournament must have a division
                           </div>
                         </div>
                         <div className="form-group">
@@ -219,7 +220,7 @@ class TournamentForm extends Component {
                             <option value="2">2</option>
                           </select>
                           <div className="invalid-feedback">
-                            You must enter a draw size
+                            Tournament must have a draw size
                           </div>
                         </div>
                         <div className="form-group">

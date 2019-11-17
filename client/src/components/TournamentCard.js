@@ -1,7 +1,13 @@
 import React from 'react';
 import moment from 'moment'
 import MatchFormModal from './MatchFormModal'
-import TournamentFormModal from './TournamentFormModal'
+import TournamentDatesModal from './modals/TournamentDatesModal'
+import TournamentLocationModal from './modals/TournamentLocationModal'
+import TournamentDivisionModal from './modals/TournamentDivisionModal'
+import TournamentSurfaceModal from './modals/TournamentSurfaceModal'
+import TournamentDrawSizeModal from './modals/TournamentDrawSizeModal'
+import TournamentPointsModal from './modals/TournamentPointsModal'
+import TournamentTitleModal from './modals/TournamentTitleModal'
 import DeleteTournamentModal from './DeleteTournamentModal'
 import tennisCourtIcon from '../images/tennis-court-icon.png'
 import tournamentDrawIcon from '../images/tournament-draw-icon.png'
@@ -45,18 +51,20 @@ const TournamentCard = (props) => {
   if(tournament) {
     return (
       <section id="tournament-card-page">
-        <div className="container-fluid py-2 bg-info text-white mb-4">
+        <div className="container-fluid py-2 bg-info mb-4">
           <div className="row">
-            <div className="col text-center">
-              <h1>{tournament.title}</h1>
-            </div>
+            <button className="btn w-100 px-0 text-white" data-toggle="modal" data-target="#tournamentTitleModal">
+              <div className="col text-center">
+                <h1>{tournament.title}</h1>
+              </div>
+            </button>
           </div>
         </div>
 
         <div className="container-fluid px-4">
-          <button className="btn w-100" data-toggle="modal" data-target="#tournamentFormModal">
-            <div className="row justify-content-center mt-2">
-              <div className="col-md-2">
+          <div className="row justify-content-center mt-2">
+            <div className="col-md-2">
+              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentDatesModal">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
@@ -74,8 +82,10 @@ const TournamentCard = (props) => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-2">
+              </button>
+            </div>
+            <div className="col-md-2">
+              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentLocationModal">
                 <div className="card card-stats text-center border-0">
                     <div className="card-body">
                       <div className="row justify-content-center">
@@ -93,8 +103,10 @@ const TournamentCard = (props) => {
                       </div>
                     </div>
                 </div>
-              </div>
-              <div className="col-md-2">
+              </button>
+            </div>
+            <div className="col-md-2">
+              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentDivisionModal">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
@@ -112,8 +124,10 @@ const TournamentCard = (props) => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-2">
+              </button>
+            </div>
+            <div className="col-md-2">
+              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentSurfaceModal">
                 <div className="card card-stats text-center border-0">
                     <div className="card-body">
                       <div className="row justify-content-center">
@@ -131,8 +145,10 @@ const TournamentCard = (props) => {
                       </div>
                     </div>
                 </div>
-              </div>
-              <div className="col-md-2">
+              </button>
+            </div>
+            <div className="col-md-2">
+              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentDrawSizeModal">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
@@ -150,8 +166,10 @@ const TournamentCard = (props) => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-2">
+              </button>
+            </div>
+            <div className="col-md-2">
+              <button className="btn w-100 px-0" data-toggle="modal" data-target="#tournamentPointsModal">
                 <div className="card card-stats text-center border-0">
                   <div className="card-body">
                     <div className="row justify-content-center">
@@ -169,9 +187,9 @@ const TournamentCard = (props) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </button>
             </div>
-          </button>
+          </div>
         </div>
 
         <div className="container-fluid my-5">
@@ -208,8 +226,14 @@ const TournamentCard = (props) => {
           <div className="row my-5">
           </div>
         </div>
+          <TournamentDatesModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
+          <TournamentLocationModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
+          <TournamentDivisionModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
+          <TournamentSurfaceModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
+          <TournamentDrawSizeModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
+          <TournamentPointsModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
+          <TournamentTitleModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
           <MatchFormModal tournamentId={tournament.id} sendMatchToDatabase={props.addMatchToDatabase} matches={props.matches} tournament={tournament} add="add"/>
-          <TournamentFormModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} edit="edit"/>
           <DeleteTournamentModal tournamentId={tournament.id} deleteTournament={deleteTournament} />
       </section>
     )
