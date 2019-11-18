@@ -7,7 +7,6 @@ import OpponentNameModal from './modals/Opponent/OpponentNameModal'
 import tournamentDrawIcon from '../images/tournament-draw-icon.png'
 import tennisBallIcon from '../images/tennis-ball-filled-icon.png'
 import ageIcon from '../images/age-icon.png'
-import utrIcon from '../images/utr-icon.png'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 

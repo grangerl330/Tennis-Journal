@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import StatsFormModal from './StatsFormModal'
-import utrIcon from '../images/utr-icon.png'
+import tennisBallIcon from '../images/tennis-ball-filled-icon.png'
 
 class Home extends Component {
   componentDidMount(){
@@ -88,7 +88,7 @@ class Home extends Component {
                   <div className="card-body">
                     <div className="row justify-content-center">
                       <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
-                        <img src={utrIcon} alt="utr-icon"/>
+                        <img src={tennisBallIcon} alt="utr-icon"/>
                       </div>
                       <div className="col-6 mx-0 pl-4 px-lg-0">
                         <div className="row justify-content-center mx-0">
