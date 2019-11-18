@@ -75,7 +75,7 @@ const MatchCard = (props) => {
                 </NavLink>
               </div>
               <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentAgeModal">
+                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#matchResultModal">
                   <div className="row justify-content-center">
                     <div className="col-5">
                       <i className="fas fa-clipboard-check fa-3x home-icon"></i>
@@ -92,7 +92,7 @@ const MatchCard = (props) => {
                 </button>
               </div>
               <div className="col-md-3 pl-md-5 pr-md-0 text-center">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentAgeModal">
+                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#matchScoreModal">
                   <div className="row justify-content-center">
                     <div className="col-5">
                       <img src={scoreboardIcon} alt="age-icon"/>
@@ -109,7 +109,7 @@ const MatchCard = (props) => {
                 </button>
               </div>
               <div className="col-md-2 pr-md-5">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentAgeModal">
+                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#matchDateModal">
                   <div className="row justify-content-center">
                     <div className="col-5">
                       <i className="fas fa-calendar-day fa-3x home-icon"></i>
@@ -126,7 +126,7 @@ const MatchCard = (props) => {
                 </button>
               </div>
               <div className="col-md-2 pr-md-5 pl-md-0 text-center">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentHandednessModal">
+                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#matchTimeModal">
                   <div className="row justify-content-center">
                     <div className="col-5">
                       <i className="fas fa-clock fa-3x home-icon"></i>
