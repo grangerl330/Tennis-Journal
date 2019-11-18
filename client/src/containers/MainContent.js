@@ -8,19 +8,19 @@ import { updateCurrentUserInDatabase, updateCurrentUserPasswordInDatabase, delet
 import Home from '../components/Home'
 import { getCurrentUser } from '../actions/currentUser'
 
-import Matches from '../components/Matches'
+import Matches from '../components/lists/Matches'
 import MatchCard from '../components/MatchCard'
 import MatchForm from '../components/MatchForm'
 import { fetchMatches } from '../actions/matches'
 import { addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase } from '../actions/matches'
 
-import Tournaments from '../components/Tournaments'
+import Tournaments from '../components/lists/Tournaments'
 import TournamentCard from '../components/TournamentCard'
 import TournamentForm from '../components/TournamentForm'
 import { fetchTournaments } from '../actions/tournaments'
 import { addTournamentToDatabase, editTournamentInDatabase, deleteTournamentFromDatabase } from '../actions/tournaments'
 
-import Opponents from '../components/Opponents'
+import Opponents from '../components/lists/Opponents'
 import OpponentCard from '../components/OpponentCard'
 import { fetchOpponents, editOpponentInDatabase } from '../actions/opponents'
 
