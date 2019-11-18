@@ -55,108 +55,88 @@ const MatchCard = (props) => {
           </div>
         </div>
 
-        <div className="container-fluid px-0">
+        <div className="container px-0">
             <div className="row justify-content-center mt-2">
-              <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
+              <div className="col-md-3 pl-5">
                 <NavLink to={`/opponents/${currentMatch.opponent.id}`} className="btn w-100 shadow-none">
-                  <div className="card card-stats text-center border-0">
-                    <div className="card-body">
-                      <div className="row justify-content-center">
-                        <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-center">
-                          <img src={headToHeadIcon} alt="head-to-head-icon"/>
-                        </div>
-                        <div className="col-6 mx-0 px-0">
-                          <div className="row justify-content-center mx-0">
-                            <h5 className="card-title">{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</h5>
-                          </div>
-                          <div className="row justify-content-center mx-0">
-                            <p className="card-text font-italic">vs</p>
-                          </div>
-                        </div>
+                  <div className="row justify-content-center">
+                    <div className="col-5">
+                      <img src={headToHeadIcon} alt="head-to-head-icon"/>
+                    </div>
+                    <div className="col-7">
+                      <div className="row">
+                        <h6 className="font-italic text-info">Vs</h6>
+                      </div>
+                      <div className="row">
+                        <h5>{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</h5>
                       </div>
                     </div>
                   </div>
                 </NavLink>
               </div>
-              <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
-                <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#matchResultModal">
-                  <div className="card card-stats text-center border-0">
-                    <div className="card-body">
-                      <div className="row justify-content-center">
-                        <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-right">
-                          <i className="fas fa-clipboard-check fa-3x home-icon"></i>
-                        </div>
-                        <div className="col-6 mx-0 px-0">
-                          <div className="row justify-content-center mx-0">
-                            <h5 className="card-title">{currentMatch.result}</h5>
-                          </div>
-                          <div className="row justify-content-center mx-0">
-                            <p className="card-text font-italic">Result</p>
-                          </div>
-                        </div>
+              <div className="col-md-2 pl-md-5 pr-md-0 text-center">
+                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentAgeModal">
+                  <div className="row justify-content-center">
+                    <div className="col-5">
+                      <i className="fas fa-clipboard-check fa-3x home-icon"></i>
+                    </div>
+                    <div className="col-7">
+                      <div className="row">
+                        <h6 className="font-italic text-info">Result</h6>
+                      </div>
+                      <div className="row">
+                        <h5>{currentMatch.result}</h5>
                       </div>
                     </div>
                   </div>
                 </button>
               </div>
-              <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
-                <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#matchScoreModal">
-                  <div className="card card-stats text-center border-0">
-                    <div className="card-body">
-                      <div className="row justify-content-center">
-                        <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-center">
-                          <img src={scoreboardIcon} alt="scoreboard-icon"/>
-                        </div>
-                        <div className="col-6 mx-0 px-0 pr-lg-1">
-                          <div className="row justify-content-center mx-0">
-                            <h5 className="card-title">{currentMatch.score}</h5>
-                          </div>
-                          <div className="row justify-content-center mx-0">
-                            <p className="card-text font-italic">Score</p>
-                          </div>
-                        </div>
+              <div className="col-md-3 pl-md-5 pr-md-0 text-center">
+                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentAgeModal">
+                  <div className="row justify-content-center">
+                    <div className="col-5">
+                      <img src={scoreboardIcon} alt="age-icon"/>
+                    </div>
+                    <div className="col-7">
+                      <div className="row">
+                        <h6 className="font-italic text-info">Score</h6>
+                      </div>
+                      <div className="row">
+                        <h5>{currentMatch.score}</h5>
                       </div>
                     </div>
                   </div>
                 </button>
               </div>
-              <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
-                <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#matchDateModal">
-                  <div className="card card-stats text-center border-0">
-                    <div className="card-body">
-                      <div className="row justify-content-center">
-                        <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-center">
-                          <i className="fas fa-calendar-day fa-3x home-icon"></i>
-                        </div>
-                        <div className="col-6 mx-0 px-0">
-                          <div className="row justify-content-center mx-0">
-                            <h5 className="card-title">{moment(currentMatch.date).format('MM/DD/YY')}</h5>
-                          </div>
-                          <div className="row justify-content-center mx-0">
-                            <p className="card-text font-italic">Date</p>
-                          </div>
-                        </div>
+              <div className="col-md-2 pr-md-5">
+                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentAgeModal">
+                  <div className="row justify-content-center">
+                    <div className="col-5">
+                      <i className="fas fa-calendar-day fa-3x home-icon"></i>
+                    </div>
+                    <div className="col-7">
+                      <div className="row">
+                        <h6 className="font-italic text-info">Date</h6>
+                      </div>
+                      <div className="row">
+                        <h5>{moment(currentMatch.date).format('MM/DD/YY')}</h5>
                       </div>
                     </div>
                   </div>
                 </button>
               </div>
-              <div className="col-md-2 mx-md-4 mx-lg-0 px-0">
-                <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#matchTimeModal">
-                  <div className="card card-stats text-center border-0">
-                    <div className="card-body">
-                      <div className="row justify-content-center">
-                        <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right text-md-left text-lg-center">
-                          <i className="fas fa-clock fa-3x home-icon"></i>
-                        </div>
-                        <div className="col-6 mx-0 px-0">
-                          <div className="row justify-content-center mx-0">
-                            <h5 className="card-title">{moment.utc(currentMatch.time).format('hh:mm a')}</h5>
-                          </div>
-                          <div className="row justify-content-center mx-0">
-                            <p className="card-text font-italic">Time</p>
-                          </div>
-                        </div>
+              <div className="col-md-2 pr-md-5 pl-md-0 text-center">
+                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentHandednessModal">
+                  <div className="row justify-content-center">
+                    <div className="col-5">
+                      <i className="fas fa-clock fa-3x home-icon"></i>
+                    </div>
+                    <div className="col-7">
+                      <div className="row">
+                        <h6 className="font-italic text-info">Time</h6>
+                      </div>
+                      <div className="row">
+                        <h5>{moment.utc(currentMatch.time).format('hh:mm a')}</h5>
                       </div>
                     </div>
                   </div>
