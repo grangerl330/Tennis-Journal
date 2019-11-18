@@ -9,19 +9,19 @@ import Home from '../components/Home'
 import { getCurrentUser } from '../actions/currentUser'
 
 import Matches from '../components/lists/Matches'
-import MatchCard from '../components/MatchCard'
+import MatchCard from '../components/cards/MatchCard'
 import MatchForm from '../components/MatchForm'
 import { fetchMatches } from '../actions/matches'
 import { addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase } from '../actions/matches'
 
 import Tournaments from '../components/lists/Tournaments'
-import TournamentCard from '../components/TournamentCard'
+import TournamentCard from '../components/cards/TournamentCard'
 import TournamentForm from '../components/TournamentForm'
 import { fetchTournaments } from '../actions/tournaments'
 import { addTournamentToDatabase, editTournamentInDatabase, deleteTournamentFromDatabase } from '../actions/tournaments'
 
 import Opponents from '../components/lists/Opponents'
-import OpponentCard from '../components/OpponentCard'
+import OpponentCard from '../components/cards/OpponentCard'
 import { fetchOpponents, editOpponentInDatabase } from '../actions/opponents'
 
 class MainContent extends Component {
