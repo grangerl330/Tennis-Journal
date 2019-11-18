@@ -1,6 +1,6 @@
 import React from 'react'
-import NavbarBrand from '../components/NavbarBrand'
-import NavbarLogin from '../components/NavbarLogin'
+import NavbarBrand from '../components/navbar/NavbarBrand'
+import NavbarLogin from '../components/navbar/NavbarLogin'
 import { updateLoginForm, authenticatePassword } from '../actions/loginForm'
 import { login } from '../actions/currentUser'
 import Signup from '../components/SignUp'
