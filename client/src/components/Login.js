@@ -53,28 +53,6 @@ class Login extends Component {
     })
   }
 
-  authenticatePassword = (email, password) => {
-    fetch('/api/authenticate_password', {
-      credentials: 'include',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password
-      })
-    })
-    .then(response => response.json())
-    .then(response => {
-      if(response.isValid === false) {
-        this.setState({
-          passwordIsValid: false
-        })
-      }
-    })
-  }
-
   formIsValid = () => {
     let isValid = true;
 
