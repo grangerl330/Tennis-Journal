@@ -43,7 +43,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="container px-4">
+        <div className="container px-4 pb-3 border-bottom">
           <div className="row justify-content-center mt-2">
             <div className="col-md-3 pl-5">
               <div className="row justify-content-center">
@@ -108,6 +108,26 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container mt-4">
+          <div className="row mt-3">
+            <div className="col-4 text-center">
+              <h3 className="mb-0">Short Term Goal</h3>
+              <small className="font-italic">1-3 months</small>
+              <p className="mt-3">{this.props.currentUser.short_term_goal}</p>
+            </div>
+            <div className="col-4 text-center">
+              <h3 className="mb-0">Mid Term Goal</h3>
+              <small className="font-italic">3-6 months</small>
+              <p className="mt-3">{this.props.currentUser.mid_term_goal}</p>
+            </div>
+            <div className="col-4 text-center">
+              <h3 className="mb-0">Long Term Goal</h3>
+              <small className="font-italic">6 months +</small>
+              <p className="mt-3">{this.props.currentUser.long_term_goal}</p>
             </div>
           </div>
         </div>

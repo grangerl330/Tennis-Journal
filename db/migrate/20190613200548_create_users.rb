@@ -9,6 +9,9 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :match_record
       t.integer :ranking
       t.integer :points
+      t.string :short_term_goal
+      t.string :mid_term_goal
+      t.string :long_term_goal
 
       t.timestamps
     end

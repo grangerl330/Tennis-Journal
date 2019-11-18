@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users
-User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", password: "password", utr: 10, match_record: "", ranking: 23, points: 0)
+User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", password: "password", utr: 10, match_record: "", ranking: 23, points: 0, short_term_goal: "Improve forehand consistency", mid_term_goal: "Get ranked inside top 20", long_term_goal: "Get recruited to D1 school")
 User.create(first_name: "Roger", last_name: "Federer", email: "rogerfederer@gmail.com", password: "password", utr: 16, match_record: "", ranking: 2, points: 0)
 
 #Tournaments
