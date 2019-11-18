@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import UpdateSuccessModal from './modals/UpdateSuccessModal'
 import classNames from 'classnames'
 import zxcvbn from 'zxcvbn'
 import $ from "jquery";
@@ -176,18 +177,7 @@ class PasswordModal extends Component {
             </div>
           </div>
         </div>
-        <div className="modal fade" id="updateSuccessModal">
-          <div className="modal-dialog modal-lg w-50">
-            <div className="modal-content">
-              <div className="modal-header d-flex">
-                <h5 className="mx-auto">Password successfully updated</h5>
-                <button className="close ml-0" data-dismiss="modal">
-                  <i className="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <UpdateSuccessModal attribute="Password" />
       </div>
     )
   }
