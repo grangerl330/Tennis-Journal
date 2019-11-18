@@ -14,18 +14,6 @@ const OpponentCard = (props) => {
   var opponentId = parseInt(props.id)
   var opponent = props.currentOpponent(opponentId)
 
-  const match_round_display = (match) => {
-    if(match.round > 8){
-      return `Round of ${match.round}`
-    } else if(match.round === 8){
-      return "Quarterfinal"
-    } else if(match.round === 4){
-      return "Semifinal"
-    } else if(match.round === 2){
-      return "Final"
-    }
-  }
-
   if(opponent) {
     return (
       <section id="opponent-card-page">

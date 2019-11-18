@@ -7,10 +7,9 @@ import TournamentSurfaceModal from './modals/Tournament/TournamentSurfaceModal'
 import TournamentDrawSizeModal from './modals/Tournament/TournamentDrawSizeModal'
 import TournamentPointsModal from './modals/Tournament/TournamentPointsModal'
 import TournamentTitleModal from './modals/Tournament/TournamentTitleModal'
-import DeleteTournamentModal from './DeleteTournamentModal'
+import DeleteTournamentModal from './modals/DeleteTournamentModal'
 import tennisCourtIcon from '../images/tennis-court-icon.png'
 import tournamentDrawIcon from '../images/tournament-draw-icon.png'
-import ageIcon from '../images/age-icon.png'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
