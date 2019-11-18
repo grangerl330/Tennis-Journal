@@ -10,13 +10,13 @@ import { getCurrentUser } from '../actions/currentUser'
 
 import Matches from '../components/lists/Matches'
 import MatchCard from '../components/cards/MatchCard'
-import MatchForm from '../components/MatchForm'
+import MatchForm from '../components/forms/MatchForm'
 import { fetchMatches } from '../actions/matches'
 import { addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase } from '../actions/matches'
 
 import Tournaments from '../components/lists/Tournaments'
 import TournamentCard from '../components/cards/TournamentCard'
-import TournamentForm from '../components/TournamentForm'
+import TournamentForm from '../components/forms/TournamentForm'
 import { fetchTournaments } from '../actions/tournaments'
 import { addTournamentToDatabase, editTournamentInDatabase, deleteTournamentFromDatabase } from '../actions/tournaments'
 
