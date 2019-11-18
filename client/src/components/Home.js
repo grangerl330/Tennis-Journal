@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import StatsFormModal from './StatsFormModal'
+import StatsRankingModal from './modals/Stats/StatsRankingModal'
+import StatsUTRModal from './modals/Stats/StatsUTRModal'
 import tennisBallIcon from '../images/tennis-ball-filled-icon.png'
 
 class Home extends Component {
@@ -11,7 +12,7 @@ class Home extends Component {
     if(!this.props.currentUser.ranking) {
       return <span className="card-title font-weight-bold ml-1">* Enter Your Current Ranking by clicking here</span>
     } else {
-      return <h3 className="card-title">{this.props.currentUser.ranking}</h3>
+      return <h5 className="card-title">{this.props.currentUser.ranking}</h5>
     }
   }
 
@@ -19,7 +20,7 @@ class Home extends Component {
     if(!this.props.currentUser.utr) {
       return <span className="card-title font-weight-bold ml-1">* Enter your UTR by clicking here</span>
     } else {
-      return <h3 className="card-title">{this.props.currentUser.utr}</h3>
+      return <h5 className="card-title">{this.props.currentUser.utr}</h5>
     }
   }
 
@@ -27,7 +28,7 @@ class Home extends Component {
     if(!this.props.currentUser.points) {
       return <span className="card-title font-weight-bold ml-1">* Points will update automatically when a tournament is added</span>
     } else {
-      return <h3 className="card-title">{this.props.currentUser.points}</h3>
+      return <h5 className="card-title">{this.props.currentUser.points}</h5>
     }
   }
 
@@ -42,90 +43,76 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="container-fluid px-4">
-          <button className="btn w-100" data-toggle="modal" data-target="#editStatsModal">
-            <div className="row justify-content-center mt-2">
-              <div className="col-md-3">
-                <div className="card card-stats text-center border-0">
-                  <div className="card-body">
-                    <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
-                        <i className="fas fa-clipboard-list fa-3x home-icon"></i>
-                      </div>
-                      <div className="col-6 mx-0 px-0">
-                        <div className="row justify-content-center mx-0">
-                          <h3 className="card-title">{this.props.currentUser.match_record}</h3>
-                        </div>
-                        <div className="row justify-content-center mx-0">
-                          <p className="card-text font-italic">Record</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+        <div className="container px-4">
+          <div className="row justify-content-center mt-2">
+            <div className="col-md-3 pl-5">
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="fas fa-clipboard-list fa-3x home-icon"></i>
                 </div>
-              </div>
-              <div className="col-md-3">
-                <div className="card card-stats text-center border-0">
-                  <div className="card-body">
-                    <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
-                        <i className="fas fa-list-ol fa-3x home-icon"></i>
-                      </div>
-                      <div className="col-6 mx-0 pl-4 px-lg-0">
-                        <div className="row justify-content-center mx-0">
-                          {this.currentRankingDisplay()}
-                        </div>
-                        <div className="row justify-content-center mx-0">
-                          <p className="card-text font-italic">Ranking</p>
-                        </div>
-                      </div>
-                    </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Record</h6>
                   </div>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="card card-stats text-center border-0">
-                  <div className="card-body">
-                    <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
-                        <img src={tennisBallIcon} alt="utr-icon"/>
-                      </div>
-                      <div className="col-6 mx-0 pl-4 px-lg-0">
-                        <div className="row justify-content-center mx-0">
-                          {this.utrDisplay()}
-                        </div>
-                        <div className="row justify-content-center mx-0">
-                          <p className="card-text font-italic">UTR</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="card card-stats text-center border-0">
-                  <div className="card-body">
-                    <div className="row justify-content-center">
-                      <div className="col-3 col-md-6 px-0 pb-0 pt-2 text-right">
-                        <i className="far fa-dot-circle fa-3x home-icon"></i>
-                      </div>
-                      <div className="col-6 mx-0 px-0">
-                        <div className="row justify-content-center mx-0">
-                          {this.pointsDisplay()}
-                        </div>
-                        <div className="row justify-content-center mx-0">
-                          <p className="card-text font-italic">Points</p>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="row">
+                    <h5>{this.props.currentUser.match_record}</h5>
                   </div>
                 </div>
               </div>
             </div>
-          </button>
+            <div className="col-md-3 pl-5">
+              <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#statsRankingModal">
+                <div className="row justify-content-center">
+                  <div className="col-5">
+                    <i className="fas fa-list-ol fa-3x home-icon"></i>
+                  </div>
+                  <div className="col-7">
+                    <div className="row">
+                      <h6 className="font-italic text-info">Ranking</h6>
+                    </div>
+                    <div className="row">
+                      {this.currentRankingDisplay()}
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </div>
+            <div className="col-md-3 pl-5">
+              <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#statsUTRModal">
+                <div className="row justify-content-center">
+                  <div className="col-5">
+                    <img src={tennisBallIcon} alt="utr-icon"/>
+                  </div>
+                  <div className="col-7">
+                    <div className="row">
+                      <h6 className="font-italic text-info">UTR</h6>
+                    </div>
+                    <div className="row">
+                      {this.utrDisplay()}
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </div>
+            <div className="col-md-3 pl-5">
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="far fa-dot-circle fa-3x home-icon"></i>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Points</h6>
+                  </div>
+                  <div className="row">
+                    {this.pointsDisplay()}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <StatsFormModal currentUser={this.props.currentUser} />
+        <StatsRankingModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <StatsUTRModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
       </section>
     )
   }
