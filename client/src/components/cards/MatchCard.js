@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment'
+import MatchAllStatsModal from '../modals/Match/MatchAllStatsModal'
 import MatchResultModal from '../modals/Match/MatchResultModal'
 import MatchScoreModal from '../modals/Match/MatchScoreModal'
 import MatchDateModal from '../modals/Match/MatchDateModal'
@@ -163,7 +164,14 @@ const MatchCard = (props) => {
         </div>
 
         <div className="container-fluid">
-          <div className="row my-5 justify-content-center">
+          <div className="row mt-3 mb-3 justify-content-center">
+            <div className="col-md-3">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#matchStatsModal">
+                <i className="fas fa-trash"></i> Edit Match
+              </button>
+            </div>
+          </div>
+          <div className="row justify-content-center">
             <div className="col-md-3">
               <button className="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteMatchModal">
                 <i className="fas fa-trash"></i> Delete Match
@@ -171,6 +179,7 @@ const MatchCard = (props) => {
             </div>
           </div>
         </div>
+          <MatchAllStatsModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <MatchResultModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <MatchScoreModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <MatchDateModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
