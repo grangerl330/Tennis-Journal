@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment'
+import TournamentAllStatsModal from '../modals/Tournament/TournamentAllStatsModal'
 import TournamentDatesModal from '../modals/Tournament/TournamentDatesModal'
 import TournamentLocationModal from '../modals/Tournament/TournamentLocationModal'
 import TournamentDivisionModal from '../modals/Tournament/TournamentDivisionModal'
@@ -166,13 +167,18 @@ const TournamentCard = (props) => {
           </div>
         </div>
 
-        <div className="container-fluid mt-4 mb-5">
-          <div className="row mt-4">
+        <div className="container-fluid py-4 mt-4 mb-3 matches-list">
+          <div className="row justify-content-center">
             <div className="col-md-2">
               <h1>Matches</h1>
             </div>
           </div>
-          <div className="row mt-4">
+          <div className="row ml-2 justify-content-center">
+            <div className="card-deck mt-4">
+              {renderMatches}
+            </div>
+          </div>
+          <div className="row mt-4 justify-content-center">
             <div className="col-md-2">
               <NavLink to={`/tournaments/${tournament.id}/add`} className="btn btn-dark btn-block">
                 <i className="fas fa-plus"></i> Add Match
@@ -181,14 +187,15 @@ const TournamentCard = (props) => {
           </div>
         </div>
 
-        <div className="container-fluid mb-3">
-          <div className="card-deck mt-4">
-            {renderMatches}
+        <div className="container-fluid mt-5">
+          <div className="row mt-3 mb-3 justify-content-center">
+            <div className="col-md-3">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#tournamentStatsModal">
+                <i className="fas fa-edit"></i> Edit Tournament
+              </button>
+            </div>
           </div>
-        </div>
-
-        <div className="container-fluid">
-          <div className="row my-5 justify-content-center">
+          <div className="row justify-content-center">
             <div className="col-md-3">
               <button className="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteTournamentModal">
                 <i className="fas fa-trash"></i> Delete Tournament
@@ -200,6 +207,7 @@ const TournamentCard = (props) => {
           <div className="row my-5">
           </div>
         </div>
+          <TournamentAllStatsModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
           <TournamentDatesModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
           <TournamentLocationModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
           <TournamentDivisionModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
