@@ -32,6 +32,18 @@ class Home extends Component {
     }
   }
 
+  arrayDisplay = (array) => {
+    const result = []
+
+    array.forEach((item, index) =>
+      result.push(
+        <li className="list-group-item mb-1" key={index+1}>{item}</li>
+      )
+    )
+
+    return result
+  }
+
   render() {
     return (
       <section id="home-page">
@@ -43,7 +55,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="container px-4 pb-3 border-bottom">
+        <div className="container mb-5 px-4 pb-3 border-bottom">
           <div className="row justify-content-center mt-2">
             <div className="col-md-3 pl-5">
               <div className="row justify-content-center">
@@ -112,7 +124,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="container mt-4">
+        <div className="container mb-5 px-4 pb-5 border-bottom">
           <div className="row mt-3">
             <div className="col-4 text-center">
               <h3 className="mb-0">Short Term Goal</h3>
@@ -128,6 +140,31 @@ class Home extends Component {
               <h3 className="mb-0">Long Term Goal</h3>
               <small className="font-italic">6 months +</small>
               <p className="mt-3">{this.props.currentUser.long_term_goal}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="row mt-3">
+            <div className="col-6">
+              <div className="row justify-content-center mb-3">
+                <h3 className="mb-0">My Strengths</h3>
+              </div>
+              <div className="row justify-content-center text-center">
+                <ul className="list-group w-25">
+                  {this.arrayDisplay(this.props.currentUser.strengths)}
+                </ul>
+              </div>
+            </div>
+            <div className="col-6 text-center">
+              <div className="row justify-content-center mb-3">
+                <h3 className="mb-0">My Weaknesses</h3>
+              </div>
+              <div className="row justify-content-center text-center">
+                <ul className="list-group w-25">
+                  {this.arrayDisplay(this.props.currentUser.weaknesses)}
+                </ul>
+              </div>
             </div>
           </div>
         </div>

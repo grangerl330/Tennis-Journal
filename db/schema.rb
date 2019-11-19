@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.string "short_term_goal"
     t.string "mid_term_goal"
     t.string "long_term_goal"
+    t.text "strengths", default: [], array: true
+    t.text "weaknesses", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

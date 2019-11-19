@@ -12,6 +12,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :short_term_goal
       t.string :mid_term_goal
       t.string :long_term_goal
+      t.text :strengths, array: true, default: []
+      t.text :weaknesses, array: true, default: []
 
       t.timestamps
     end
