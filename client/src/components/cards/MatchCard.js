@@ -147,31 +147,12 @@ const MatchCard = (props) => {
         </div>
 
         <div className="container-fluid">
-            <div className="row mt-4">
-            <button className="btn shadow-none" data-toggle="modal" data-target="#matchNotesModal">
-              <div className="col">
-                <h1>Notes:</h1>
-              </div>
-            </button>
-            </div>
-            <div className="row mt-1">
-              <button className="btn shadow-none text-left" data-toggle="modal" data-target="#matchNotesModal">
-                <div className="col">
-                  {currentMatch.notes}
-                </div>
-              </button>
-            </div>
-        </div>
-
-        <div className="container-fluid">
           <div className="row mt-3 mb-3 justify-content-center">
             <div className="col-md-3">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#matchStatsModal">
-                <i className="fas fa-trash"></i> Edit Match
+                <i className="fas fa-edit"></i> Edit Match
               </button>
             </div>
-          </div>
-          <div className="row justify-content-center">
             <div className="col-md-3">
               <button className="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteMatchModal">
                 <i className="fas fa-trash"></i> Delete Match
@@ -179,6 +160,24 @@ const MatchCard = (props) => {
             </div>
           </div>
         </div>
+
+        <div className="container border rounded pb-4 mt-5 mb-4">
+          <div className="row justify-content-center bg-secondary">
+          <button className="btn p-0 shadow-none text-white" data-toggle="modal" data-target="#matchNotesModal">
+            <div className="col">
+              <h1>Notes</h1>
+            </div>
+          </button>
+          </div>
+          <div className="row mt-1">
+            <button className="btn shadow-none text-left" data-toggle="modal" data-target="#matchNotesModal">
+              <div className="col">
+                {currentMatch.notes}
+              </div>
+            </button>
+          </div>
+        </div>
+
           <MatchAllStatsModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <MatchResultModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <MatchScoreModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>

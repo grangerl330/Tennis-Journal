@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.string "score"
     t.date "date"
     t.time "time"
-    t.string "notes"
+    t.text "notes"
     t.integer "tournament_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.string "last_name"
     t.integer "age"
     t.string "handedness"
-    t.string "notes"
+    t.text "notes"
     t.string "strengths"
     t.string "weaknesses"
     t.float "utr"

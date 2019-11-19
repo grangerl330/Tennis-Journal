@@ -167,8 +167,23 @@ const TournamentCard = (props) => {
           </div>
         </div>
 
-        <div className="container-fluid py-4 mt-4 mb-3 matches-list">
-          <div className="row justify-content-center">
+        <div className="container-fluid">
+          <div className="row mt-3 mb-3 justify-content-center">
+            <div className="col-md-3">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#tournamentStatsModal">
+                <i className="fas fa-edit"></i> Edit Tournament
+              </button>
+            </div>
+            <div className="col-md-3">
+              <button className="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteTournamentModal">
+                <i className="fas fa-trash"></i> Delete Tournament
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="container border rounded pb-4 mt-5 mb-4">
+          <div className="row justify-content-center text-white bg-secondary">
             <div className="col-md-2">
               <h1>Matches</h1>
             </div>
@@ -187,26 +202,6 @@ const TournamentCard = (props) => {
           </div>
         </div>
 
-        <div className="container-fluid mt-5">
-          <div className="row mt-3 mb-3 justify-content-center">
-            <div className="col-md-3">
-              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#tournamentStatsModal">
-                <i className="fas fa-edit"></i> Edit Tournament
-              </button>
-            </div>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-md-3">
-              <button className="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteTournamentModal">
-                <i className="fas fa-trash"></i> Delete Tournament
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="container-fluid">
-          <div className="row my-5">
-          </div>
-        </div>
           <TournamentAllStatsModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
           <TournamentDatesModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
           <TournamentLocationModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />

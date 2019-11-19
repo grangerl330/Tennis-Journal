@@ -6,7 +6,7 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.string :score
       t.date :date
       t.time :time
-      t.string :notes
+      t.text :notes
       t.integer :tournament_id
       t.integer :user_id
 

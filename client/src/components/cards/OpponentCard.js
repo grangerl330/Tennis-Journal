@@ -1,4 +1,5 @@
 import React from 'react';
+import OpponentAllStatsModal from '../modals/Opponent/OpponentAllStatsModal'
 import OpponentAgeModal from '../modals/Opponent/OpponentAgeModal'
 import OpponentHandednessModal from '../modals/Opponent/OpponentHandednessModal'
 import OpponentUTRModal from '../modals/Opponent/OpponentUTRModal'
@@ -74,7 +75,7 @@ const OpponentCard = (props) => {
                         <h6 className="font-italic text-info">Plays</h6>
                       </div>
                       <div className="row">
-                        <h5>{opponent.handedness} handed</h5>
+                        <h5>{opponent.handedness} Handed</h5>
                       </div>
                     </div>
                   </div>
@@ -101,21 +102,33 @@ const OpponentCard = (props) => {
         </div>
 
         <div className="container-fluid">
-          <div className="row mt-4">
-          <button className="btn shadow-none" data-toggle="modal" data-target="#opponentNotesModal">
+          <div className="row mt-3 mb-3 justify-content-center">
+            <div className="col-md-3">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentStatsModal">
+                <i className="fas fa-edit"></i> Edit Opponent
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="container border rounded pb-4 mt-5 mb-4">
+          <div className="row justify-content-center bg-secondary">
+          <button className="btn p-0 shadow-none text-white" data-toggle="modal" data-target="#matchNotesModal">
             <div className="col">
-              <h1>Notes:</h1>
+              <h1>Notes</h1>
             </div>
           </button>
           </div>
           <div className="row mt-1">
-            <button className="btn shadow-none text-md-left" data-toggle="modal" data-target="#opponentNotesModal">
+            <button className="btn shadow-none text-left" data-toggle="modal" data-target="#matchNotesModal">
               <div className="col">
                 {opponent.notes}
               </div>
             </button>
           </div>
         </div>
+
+          <OpponentAllStatsModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
           <OpponentAgeModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
           <OpponentHandednessModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
           <OpponentUTRModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />

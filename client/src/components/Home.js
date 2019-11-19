@@ -55,7 +55,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="container mb-3 px-4 pb-3 border-bottom">
+        <div className="container mb-3 px-4 pb-3">
           <div className="row justify-content-center mt-2">
             <div className="col-md-3 pl-5">
               <div className="row justify-content-center">
@@ -124,8 +124,8 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="container mb-5 px-4 pb-5 border-bottom">
-          <div className="row">
+        <div className="container border rounded pb-4 mb-5">
+          <div className="row justify-content-center text-white bg-secondary">
             <h1>My Goals</h1>
           </div>
           <div className="row mt-5">
@@ -147,11 +147,14 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="container mb-5 px-4 pb-5 border-bottom">
-          <div className="row mt-3">
-            <div className="col-6">
+        <div className="container border rounded pb-4 mt-5 mb-4">
+          <div className="row justify-content-center text-white bg-secondary">
+            <h1>My Game</h1>
+          </div>
+          <div className="row mt-5">
+            <div className="col-6 text-center">
               <div className="row justify-content-center mb-3">
-                <h3 className="mb-0">My Strengths</h3>
+                <h3 className="mb-0">Strengths</h3>
               </div>
               <div className="row justify-content-center text-center">
                 <ul className="list-group w-25">
@@ -161,7 +164,7 @@ class Home extends Component {
             </div>
             <div className="col-6 text-center">
               <div className="row justify-content-center mb-3">
-                <h3 className="mb-0">My Weaknesses</h3>
+                <h3 className="mb-0">Weaknesses</h3>
               </div>
               <div className="row justify-content-center text-center">
                 <ul className="list-group w-25">
