@@ -29,18 +29,18 @@ const Tournaments = (props) => {
         </div>
 
         <div className="container">
+          <div className="card-deck mt-4 d-flex justify-content-center">
+            {renderTournaments}
+          </div>
+        </div>
+
+        <div className="container">
           <div className="row justify-content-center mt-4">
             <div className="col-md-3">
               <NavLink to="/tournaments/add" className="btn btn-dark btn-block">
                 <i className="fas fa-plus"></i> Add Tournament
               </NavLink>
             </div>
-          </div>
-        </div>
-
-        <div className="container">
-          <div className="card-deck mt-4 d-flex justify-content-center">
-            {renderTournaments}
           </div>
         </div>
 
