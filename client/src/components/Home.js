@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import StatsRankingModal from './modals/Stats/StatsRankingModal'
+import AllStatsModal from './modals/Stats/AllStatsModal'
+import GoalsModal from './modals/Stats/GoalsModal'
 import StatsUTRModal from './modals/Stats/StatsUTRModal'
+import StrengthsModal from './modals/Stats/StrengthsModal'
+import WeaknessesModal from './modals/Stats/WeaknessesModal'
 import tennisBallIcon from '../images/tennis-ball-filled-icon.png'
 
 class Home extends Component {
@@ -55,7 +58,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="container mb-3 px-4 pb-3">
+        <div className="container px-4">
           <div className="row justify-content-center mt-2">
             <div className="col-md-3 pl-5">
               <div className="row justify-content-center">
@@ -124,7 +127,17 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="container border rounded pb-4 mb-5">
+        <div className="container">
+          <div className="row mt-3 mb-3 justify-content-center">
+            <div className="col-md-3">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#allStatsModal">
+                <i className="fas fa-edit"></i> Edit Stats
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="container border rounded pb-4 my-5">
           <div className="row justify-content-center text-white bg-secondary">
             <h1>My Goals</h1>
           </div>
@@ -145,6 +158,13 @@ class Home extends Component {
               <p className="mt-3">{this.props.currentUser.long_term_goal}</p>
             </div>
           </div>
+          <div className="row mt-3 mb-3 justify-content-center">
+            <div className="col-md-3">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#goalsModal">
+                <i className="fas fa-edit"></i> Edit Goals
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className="container border rounded pb-4 mt-5 mb-4">
@@ -161,6 +181,13 @@ class Home extends Component {
                   {this.arrayDisplay(this.props.currentUser.strengths)}
                 </ul>
               </div>
+              <div className="row justify-content-center mt-3 text-center">
+                <div className="col-md-4">
+                  <button className="btn btn-info btn-block" data-toggle="modal" data-target="#strengthsModal">
+                    <i className="fas fa-edit"></i> Edit Strengths
+                  </button>
+                </div>
+              </div>
             </div>
             <div className="col-6 text-center">
               <div className="row justify-content-center mb-3">
@@ -171,11 +198,22 @@ class Home extends Component {
                   {this.arrayDisplay(this.props.currentUser.weaknesses)}
                 </ul>
               </div>
+              <div className="row justify-content-center mt-3 text-center">
+                <div className="col-md-5">
+                  <button className="btn btn-info btn-block" data-toggle="modal" data-target="#weaknessesModal">
+                    <i className="fas fa-edit"></i> Edit Weaknesses
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <StatsRankingModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+
+        <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <StatsUTRModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <WeaknessesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
       </section>
     )
   }
