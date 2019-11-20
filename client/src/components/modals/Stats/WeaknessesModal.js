@@ -65,7 +65,7 @@ class WeaknessesModal extends Component {
           </div>
           <input className="form-control" type="text" name={`weakness${index+1}`} value={this.state[`weakness${index+1}`] || ''} onChange={this.handleOnChange} />
           <div className="input-group-append">
-            <button onClick={this.removeWeakness} value={`weakness${index+1}`}><i className="fas fa-trash"></i></button>
+            <button onClick={this.removeWeakness} value={`weakness${index+1}`}><i className="fas fa-trash-alt text-secondary"></i></button>
           </div>
         </div>
       )

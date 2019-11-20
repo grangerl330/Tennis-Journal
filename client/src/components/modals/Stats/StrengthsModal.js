@@ -65,7 +65,7 @@ class StrengthsModal extends Component {
           </div>
           <input className="form-control" type="text" name={`strength${index+1}`} value={this.state[`strength${index+1}`] || ''} onChange={this.handleOnChange} />
           <div className="input-group-append">
-            <button onClick={this.removeStrength} value={`strength${index+1}`}><i className="fas fa-trash"></i></button>
+            <button onClick={this.removeStrength} value={`strength${index+1}`}><i className="fas fa-trash-alt text-secondary"></i></button>
           </div>
         </div>
       )
