@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import validator from 'validator'
 import zxcvbn from 'zxcvbn'
+import $ from 'jquery'
 import { withRouter } from 'react-router';
 
 class Signup extends Component {
@@ -56,6 +57,9 @@ class Signup extends Component {
     this.setState({
       emailIsValid: false
     })
+
+    $('.invalid-feedback.email').text('Please enter a valid email address')
+    
       isValid = false;
     }
 
@@ -85,7 +89,7 @@ class Signup extends Component {
   }
 
   render() {
-    const emailInputClass = classNames('form-control',
+    const emailInputClass = classNames('form-control email',
       { 'is-invalid': !this.state.emailIsValid }
     );
 
@@ -117,7 +121,7 @@ class Signup extends Component {
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
                   <input className={emailInputClass} type="text" name="email" onChange={this.handleOnChange} value={this.state.email} placeholder="Email" />
-                  <div className="invalid-feedback">
+                  <div className="invalid-feedback email">
                     Please enter a valid email address
                   </div>
                 </div>
