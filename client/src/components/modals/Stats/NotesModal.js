@@ -41,8 +41,8 @@ class NotesModal extends Component {
             <div className="modal-body">
               <form>
                 <div className="form-group">
-                  <label htmlFor="Short Term Goal">Notes</label>
-                  <textarea className="form-control" type="text" rows="10" name="notes" value={this.state.notes || ''} onChange={this.handleOnChange} placeholder="Enter your short term goal"/>
+                  <label htmlFor="Things To Improve">Notes</label>
+                  <textarea className="form-control" type="text" rows="10" name="notes" value={this.state.notes || ''} onChange={this.handleOnChange} />
                 </div>
               </form>
             </div>

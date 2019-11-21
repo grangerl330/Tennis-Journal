@@ -215,7 +215,7 @@ class Home extends Component {
             </div>
           </div>
           <div className="row mt-1">
-            <div className="col">
+            <div className="col text-center">
               {this.props.currentUser.notes}
             </div>
           </div>
