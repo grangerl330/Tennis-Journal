@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import AllStatsModal from './modals/Stats/AllStatsModal'
-import GoalsModal from './modals/Stats/GoalsModal'
-import StatsUTRModal from './modals/Stats/StatsUTRModal'
-import StrengthsModal from './modals/Stats/StrengthsModal'
-import WeaknessesModal from './modals/Stats/WeaknessesModal'
-import NotesModal from './modals/Stats/NotesModal'
+import AllStatsModal from './modals/Home/AllStatsModal'
+import GoalsModal from './modals/Home/GoalsModal'
+import StrengthsModal from './modals/Home/StrengthsModal'
+import WeaknessesModal from './modals/Home/WeaknessesModal'
+import NotesModal from './modals/Home/NotesModal'
 import tennisBallIcon from '../images/tennis-ball-filled-icon.png'
 
 class Home extends Component {
@@ -74,38 +73,34 @@ class Home extends Component {
               </div>
             </div>
             <div className="col-md-3 pl-5">
-              <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#statsRankingModal">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <i className="fas fa-list-ol fa-3x home-icon"></i>
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="fas fa-list-ol fa-3x home-icon"></i>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Ranking</h6>
                   </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Ranking</h6>
-                    </div>
-                    <div className="row">
-                      <h5 className="card-title">{this.props.currentUser.ranking}</h5>
-                    </div>
+                  <div className="row">
+                    <h5 className="card-title">{this.props.currentUser.ranking}</h5>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
             <div className="col-md-3 pl-5">
-              <button className="btn w-100 shadow-none" data-toggle="modal" data-target="#statsUTRModal">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <img src={tennisBallIcon} alt="utr-icon"/>
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <img src={tennisBallIcon} alt="utr-icon"/>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">UTR</h6>
                   </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">UTR</h6>
-                    </div>
-                    <div className="row">
-                      <h5 className="card-title">{this.props.currentUser.utr}</h5>
-                    </div>
+                  <div className="row">
+                    <h5 className="card-title">{this.props.currentUser.utr}</h5>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
             <div className="col-md-3 pl-5">
               <div className="row justify-content-center">
@@ -230,7 +225,6 @@ class Home extends Component {
 
         <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-        <StatsUTRModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <WeaknessesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
