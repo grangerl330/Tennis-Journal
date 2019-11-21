@@ -122,10 +122,10 @@ const OpponentCard = (props) => {
               <div className="row justify-content-center mb-3">
                 <h3 className="mb-0">Strengths</h3>
               </div>
-              <div className="row justify-content-center text-center">
-                <div className="card-deck mt-4 d-flex justify-content-center">
+              <div className="row justify-content-center">
+                <ul className="mr-5">
                   {arrayDisplay(opponent.strengths)}
-                </div>
+                </ul>
               </div>
               <div className="row justify-content-center mt-3 text-center">
                 <div className="col-md-4">
@@ -140,9 +140,9 @@ const OpponentCard = (props) => {
                 <h3 className="mb-0">Weaknesses</h3>
               </div>
               <div className="row justify-content-center text-center">
-                <div className="card-deck mt-4 d-flex justify-content-center">
+                <ul className="mr-5">
                   {arrayDisplay(opponent.weaknesses)}
-                </div>
+                </ul>
               </div>
               <div className="row justify-content-center mt-3 text-center">
                 <div className="col-md-5">
@@ -192,13 +192,7 @@ const arrayDisplay = (array) => {
 
   array.forEach((item, index) =>
     result.push(
-      <div className="col-auto px-0 mb-3" key={index+1}>
-        <div className="card card-tournament border border-secondary">
-          <div className="card-body text-center">
-            <p className="card-text">{item}</p>
-          </div>
-        </div>
-      </div>
+      <li key={index+1}>{item}</li>
     )
   )
 

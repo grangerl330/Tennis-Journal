@@ -33,13 +33,7 @@ class Home extends Component {
 
     array.forEach((item, index) =>
       result.push(
-        <div className="col-auto px-0 mb-3" key={index+1}>
-          <div className="card card-tournament border border-secondary">
-            <div className="card-body text-center">
-              <p className="card-text">{item}</p>
-            </div>
-          </div>
-        </div>
+        <li key={index+1}>{item}</li>
       )
     )
 
@@ -168,17 +162,17 @@ class Home extends Component {
 
         <div className="container border rounded pb-4 mt-5 mb-4">
           <div className="row justify-content-center text-white bg-secondary">
-            <h1>My Game</h1>
+            <h1>My Skills</h1>
           </div>
           <div className="row mt-4">
             <div className="col-6 text-center">
               <div className="row justify-content-center mb-3">
                 <h3 className="mb-0">Strengths</h3>
               </div>
-              <div className="row justify-content-center text-center">
-                <div className="card-deck mt-4 d-flex justify-content-center">
+              <div className="row justify-content-center">
+                <ul className="mr-5">
                   {this.arrayDisplay(this.props.currentUser.strengths)}
-                </div>
+                </ul>
               </div>
               <div className="row justify-content-center mt-3 text-center">
                 <div className="col-md-4">
@@ -193,9 +187,9 @@ class Home extends Component {
                 <h3 className="mb-0">Weaknesses</h3>
               </div>
               <div className="row justify-content-center text-center">
-                <div className="card-deck mt-4 d-flex justify-content-center">
+                <ul className="mr-5">
                   {this.arrayDisplay(this.props.currentUser.weaknesses)}
-                </div>
+                </ul>
               </div>
               <div className="row justify-content-center mt-3 text-center">
                 <div className="col-md-5">
