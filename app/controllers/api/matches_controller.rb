@@ -50,6 +50,6 @@ class Api::MatchesController < ApplicationController
   private
 
   def match_params
-    params.require(:match).permit(:round, :result, :score, :date, :time, :notes, :tournament_id, :user_id)
+    params.require(:match).permit(:round, :result, :score, :date, :time, :notes, :forced_errors, :unforced_errors, :winners, :double_faults, :aces, :tournament_id, :user_id)
   end
 end

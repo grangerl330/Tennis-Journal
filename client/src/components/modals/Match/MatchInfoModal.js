@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 
-class MatchAllStatsModal extends Component {
+class MatchAllInfoModal extends Component {
   constructor(props){
     super(props)
 
@@ -106,7 +106,7 @@ class MatchAllStatsModal extends Component {
 
   render() {
     return (
-      <div className="modal fade mt-3" id="matchStatsModal">
+      <div className="modal fade mt-3" id="matchAllStatsModal">
         <div className="modal-dialog modal-md">
           <div className="modal-content">
             <div className="modal-header bg-info text-white">
@@ -168,4 +168,4 @@ class MatchAllStatsModal extends Component {
   }
 }
 
-export default withRouter(MatchAllStatsModal)
+export default withRouter(MatchAllInfoModal)

@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.date "date"
     t.time "time"
     t.text "notes"
+    t.integer "unforced_errors"
+    t.integer "forced_errors"
+    t.integer "winners"
+    t.integer "double_faults"
+    t.integer "aces"
     t.integer "tournament_id"
     t.integer "user_id"
     t.datetime "created_at", null: false

@@ -7,6 +7,11 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.date :date
       t.time :time
       t.text :notes
+      t.integer :unforced_errors
+      t.integer :forced_errors
+      t.integer :winners
+      t.integer :double_faults
+      t.integer :aces
       t.integer :tournament_id
       t.integer :user_id
 
