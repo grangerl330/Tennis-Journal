@@ -5,6 +5,8 @@ import OpponentHandednessModal from '../modals/Opponent/OpponentHandednessModal'
 import OpponentUTRModal from '../modals/Opponent/OpponentUTRModal'
 import OpponentNotesModal from '../modals/Opponent/OpponentNotesModal'
 import OpponentNameModal from '../modals/Opponent/OpponentNameModal'
+import OpponentStrengthsModal from '../modals/Opponent/OpponentStrengthsModal'
+import OpponentWeaknessesModal from '../modals/Opponent/OpponentWeaknessesModal'
 import tournamentDrawIcon from '../../images/tournament-draw-icon.png'
 import tennisBallIcon from '../../images/tennis-ball-filled-icon.png'
 import birthdayIcon from '../../images/birthday-cake-icon.png'
@@ -112,6 +114,48 @@ const OpponentCard = (props) => {
         </div>
 
         <div className="container border rounded pb-4 mt-5 mb-4">
+          <div className="row justify-content-center text-white bg-secondary">
+            <h1>Skills</h1>
+          </div>
+          <div className="row mt-5">
+            <div className="col-6 text-center">
+              <div className="row justify-content-center mb-3">
+                <h3 className="mb-0">Strengths</h3>
+              </div>
+              <div className="row justify-content-center text-center">
+                <div className="card-deck mt-4 d-flex justify-content-center">
+                  {arrayDisplay(opponent.strengths)}
+                </div>
+              </div>
+              <div className="row justify-content-center mt-3 text-center">
+                <div className="col-md-4">
+                  <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentStrengthsModal">
+                    <i className="fas fa-edit"></i> Edit Strengths
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="col-6 text-center">
+              <div className="row justify-content-center mb-3">
+                <h3 className="mb-0">Weaknesses</h3>
+              </div>
+              <div className="row justify-content-center text-center">
+                <div className="card-deck mt-4 d-flex justify-content-center">
+                  {arrayDisplay(opponent.weaknesses)}
+                </div>
+              </div>
+              <div className="row justify-content-center mt-3 text-center">
+                <div className="col-md-5">
+                  <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentWeaknessesModal">
+                    <i className="fas fa-edit"></i> Edit Weaknesses
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container border rounded pb-4 mt-5 mb-4">
           <div className="row justify-content-center bg-secondary">
           <button className="btn p-0 shadow-none text-white" data-toggle="modal" data-target="#matchNotesModal">
             <div className="col">
@@ -134,11 +178,31 @@ const OpponentCard = (props) => {
           <OpponentUTRModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
           <OpponentNotesModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
           <OpponentNameModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
+          <OpponentStrengthsModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
+          <OpponentWeaknessesModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
       </section>
     )
   } else {
     return <h3>Opponent Does Not Exist</h3>
   }
+}
+
+const arrayDisplay = (array) => {
+  const result = []
+
+  array.forEach((item, index) =>
+    result.push(
+      <div className="col-auto px-0 mb-3" key={index+1}>
+        <div className="card card-tournament border border-secondary">
+          <div className="card-body text-center">
+            <p className="card-text">{item}</p>
+          </div>
+        </div>
+      </div>
+    )
+  )
+
+  return result
 }
 
 export default withRouter(OpponentCard)
