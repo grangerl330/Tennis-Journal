@@ -209,7 +209,7 @@ class Home extends Component {
         </div>
 
         <div className="container border rounded pb-4 mt-5 mb-4">
-          <div className="row justify-content-center bg-secondary">
+          <div className="row justify-content-center bg-secondary mb-4">
             <div className="col text-center text-white">
               <h1>Things To Improve</h1>
             </div>
@@ -219,7 +219,7 @@ class Home extends Component {
               {this.props.currentUser.notes}
             </div>
           </div>
-          <div className="row mt-3 mb-3 justify-content-center">
+          <div className="row mt-5 mb-3 justify-content-center">
             <div className="col-md-3">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#notesModal">
                 <i className="fas fa-edit"></i> Edit Notes
