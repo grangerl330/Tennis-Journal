@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users
-User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", password: "password", utr: 10, match_record: "", ranking: 23, points: 0, short_term_goal: "Improve forehand consistency", mid_term_goal: "Get ranked inside top 20", long_term_goal: "Get recruited to D1 school")
+User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", password: "password", utr: 10, match_record: "", ranking: 23, points: 0, short_term_goal: "Improve forehand consistency", mid_term_goal: "Get ranked inside top 20", long_term_goal: "Get recruited to D1 school", strengths: ["Forehand", "Serve"], weaknesses: ["Backhand"], notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta in, fugiat fugit saepe necessitatibus, rem. Explicabo quis doloribus dolores soluta harum a minima tempora nemo perferendis quia dolorem porro autem minus sequi repellat veniam unde, quae eligendi possimus asperiores fuga nihil reprehenderit assumenda natus molestias. Impedit, aperiam enim laudantium")
 User.create(first_name: "Roger", last_name: "Federer", email: "rogerfederer@gmail.com", password: "password", utr: 16, match_record: "", ranking: 2, points: 0)
 
 #Tournaments

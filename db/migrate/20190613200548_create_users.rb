@@ -14,6 +14,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :long_term_goal
       t.text :strengths, array: true, default: []
       t.text :weaknesses, array: true, default: []
+      t.text :notes 
 
       t.timestamps
     end

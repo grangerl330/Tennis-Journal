@@ -4,6 +4,7 @@ import GoalsModal from './modals/Stats/GoalsModal'
 import StatsUTRModal from './modals/Stats/StatsUTRModal'
 import StrengthsModal from './modals/Stats/StrengthsModal'
 import WeaknessesModal from './modals/Stats/WeaknessesModal'
+import NotesModal from './modals/Stats/NotesModal'
 import tennisBallIcon from '../images/tennis-ball-filled-icon.png'
 
 class Home extends Component {
@@ -24,14 +25,6 @@ class Home extends Component {
       return <span className="card-title font-weight-bold ml-1">* Enter your UTR by clicking here</span>
     } else {
       return <h5 className="card-title">{this.props.currentUser.utr}</h5>
-    }
-  }
-
-  pointsDisplay = () => {
-    if(!this.props.currentUser.points) {
-      return <span className="card-title font-weight-bold ml-1">* Points will update automatically when a tournament is added</span>
-    } else {
-      return <h5 className="card-title">{this.props.currentUser.points}</h5>
     }
   }
 
@@ -125,7 +118,7 @@ class Home extends Component {
                     <h6 className="font-italic text-info">Points</h6>
                   </div>
                   <div className="row">
-                    {this.pointsDisplay()}
+                    <h5 className="card-title">{this.props.currentUser.points}</h5>
                   </div>
                 </div>
               </div>
@@ -177,7 +170,7 @@ class Home extends Component {
           <div className="row justify-content-center text-white bg-secondary">
             <h1>My Game</h1>
           </div>
-          <div className="row mt-5">
+          <div className="row mt-4">
             <div className="col-6 text-center">
               <div className="row justify-content-center mb-3">
                 <h3 className="mb-0">Strengths</h3>
@@ -215,11 +208,32 @@ class Home extends Component {
           </div>
         </div>
 
+        <div className="container border rounded pb-4 mt-5 mb-4">
+          <div className="row justify-content-center bg-secondary">
+            <div className="col text-center text-white">
+              <h1>Things To Improve</h1>
+            </div>
+          </div>
+          <div className="row mt-1">
+            <div className="col">
+              {this.props.currentUser.notes}
+            </div>
+          </div>
+          <div className="row mt-3 mb-3 justify-content-center">
+            <div className="col-md-3">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#notesModal">
+                <i className="fas fa-edit"></i> Edit Notes
+              </button>
+            </div>
+          </div>
+        </div>
+
         <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <StatsUTRModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <WeaknessesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
       </section>
     )
   }
