@@ -169,12 +169,12 @@ const TournamentCard = (props) => {
 
         <div className="container-fluid">
           <div className="row mt-3 mb-3 justify-content-center">
-            <div className="col-md-3">
+            <div className="col-md-2">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#tournamentStatsModal">
                 <i className="fas fa-edit"></i> Edit Tournament
               </button>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <button className="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteTournamentModal">
                 <i className="fas fa-trash"></i> Delete Tournament
               </button>
