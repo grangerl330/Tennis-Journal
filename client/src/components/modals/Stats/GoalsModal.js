@@ -44,15 +44,15 @@ class GoalsModal extends Component {
               <form>
                 <div className="form-group">
                   <label htmlFor="Short Term Goal">Short Term Goal</label>
-                  <textarea className="form-control" type="text" name="short_term_goal" value={this.state.short_term_goal} onChange={this.handleOnChange} placeholder="Enter your short term goal"/>
+                  <textarea className="form-control" type="text" name="short_term_goal" value={this.state.short_term_goal || ''} onChange={this.handleOnChange} placeholder="Enter your short term goal"/>
                 </div>
                 <div className="form-group">
                   <label htmlFor="Short Term Goal">Mid Term Goal</label>
-                  <textarea className="form-control" type="text" name="mid_term_goal" value={this.state.mid_term_goal} onChange={this.handleOnChange} placeholder="Enter your mid term goal"/>
+                  <textarea className="form-control" type="text" name="mid_term_goal" value={this.state.mid_term_goal || ''} onChange={this.handleOnChange} placeholder="Enter your mid term goal"/>
                 </div>
                 <div className="form-group">
                   <label htmlFor="Long Term Goal">Long Term Goal</label>
-                  <textarea className="form-control" type="text" name="long_term_goal" value={this.state.long_term_goal} onChange={this.handleOnChange} placeholder="Enter your long term goal"/>
+                  <textarea className="form-control" type="text" name="long_term_goal" value={this.state.long_term_goal || ''} onChange={this.handleOnChange} placeholder="Enter your long term goal"/>
                 </div>
               </form>
             </div>

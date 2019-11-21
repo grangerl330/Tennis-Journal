@@ -54,7 +54,7 @@ class MatchNotesModal extends Component {
               <form>
                 <div className="form-group">
                   <label htmlFor="Match Notes">Notes: </label>
-                  <textarea className="form-control" rows="17" cols="50" name="notes" onChange={this.handleOnChange} value={this.state.notes} />
+                  <textarea className="form-control" rows="17" cols="50" name="notes" onChange={this.handleOnChange} value={this.state.notes || ''} />
                 </div>
                 <button className="btn btn-dark btn-block" data-dismiss="modal" onClick={this.handleOnSubmit}>
                   Update Notes

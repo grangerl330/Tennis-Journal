@@ -106,7 +106,7 @@ class MatchAllInfoModal extends Component {
 
   render() {
     return (
-      <div className="modal fade mt-3" id="matchAllStatsModal">
+      <div className="modal fade mt-3" id="matchInfoModal">
         <div className="modal-dialog modal-md">
           <div className="modal-content">
             <div className="modal-header bg-info text-white">
@@ -136,24 +136,24 @@ class MatchAllInfoModal extends Component {
                   <div className="col">
                     <div className="form-group">
                       <label htmlFor="Match Score">Score: </label>
-                      <input className="form-control" name="score" onChange={this.handleOnChange} value={this.state.score} />
+                      <input className="form-control" name="score" onChange={this.handleOnChange} value={this.state.score || ''} />
                     </div>
                     <div className="form-group">
                       <label htmlFor="Match Date">Date: </label>
-                      <input className="form-control" name="date" type="date" onChange={this.handleOnChange} value={this.state.date} />
+                      <input className="form-control" name="date" type="date" onChange={this.handleOnChange} value={this.state.date || ''} />
                     </div>
                   </div>
                 </div>
                 <div className="row justify-content-center">
                   <div className="form-group w-75">
                     <label htmlFor="Match Time">Time: </label>
-                    <input className="form-control" name="time" type="time" onChange={this.handleOnChange} value={this.state.time} />
+                    <input className="form-control" name="time" type="time" onChange={this.handleOnChange} value={this.state.time || ''} />
                   </div>
                 </div>
                 <div className="row justify-content-center">
                   <div className="form-group">
                     <label htmlFor="Match Notes">Notes: </label>
-                    <textarea className="form-control" rows="10" cols="50" name="notes" onChange={this.handleOnChange} value={this.state.notes} />
+                    <textarea className="form-control" rows="10" cols="50" name="notes" onChange={this.handleOnChange} value={this.state.notes || ''} />
                   </div>
                 </div>
                 <button className="btn btn-dark btn-block" data-dismiss="modal" onClick={this.handleOnSubmit}>

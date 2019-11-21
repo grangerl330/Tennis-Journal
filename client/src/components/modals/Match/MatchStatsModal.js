@@ -59,23 +59,23 @@ class MatchStatsModal extends Component {
               <form>
                 <div className="form-group">
                   <label htmlFor="Unforced Errors">Unforced Errors </label>
-                  <input type="number" className="form-control" name="unforced_errors" value={this.state.unforced_errors} onChange={this.handleOnChange} />
+                  <input type="number" className="form-control" name="unforced_errors" value={this.state.unforced_errors || ''} onChange={this.handleOnChange} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="Forced Errors">Forced Errors </label>
-                  <input className="form-control" name="forced_errors" onChange={this.handleOnChange} value={this.state.forced_errors} />
+                  <input className="form-control" name="forced_errors" onChange={this.handleOnChange} value={this.state.forced_errors || ''} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="Winners">Winners </label>
-                  <input type="number" className="form-control" name="winners" onChange={this.handleOnChange} value={this.state.winners} />
+                  <input type="number" className="form-control" name="winners" onChange={this.handleOnChange} value={this.state.winners || ''} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="Double Faults">Double Faults </label>
-                  <input className="form-control" name="double_faults" type="double_faults" onChange={this.handleOnChange} value={this.state.double_faults} />
+                  <input className="form-control" name="double_faults" type="double_faults" onChange={this.handleOnChange} value={this.state.double_faults || ''} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="Aces">Aces </label>
-                  <input className="form-control" name="aces" type="aces" onChange={this.handleOnChange} value={this.state.aces} />
+                  <input className="form-control" name="aces" type="aces" onChange={this.handleOnChange} value={this.state.aces || ''} />
                 </div>
                 <div className="form-group mt-4">
                   <button className="btn btn-dark btn-block" data-dismiss="modal" onClick={this.handleOnSubmit}>

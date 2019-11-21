@@ -1,10 +1,13 @@
 import React from 'react'
+import { withRouter } from 'react-router';
 
 const DeleteAccountModal = (props) => {
   const deleteAccount = event => {
     event.preventDefault()
 
     props.deleteCurrentUserFromDatabase(props.currentUser)
+
+    props.history.push('/')
   }
 
   return (
@@ -30,4 +33,4 @@ const DeleteAccountModal = (props) => {
   )
 }
 
-export default DeleteAccountModal
+export default withRouter(DeleteAccountModal)

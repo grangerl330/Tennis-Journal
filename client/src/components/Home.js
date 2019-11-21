@@ -14,17 +14,22 @@ class Home extends Component {
 
   currentRankingDisplay = () => {
     if(!this.props.currentUser.ranking) {
-      return <span className="card-title font-weight-bold ml-1">* Enter Your Current Ranking by clicking here</span>
+      return <span className="card-title font-weight-bold ml-1">* Enter Your Current Ranking and UTR by clicking the Edit Stats button</span>
     } else {
       return <h5 className="card-title">{this.props.currentUser.ranking}</h5>
     }
   }
 
-  utrDisplay = () => {
-    if(!this.props.currentUser.utr) {
-      return <span className="card-title font-weight-bold ml-1">* Enter your UTR by clicking here</span>
-    } else {
-      return <h5 className="card-title">{this.props.currentUser.utr}</h5>
+  messageDisplay = () => {
+    if(!this.props.currentUser.utr || !this.props.currentUser.ranking) {
+      return (
+        <div id="home-message" className="row mt-3">
+          <div className="col text-center">
+            <p className="card-title font-weight-bold ml-1">* Enter Your Current Ranking and UTR by clicking the Edit Stats button.</p>
+            <p className="card-title font-weight-bold ml-1">The Record and Points categories will update automatically when a Tournament or Match is added</p>
+          </div>
+        </div>
+      )
     }
   }
 
@@ -79,7 +84,7 @@ class Home extends Component {
                       <h6 className="font-italic text-info">Ranking</h6>
                     </div>
                     <div className="row">
-                      {this.currentRankingDisplay()}
+                      <h5 className="card-title">{this.props.currentUser.ranking}</h5>
                     </div>
                   </div>
                 </div>
@@ -96,7 +101,7 @@ class Home extends Component {
                       <h6 className="font-italic text-info">UTR</h6>
                     </div>
                     <div className="row">
-                      {this.utrDisplay()}
+                      <h5 className="card-title">{this.props.currentUser.utr}</h5>
                     </div>
                   </div>
                 </div>
@@ -121,6 +126,7 @@ class Home extends Component {
         </div>
 
         <div className="container">
+          {this.messageDisplay()}
           <div className="row mt-3 mb-3 justify-content-center">
             <div className="col-md-3">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#allStatsModal">

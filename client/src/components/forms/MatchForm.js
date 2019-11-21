@@ -35,9 +35,9 @@ class MatchForm extends Component {
     event.preventDefault()
 
     if (this.formIsValid()) {
-      const tournament = this.state
+      const match = this.state
 
-      this.props.sendMatchToDatabase(tournament)
+      this.props.addMatchToDatabase(match)
       this.setState({
         date: "",
         time: "",
@@ -51,7 +51,7 @@ class MatchForm extends Component {
         opponent_last_name:""
       })
 
-      this.props.history.push(`/tournaments/${tournament.id}`)
+      this.props.history.push(`/matches/${match.id}`)
     }
   }
 
@@ -111,13 +111,15 @@ class MatchForm extends Component {
   }
 
   roundOptionsDisplay = () => {
-    var displayOptions = []
-    var createdMatchRounds = []
+    let displayOptions = []
+    let createdMatchRounds = []
+
     this.props.matches.forEach(match => {createdMatchRounds.push(match.round)})
-    var roundOptions = this.roundOptions().filter(option => {
+
+    let roundOptions = this.roundOptions().filter(option => {
       return !createdMatchRounds.includes(option)
     })
-    var key = 1
+    let key = 1
 
     roundOptions.forEach(option => {
       if(parseInt(option) > 8){

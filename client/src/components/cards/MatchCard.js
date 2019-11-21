@@ -1,11 +1,6 @@
 import React from 'react';
 import moment from 'moment'
 import MatchInfoModal from '../modals/Match/MatchInfoModal'
-import MatchResultModal from '../modals/Match/MatchResultModal'
-import MatchScoreModal from '../modals/Match/MatchScoreModal'
-import MatchDateModal from '../modals/Match/MatchDateModal'
-import MatchTimeModal from '../modals/Match/MatchTimeModal'
-import MatchRoundModal from '../modals/Match/MatchRoundModal'
 import MatchNotesModal from '../modals/Match/MatchNotesModal'
 import MatchStatsModal from '../modals/Match/MatchStatsModal'
 import DeleteMatchModal from '../modals/DeleteMatchModal'
@@ -77,72 +72,64 @@ const MatchCard = (props) => {
                 </NavLink>
               </div>
               <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#matchResultModal">
-                  <div className="row justify-content-center">
-                    <div className="col-5">
-                      <i className="fas fa-clipboard-check fa-3x home-icon"></i>
+                <div className="row justify-content-center">
+                  <div className="col-5">
+                    <i className="fas fa-clipboard-check fa-3x home-icon"></i>
+                  </div>
+                  <div className="col-7">
+                    <div className="row">
+                      <h6 className="font-italic text-info">Result</h6>
                     </div>
-                    <div className="col-7">
-                      <div className="row">
-                        <h6 className="font-italic text-info">Result</h6>
-                      </div>
-                      <div className="row">
-                        <h5>{currentMatch.result}</h5>
-                      </div>
+                    <div className="row">
+                      <h5>{currentMatch.result}</h5>
                     </div>
                   </div>
-                </button>
+                </div>
               </div>
               <div className="col-md-3 pl-md-5 pr-md-0 text-center">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#matchScoreModal">
-                  <div className="row justify-content-center">
-                    <div className="col-5">
-                      <img src={scoreboardIcon} alt="age-icon"/>
+                <div className="row justify-content-center">
+                  <div className="col-5">
+                    <img src={scoreboardIcon} alt="age-icon"/>
+                  </div>
+                  <div className="col-7">
+                    <div className="row">
+                      <h6 className="font-italic text-info">Score</h6>
                     </div>
-                    <div className="col-7">
-                      <div className="row">
-                        <h6 className="font-italic text-info">Score</h6>
-                      </div>
-                      <div className="row">
-                        <h5>{currentMatch.score}</h5>
-                      </div>
+                    <div className="row">
+                      <h5>{currentMatch.score}</h5>
                     </div>
                   </div>
-                </button>
+                </div>
               </div>
               <div className="col-md-2 pr-md-5">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#matchDateModal">
-                  <div className="row justify-content-center">
-                    <div className="col-5">
-                      <i className="fas fa-calendar-day fa-3x home-icon"></i>
+                <div className="row justify-content-center">
+                  <div className="col-5">
+                    <i className="fas fa-calendar-day fa-3x home-icon"></i>
+                  </div>
+                  <div className="col-7">
+                    <div className="row">
+                      <h6 className="font-italic text-info">Date</h6>
                     </div>
-                    <div className="col-7">
-                      <div className="row">
-                        <h6 className="font-italic text-info">Date</h6>
-                      </div>
-                      <div className="row">
-                        <h5>{moment(currentMatch.date).format('MM/DD/YY')}</h5>
-                      </div>
+                    <div className="row">
+                      <h5>{moment(currentMatch.date).format('MM/DD/YY')}</h5>
                     </div>
                   </div>
-                </button>
+                </div>
               </div>
               <div className="col-md-2 pr-md-5 pl-md-0 text-center">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#matchTimeModal">
-                  <div className="row justify-content-center">
-                    <div className="col-5">
-                      <i className="fas fa-clock fa-3x home-icon"></i>
+                <div className="row justify-content-center">
+                  <div className="col-5">
+                    <i className="fas fa-clock fa-3x home-icon"></i>
+                  </div>
+                  <div className="col-7">
+                    <div className="row">
+                      <h6 className="font-italic text-info">Time</h6>
                     </div>
-                    <div className="col-7">
-                      <div className="row">
-                        <h6 className="font-italic text-info">Time</h6>
-                      </div>
-                      <div className="row">
-                        <h5>{moment.utc(currentMatch.time).format('hh:mm a')}</h5>
-                      </div>
+                    <div className="row">
+                      <h5>{moment.utc(currentMatch.time).format('hh:mm a')}</h5>
                     </div>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
         </div>
@@ -150,7 +137,7 @@ const MatchCard = (props) => {
         <div className="container-fluid">
           <div className="row mt-3 mb-3 justify-content-center">
             <div className="col-md-2">
-              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#matchAllStatsModal">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#matchInfoModal">
                 <i className="fas fa-edit"></i> Edit Match
               </button>
             </div>
@@ -225,11 +212,6 @@ const MatchCard = (props) => {
 
           <MatchInfoModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <MatchStatsModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
-          <MatchResultModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
-          <MatchScoreModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
-          <MatchDateModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
-          <MatchTimeModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
-          <MatchRoundModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <MatchNotesModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <DeleteMatchModal matchId={currentMatch.id} deleteMatch={deleteMatch} />
       </section>

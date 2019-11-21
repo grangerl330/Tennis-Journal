@@ -1,13 +1,6 @@
 import React from 'react';
 import moment from 'moment'
-import TournamentAllStatsModal from '../modals/Tournament/TournamentAllStatsModal'
-import TournamentDatesModal from '../modals/Tournament/TournamentDatesModal'
-import TournamentLocationModal from '../modals/Tournament/TournamentLocationModal'
-import TournamentDivisionModal from '../modals/Tournament/TournamentDivisionModal'
-import TournamentSurfaceModal from '../modals/Tournament/TournamentSurfaceModal'
-import TournamentDrawSizeModal from '../modals/Tournament/TournamentDrawSizeModal'
-import TournamentPointsModal from '../modals/Tournament/TournamentPointsModal'
-import TournamentTitleModal from '../modals/Tournament/TournamentTitleModal'
+import TournamentInfoModal from '../modals/Tournament/TournamentInfoModal'
 import DeleteTournamentModal from '../modals/DeleteTournamentModal'
 import tennisCourtIcon from '../../images/tennis-court-icon.png'
 import tournamentDrawIcon from '../../images/tournament-draw-icon.png'
@@ -52,117 +45,103 @@ const TournamentCard = (props) => {
       <section id="tournament-card-page">
         <div className="container-fluid py-2 bg-info mb-4">
           <div className="row">
-            <button className="btn w-100 shadow-none px-0 text-white" data-toggle="modal" data-target="#tournamentTitleModal">
-              <div className="col text-center">
-                <h1>{tournament.title}</h1>
-              </div>
-            </button>
+            <div className="col text-white text-center">
+              <h1>{tournament.title}</h1>
+            </div>
           </div>
         </div>
 
         <div className="container-fluid px-4">
           <div className="row justify-content-center mt-2">
             <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#tournamentDatesModal">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <i className="fas fa-calendar-alt fa-3x home-icon"></i>
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="fas fa-calendar-alt fa-3x home-icon"></i>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Dates</h6>
                   </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Dates</h6>
-                    </div>
-                    <div className="row">
-                      <h6 className="text-left">{moment(tournament.start_date).format('MM/DD/YY')} - {moment(tournament.end_date).format('MM/DD/YY')}</h6>
-                    </div>
+                  <div className="row">
+                    <h6 className="text-left">{moment(tournament.start_date).format('MM/DD/YY')} - {moment(tournament.end_date).format('MM/DD/YY')}</h6>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
             <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#tournamentLocationModal">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <i className="fas fa-map-marker-alt fa-3x home-icon"></i>
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="fas fa-map-marker-alt fa-3x home-icon"></i>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Location</h6>
                   </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Location</h6>
-                    </div>
-                    <div className="row">
-                      <h6>{tournament.location}</h6>
-                    </div>
+                  <div className="row">
+                    <h6>{tournament.location}</h6>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
             <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#tournamentDivisionModal">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <i className="fas fa-folder-open fa-3x home-icon"></i>
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="fas fa-folder-open fa-3x home-icon"></i>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Division</h6>
                   </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Division</h6>
-                    </div>
-                    <div className="row">
-                      <h6>{tournament.age_category}</h6>
-                    </div>
+                  <div className="row">
+                    <h6>{tournament.age_category}</h6>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
             <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#tournamentSurfaceModal">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <img src={tennisCourtIcon} alt="age-icon"/>
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <img src={tennisCourtIcon} alt="age-icon"/>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Surface</h6>
                   </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Surface</h6>
-                    </div>
-                    <div className="row">
-                      <h6>{tournament.surface}</h6>
-                    </div>
+                  <div className="row">
+                    <h6>{tournament.surface}</h6>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
             <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#tournamentDrawSizeModal">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <img src={tournamentDrawIcon} alt="age-icon"/>
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <img src={tournamentDrawIcon} alt="age-icon"/>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Draw Size</h6>
                   </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Draw Size</h6>
-                    </div>
-                    <div className="row">
-                      <h6>{tournament.draw_size}</h6>
-                    </div>
+                  <div className="row">
+                    <h6>{tournament.draw_size}</h6>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
             <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#tournamentPointsModal">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <i className="far fa-dot-circle fa-3x home-icon"></i>
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="far fa-dot-circle fa-3x home-icon"></i>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Points</h6>
                   </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Points</h6>
-                    </div>
-                    <div className="row">
-                      <h6>{tournament.points}</h6>
-                    </div>
+                  <div className="row">
+                    <h6>{tournament.points}</h6>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
           </div>
         </div>
@@ -170,7 +149,7 @@ const TournamentCard = (props) => {
         <div className="container-fluid">
           <div className="row mt-3 mb-3 justify-content-center">
             <div className="col-md-2">
-              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#tournamentStatsModal">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#tournamentInfoModal">
                 <i className="fas fa-edit"></i> Edit Tournament
               </button>
             </div>
@@ -202,14 +181,7 @@ const TournamentCard = (props) => {
           </div>
         </div>
 
-          <TournamentAllStatsModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
-          <TournamentDatesModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
-          <TournamentLocationModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
-          <TournamentDivisionModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
-          <TournamentSurfaceModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
-          <TournamentDrawSizeModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
-          <TournamentPointsModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
-          <TournamentTitleModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
+          <TournamentInfoModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
           <DeleteTournamentModal tournamentId={tournament.id} deleteTournament={deleteTournament} />
       </section>
     )

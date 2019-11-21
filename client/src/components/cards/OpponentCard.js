@@ -1,10 +1,6 @@
 import React from 'react';
-import OpponentAllStatsModal from '../modals/Opponent/OpponentAllStatsModal'
-import OpponentAgeModal from '../modals/Opponent/OpponentAgeModal'
-import OpponentHandednessModal from '../modals/Opponent/OpponentHandednessModal'
-import OpponentUTRModal from '../modals/Opponent/OpponentUTRModal'
+import OpponentInfoModal from '../modals/Opponent/OpponentInfoModal'
 import OpponentNotesModal from '../modals/Opponent/OpponentNotesModal'
-import OpponentNameModal from '../modals/Opponent/OpponentNameModal'
 import OpponentStrengthsModal from '../modals/Opponent/OpponentStrengthsModal'
 import OpponentWeaknessesModal from '../modals/Opponent/OpponentWeaknessesModal'
 import tournamentDrawIcon from '../../images/tournament-draw-icon.png'
@@ -50,55 +46,49 @@ const OpponentCard = (props) => {
                 </NavLink>
               </div>
               <div className="col-md-3 pl-md-5 pr-md-0 text-center">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentAgeModal">
-                  <div className="row justify-content-center">
-                    <div className="col-5">
-                      <img src={birthdayIcon} alt="age-icon"/>
+                <div className="row justify-content-center">
+                  <div className="col-5">
+                    <img src={birthdayIcon} alt="age-icon"/>
+                  </div>
+                  <div className="col-7">
+                    <div className="row">
+                      <h6 className="font-italic text-info">Age</h6>
                     </div>
-                    <div className="col-7">
-                      <div className="row">
-                        <h6 className="font-italic text-info">Age</h6>
-                      </div>
-                      <div className="row">
-                        <h5>{opponent.age}</h5>
-                      </div>
+                    <div className="row">
+                      <h5>{opponent.age}</h5>
                     </div>
                   </div>
-                </button>
+                </div>
               </div>
               <div className="col-md-3 pr-md-5 pl-md-0 text-center">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentHandednessModal">
-                  <div className="row justify-content-center">
-                    <div className="col-5">
-                      <i className="fas fa-hand-paper fa-3x home-icon"></i>
+                <div className="row justify-content-center">
+                  <div className="col-5">
+                    <i className="fas fa-hand-paper fa-3x home-icon"></i>
+                  </div>
+                  <div className="col-7">
+                    <div className="row">
+                      <h6 className="font-italic text-info">Plays</h6>
                     </div>
-                    <div className="col-7">
-                      <div className="row">
-                        <h6 className="font-italic text-info">Plays</h6>
-                      </div>
-                      <div className="row">
-                        <h5>{opponent.handedness} Handed</h5>
-                      </div>
+                    <div className="row">
+                      <h5>{opponent.handedness} Handed</h5>
                     </div>
                   </div>
-                </button>
+                </div>
               </div>
               <div className="col-md-3 text-center">
-                <button className="btn shadow-none btn-block px-0" data-toggle="modal" data-target="#opponentUTRModal">
-                  <div className="row justify-content-center">
-                    <div className="col-5">
-                      <img src={tennisBallIcon} alt="utr-icon"/>
+                <div className="row justify-content-center">
+                  <div className="col-5">
+                    <img src={tennisBallIcon} alt="utr-icon"/>
+                  </div>
+                  <div className="col-7">
+                    <div className="row">
+                      <h6 className="font-italic text-info">UTR</h6>
                     </div>
-                    <div className="col-7">
-                      <div className="row">
-                        <h6 className="font-italic text-info">UTR</h6>
-                      </div>
-                      <div className="row">
-                        <h5>{opponent.utr}</h5>
-                      </div>
+                    <div className="row">
+                      <h5>{opponent.utr}</h5>
                     </div>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
         </div>
@@ -106,7 +96,7 @@ const OpponentCard = (props) => {
         <div className="container-fluid">
           <div className="row mt-3 mb-3 justify-content-center">
             <div className="col-md-2">
-              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentStatsModal">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentInfoModal">
                 <i className="fas fa-edit"></i> Edit Opponent
               </button>
             </div>
@@ -172,12 +162,8 @@ const OpponentCard = (props) => {
           </div>
         </div>
 
-          <OpponentAllStatsModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
-          <OpponentAgeModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
-          <OpponentHandednessModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
-          <OpponentUTRModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
+          <OpponentInfoModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
           <OpponentNotesModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
-          <OpponentNameModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
           <OpponentStrengthsModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
           <OpponentWeaknessesModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
       </section>

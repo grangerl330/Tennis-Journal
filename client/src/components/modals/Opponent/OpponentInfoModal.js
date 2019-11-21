@@ -64,7 +64,7 @@ class OpponentAllStatsModal extends Component {
 
   render() {
     return (
-      <div className="modal fade mt-3" id="opponentStatsModal">
+      <div className="modal fade mt-3" id="opponentInfoModal">
         <div className="modal-dialog modal-md">
           <div className="modal-content">
             <div className="modal-header bg-info text-white">
@@ -77,30 +77,30 @@ class OpponentAllStatsModal extends Component {
               <form>
                 <div className="form-group">
                   <label htmlFor="Opponent First Name">First Name: </label>
-                  <input className="form-control" name="first_name" onChange={this.handleOnChange} value={this.state.first_name} />
+                  <input className="form-control" name="first_name" onChange={this.handleOnChange} value={this.state.first_name || ''} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="Opponent Last Name">Last Name: </label>
-                  <input className="form-control" name="last_name" onChange={this.handleOnChange} value={this.state.last_name} />
+                  <input className="form-control" name="last_name" onChange={this.handleOnChange} value={this.state.last_name || ''} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="Opponent Age">Age: </label>
-                  <input className="form-control" name="age" onChange={this.handleOnChange} value={this.state.age} />
+                  <input className="form-control" name="age" onChange={this.handleOnChange} value={this.state.age || ''} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="opponent-handedness" className="mr-2">Plays</label>
-                  <select className="form-control mr-2" name="handedness" onChange={this.handleOnChange} value={this.state.handedness}>
+                  <select className="form-control mr-2" name="handedness" onChange={this.handleOnChange} value={this.state.handedness || ''}>
                     <option value="Right">Right Handed</option>
                     <option value="Left">Left Handed</option>
                   </select>
                 </div>
                 <div className="form-group">
                   <label htmlFor="Opponent UTR">UTR: </label>
-                  <input className="form-control" name="utr" onChange={this.handleOnChange} value={this.state.utr} />
+                  <input className="form-control" name="utr" onChange={this.handleOnChange} value={this.state.utr || ''} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="Opponent Notes">Notes: </label>
-                  <textarea className="form-control" rows="17" cols="50" name="notes" onChange={this.handleOnChange} value={this.state.notes} />
+                  <textarea className="form-control" rows="17" cols="50" name="notes" onChange={this.handleOnChange} value={this.state.notes || ''} />
                 </div>
                 <button className="btn btn-dark btn-block" data-dismiss="modal" onClick={this.handleOnSubmit}>
                   Update Opponent

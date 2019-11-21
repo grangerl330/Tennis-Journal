@@ -43,11 +43,11 @@ class AllStatsModal extends Component {
               <form>
                 <div className="form-group">
                   <label htmlFor="Current Ranking">Current Ranking</label>
-                  <input className="form-control" type="text" name="ranking" value={this.state.ranking} onChange={this.handleOnChange} placeholder="Enter your current ranking"/>
+                  <input className="form-control" type="text" name="ranking" value={this.state.ranking || ''} onChange={this.handleOnChange} placeholder="Enter your current ranking"/>
                 </div>
                 <div className="form-group">
                   <label htmlFor="Current UTR">Current UTR</label>
-                  <input className="form-control" type="text" name="utr" value={this.state.utr} onChange={this.handleOnChange} placeholder="Enter your current UTR"/>
+                  <input className="form-control" type="text" name="utr" value={this.state.utr || ''} onChange={this.handleOnChange} placeholder="Enter your current UTR"/>
                 </div>
               </form>
             </div>

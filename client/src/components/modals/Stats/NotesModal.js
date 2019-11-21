@@ -42,7 +42,7 @@ class NotesModal extends Component {
               <form>
                 <div className="form-group">
                   <label htmlFor="Short Term Goal">Notes</label>
-                  <textarea className="form-control" type="text" rows="10" name="notes" value={this.state.notes} onChange={this.handleOnChange} placeholder="Enter your short term goal"/>
+                  <textarea className="form-control" type="text" rows="10" name="notes" value={this.state.notes || ''} onChange={this.handleOnChange} placeholder="Enter your short term goal"/>
                 </div>
               </form>
             </div>

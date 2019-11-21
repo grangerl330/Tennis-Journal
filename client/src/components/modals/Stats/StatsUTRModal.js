@@ -42,7 +42,7 @@ class StatsUTRModal extends Component {
               <form>
                 <div className="form-group">
                   <label htmlFor="Current UTR">Current UTR</label>
-                  <input className="form-control" type="text" name="utr" value={this.state.utr} onChange={this.handleOnChange} placeholder="Enter your current UTR"/>
+                  <input className="form-control" type="text" name="utr" value={this.state.utr || ''} onChange={this.handleOnChange} placeholder="Enter your current UTR"/>
                 </div>
               </form>
             </div>

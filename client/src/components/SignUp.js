@@ -10,8 +10,8 @@ class Signup extends Component {
     super(props)
 
     this.state = {
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
       email: "",
       emailIsValid: true,
       password: "",
@@ -66,7 +66,7 @@ class Signup extends Component {
         isValid = false;
     }
 
-    if(this.state.passwordConfirmation !== "" && this.state.password !== this.state.passwordConfirmation) {
+    if(this.state.password !== this.state.passwordConfirmation) {
       this.setState({
         passwordConfirmationIsValid: false
       })
@@ -108,11 +108,11 @@ class Signup extends Component {
               <form onSubmit={this.handleOnSubmit}>
                 <div className="form-group">
                   <label htmlFor="First Name">First Name</label>
-                  <input className="form-control" type="text" name="first_name" onChange={this.handleOnChange} value={this.state.firstName} placeholder="First Name" />
+                  <input className="form-control" type="text" name="first_name" onChange={this.handleOnChange} value={this.state.first_name} placeholder="First Name" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="Last Name">Last Name</label>
-                  <input className="form-control" type="text" name="last_name" onChange={this.handleOnChange} value={this.state.lastName} placeholder="Last Name" />
+                  <input className="form-control" type="text" name="last_name" onChange={this.handleOnChange} value={this.state.last_name} placeholder="Last Name" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
