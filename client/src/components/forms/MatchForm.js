@@ -14,6 +14,11 @@ class MatchForm extends Component {
       result: "",
       resultIsValid: true,
       score: "",
+      unforced_errors: 0,
+      forced_errors: 0,
+      winners: 0,
+      double_faults: 0,
+      aces: 0,
       notes: "",
       opponent_first_name: "",
       opponentFirstNameIsValid: true,
@@ -51,7 +56,7 @@ class MatchForm extends Component {
         opponent_last_name:""
       })
 
-      this.props.history.push(`/matches/${match.id}`)
+      this.props.history.push(`/tournaments/${this.props.tournamentId}`)
     }
   }
 
@@ -90,7 +95,15 @@ class MatchForm extends Component {
   }
 
   roundOptions = () => {
-    switch(this.props.tournament.draw_size){
+    let switchCondition = 0
+
+    if(this.props.tournament === undefined) {
+      switchCondition = 128
+    } else {
+      switchCondition = this.props.tournament.draw_size
+    }
+
+    switch(switchCondition){
       case 128:
         return [128, 64, 32, 16, 'Quarterfinal', 'Semifinal', 'Final']
       case 64:
@@ -240,9 +253,40 @@ class MatchForm extends Component {
                         </div>
                       </div>
                     </div>
+                    <div className="row justify-content-center mb-2 mt-3">
+                      <h4>Stats</h4>
+                    </div>
+                    <div className="row justify-content-center">
+                      <div className="col-6">
+                        <div className="form-group">
+                          <label htmlFor="Unforced Errors">Unforced Errors: </label>
+                          <input className="form-control" type="number" name="unforced_errors" value={this.state.unforced_errors} onChange={this.handleOnChange} />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="Winners">Winners: </label>
+                          <input className="form-control" type="number" name="winners" value={this.state.winners} onChange={this.handleOnChange} />
+                        </div>
+                      </div>
+                      <div className="col-6">
+                        <div className="form-group">
+                          <label htmlFor="Forced Errors">Forced Errors: </label>
+                          <input className="form-control" type="number" name="forced_errors" value={this.state.forced_errors} onChange={this.handleOnChange} />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="Double Faults">Double Faults: </label>
+                          <input className="form-control" type="number" name="double_faults" value={this.state.double_faults} onChange={this.handleOnChange} />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row justify-content-center mb-2">
+                      <div className="form-group">
+                        <label htmlFor="Double Faults">Aces: </label>
+                        <input className="form-control" type="number" name="aces" value={this.state.aces} onChange={this.handleOnChange} />
+                      </div>
+                    </div>
                     <div className="row justify-content-center mb-2">
                       <div className="form-group text-center">
-                        <label htmlFor="Match Notes">Notes: </label>
+                        <label htmlFor="Match Notes"><h4>Notes</h4></label>
                         <textarea className="form-control" rows="7" cols="60" name="notes" value={this.state.notes} onChange={this.handleOnChange} placeholder="Notes about the match">Notes:</textarea>
                       </div>
                     </div>
