@@ -18,14 +18,12 @@ const NavbarRight = (props) => {
         </button>
         <div className="dropdown-menu">
           <NavLink to='/profile/edit' className="dropdown-item">
-            <i className="fas fa-user-circle"></i> Edit Profile
+            <i className="fas fa-user-circle mr-2"></i> Edit Profile
           </NavLink>
+          <a href="/login" className="dropdown-item" onClick={handleOnSubmit}>
+            <i className="fas fa-user-times mr-2"></i> Logout
+          </a>
         </div>
-      </li>
-      <li className= "nav-item">
-        <a href="/login" className="nav-link" onClick={handleOnSubmit}>
-          <i className="fas fa-user-times"></i> Logout
-        </a>
       </li>
     </ul>
   )

@@ -254,7 +254,7 @@ class MatchForm extends Component {
                       </div>
                     </div>
                     <div className="row justify-content-center mb-2 mt-3">
-                      <h4>Stats</h4>
+                      <h4>Match Stats</h4>
                     </div>
                     <div className="row justify-content-center">
                       <div className="col-6">
