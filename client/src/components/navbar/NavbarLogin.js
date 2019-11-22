@@ -77,7 +77,7 @@ class NavbarLogin extends Component {
   }
 
   render() {
-    const emailInputClass = classNames('form-control',
+    const emailInputClass = classNames('form-control email-login',
       { 'is-invalid': !this.state.emailIsValid }
     );
 
@@ -91,7 +91,7 @@ class NavbarLogin extends Component {
           <div className="form-row">
             <div className="col-5-form mb-2 mb-md-0">
               <input className={emailInputClass} type="text" name="email" onChange={this.handleOnChange} value={this.state.email} placeholder="Email" />
-              <div className="invalid-feedback">
+              <div className="invalid-feedback email-login">
                 Please enter a valid email address
               </div>
             </div>

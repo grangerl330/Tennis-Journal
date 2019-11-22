@@ -17,8 +17,8 @@ export const signup = newUserInfo => {
     .then(response => response.json())
     .then(user => {
       if (user.error) {
-        $('.form-control.email').addClass('is-invalid')
-        $('.invalid-feedback.email').text('An account already exists with this email address')
+        $('.form-control.email-signup').addClass('is-invalid')
+        $('.invalid-feedback.email-signup').text('An account already exists with this email address')
       } else {
         dispatch(setCurrentUser(user))
       }

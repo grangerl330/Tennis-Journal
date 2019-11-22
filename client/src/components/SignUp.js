@@ -59,7 +59,7 @@ class Signup extends Component {
     })
 
     $('.invalid-feedback.email').text('Please enter a valid email address')
-    
+
       isValid = false;
     }
 
@@ -89,7 +89,7 @@ class Signup extends Component {
   }
 
   render() {
-    const emailInputClass = classNames('form-control email',
+    const emailInputClass = classNames('form-control email-signup',
       { 'is-invalid': !this.state.emailIsValid }
     );
 
@@ -121,7 +121,7 @@ class Signup extends Component {
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
                   <input className={emailInputClass} type="text" name="email" onChange={this.handleOnChange} value={this.state.email} placeholder="Email" />
-                  <div className="invalid-feedback email">
+                  <div className="invalid-feedback email-signup">
                     Please enter a valid email address
                   </div>
                 </div>

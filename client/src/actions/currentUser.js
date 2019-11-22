@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 // Synchronous Action Creators
 export const setCurrentUser = user => {
   return {
@@ -25,7 +27,12 @@ export const login = credentials => {
     })
     .then(response => response.json())
     .then(user => {
-      dispatch(setCurrentUser(user))
+      if(user.error) {
+        $('.form-control.email-login').addClass('is-invalid')
+        $('.invalid-feedback.email-login').text('An account with this email does not exist')
+      } else {
+        dispatch(setCurrentUser(user))
+      }
     })
     .catch(console.log)
   }
