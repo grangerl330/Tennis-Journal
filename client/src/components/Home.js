@@ -123,7 +123,7 @@ class Home extends Component {
         <div className="container">
           {this.messageDisplay()}
           <div className="row mt-3 mb-3 justify-content-center">
-            <div className="col-md-3">
+            <div className="col-md-2">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#allStatsModal">
                 <i className="fas fa-edit"></i> Edit Stats
               </button>
@@ -153,7 +153,7 @@ class Home extends Component {
             </div>
           </div>
           <div className="row mt-3 mb-3 justify-content-center">
-            <div className="col-md-3">
+            <div className="col-md-2">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#goalsModal">
                 <i className="fas fa-edit"></i> Edit Goals
               </button>
@@ -215,7 +215,7 @@ class Home extends Component {
             </div>
           </div>
           <div className="row mt-5 mb-3 justify-content-center">
-            <div className="col-md-3">
+            <div className="col-md-2">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#notesModal">
                 <i className="fas fa-edit"></i> Edit Notes
               </button>

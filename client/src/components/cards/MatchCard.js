@@ -180,7 +180,7 @@ const MatchCard = (props) => {
               </div>
           </div>
           <div className="row mt-4 mb-0 justify-content-center">
-            <div className="col-md-3">
+            <div className="col-md-2">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#matchStatsModal">
                 <i className="fas fa-edit"></i> Edit Stats
               </button>
@@ -202,7 +202,7 @@ const MatchCard = (props) => {
             </div>
           </div>
           <div className="row mt-5 mb-0 justify-content-center">
-            <div className="col-md-3">
+            <div className="col-md-2">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#matchNotesModal">
                 <i className="fas fa-edit"></i> Edit Notes
               </button>
