@@ -79,6 +79,9 @@ class StrengthsModal extends Component {
               <span className="input-group-text">{i+1}</span>
             </div>
             <input className="form-control" type="text" name={`strength${i+1}`} value={this.state[`strength${i+1}`] || ''} onChange={this.handleOnChange} />
+            <div className="input-group-append">
+              <button onClick={this.removeStrength} value={`strength${i+1}`}><i className="fas fa-trash-alt text-secondary"></i></button>
+            </div>
           </div>
         )
       }
@@ -135,9 +138,6 @@ class StrengthsModal extends Component {
             <div className="row justify-content-center mb-3">
               <div className="col-2 d-flex justify-content-center">
                 <button className="btn btn-info btn-block" onClick={this.addStrengthInput}><i className="fas fa-plus"></i></button>
-              </div>
-              <div className="col-2 d-flex justify-content-center">
-                <button className="btn btn-info btn-block" onClick={this.removeStrengthInput}><i className="fas fa-minus"></i></button>
               </div>
             </div>
             <div className="modal-footer justify-content-center">
