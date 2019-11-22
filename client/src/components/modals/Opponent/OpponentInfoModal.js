@@ -68,7 +68,7 @@ class OpponentAllStatsModal extends Component {
         <div className="modal-dialog modal-md">
           <div className="modal-content">
             <div className="modal-header bg-info text-white">
-              <h5 className="modal-title">Edit Opponent</h5>
+              <h5 className="modal-title">Edit Opponent Info</h5>
               <button className="close" data-dismiss="modal">
                 <i className="fas fa-times"></i>
               </button>
@@ -103,7 +103,7 @@ class OpponentAllStatsModal extends Component {
                   <textarea className="form-control" rows="17" cols="50" name="notes" onChange={this.handleOnChange} value={this.state.notes || ''} />
                 </div>
                 <button className="btn btn-dark btn-block" data-dismiss="modal" onClick={this.handleOnSubmit}>
-                  Update Opponent
+                  Update Opponent Info
                 </button>
               </form>
             </div>

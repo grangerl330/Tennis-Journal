@@ -138,7 +138,7 @@ const MatchCard = (props) => {
           <div className="row mt-3 mb-3 justify-content-center">
             <div className="col-md-2">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#matchInfoModal">
-                <i className="fas fa-edit"></i> Edit Match
+                <i className="fas fa-edit"></i> Edit Info
               </button>
             </div>
             <div className="col-md-2">
@@ -190,11 +190,9 @@ const MatchCard = (props) => {
 
         <div className="container border rounded pb-4 mt-5 mb-4">
           <div className="row justify-content-center bg-secondary mb-3">
-          <button className="btn p-0 shadow-none text-white" data-toggle="modal" data-target="#matchNotesModal">
-            <div className="col">
+            <div className="col text-center text-white">
               <h1>Notes</h1>
             </div>
-          </button>
           </div>
           <div className="row mt-1">
             <div className="col">

@@ -97,7 +97,7 @@ const OpponentCard = (props) => {
           <div className="row mt-3 mb-3 justify-content-center">
             <div className="col-md-2">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentInfoModal">
-                <i className="fas fa-edit"></i> Edit Opponent
+                <i className="fas fa-edit"></i> Edit Info
               </button>
             </div>
           </div>
@@ -146,19 +146,22 @@ const OpponentCard = (props) => {
         </div>
 
         <div className="container border rounded pb-4 mt-5 mb-4">
-          <div className="row justify-content-center bg-secondary">
-          <button className="btn p-0 shadow-none text-white" data-toggle="modal" data-target="#matchNotesModal">
-            <div className="col">
+          <div className="row justify-content-center bg-secondary mb-3">
+            <div className="col text-center text-white">
               <h1>Notes</h1>
             </div>
-          </button>
           </div>
           <div className="row mt-1">
-            <button className="btn shadow-none text-left" data-toggle="modal" data-target="#matchNotesModal">
-              <div className="col">
-                {opponent.notes}
-              </div>
-            </button>
+            <div className="col">
+              {opponent.notes}
+            </div>
+          </div>
+          <div className="row mt-5 mb-0 justify-content-center">
+            <div className="col-md-2">
+              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentNotesModal">
+                <i className="fas fa-edit"></i> Edit Notes
+              </button>
+            </div>
           </div>
         </div>
 

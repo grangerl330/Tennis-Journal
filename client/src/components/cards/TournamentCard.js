@@ -150,7 +150,7 @@ const TournamentCard = (props) => {
           <div className="row mt-3 mb-3 justify-content-center">
             <div className="col-md-2">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#tournamentInfoModal">
-                <i className="fas fa-edit"></i> Edit Tournament
+                <i className="fas fa-edit"></i> Edit Info
               </button>
             </div>
             <div className="col-md-2">

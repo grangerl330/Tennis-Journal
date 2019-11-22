@@ -11,7 +11,6 @@ class MatchAllInfoModal extends Component {
       result: "",
       date: "",
       time: "",
-      notes: "",
       id: "",
       tournament_id: props.tournamentId
     }
@@ -24,7 +23,6 @@ class MatchAllInfoModal extends Component {
       result: this.props.currentMatch.result,
       date: this.props.currentMatch.date,
       time: this.props.currentMatch.time,
-      notes: this.props.currentMatch.notes,
       id: this.props.currentMatch.id
     })
   }
@@ -110,7 +108,7 @@ class MatchAllInfoModal extends Component {
         <div className="modal-dialog modal-md">
           <div className="modal-content">
             <div className="modal-header bg-info text-white">
-              <h5 className="modal-title">Edit Match</h5>
+              <h5 className="modal-title">Edit Match Info</h5>
               <button className="close" data-dismiss="modal">
                 <i className="fas fa-times"></i>
               </button>
@@ -150,14 +148,8 @@ class MatchAllInfoModal extends Component {
                     <input className="form-control" name="time" type="time" onChange={this.handleOnChange} value={this.state.time || ''} />
                   </div>
                 </div>
-                <div className="row justify-content-center">
-                  <div className="form-group">
-                    <label htmlFor="Match Notes">Notes: </label>
-                    <textarea className="form-control" rows="10" cols="50" name="notes" onChange={this.handleOnChange} value={this.state.notes || ''} />
-                  </div>
-                </div>
                 <button className="btn btn-dark btn-block" data-dismiss="modal" onClick={this.handleOnSubmit}>
-                  Update Match
+                  Update Match Info
                 </button>
               </form>
             </div>
