@@ -1,11 +1,13 @@
 import React from 'react';
 import moment from 'moment'
+import TournamentStatDisplay from './TournamentStatDisplay'
 import TournamentInfoModal from '../modals/Tournament/TournamentInfoModal'
 import DeleteTournamentModal from '../modals/Delete/DeleteTournamentModal'
 import tennisCourtIcon from '../../images/tennis-court-icon.png'
 import tournamentDrawIcon from '../../images/tournament-draw-icon.png'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router';
+
 
 const TournamentCard = (props) => {
   var tournamentId = parseInt(props.id)
@@ -53,96 +55,12 @@ const TournamentCard = (props) => {
 
         <div className="container-fluid px-4">
           <div className="row justify-content-center mt-2">
-            <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <div className="row justify-content-center">
-                <div className="col-5">
-                  <i className="fas fa-calendar-alt fa-3x home-icon"></i>
-                </div>
-                <div className="col-7">
-                  <div className="row">
-                    <h6 className="font-italic text-info">Dates</h6>
-                  </div>
-                  <div className="row">
-                    <h6 className="text-left">{moment(tournament.start_date).format('MM/DD/YY')} - {moment(tournament.end_date).format('MM/DD/YY')}</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <div className="row justify-content-center">
-                <div className="col-5">
-                  <i className="fas fa-map-marker-alt fa-3x home-icon"></i>
-                </div>
-                <div className="col-7">
-                  <div className="row">
-                    <h6 className="font-italic text-info">Location</h6>
-                  </div>
-                  <div className="row">
-                    <h6>{tournament.location}</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <div className="row justify-content-center">
-                <div className="col-5">
-                  <i className="fas fa-folder-open fa-3x home-icon"></i>
-                </div>
-                <div className="col-7">
-                  <div className="row">
-                    <h6 className="font-italic text-info">Division</h6>
-                  </div>
-                  <div className="row">
-                    <h6>{tournament.age_category}</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <div className="row justify-content-center">
-                <div className="col-5">
-                  <img src={tennisCourtIcon} alt="age-icon"/>
-                </div>
-                <div className="col-7">
-                  <div className="row">
-                    <h6 className="font-italic text-info">Surface</h6>
-                  </div>
-                  <div className="row">
-                    <h6>{tournament.surface}</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <div className="row justify-content-center">
-                <div className="col-5">
-                  <img src={tournamentDrawIcon} alt="age-icon"/>
-                </div>
-                <div className="col-7">
-                  <div className="row">
-                    <h6 className="font-italic text-info">Draw Size</h6>
-                  </div>
-                  <div className="row">
-                    <h6>{tournament.draw_size}</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-2 pl-md-5 pr-md-0 text-center">
-              <div className="row justify-content-center">
-                <div className="col-5">
-                  <i className="far fa-dot-circle fa-3x home-icon"></i>
-                </div>
-                <div className="col-7">
-                  <div className="row">
-                    <h6 className="font-italic text-info">Points</h6>
-                  </div>
-                  <div className="row">
-                    <h6>{tournament.points}</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <TournamentStatDisplay statName="Dates" stat={`${moment(tournament.start_date).format('MM/DD/YY')} - ${moment(tournament.end_date).format('MM/DD/YY')}`} icon="fas fa-calendar-alt fa-3x home-icon" dateClass="text-left" />
+            <TournamentStatDisplay statName="Location" stat={tournament.location} icon="fas fa-map-marker-alt fa-3x home-icon" />
+            <TournamentStatDisplay statName="Division" stat={tournament.age_category} icon="fas fa-folder-open fa-3x home-icon" />
+            <TournamentStatDisplay statName="Surface" stat={tournament.surface} image={tennisCourtIcon} />
+            <TournamentStatDisplay statName="Draw Size" stat={tournament.draw_size} image={tournamentDrawIcon} />
+            <TournamentStatDisplay statName="Points" stat={tournament.points} icon="far fa-dot-circle fa-3x home-icon" />
           </div>
         </div>
 
