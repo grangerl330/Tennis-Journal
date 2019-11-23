@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment'
 import TournamentInfoModal from '../modals/Tournament/TournamentInfoModal'
-import DeleteTournamentModal from '../modals/DeleteTournamentModal'
+import DeleteTournamentModal from '../modals/Delete/DeleteTournamentModal'
 import tennisCourtIcon from '../../images/tennis-court-icon.png'
 import tournamentDrawIcon from '../../images/tournament-draw-icon.png'
 import { NavLink } from 'react-router-dom'

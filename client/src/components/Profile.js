@@ -1,7 +1,7 @@
 import React from 'react'
 import ProfileForm from './forms/ProfileForm'
 import PasswordModal from './modals/PasswordModal'
-import DeleteAccountModal from './modals/DeleteAccountModal'
+import DeleteAccountModal from './modals/Delete/DeleteAccountModal'
 
 const Profile = (props) => {
   return (
