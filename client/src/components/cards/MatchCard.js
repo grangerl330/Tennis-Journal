@@ -3,6 +3,7 @@ import moment from 'moment'
 import MatchInfoModal from '../modals/Match/MatchInfoModal'
 import MatchNotesModal from '../modals/Match/MatchNotesModal'
 import MatchStatsModal from '../modals/Match/MatchStatsModal'
+import LiveStatsModal from '../modals/Match/LiveStatsModal'
 import DeleteMatchModal from '../modals/Delete/DeleteMatchModal'
 import headToHeadIcon from '../../images/head-to-head.png'
 import scoreboardIcon from '../../images/scoreboard.png'
@@ -185,6 +186,11 @@ const MatchCard = (props) => {
                 <i className="fas fa-edit"></i> Edit Stats
               </button>
             </div>
+            <div className="col-md-3">
+              <button className="btn btn-info btn-block w-75" data-toggle="modal" data-target="#liveStatsModal">
+                <i className="fas fa-rss mr-2"></i> Live Stat Tracker
+              </button>
+            </div>
           </div>
         </div>
 
@@ -210,6 +216,7 @@ const MatchCard = (props) => {
 
           <MatchInfoModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <MatchStatsModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
+          <LiveStatsModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <MatchNotesModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
           <DeleteMatchModal matchId={currentMatch.id} deleteMatch={deleteMatch} />
       </section>
