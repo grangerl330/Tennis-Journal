@@ -35,7 +35,7 @@ const TournamentCard = (props) => {
       <div className="card card-tournament border border-secondary">
         <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/matches/${match.id}`}>
           <div className="card-body text-center">
-              <h6 className="card-text">{match_round_display(match)}</h6>
+            <h6 className="card-text">{match_round_display(match)}</h6>
           </div>
         </NavLink>
       </div>

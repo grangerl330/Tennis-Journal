@@ -242,6 +242,7 @@ class MatchForm extends Component {
                             <option disabled hidden></option>
                             <option value="Won">Won</option>
                             <option value="Lost">Lost</option>
+                            <option value="In Progress">In Progress</option>
                           </select>
                           <div className="invalid-feedback">
                             Please select a result

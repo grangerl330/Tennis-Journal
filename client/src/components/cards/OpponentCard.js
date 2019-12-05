@@ -27,70 +27,70 @@ const OpponentCard = (props) => {
         </div>
 
         <div className="container px-0">
-            <div className="row justify-content-center mt-2">
-              <div className="col-md-3">
-                <NavLink to={`/matches/${opponent.match.id}`} className="btn shadow-none btn-block shadow-none">
-                  <div className="row justify-content-center">
-                    <div className="col-5">
-                      <img src={tournamentDrawIcon} alt="age-icon"/>
-                    </div>
-                    <div className="col-7">
-                      <div className="row">
-                        <h6 className="font-italic text-info">Played In</h6>
-                      </div>
-                      <div className="row">
-                        <h5>{opponent.match.tournament.title}</h5>
-                      </div>
-                    </div>
-                  </div>
-                </NavLink>
-              </div>
-              <div className="col-md-3 pl-md-5 pr-md-0 text-center">
+          <div className="row justify-content-center mt-2">
+            <div className="col-md-3">
+              <NavLink to={`/matches/${opponent.match.id}`} className="btn shadow-none btn-block shadow-none">
                 <div className="row justify-content-center">
                   <div className="col-5">
-                    <img src={birthdayIcon} alt="age-icon"/>
+                    <img src={tournamentDrawIcon} alt="age-icon"/>
                   </div>
                   <div className="col-7">
                     <div className="row">
-                      <h6 className="font-italic text-info">Age</h6>
+                      <h6 className="font-italic text-info">Played In</h6>
                     </div>
                     <div className="row">
-                      <h5>{opponent.age}</h5>
+                      <h5>{opponent.match.tournament.title}</h5>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-3 pr-md-5 pl-md-0 text-center">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <i className="fas fa-hand-paper fa-3x home-icon"></i>
-                  </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Plays</h6>
-                    </div>
-                    <div className="row">
-                      <h5>{opponent.handedness} Handed</h5>
-                    </div>
-                  </div>
+              </NavLink>
+            </div>
+            <div className="col-md-3 pl-md-5 pr-md-0 text-center">
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <img src={birthdayIcon} alt="age-icon"/>
                 </div>
-              </div>
-              <div className="col-md-3 text-center">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <img src={tennisBallIcon} alt="utr-icon"/>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Age</h6>
                   </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">UTR</h6>
-                    </div>
-                    <div className="row">
-                      <h5>{opponent.utr}</h5>
-                    </div>
+                  <div className="row">
+                    <h5>{opponent.age}</h5>
                   </div>
                 </div>
               </div>
             </div>
+            <div className="col-md-3 pr-md-5 pl-md-0 text-center">
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="fas fa-hand-paper fa-3x home-icon"></i>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Plays</h6>
+                  </div>
+                  <div className="row">
+                    <h5>{opponent.handedness} Handed</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-3 text-center">
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <img src={tennisBallIcon} alt="utr-icon"/>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">UTR</h6>
+                  </div>
+                  <div className="row">
+                    <h5>{opponent.utr}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="container-fluid">

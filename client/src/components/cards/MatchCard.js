@@ -53,85 +53,85 @@ const MatchCard = (props) => {
         </div>
 
         <div className="container px-0">
-            <div className="row justify-content-center mt-2">
-              <div className="col-md-3 pl-5">
-                <NavLink to={`/opponents/${currentMatch.opponent.id}`} className="btn w-100 shadow-none">
-                  <div className="row justify-content-center">
-                    <div className="col-5">
-                      <img src={headToHeadIcon} alt="head-to-head-icon"/>
-                    </div>
-                    <div className="col-7">
-                      <div className="row">
-                        <h6 className="font-italic text-info">Vs</h6>
-                      </div>
-                      <div className="row">
-                        <h5>{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</h5>
-                      </div>
-                    </div>
-                  </div>
-                </NavLink>
-              </div>
-              <div className="col-md-2 pl-md-5 pr-md-0 text-center">
+          <div className="row justify-content-center mt-2">
+            <div className="col-md-3 pl-5">
+              <NavLink to={`/opponents/${currentMatch.opponent.id}`} className="btn w-100 shadow-none">
                 <div className="row justify-content-center">
                   <div className="col-5">
-                    <i className="fas fa-clipboard-check fa-3x home-icon"></i>
+                    <img src={headToHeadIcon} alt="head-to-head-icon"/>
                   </div>
                   <div className="col-7">
                     <div className="row">
-                      <h6 className="font-italic text-info">Result</h6>
+                      <h6 className="font-italic text-info">Vs</h6>
                     </div>
                     <div className="row">
-                      <h5>{currentMatch.result}</h5>
+                      <h5>{currentMatch.opponent.first_name} {currentMatch.opponent.last_name}</h5>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-3 pl-md-5 pr-md-0 text-center">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <img src={scoreboardIcon} alt="age-icon"/>
-                  </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Score</h6>
-                    </div>
-                    <div className="row">
-                      <h5>{currentMatch.score}</h5>
-                    </div>
-                  </div>
+              </NavLink>
+            </div>
+            <div className="col-md-2 pl-md-5 pr-md-0 text-center">
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="fas fa-clipboard-check fa-3x home-icon"></i>
                 </div>
-              </div>
-              <div className="col-md-2 pr-md-5">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <i className="fas fa-calendar-day fa-3x home-icon"></i>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Result</h6>
                   </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Date</h6>
-                    </div>
-                    <div className="row">
-                      <h5>{moment(currentMatch.date).format('MM/DD/YY')}</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-2 pr-md-5 pl-md-0 text-center">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <i className="fas fa-clock fa-3x home-icon"></i>
-                  </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Time</h6>
-                    </div>
-                    <div className="row">
-                      <h5>{moment.utc(currentMatch.time).format('hh:mm a')}</h5>
-                    </div>
+                  <div className="row">
+                    <h5>{currentMatch.result}</h5>
                   </div>
                 </div>
               </div>
             </div>
+            <div className="col-md-3 pl-md-5 pr-md-0 text-center">
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <img src={scoreboardIcon} alt="age-icon"/>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Score</h6>
+                  </div>
+                  <div className="row">
+                    <h5>{currentMatch.score}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-2 pr-md-5">
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="fas fa-calendar-day fa-3x home-icon"></i>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Date</h6>
+                  </div>
+                  <div className="row">
+                    <h5>{moment(currentMatch.date).format('MM/DD/YY')}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-2 pr-md-5 pl-md-0 text-center">
+              <div className="row justify-content-center">
+                <div className="col-5">
+                  <i className="fas fa-clock fa-3x home-icon"></i>
+                </div>
+                <div className="col-7">
+                  <div className="row">
+                    <h6 className="font-italic text-info">Time</h6>
+                  </div>
+                  <div className="row">
+                    <h5>{moment.utc(currentMatch.time).format('hh:mm a')}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="container-fluid">

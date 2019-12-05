@@ -128,6 +128,7 @@ class MatchAllInfoModal extends Component {
                       <select className="form-control" name="result" onChange={this.handleOnChange} value={this.state.result}>
                         <option value="Won">Won</option>
                         <option value="Lost">Lost</option>
+                        <option value="In Progress">In Progress</option>
                       </select>
                     </div>
                   </div>
