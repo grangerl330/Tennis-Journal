@@ -25,5 +25,4 @@ const NavbarBrand = (props) => {
   }
 }
 
-
 export default withRouter(NavbarBrand)
