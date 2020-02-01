@@ -161,23 +161,28 @@ const MatchCard = (props) => {
           <div className="row mt-3">
               <div className="col text-center">
                 <h6 className="font-italic text-info">Unforced Errors</h6>
-                <h5>{currentMatch.unforced_errors}</h5>
+                <h5>Forehand: {currentMatch.forehand_unforced_errors}</h5>
+                <h5>Backhand: {currentMatch.backhand_unforced_errors}</h5>
+                <h5>Slice: {currentMatch.slice_unforced_errors}</h5>
+                <h5>Forehand Volley: {currentMatch.forehand_volley_unforced_errors}</h5>
+                <h5>Backhand Volley: {currentMatch.backhand_volley_unforced_errors}</h5>
+                <h5>Overhead: {currentMatch.overhead_unforced_errors}</h5>
               </div>
               <div className="col text-center">
                 <h6 className="font-italic text-info">Forced Errors</h6>
-                <h5>{currentMatch.forced_errors}</h5>
+
               </div>
               <div className="col text-center">
                 <h6 className="font-italic text-info">Winners</h6>
-                <h5>{currentMatch.winners}</h5>
+
               </div>
               <div className="col text-center">
                 <h6 className="font-italic text-info">Double Faults</h6>
-                <h5>{currentMatch.double_faults}</h5>
+
               </div>
               <div className="col text-center">
                 <h6 className="font-italic text-info">Aces</h6>
-                <h5>{currentMatch.aces}</h5>
+              
               </div>
           </div>
           <div className="row mt-4 mb-0 justify-content-center">

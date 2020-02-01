@@ -25,7 +25,7 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.integer :slice_winners
       t.integer :forehand_volley_winners
       t.integer :backhand_volley_winners
-      t.integer :overhead_winner
+      t.integer :overhead_winners
       t.integer :double_faults
       t.integer :aces
       t.integer :tournament_id
