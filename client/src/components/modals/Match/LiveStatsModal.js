@@ -28,7 +28,6 @@ class LiveStatsModal extends Component {
       ad_side_double_faults: 0,
       deuce_side_aces: 0,
       ad_side_aces: 0,
-      aces: 0,
       id: props.currentMatch.id,
       tournament_id: props.tournamentId
     }
