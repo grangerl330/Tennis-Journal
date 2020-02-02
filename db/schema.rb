@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.integer "forehand_volley_winners"
     t.integer "backhand_volley_winners"
     t.integer "overhead_winners"
-    t.integer "double_faults"
-    t.integer "aces"
+    t.integer "deuce_side_double_faults"
+    t.integer "ad_side_double_faults"
+    t.integer "deuce_aces"
+    t.integer "ad_aces"
     t.integer "tournament_id"
     t.integer "user_id"
     t.datetime "created_at", null: false

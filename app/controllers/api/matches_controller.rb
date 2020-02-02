@@ -75,8 +75,10 @@ class Api::MatchesController < ApplicationController
       :forehand_volley_winners,
       :backhand_volley_winners,
       :overhead_winners,
-      :double_faults,
-      :aces,
+      :deuce_side_double_faults,
+      :ad_side_double_faults,
+      :deuce_side_aces,
+      :ad_side_aces,
       :tournament_id,
       :user_id
     )
