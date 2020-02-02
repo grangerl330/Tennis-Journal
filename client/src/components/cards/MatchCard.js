@@ -189,12 +189,14 @@ const MatchCard = (props) => {
           </div>
           <div className="row mt-4">
             <div className="col text-center">
-              <h5 className="font-italic text-info">Double Faults</h5>
-              <h6 className="mb-3">{currentMatch.double_faults}</h6>
+              <h5 className="font-italic text-info mb-3">Double Faults</h5>
+              <h6 className="mb-3">Deuce Side: {currentMatch.deuce_side_double_faults}</h6>
+              <h6 className="mb-3">Ad Side: {currentMatch.ad_side_double_faults}</h6>
             </div>
             <div className="col text-center">
-              <h5 className="font-italic text-info">Aces</h5>
-              <h6 className="mb-3">{currentMatch.aces}</h6>
+              <h5 className="font-italic text-info mb-3">Aces</h5>
+              <h6 className="mb-3">Deuce Side: {currentMatch.deuce_side_aces}</h6>
+              <h6 className="mb-3">Ad Side: {currentMatch.ad_side_aces}</h6>
             </div>
           </div>
           <div className="row mt-4 mb-0 justify-content-center">
