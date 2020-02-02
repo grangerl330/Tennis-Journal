@@ -159,31 +159,43 @@ const MatchCard = (props) => {
           </button>
           </div>
           <div className="row mt-3">
-              <div className="col text-center">
-                <h6 className="font-italic text-info">Unforced Errors</h6>
-                <h5>Forehand: {currentMatch.forehand_unforced_errors}</h5>
-                <h5>Backhand: {currentMatch.backhand_unforced_errors}</h5>
-                <h5>Slice: {currentMatch.slice_unforced_errors}</h5>
-                <h5>Forehand Volley: {currentMatch.forehand_volley_unforced_errors}</h5>
-                <h5>Backhand Volley: {currentMatch.backhand_volley_unforced_errors}</h5>
-                <h5>Overhead: {currentMatch.overhead_unforced_errors}</h5>
-              </div>
-              <div className="col text-center">
-                <h6 className="font-italic text-info">Forced Errors</h6>
-
-              </div>
-              <div className="col text-center">
-                <h6 className="font-italic text-info">Winners</h6>
-
-              </div>
-              <div className="col text-center">
-                <h6 className="font-italic text-info">Double Faults</h6>
-
-              </div>
-              <div className="col text-center">
-                <h6 className="font-italic text-info">Aces</h6>
-              
-              </div>
+            <div className="col text-center">
+              <h5 className="font-italic text-info mb-3">Unforced Errors</h5>
+              <h6 className="mb-3">Forehand: {currentMatch.forehand_unforced_errors}</h6>
+              <h6 className="mb-3">Backhand: {currentMatch.backhand_unforced_errors}</h6>
+              <h6 className="mb-3">Slice: {currentMatch.slice_unforced_errors}</h6>
+              <h6 className="mb-3">Forehand Volley: {currentMatch.forehand_volley_unforced_errors}</h6>
+              <h6 className="mb-3">Backhand Volley: {currentMatch.backhand_volley_unforced_errors}</h6>
+              <h6 className="mb-3">Overhead: {currentMatch.overhead_unforced_errors}</h6>
+            </div>
+            <div className="col text-center">
+              <h5 className="font-italic text-info mb-3">Forced Errors</h5>
+              <h6 className="mb-3">Forehand: {currentMatch.forehand_forced_errors}</h6>
+              <h6 className="mb-3">Backhand: {currentMatch.backhand_forced_errors}</h6>
+              <h6 className="mb-3">Slice: {currentMatch.slice_forced_errors}</h6>
+              <h6 className="mb-3">Forehand Volley: {currentMatch.forehand_volley_forced_errors}</h6>
+              <h6 className="mb-3">Backhand Volley: {currentMatch.backhand_volley_forced_errors}</h6>
+              <h6 className="mb-3">Overhead: {currentMatch.overhead_forced_errors}</h6>
+            </div>
+            <div className="col text-center">
+              <h5 className="font-italic text-info mb-3">Winners</h5>
+              <h6 className="mb-3">Forehand: {currentMatch.forehand_winners}</h6>
+              <h6 className="mb-3">Backhand: {currentMatch.backhand_winners}</h6>
+              <h6 className="mb-3">Slice: {currentMatch.slice_winners}</h6>
+              <h6 className="mb-3">Forehand Volley: {currentMatch.forehand_volley_winners}</h6>
+              <h6 className="mb-3">Backhand Volley: {currentMatch.backhand_volley_winners}</h6>
+              <h6 className="mb-3">Overhead: {currentMatch.overhead_winners}</h6>
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col text-center">
+              <h5 className="font-italic text-info">Double Faults</h5>
+              <h6 className="mb-3">{currentMatch.double_faults}</h6>
+            </div>
+            <div className="col text-center">
+              <h5 className="font-italic text-info">Aces</h5>
+              <h6 className="mb-3">{currentMatch.aces}</h6>
+            </div>
           </div>
           <div className="row mt-4 mb-0 justify-content-center">
             <div className="col-md-2">
