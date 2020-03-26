@@ -14,7 +14,7 @@ const StatsOverviewDisplay = (props) => {
           </div>
           <div className="row mb-3">
             <div className="col-6">
-              <h5 className="inline">Record:</h5> <span className="ml-3">{props.currentUser.matchRecord}</span>
+              <h5 className="inline">Record:</h5> <span className="ml-3">{props.currentUser.match_record}</span>
             </div>
             <div className="col-6">
               <h5 className="inline">Points:</h5> <span className="ml-3">{props.currentUser.points}</span>

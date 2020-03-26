@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 // Display Components
 import PageTitleBar from '../../../components/PageTitleBar'
 import StatsOverviewDisplay from '../../../components/home-page/StatsOverviewDisplay'
+import AllMatchStatsDisplay from '../../../components/home-page/AllMatchStatsDisplay'
 import GoalsDisplay from '../../../components/home-page/GoalsDisplay'
 import SkillsDisplay from '../../../components/home-page/SkillsDisplay'
 import ImprovementDisplay from '../../../components/home-page/ImprovementDisplay'
@@ -26,6 +27,7 @@ class HomePage extends Component {
 
         {/* Home Page Displays */}
         <StatsOverviewDisplay currentUser={this.props.currentUser} />
+        <AllMatchStatsDisplay currentUser={this.props.currentUser} />
         <GoalsDisplay currentUser={this.props.currentUser} />
         <SkillsDisplay currentUser={this.props.currentUser} />
         <ImprovementDisplay currentUser={this.props.currentUser} />
