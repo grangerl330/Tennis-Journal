@@ -1,6 +1,5 @@
 import React from 'react'
-import NavbarBrand from '../../../components/navbar/NavbarBrand'
-import NavbarLogin from '../../../components/navbar/NavbarLogin'
+import Navbar from '../../app-layout/Navbar'
 import { updateLoginForm, authenticatePassword } from '../../../actions/loginForm'
 import { login } from '../../../actions/currentUser'
 import SignUpForm from '../../../components/forms/SignUpForm'
@@ -11,17 +10,8 @@ import { connect } from 'react-redux'
 const LoginPage = (props) => {
   return (
     <div className="section" id="login-page">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
-        <div className="container-fluid">
-          <NavbarBrand login={true}/>
-          <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarCollapse">
-            <NavbarLogin authenticatePassword={props.authenticatePassword} login={props.login}/>
-          </div>
-        </div>
-      </nav>
+      <Navbar isLogin={true} authenticatePassword={props.authenticatePassword} login={props.login}/>
+
       <header id="login-page-header">
         <div className="dark-overlay">
           <div className="container-fluid login">
