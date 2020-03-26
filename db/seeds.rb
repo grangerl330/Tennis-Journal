@@ -10,6 +10,20 @@
 User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", password: "password", utr: 10, match_record: "", ranking: 23, points: 0, short_term_goal: "Improve forehand consistency", mid_term_goal: "Get ranked inside top 20", long_term_goal: "Get recruited to D1 school", strengths: ["Forehand", "Serve"], weaknesses: ["Backhand"], notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta in, fugiat fugit saepe necessitatibus, rem. Explicabo quis doloribus dolores soluta harum a minima tempora nemo perferendis quia dolorem porro autem minus sequi repellat veniam unde, quae eligendi possimus asperiores fuga nihil reprehenderit assumenda natus molestias. Impedit, aperiam enim laudantium")
 User.create(first_name: "Roger", last_name: "Federer", email: "rogerfederer@gmail.com", password: "password", utr: 16, match_record: "", ranking: 2, points: 0)
 
+#Rankings
+Ranking.create(rank: 20, month: "January", year: "2019", user_id: 1)
+Ranking.create(rank: 23, month: "February", year: "2019", user_id: 1)
+Ranking.create(rank: 18, month: "March", year: "2019", user_id: 1)
+Ranking.create(rank: 16, month: "April", year: "2019", user_id: 1)
+Ranking.create(rank: 17, month: "May", year: "2019", user_id: 1)
+Ranking.create(rank: 13, month: "June", year: "2019", user_id: 1)
+Ranking.create(rank: 10, month: "July", year: "2019", user_id: 1)
+Ranking.create(rank: 10, month: "August", year: "2019", user_id: 1)
+Ranking.create(rank: 11, month: "September", year: "2019", user_id: 1)
+Ranking.create(rank: 9, month: "October", year: "2019", user_id: 1)
+Ranking.create(rank: 8, month: "November", year: "2019", user_id: 1)
+Ranking.create(rank: 8, month: "December", year: "2019", user_id: 1)
+
 #Tournaments
 Tournament.create(title: "Tournament 1", start_date: Date.new(2019,1,1), end_date: Date.new(2019,1,3), location: "Tennis Club 1", surface: "Hard", age_category: "16 and Under", draw_size: 128, points: 500, user_id: 1)
 Tournament.create(title: "Tournament 2", start_date: Date.new(2019,2,1), end_date: Date.new(2019,2,3), location: "Tennis Club 2", surface: "Clay", age_category: "16 and Under", draw_size: 64, points: 200, user_id: 1)
