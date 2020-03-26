@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :tournaments
     resources :opponents
     resources :users
+    resources :rankings
   end
 
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do
