@@ -1,18 +1,13 @@
 import React from 'react'
-import ProfileForm from './forms/ProfileForm'
-import PasswordModal from './modals/PasswordModal'
-import DeleteAccountModal from './modals/Delete/DeleteAccountModal'
+import PageTitleBar from '../../../components/PageTitleBar'
+import ProfileForm from '../../../components/forms/ProfileForm'
+import PasswordModal from '../../../components/modals/PasswordModal'
+import DeleteAccountModal from '../../../components/modals/Delete/DeleteAccountModal'
 
-const Profile = (props) => {
+const ProfilePage = (props) => {
   return (
     <section id="profile">
-      <div className="container-fluid py-2 bg-info text-white mb-4">
-        <div className="row">
-          <div className="col text-center">
-            <h1>Edit Profile</h1>
-          </div>
-        </div>
-      </div>
+      <PageTitleBar pageTitle="Edit Profile" />
 
       <div className="container mb-4">
         <div className="row justify-content-center">
@@ -49,4 +44,4 @@ const Profile = (props) => {
   )
 }
 
-export default Profile
+export default ProfilePage

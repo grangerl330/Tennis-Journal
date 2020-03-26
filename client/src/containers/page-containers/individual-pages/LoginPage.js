@@ -1,11 +1,11 @@
 import React from 'react'
-import NavbarBrand from '../components/navbar/NavbarBrand'
-import NavbarLogin from '../components/navbar/NavbarLogin'
-import { updateLoginForm, authenticatePassword } from '../actions/loginForm'
-import { login } from '../actions/currentUser'
-import Signup from '../components/SignUp'
-import { updateSignupForm } from '../actions/signupForm'
-import { signup } from '../actions/newUser'
+import NavbarBrand from '../../../components/navbar/NavbarBrand'
+import NavbarLogin from '../../../components/navbar/NavbarLogin'
+import { updateLoginForm, authenticatePassword } from '../../../actions/loginForm'
+import { login } from '../../../actions/currentUser'
+import SignUpForm from '../../../components/forms/SignUpForm'
+import { updateSignupForm } from '../../../actions/signupForm'
+import { signup } from '../../../actions/newUser'
 import { connect } from 'react-redux'
 
 const LoginPage = (props) => {
@@ -66,7 +66,7 @@ const LoginPage = (props) => {
               <div className="col-lg-4 ml-4">
                 <div className="row mt-4">
                   <div className="col">
-                    <Signup signupFormData={props.signupFormData} updateSignupForm={props.updateSignupForm} signup={props.signup} welcome={props.welcome}/>
+                    <SignUpForm signupFormData={props.signupFormData} updateSignupForm={props.updateSignupForm} signup={props.signup} welcome={props.welcome}/>
                   </div>
                 </div>
               </div>

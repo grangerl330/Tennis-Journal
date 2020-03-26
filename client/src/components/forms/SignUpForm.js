@@ -5,7 +5,7 @@ import zxcvbn from 'zxcvbn'
 import $ from 'jquery'
 import { withRouter } from 'react-router';
 
-class Signup extends Component {
+class SignUpForm extends Component {
 
   constructor(props){
     super(props)
@@ -149,4 +149,4 @@ class Signup extends Component {
   }
 }
 
-export default withRouter(Signup)
+export default withRouter(SignUpForm)

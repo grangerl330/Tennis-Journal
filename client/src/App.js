@@ -1,8 +1,11 @@
-import React, {Component} from 'react';
-import MainContent from './containers/MainContent'
-import Navbar from './containers/Navbar'
-import LoginPage from './containers/LoginPage'
-import Footer from './containers/Footer'
+import React, { Component } from 'react';
+
+// App Layout Containers
+import MainContent from './containers/app-layout/MainContent'
+import Navbar from './containers/app-layout/Navbar'
+import Footer from './containers/app-layout/Footer'
+
+import LoginPage from './containers/page-containers/individual-pages/LoginPage'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 

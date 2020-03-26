@@ -1,8 +1,8 @@
 import React from 'react'
-import NavbarBrand from '../components/navbar/NavbarBrand'
-import NavbarRight from '../components/navbar/NavbarRight'
-import NavbarLinks from '../components/navbar/NavbarLinks'
-import { logout } from '../actions/currentUser'
+import NavbarBrand from '../../components/navbar/NavbarBrand'
+import NavbarRight from '../../components/navbar/NavbarRight'
+import NavbarLinks from '../../components/navbar/NavbarLinks'
+import { logout } from '../../actions/currentUser'
 import { connect } from 'react-redux'
 
 const Navbar = (props) => {

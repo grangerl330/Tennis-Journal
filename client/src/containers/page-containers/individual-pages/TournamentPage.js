@@ -1,15 +1,15 @@
 import React from 'react';
 import moment from 'moment'
-import TournamentStatDisplay from './TournamentStatDisplay'
-import TournamentInfoModal from '../modals/Tournament/TournamentInfoModal'
-import DeleteTournamentModal from '../modals/Delete/DeleteTournamentModal'
-import tennisCourtIcon from '../../images/tennis-court-icon.png'
-import tournamentDrawIcon from '../../images/tournament-draw-icon.png'
+import TournamentStatDisplay from '../../../components/TournamentStatDisplay'
+import TournamentInfoModal from '../../../components/modals/Tournament/TournamentInfoModal'
+import DeleteTournamentModal from '../../../components/modals/Delete/DeleteTournamentModal'
+import tennisCourtIcon from '../../../images/tennis-court-icon.png'
+import tournamentDrawIcon from '../../../images/tournament-draw-icon.png'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
 
-const TournamentCard = (props) => {
+const TournamentPage = (props) => {
   var tournamentId = parseInt(props.id)
   var tournament = props.currentTournament(tournamentId)
 
@@ -114,4 +114,4 @@ const TournamentCard = (props) => {
   }
 }
 
-export default withRouter(TournamentCard)
+export default withRouter(TournamentPage)
