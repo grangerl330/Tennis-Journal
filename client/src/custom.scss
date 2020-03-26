@@ -58,6 +58,21 @@ html, body {
   display: inline;
 }
 
+.rankings-history {
+  height: 350px;
+}
+
+.card-deck-scrollable{
+  @extend .card-deck;
+  flex-direction: row;
+
+  & > .card{
+    @extend .mx-3;
+    flex: 0 0 20% !important;/*Change to any size you want*/
+    max-width: 20%;
+  }
+}
+
 // .notes-section {
 //   background: #107585;
 // }

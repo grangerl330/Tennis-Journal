@@ -7,6 +7,7 @@ import AllMatchStatsDisplay from '../../../components/home-page/AllMatchStatsDis
 import GoalsDisplay from '../../../components/home-page/GoalsDisplay'
 import SkillsDisplay from '../../../components/home-page/SkillsDisplay'
 import ImprovementDisplay from '../../../components/home-page/ImprovementDisplay'
+import RankingsHistoryDisplay from '../../../components/home-page/RankingsHistoryDisplay'
 
 // Modal Components
 import AllStatsModal from '../../../components/modals/Home/AllStatsModal'
@@ -28,6 +29,7 @@ class HomePage extends Component {
         {/* Home Page Displays */}
         <StatsOverviewDisplay currentUser={this.props.currentUser} />
         <AllMatchStatsDisplay currentUser={this.props.currentUser} />
+        <RankingsHistoryDisplay currentUser={this.props.currentUser} />
         <GoalsDisplay currentUser={this.props.currentUser} />
         <SkillsDisplay currentUser={this.props.currentUser} />
         <ImprovementDisplay currentUser={this.props.currentUser} />
