@@ -13,7 +13,7 @@ const SkillsDisplay = (props) => {
           </div>
           <div className="row justify-content-center">
             <ul className="mr-5">
-              {arrayDisplay(props.strengths)}
+              {arrayDisplay(props.currentUser.strengths)}
             </ul>
           </div>
           <div className="row justify-content-center mt-3 text-center">
@@ -30,7 +30,7 @@ const SkillsDisplay = (props) => {
           </div>
           <div className="row justify-content-center text-center">
             <ul className="mr-5">
-              {arrayDisplay(props.weaknesses)}
+              {arrayDisplay(props.currentUser.weaknesses)}
             </ul>
           </div>
           <div className="row justify-content-center mt-3 text-center">

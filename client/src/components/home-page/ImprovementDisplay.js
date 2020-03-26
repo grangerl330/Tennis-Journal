@@ -10,7 +10,7 @@ const ImprovementDisplay = (props) => {
       </div>
       <div className="row mt-1">
         <div className="col text-center">
-          {props.notes}
+          {props.currentUser.notes}
         </div>
       </div>
       <div className="row mt-5 mb-3 justify-content-center">

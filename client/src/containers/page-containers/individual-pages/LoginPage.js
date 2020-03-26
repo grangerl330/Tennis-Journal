@@ -1,10 +1,15 @@
 import React from 'react'
+
+// Navbar Components and Functions
 import Navbar from '../../app-layout/Navbar'
 import { updateLoginForm, authenticatePassword } from '../../../actions/loginForm'
 import { login } from '../../../actions/currentUser'
+
+// Signup Components and Functions
 import SignUpForm from '../../../components/forms/SignUpForm'
 import { updateSignupForm } from '../../../actions/signupForm'
 import { signup } from '../../../actions/newUser'
+
 import { connect } from 'react-redux'
 
 const LoginPage = (props) => {

@@ -25,10 +25,10 @@ class HomePage extends Component {
         <PageTitleBar pageTitle="Home" />
 
         {/* Home Page Displays */}
-        <StatsOverviewDisplay matchRecord={this.props.currentUser.match_record} ranking={this.props.currentUser.ranking} utr={this.props.currentUser.utr} points={this.props.currentUser.points} />
-        <GoalsDisplay shortTermGoal={this.props.currentUser.short_term_goal} midTermGoal={this.props.currentUser.mid_term_goal} longTermGoal={this.props.currentUser.long_term_goal} />
-        <SkillsDisplay strengths={this.props.currentUser.strengths} weaknesses={this.props.currentUser.weaknesses} />
-        <ImprovementDisplay notes={this.props.currentUser.notes} />
+        <StatsOverviewDisplay currentUser={this.props.currentUser} />
+        <GoalsDisplay currentUser={this.props.currentUser} />
+        <SkillsDisplay currentUser={this.props.currentUser} />
+        <ImprovementDisplay currentUser={this.props.currentUser} />
 
         {/* Modals */}
         <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
