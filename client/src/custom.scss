@@ -79,6 +79,11 @@ html, body {
   border: none;
 }
 
+.rankings-chart-button:focus {
+  border: none;
+  outline: none;
+}
+
 .rankings-chart-message {
   height: 400px;
 }
