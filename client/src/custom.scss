@@ -73,9 +73,15 @@ html, body {
   }
 }
 
-// .notes-section {
-//   background: #107585;
-// }
+.rankings-chart-button {
+  color: white;
+  background: none;
+  border: none;
+}
+
+.rankings-chart-message {
+  height: 400px;
+}
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

@@ -1,25 +1,77 @@
-import React from 'react'
-import RankingCard from './RankingCard'
+import React, { Component } from 'react'
 import RankingsChart from './RankingsChart'
 
-const RankingsHistoryDisplay = (props) => {
+class RankingsHistoryDisplay extends Component {
 
-  const data = props.currentUser.rankings.map(rank =>
-    Object.create({month: rank.month, Rank: rank.rank})
-  )
+  constructor(props){
+    super(props)
 
-  return (
-    <div id="Rankings-History-Display" className="container border rounded my-5">
-      <div className="row justify-content-center text-white bg-secondary">
-        <h1>Rankings History</h1>
-      </div>
-      <div className="row w-100 h-100 text-center justify-content-center align-self-center">
-        <RankingsChart currentUser={props.currentUser} data={data}/>
-      </div>
-    </div>
-  )
+    this.state = {
+      chartDate: new Date().getFullYear().toString(),
+      dataExists: props.currentUser.rankings.some(rank => rank.year === new Date().getFullYear().toString())
+    }
+  }
+
+  setChartData = () => {
+    const filteredRankings = this.props.currentUser.rankings.filter(rank => rank.year === this.state.chartDate)
+
+    const data = filteredRankings.map(rank =>
+      Object.create({month: rank.month, Rank: rank.rank})
+    )
+
+    return data
+  }
+
+  updateYear = event => {
+    event.preventDefault()
+
+    let currentYear = parseInt(this.state.chartDate)
+
+    if(event.target.classList.contains("fa-chevron-right")) {
+      this.setState({
+        chartDate: (currentYear + 1).toString(),
+        dataExists: this.props.currentUser.rankings.some(rank => rank.year === (currentYear + 1).toString())
+      })
+    } else if(event.target.classList.contains("fa-chevron-left")) {
+      this.setState({
+        chartDate: (currentYear - 1).toString(),
+        dataExists: this.props.currentUser.rankings.some(rank => rank.year === (currentYear - 1).toString())
+      })
+    }
+  }
+
+  renderChart = () => {
+    if(this.state.dataExists){
+      return (
+        <RankingsChart currentUser={this.props.currentUser} data={this.setChartData()} />
+      )
+    } else {
+      return (
+        <div className="rankings-chart-message d-flex">
+          <h2 className="my-auto">* No Data Exists For This Year</h2>
+        </div>
+      )
+    }
+  }
+
+ render() {
+   return (
+     <div id="Rankings-History-Display" className="container border rounded my-5">
+       <div className="row justify-content-center text-white bg-secondary">
+        <button className="mr-auto ml-3 rankings-chart-button" onClick={this.updateYear}>
+          <i className="fas fa-chevron-left"></i>
+        </button>
+        <h1>Rankings History - {this.state.chartDate}</h1>
+        <button className="ml-auto mr-3 rankings-chart-button" onClick={this.updateYear}>
+          <i className="fas fa-chevron-right"></i>
+        </button>
+       </div>
+       <div className="row w-100 h-100 text-center justify-content-center align-self-center">
+         {this.renderChart()}
+       </div>
+     </div>
+   )
+ }
 }
-
-
 
 export default RankingsHistoryDisplay
