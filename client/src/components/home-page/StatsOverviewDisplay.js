@@ -5,11 +5,8 @@ import defaultProfile from '../../images/Default-Profile.jpeg'
 const StatsOverviewDisplay = (props) => {
   return (
     <div id="Stats-Overview" className="container-fluid">
-      <div className="row justify-content-center">
-        <div className="col-3 text-center">
-          <ProfilePicture />
-        </div>
-        <div className="col-9">
+      <div className="row ml-3">
+        <div className="col-12">
           <div className="row mb-3">
             <h1>{props.currentUser.first_name} {props.currentUser.last_name}</h1>
           </div>
