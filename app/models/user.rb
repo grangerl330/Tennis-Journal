@@ -28,36 +28,37 @@ class User < ApplicationRecord
 
   def convert_month(month)
     case month
-    when month === "Jan"
+    when "Jan"
       1
-    when month === "Feb"
+    when "Feb"
       2
-    when month === "Mar"
+    when "Mar"
       3
-    when month === "Apr"
+    when "Apr"
       4
-    when month === "May"
+    when "May"
       5
-    when month === "Jun"
+    when "Jun"
       6
-    when month === "Jul"
+    when "Jul"
       7
-    when month === "Aug"
+    when "Aug"
       8
-    when month === "Sept"
+    when "Sept"
       9
-    when month === "Oct"
+    when "Oct"
       10
-    when month === "Nov"
+    when "Nov"
       11
-    when month === "Dec"
+    when "Dec"
       12
     end
   end
 
   def set_current_ranking
-    sorted_by_year = self.rankings.sort_by{|rank| rank.year}
-    sorted_by_month = sorted_by_year.sort_by{|rank| convert_month(rank.month)}
+    filtered_by_current_year = self.rankings.select{|rank| rank.year === Date.current.year.to_s()}
+    sorted_by_month = filtered_by_current_year.sort_by{|rank| convert_month(rank.month)}
+    current_rank = sorted_by_month.last.rank
     self.update(current_ranking: sorted_by_month.last.rank)
   end
 
