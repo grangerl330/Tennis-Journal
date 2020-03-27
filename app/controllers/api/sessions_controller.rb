@@ -15,6 +15,7 @@ class Api::SessionsController < ApplicationController
 
   def get_current_user
     if logged_in?
+      current_user.set_current_ranking
       render json: current_user
     else
       render json: {

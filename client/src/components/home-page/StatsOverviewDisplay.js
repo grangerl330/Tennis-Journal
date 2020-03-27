@@ -25,7 +25,7 @@ const StatsOverviewDisplay = (props) => {
               <h5 className="inline">UTR:</h5> <span className="ml-3">{props.currentUser.utr}</span>
             </div>
             <div className="col-6">
-              <h5 className="inline">Ranking:</h5> <span className="ml-3">{props.currentUser.ranking}</span>
+              <h5 className="inline">Ranking:</h5> <span className="ml-3">{props.currentUser.current_ranking}</span>
             </div>
           </div>
         </div>
