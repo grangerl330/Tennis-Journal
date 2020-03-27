@@ -1,4 +1,5 @@
 import React from 'react'
+import ProfilePicture from './ProfilePicture'
 import defaultProfile from '../../images/Default-Profile.jpeg'
 
 const StatsOverviewDisplay = (props) => {
@@ -6,7 +7,7 @@ const StatsOverviewDisplay = (props) => {
     <div id="Stats-Overview" className="container-fluid">
       <div className="row justify-content-center">
         <div className="col-3 text-center">
-          <img src={defaultProfile} alt="Profile"/>
+          <ProfilePicture />
         </div>
         <div className="col-9">
           <div className="row mb-3">
