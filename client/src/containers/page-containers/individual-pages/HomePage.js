@@ -23,24 +23,32 @@ class HomePage extends Component {
 
   render() {
     return (
-      <section id="home-page">
-        <PageTitleBar pageTitle="Home" />
-
-        {/* Home Page Displays */}
-        <StatsOverviewDisplay currentUser={this.props.currentUser} />
-        <AllMatchStatsDisplay currentUser={this.props.currentUser} />
-        <RankingsHistoryDisplay currentUser={this.props.currentUser} />
-        <GoalsDisplay currentUser={this.props.currentUser} />
-        <SkillsDisplay currentUser={this.props.currentUser} />
-        <ImprovementDisplay currentUser={this.props.currentUser} />
-
-        {/* Modals */}
-        <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-        <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-        <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-        <WeaknessesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-        <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-      </section>
+      <div id="home-page" className="container-fluid mt-5">
+        <div className="row">
+          <div id="home-page-left" className="col-8">
+            <div className="row">
+              <StatsOverviewDisplay currentUser={this.props.currentUser} />
+            </div>
+            <div className="row mt-5">
+              <RankingsHistoryDisplay currentUser={this.props.currentUser} />
+            </div>
+            <div className="row mt-3">
+              <AllMatchStatsDisplay currentUser={this.props.currentUser} />
+            </div>
+          </div>
+          <div id="home-page-right" className="col-4">
+            <div className="row">
+              <GoalsDisplay currentUser={this.props.currentUser} />
+            </div>
+            <div className="row mt-3">
+              <SkillsDisplay currentUser={this.props.currentUser} />
+            </div>
+            <div className="row mt-3">
+              <ImprovementDisplay currentUser={this.props.currentUser} />
+            </div>
+          </div>
+        </div>
+      </div>
     )
   }
 }
@@ -68,3 +76,17 @@ export default HomePage
 //     )
 //   }
 // }
+
+// {/* Home Page Displays */}
+// <AllMatchStatsDisplay currentUser={this.props.currentUser} />
+// <RankingsHistoryDisplay currentUser={this.props.currentUser} />
+// <GoalsDisplay currentUser={this.props.currentUser} />
+// <SkillsDisplay currentUser={this.props.currentUser} />
+// <ImprovementDisplay currentUser={this.props.currentUser} />
+//
+// {/* Modals */}
+// <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+// <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+// <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+// <WeaknessesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+// <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />

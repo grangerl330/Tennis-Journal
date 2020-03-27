@@ -2,7 +2,7 @@ import React from 'react'
 
 const SkillsDisplay = (props) => {
   return (
-    <div id="Skills-Display" className="container border rounded pb-4 mt-5 mb-4">
+    <div id="Skills-Display" className="container border rounded">
       <div className="row justify-content-center text-white bg-secondary">
         <h1>My Skills</h1>
       </div>
@@ -17,7 +17,7 @@ const SkillsDisplay = (props) => {
             </ul>
           </div>
           <div className="row justify-content-center mt-3 text-center">
-            <div className="col-md-4">
+            <div className="col-md-12">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#strengthsModal">
                 <i className="fas fa-edit"></i> Edit Strengths
               </button>
@@ -34,7 +34,7 @@ const SkillsDisplay = (props) => {
             </ul>
           </div>
           <div className="row justify-content-center mt-3 text-center">
-            <div className="col-md-5">
+            <div className="col-md-12">
               <button className="btn btn-info btn-block" data-toggle="modal" data-target="#weaknessesModal">
                 <i className="fas fa-edit"></i> Edit Weaknesses
               </button>

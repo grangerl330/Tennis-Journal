@@ -58,10 +58,6 @@ html, body {
   display: inline;
 }
 
-.ranking-card {
-  height: 350px;
-}
-
 .card-deck-scrollable{
   @extend .card-deck;
   flex-direction: row;
@@ -85,7 +81,7 @@ html, body {
 }
 
 .rankings-chart-message {
-  height: 400px;
+  height: 350px;
 }
 
 // Import Bootstrap and its default variables

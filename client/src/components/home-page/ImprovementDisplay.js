@@ -2,7 +2,7 @@ import React from 'react'
 
 const ImprovementDisplay = (props) => {
   return (
-    <div id="Improvement-Display" className="container border rounded pb-4 mt-5 mb-4">
+    <div id="Improvement-Display" className="container border rounded">
       <div className="row justify-content-center bg-secondary mb-4">
         <div className="col text-center text-white">
           <h1>Things To Improve</h1>
@@ -14,7 +14,7 @@ const ImprovementDisplay = (props) => {
         </div>
       </div>
       <div className="row mt-5 mb-3 justify-content-center">
-        <div className="col-md-2">
+        <div className="col-md-12">
           <button className="btn btn-info btn-block" data-toggle="modal" data-target="#notesModal">
             <i className="fas fa-edit"></i> Edit Notes
           </button>

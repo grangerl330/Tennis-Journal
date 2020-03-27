@@ -2,9 +2,9 @@ import React from 'react'
 
 const AllMatchStatsDisplay = (props) => {
   return (
-    <div id="Advanced-Stats-Display" className="container border rounded pb-4 my-5">
-      <div className="row justify-content-center text-white bg-secondary">
-        <h1>All Match Stats</h1>
+    <div id="Advanced-Stats-Display" className="container border rounded">
+      <div className="row ml-3">
+        <h3>All Match Stats</h3>
       </div>
       <div className="row mt-4 justify-content-center">
         <div className="col-3 text-center">

@@ -56,7 +56,7 @@ class RankingsHistoryDisplay extends Component {
 
  render() {
    return (
-     <div id="Rankings-History-Display" className="container border rounded my-5">
+     <div id="Rankings-History-Display" className="container border rounded">
        <div className="row justify-content-center text-white bg-secondary">
         <button className="mr-auto ml-3 rankings-chart-button" onClick={this.updateYear}>
           <i className="fas fa-chevron-left"></i>
