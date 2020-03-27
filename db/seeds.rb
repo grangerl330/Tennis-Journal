@@ -11,6 +11,7 @@ User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", passwo
 User.create(first_name: "Roger", last_name: "Federer", email: "rogerfederer@gmail.com", password: "password", utr: 16, match_record: "", points: 0)
 
 #Rankings
+#2019
 Ranking.create(rank: 20, month: "Jan", year: "2019", user_id: 1)
 Ranking.create(rank: 23, month: "Feb", year: "2019", user_id: 1)
 Ranking.create(rank: 18, month: "Mar", year: "2019", user_id: 1)
@@ -23,6 +24,19 @@ Ranking.create(rank: 11, month: "Sept", year: "2019", user_id: 1)
 Ranking.create(rank: 9, month: "Oct", year: "2019", user_id: 1)
 Ranking.create(rank: 8, month: "Nov", year: "2019", user_id: 1)
 Ranking.create(rank: 8, month: "Dec", year: "2019", user_id: 1)
+#2018
+Ranking.create(rank: 35, month: "Jan", year: "2018", user_id: 1)
+Ranking.create(rank: 34, month: "Feb", year: "2018", user_id: 1)
+Ranking.create(rank: 32, month: "Mar", year: "2018", user_id: 1)
+Ranking.create(rank: 30, month: "Apr", year: "2018", user_id: 1)
+Ranking.create(rank: 31, month: "May", year: "2018", user_id: 1)
+Ranking.create(rank: 27, month: "Jun", year: "2018", user_id: 1)
+Ranking.create(rank: 25, month: "Jul", year: "2018", user_id: 1)
+Ranking.create(rank: 25, month: "Aug", year: "2018", user_id: 1)
+Ranking.create(rank: 24, month: "Sept", year: "2018", user_id: 1)
+Ranking.create(rank: 25, month: "Oct", year: "2018", user_id: 1)
+Ranking.create(rank: 22, month: "Nov", year: "2018", user_id: 1)
+Ranking.create(rank: 22, month: "Dec", year: "2018", user_id: 1)
 
 #Tournaments
 Tournament.create(title: "Tournament 1", start_date: Date.new(2019,1,1), end_date: Date.new(2019,1,3), location: "Tennis Club 1", surface: "Hard", age_category: "16 and Under", draw_size: 128, points: 500, user_id: 1)
