@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_200845) do
+ActiveRecord::Schema.define(version: 2020_03_26_232146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,15 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "rankings", force: :cascade do |t|
+    t.integer "rank"
+    t.string "month"
+    t.string "year"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tournaments", force: :cascade do |t|
     t.string "title"
     t.date "start_date"
@@ -86,7 +95,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_200845) do
     t.string "password_digest"
     t.float "utr"
     t.string "match_record"
-    t.integer "ranking"
+    t.integer "current_ranking"
     t.integer "points"
     t.string "short_term_goal"
     t.string "mid_term_goal"

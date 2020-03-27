@@ -7,14 +7,14 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.float :utr
       t.string :match_record
-      t.integer :ranking
+      t.integer :current_ranking
       t.integer :points
       t.string :short_term_goal
       t.string :mid_term_goal
       t.string :long_term_goal
       t.text :strengths, array: true, default: []
       t.text :weaknesses, array: true, default: []
-      t.text :notes 
+      t.text :notes
 
       t.timestamps
     end
