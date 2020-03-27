@@ -4,7 +4,7 @@ const SkillsDisplay = (props) => {
   return (
     <div id="Skills-Display" className="container border rounded">
       <div className="row justify-content-center text-white bg-secondary">
-        <h1>My Skills</h1>
+        <h3>My Skills</h3>
       </div>
       <div className="row mt-4">
         <div className="col-6 text-center">
@@ -16,13 +16,6 @@ const SkillsDisplay = (props) => {
               {arrayDisplay(props.currentUser.strengths)}
             </ul>
           </div>
-          <div className="row justify-content-center mt-3 text-center">
-            <div className="col-md-12">
-              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#strengthsModal">
-                <i className="fas fa-edit"></i> Edit Strengths
-              </button>
-            </div>
-          </div>
         </div>
         <div className="col-6 text-center">
           <div className="row justify-content-center mb-3">
@@ -33,13 +26,18 @@ const SkillsDisplay = (props) => {
               {arrayDisplay(props.currentUser.weaknesses)}
             </ul>
           </div>
-          <div className="row justify-content-center mt-3 text-center">
-            <div className="col-md-12">
-              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#weaknessesModal">
-                <i className="fas fa-edit"></i> Edit Weaknesses
-              </button>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div className="row justify-content-center mt-3 mb-3 text-center">
+        <div className="col-md-6">
+          <button className="btn btn-info btn-block" data-toggle="modal" data-target="#strengthsModal">
+            <i className="fas fa-edit"></i> Edit Strengths
+          </button>
+        </div>
+        <div className="col-md-6">
+          <button className="btn btn-info btn-block" data-toggle="modal" data-target="#weaknessesModal">
+            <i className="fas fa-edit"></i> Edit Weaknesses
+          </button>
         </div>
       </div>
     </div>

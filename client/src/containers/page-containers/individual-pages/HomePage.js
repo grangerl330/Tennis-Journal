@@ -23,9 +23,9 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div id="home-page" className="container-fluid mt-5">
+      <div id="home-page" className="container-fluid mt-5 px-0">
         <div className="row">
-          <div id="home-page-left" className="col-8">
+          <div id="home-page-left" className="col-7 mr-4 ml-auto">
             <div className="row">
               <StatsOverviewDisplay currentUser={this.props.currentUser} />
             </div>
@@ -36,7 +36,7 @@ class HomePage extends Component {
               <AllMatchStatsDisplay currentUser={this.props.currentUser} />
             </div>
           </div>
-          <div id="home-page-right" className="col-4">
+          <div id="home-page-right" className="col-4 mr-auto">
             <div className="row">
               <GoalsDisplay currentUser={this.props.currentUser} />
             </div>

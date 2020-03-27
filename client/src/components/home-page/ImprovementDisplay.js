@@ -5,7 +5,7 @@ const ImprovementDisplay = (props) => {
     <div id="Improvement-Display" className="container border rounded">
       <div className="row justify-content-center bg-secondary mb-4">
         <div className="col text-center text-white">
-          <h1>Things To Improve</h1>
+          <h3>Things To Improve</h3>
         </div>
       </div>
       <div className="row mt-1">

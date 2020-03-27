@@ -61,7 +61,7 @@ class RankingsHistoryDisplay extends Component {
         <button className="mr-auto ml-3 rankings-chart-button" onClick={this.updateYear}>
           <i className="fas fa-chevron-left"></i>
         </button>
-        <h1>Rankings History - {this.state.chartDate}</h1>
+        <h3>Rankings History - {this.state.chartDate}</h3>
         <button className="ml-auto mr-3 rankings-chart-button" onClick={this.updateYear}>
           <i className="fas fa-chevron-right"></i>
         </button>
