@@ -11,6 +11,19 @@ User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", passwo
 User.create(first_name: "Roger", last_name: "Federer", email: "rogerfederer@gmail.com", password: "password", utr: 16, match_record: "", points: 0)
 
 #Rankings
+#2020
+Ranking.create(rank: 8, month: "Jan", year: "2020", user_id: 1)
+Ranking.create(rank: 8, month: "Feb", year: "2020", user_id: 1)
+Ranking.create(rank: 8, month: "Mar", year: "2020", user_id: 1)
+Ranking.create(rank: 7, month: "Apr", year: "2020", user_id: 1)
+Ranking.create(rank: 5, month: "May", year: "2020", user_id: 1)
+Ranking.create(rank: 5, month: "Jun", year: "2020", user_id: 1)
+Ranking.create(rank: 7, month: "Jul", year: "2020", user_id: 1)
+Ranking.create(rank: 8, month: "Aug", year: "2020", user_id: 1)
+Ranking.create(rank: 9, month: "Sept", year: "2020", user_id: 1)
+Ranking.create(rank: 6, month: "Oct", year: "2020", user_id: 1)
+Ranking.create(rank: 5, month: "Nov", year: "2020", user_id: 1)
+Ranking.create(rank: 5, month: "Dec", year: "2020", user_id: 1)
 #2019
 Ranking.create(rank: 20, month: "Jan", year: "2019", user_id: 1)
 Ranking.create(rank: 23, month: "Feb", year: "2019", user_id: 1)
