@@ -20,7 +20,7 @@ class HomePage extends Component {
   componentDidMount(){
     this.props.getCurrentUser()
   }
-
+  
   render() {
     return (
       <div id="home-page" className="container-fluid mt-5 px-0">
@@ -48,6 +48,13 @@ class HomePage extends Component {
             </div>
           </div>
         </div>
+
+        {/* Modals */}
+        <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <WeaknessesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
       </div>
     )
   }
