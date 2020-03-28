@@ -33,7 +33,7 @@ class NotesModal extends Component {
         <div className="modal-dialog modal-lg w-50">
           <div className="modal-content">
             <div className="modal-header bg-info text-white">
-              <h5 className="modal-title">Edit Notes</h5>
+              <h5 className="modal-title">Edit Things To Improve</h5>
               <button className="close" data-dismiss="modal">
                 <i className="fas fa-times"></i>
               </button>

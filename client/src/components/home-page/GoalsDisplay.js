@@ -5,6 +5,7 @@ const GoalsDisplay = (props) => {
     <div id="Goals-Display" className="container border rounded">
       <div className="row justify-content-center text-white bg-secondary">
         <h3>My Goals</h3>
+        <i className="fas fa-edit ml-2 my-auto fa-xs" data-toggle="modal" data-target="#goalsModal"></i>
       </div>
       <div className="row mt-3">
         <div className="col-6">
@@ -28,13 +29,6 @@ const GoalsDisplay = (props) => {
         </div>
         <div className="col-6">
           {props.currentUser.long_term_goal}
-        </div>
-      </div>
-      <div className="row mt-3 mb-3 justify-content-center">
-        <div className="col-md-12">
-          <button className="btn btn-info btn-block" data-toggle="modal" data-target="#goalsModal">
-            <i className="fas fa-edit"></i> Edit Goals
-          </button>
         </div>
       </div>
     </div>

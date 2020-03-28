@@ -13,14 +13,14 @@ import RankingsHistoryDisplay from '../../../components/home-page/RankingsHistor
 import AllStatsModal from '../../../components/modals/Home/AllStatsModal'
 import GoalsModal from '../../../components/modals/Home/GoalsModal'
 import StrengthsModal from '../../../components/modals/Home/StrengthsModal'
-import WeaknessesModal from '../../../components/modals/Home/WeaknessesModal'
+import SkillsModal from '../../../components/modals/Home/SkillsModal'
 import NotesModal from '../../../components/modals/Home/NotesModal'
 
 class HomePage extends Component {
   componentDidMount(){
     this.props.getCurrentUser()
   }
-  
+
   render() {
     return (
       <div id="home-page" className="container-fluid mt-5 px-0">
@@ -53,7 +53,7 @@ class HomePage extends Component {
         <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-        <WeaknessesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <SkillsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
       </div>
     )
@@ -95,5 +95,5 @@ export default HomePage
 // <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
 // <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
 // <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-// <WeaknessesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+// <SkillsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
 // <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />

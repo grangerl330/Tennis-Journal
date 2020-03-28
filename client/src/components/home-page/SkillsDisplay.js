@@ -5,6 +5,7 @@ const SkillsDisplay = (props) => {
     <div id="Skills-Display" className="container border rounded">
       <div className="row justify-content-center text-white bg-secondary">
         <h3>My Skills</h3>
+        <i className="fas fa-edit ml-2 my-auto fa-xs" data-toggle="modal" data-target="#skillsModal"></i>
       </div>
       <div className="row mt-4">
         <div className="col-6 text-center">
@@ -26,18 +27,6 @@ const SkillsDisplay = (props) => {
               {arrayDisplay(props.currentUser.weaknesses)}
             </ul>
           </div>
-        </div>
-      </div>
-      <div className="row justify-content-center mt-3 mb-3 text-center">
-        <div className="col-md-6">
-          <button className="btn btn-info btn-block" data-toggle="modal" data-target="#strengthsModal">
-            <i className="fas fa-edit"></i> Edit Strengths
-          </button>
-        </div>
-        <div className="col-md-6">
-          <button className="btn btn-info btn-block" data-toggle="modal" data-target="#weaknessesModal">
-            <i className="fas fa-edit"></i> Edit Weaknesses
-          </button>
         </div>
       </div>
     </div>

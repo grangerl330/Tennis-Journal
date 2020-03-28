@@ -111,5 +111,9 @@ html, body {
   border: none;
 }
 
+.middle {
+  vertical-align: middle;
+}
+
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

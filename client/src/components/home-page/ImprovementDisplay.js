@@ -3,21 +3,13 @@ import React from 'react'
 const ImprovementDisplay = (props) => {
   return (
     <div id="Improvement-Display" className="container border rounded">
-      <div className="row justify-content-center bg-secondary mb-4">
-        <div className="col text-center text-white">
+      <div className="row justify-content-center text-white bg-secondary">
           <h3>Things To Improve</h3>
-        </div>
+          <i className="fas fa-edit ml-2 my-auto fa-xs" data-toggle="modal" data-target="#notesModal"></i>
       </div>
       <div className="row mt-1">
         <div className="col text-center">
           {props.currentUser.notes}
-        </div>
-      </div>
-      <div className="row mt-5 mb-3 justify-content-center">
-        <div className="col-md-12">
-          <button className="btn btn-info btn-block" data-toggle="modal" data-target="#notesModal">
-            <i className="fas fa-edit"></i> Edit Notes
-          </button>
         </div>
       </div>
     </div>
