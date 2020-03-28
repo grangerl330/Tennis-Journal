@@ -12,7 +12,6 @@ import RankingsHistoryDisplay from '../../../components/home-page/RankingsHistor
 // Modal Components
 import AllStatsModal from '../../../components/modals/Home/AllStatsModal'
 import GoalsModal from '../../../components/modals/Home/GoalsModal'
-import StrengthsModal from '../../../components/modals/Home/StrengthsModal'
 import SkillsModal from '../../../components/modals/Home/SkillsModal'
 import NotesModal from '../../../components/modals/Home/NotesModal'
 
@@ -52,7 +51,6 @@ class HomePage extends Component {
         {/* Modals */}
         <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-        <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <SkillsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
       </div>
