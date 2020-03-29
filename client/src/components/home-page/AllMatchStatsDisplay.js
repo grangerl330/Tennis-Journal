@@ -45,7 +45,7 @@ const AllMatchStatsDisplay = (props) => {
 
   return (
     <div id="Advanced-Stats-Display" className="container border rounded">
-      <div className="row justify-content-center text-white bg-secondary">
+      <div className="row justify-content-center text-white background-dark">
         <h3>All Match Stats</h3>
       </div>
       <div className="row mt-4 justify-content-center">

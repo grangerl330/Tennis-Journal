@@ -2,35 +2,42 @@ import React from 'react'
 
 const GoalsDisplay = (props) => {
   return (
-    <div id="Goals-Display" className="container border rounded">
-      <div className="row justify-content-center text-white bg-secondary">
-        <h3>My Goals</h3>
-        <i className="fas fa-edit ml-2 my-auto fa-xs" data-toggle="modal" data-target="#goalsModal"></i>
+    <div id="Goals-Display" className="container border rounded bg-white">
+      <div className="row mt-3 justify-content-center">
+        <h3 className="mx-auto text-green">My Goals</h3>
+        <span data-toggle="tooltip" data-placement="top" title="Edit Goals">
+          <i className="fas fa-pencil-alt pr-2 my-auto fa-s text-green" data-toggle="modal" data-target="#goalsModal"></i>
+        </span>
       </div>
       <div className="row mt-3">
-        <div className="col-6">
-          <h5>Short Term Goal:</h5>
-        </div>
-        <div className="col-6">
-          {props.currentUser.short_term_goal}
+        <div className="col">
+          <div className="row">
+            <div className="col-5">
+              <span>Short Term Goal:</span>
+            </div>
+            <div className="col-7">
+              <span className="goals-text">{props.currentUser.short_term_goal}</span>
+            </div>
+          </div>
+          <div className="row mt-3">
+            <div className="col-5">
+              <span>Mid Term Goal:</span>
+            </div>
+            <div className="col-7">
+              <span className="goals-text">{props.currentUser.mid_term_goal}</span>
+            </div>
+          </div>
+          <div className="row my-3">
+            <div className="col-5">
+              <span>Long Term Goal:</span>
+            </div>
+            <div className="col-7">
+              <span className="goals-text">{props.currentUser.long_term_goal}</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="row mt-3">
-        <div className="col-6">
-          <h5>Mid Term Goal:</h5>
-        </div>
-        <div className="col-6">
-          {props.currentUser.mid_term_goal}
-        </div>
-      </div>
-      <div className="row mt-3">
-        <div className="col-6">
-          <h5>Long Term Goal:</h5>
-        </div>
-        <div className="col-6">
-          {props.currentUser.long_term_goal}
-        </div>
-      </div>
+
     </div>
   )
 }

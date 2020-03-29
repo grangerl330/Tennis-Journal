@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 const Navbar = (props) => {
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark py-3">
+    <nav className="navbar navbar-expand-sm navbar-dark background-dark py-3">
       <div className="container-fluid">
         <NavbarBrand login={props.isLogin}/>
         <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">

@@ -1,7 +1,14 @@
 // Override default variables before the import
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
 html, body {
   min-height: 100vh;
   height: 100%;
+  font-family: 'Muli', sans-serif !important;
+}
+
+ul {
+  list-style-type: none;
 }
 
 #App {
@@ -70,7 +77,7 @@ html, body {
 }
 
 .rankings-chart-button {
-  color: white;
+  color: #49A067;
   background: none;
   border: none;
 }
@@ -113,6 +120,28 @@ html, body {
 
 .middle {
   vertical-align: middle;
+}
+
+.text-green {
+  color: #49A067;
+}
+
+.background-dark {
+  background: #3A3A3A;
+}
+
+.background-light-green {
+  background: #DDEFE2;
+}
+
+.goals-text {
+  font-size: 14px;
+}
+
+.skills-li {
+  background: #49A067;
+  color: white;
+  border-radius: 1rem;
 }
 
 // Import Bootstrap and its default variables

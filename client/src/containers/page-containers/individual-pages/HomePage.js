@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import $ from 'jquery'
 
 // Display Components
-import PageTitleBar from '../../../components/PageTitleBar'
+// import PageTitleBar from '../../../components/PageTitleBar'
 import StatsOverviewDisplay from '../../../components/home-page/StatsOverviewDisplay'
 import AllMatchStatsDisplay from '../../../components/home-page/AllMatchStatsDisplay'
 import GoalsDisplay from '../../../components/home-page/GoalsDisplay'
@@ -18,32 +19,39 @@ import NotesModal from '../../../components/modals/Home/NotesModal'
 class HomePage extends Component {
   componentDidMount(){
     this.props.getCurrentUser()
+    $('[data-toggle="tooltip"]').tooltip();
   }
 
   render() {
     return (
-      <div id="home-page" className="container-fluid mt-5 px-0">
-        <div className="row">
-          <div id="home-page-left" className="col-7 mr-4 ml-auto">
-            <div className="row">
+      <div id="home-page" className="container-fluid px-0">
+        <div className="row mx-auto">
+          <div id="home-page-left" className="col-8">
+            <div className="row pt-4 px-5">
               <StatsOverviewDisplay currentUser={this.props.currentUser} />
             </div>
-            <div className="row mt-5">
+            <div className="row mt-3 mb-5 px-5">
               <RankingsHistoryDisplay currentUser={this.props.currentUser} />
             </div>
-            <div className="row mt-3">
+            <div className="row mt-3 px-5">
               <AllMatchStatsDisplay currentUser={this.props.currentUser} />
             </div>
           </div>
-          <div id="home-page-right" className="col-4 mr-auto">
+          <div id="home-page-right" className="col-4 background-light-green">
             <div className="row">
-              <GoalsDisplay currentUser={this.props.currentUser} />
+              <div className="col px-4 mt-5">
+                <GoalsDisplay currentUser={this.props.currentUser} />
+              </div>
             </div>
             <div className="row mt-3">
-              <SkillsDisplay currentUser={this.props.currentUser} />
+              <div className="col px-4 mt-5">
+                <SkillsDisplay currentUser={this.props.currentUser} />
+              </div>
             </div>
             <div className="row mt-3">
-              <ImprovementDisplay currentUser={this.props.currentUser} />
+              <div className="col px-4 my-5">
+                <ImprovementDisplay currentUser={this.props.currentUser} />
+              </div>
             </div>
           </div>
         </div>

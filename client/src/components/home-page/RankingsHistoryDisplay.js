@@ -57,14 +57,17 @@ class RankingsHistoryDisplay extends Component {
  render() {
    return (
      <div id="Rankings-History-Display" className="container border rounded">
-       <div className="row justify-content-center text-white bg-secondary">
-        <button className="mr-auto ml-3 rankings-chart-button" onClick={this.updateYear}>
-          <i className="fas fa-chevron-left"></i>
-        </button>
-        <h3>Rankings History - {this.state.chartDate}</h3>
-        <button className="ml-auto mr-3 rankings-chart-button" onClick={this.updateYear}>
-          <i className="fas fa-chevron-right"></i>
-        </button>
+       <div className="row justify-content-center text-white background-dark">
+        <h3>Rankings History</h3>
+       </div>
+       <div className="row mt-2">
+         <button className="ml-auto mr-3 rankings-chart-button" onClick={this.updateYear}>
+           <i className="fas fa-chevron-left"></i>
+         </button>
+         <span className="text-green">{this.state.chartDate}</span>
+         <button className="mr-auto ml-3 rankings-chart-button" onClick={this.updateYear}>
+           <i className="fas fa-chevron-right"></i>
+         </button>
        </div>
        <div className="row w-100 h-100 text-center justify-content-center align-self-center">
          {this.renderChart()}
