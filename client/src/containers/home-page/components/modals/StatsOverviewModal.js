@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 
-class AllStatsModal extends Component {
+class StatsOverviewModal extends Component {
   constructor(props){
     super(props)
 
@@ -30,7 +30,7 @@ class AllStatsModal extends Component {
 
   render(){
     return(
-      <div className="modal fade" id="allStatsModal">
+      <div className="modal fade" id="statsOverviewModal">
         <div className="modal-dialog modal-lg w-50">
           <div className="modal-content">
             <div className="modal-header bg-info text-white">
@@ -61,4 +61,4 @@ class AllStatsModal extends Component {
   }
 }
 
-export default withRouter(AllStatsModal)
+export default withRouter(StatsOverviewModal)

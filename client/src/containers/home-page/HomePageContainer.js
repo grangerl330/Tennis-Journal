@@ -10,7 +10,7 @@ import ImprovementDisplay from './components/displays/ImprovementDisplay'
 import RankingsHistoryDisplay from './components/displays/RankingsHistoryDisplay'
 
 // Modal Components
-import AllStatsModal from './components/modals/AllStatsModal'
+import StatsOverviewModal from './components/modals/StatsOverviewModal'
 import GoalsModal from './components/modals/GoalsModal'
 import SkillsModal from './components/modals/SkillsModal'
 import NotesModal from './components/modals/NotesModal'
@@ -56,7 +56,7 @@ class HomePageContainer extends Component {
         </div>
 
         {/* Modals */}
-        <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <StatsOverviewModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <SkillsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
@@ -97,7 +97,7 @@ export default HomePageContainer
 // <ImprovementDisplay currentUser={this.props.currentUser} />
 //
 // {/* Modals */}
-// <AllStatsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+// <StatsOverviewModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
 // <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
 // <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
 // <SkillsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
