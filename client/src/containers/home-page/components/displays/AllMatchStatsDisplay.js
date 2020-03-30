@@ -48,32 +48,106 @@ const AllMatchStatsDisplay = (props) => {
       <div className="row justify-content-center border rounded-top text-white background-dark py-2">
         <h4>All Match Stats</h4>
       </div>
-      <div className="row mt-4 justify-content-center">
-        <div className="col-3 text-center">
-          <h5>Matches Played: {totalMatchesPlayed}</h5>
+      <div className="row my-4 justify-content-center">
+        <div className="col-6 border-right">
+          <div className="row justify-content-center border-bottom py-4 mx-3">
+            <div className="col-9">
+              <div className="row">
+                <div className="col-10">
+                  <span className="my-auto">Matches Played:</span>
+                </div>
+                <div className="col-2">
+                  <span className="my-auto text-green">{totalMatchesPlayed}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row justify-content-center border-bottom py-4 mx-3">
+            <div className="col-9">
+              <div className="row">
+                <div className="col-10">
+                  <span className="my-auto">Total Winners:</span>
+                </div>
+                <div className="col-2">
+                  <span className="my-auto text-green">{totalWinners}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row justify-content-center border-bottom py-4 mx-3">
+            <div className="col-9">
+              <div className="row">
+                <div className="col-10">
+                  <span className="my-auto">Total Forced Errors:</span>
+                </div>
+                <div className="col-2">
+                  <span className="my-auto text-green">{totalForcedErrors}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row justify-content-center py-4 mx-3">
+            <div className="col-9">
+              <div className="row">
+                <div className="col-10">
+                  <span className="my-auto">Total Unforced Errors:</span>
+                </div>
+                <div className="col-2">
+                  <span className="my-auto text-green">{totalUnforcedErrors}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="col-3 text-center">
-          <h5>Total Winners: {totalWinners}</h5>
-        </div>
-        <div className="col-3 text-center">
-          <h5>Total Forced Errors: {totalForcedErrors}</h5>
-        </div>
-        <div className="col-3 text-center">
-          <h5>Total Unforced Errors: {totalUnforcedErrors}</h5>
-        </div>
-      </div>
-      <div className="row mt-5 justify-content-center">
-        <div className="col-3 text-center">
-          <h5>Total Aces: {totalAces}</h5>
-        </div>
-        <div className="col-3 text-center">
-          <h5>Total Service Winners: {totalServiceWinners}</h5>
-        </div>
-        <div className="col-3 text-center">
-          <h5>Total Double Faults: {totalDoubleFaults}</h5>
-        </div>
-        <div className="col-3 text-center">
-          <h5>Aggressive Margin: {totalDoubleFaults}</h5>
+        <div className="col-6">
+          <div className="row justify-content-center border-bottom py-4 mx-3">
+            <div className="col-9">
+              <div className="row">
+                <div className="col-10">
+                  <span className="my-auto">Aggressive Margin:</span>
+                </div>
+                <div className="col-2">
+                  <span className="my-auto text-green">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row justify-content-center border-bottom py-4 mx-3">
+            <div className="col-9">
+              <div className="row">
+                <div className="col-10">
+                  <span className="my-auto">Total Aces:</span>
+                </div>
+                <div className="col-2">
+                  <span className="my-auto text-green">{totalAces}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row justify-content-center border-bottom py-4 mx-3">
+            <div className="col-9">
+              <div className="row">
+                <div className="col-10">
+                  <span className="my-auto">Total Service Winners:</span>
+                </div>
+                <div className="col-2">
+                  <span className="my-auto text-green">{totalServiceWinners}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row justify-content-center py-4 mx-3">
+            <div className="col-9">
+              <div className="row">
+                <div className="col-10">
+                  <span className="my-auto">Total Double Faults:</span>
+                </div>
+                <div className="col-2">
+                  <span className="my-auto text-green">{totalDoubleFaults}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
