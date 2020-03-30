@@ -1,21 +1,21 @@
 import React from 'react'
 
 // Navbar Components and Functions
-import Navbar from '../../app-layout/Navbar'
-import { updateLoginForm, authenticatePassword } from '../../../actions/loginForm'
-import { login } from '../../../actions/currentUser'
+import NavbarContainer from '../app-layout/navbar/NavbarContainer'
+import { updateLoginForm, authenticatePassword } from '../../actions/loginForm'
+import { login } from '../../actions/currentUser'
 
 // Signup Components and Functions
-import SignUpForm from '../../../components/forms/SignUpForm'
-import { updateSignupForm } from '../../../actions/signupForm'
-import { signup } from '../../../actions/newUser'
+import SignUpForm from './SignUpForm'
+import { updateSignupForm } from '../../actions/signupForm'
+import { signup } from '../../actions/newUser'
 
 import { connect } from 'react-redux'
 
-const LoginPage = (props) => {
+const LoginPageContainer = (props) => {
   return (
     <div className="section" id="login-page">
-      <Navbar isLogin={true} authenticatePassword={props.authenticatePassword} login={props.login}/>
+      <NavbarContainer isLogin={true} authenticatePassword={props.authenticatePassword} login={props.login}/>
 
       <header id="login-page-header">
         <div className="dark-overlay">
@@ -81,4 +81,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateLoginForm, login, updateSignupForm, signup, authenticatePassword })(LoginPage)
+export default connect(mapStateToProps, { updateLoginForm, login, updateSignupForm, signup, authenticatePassword })(LoginPageContainer)

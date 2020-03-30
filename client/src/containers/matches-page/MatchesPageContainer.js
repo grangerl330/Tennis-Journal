@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment'
 import { NavLink } from 'react-router-dom'
 
-const Matches = (props) => {
+const MatchesPageContainer = (props) => {
   const sortedMatches = props.matches.sort(function(a,b) {return moment(a.date) - moment(b.date)})
 
   const match_round_display = (match) => {
@@ -64,4 +64,4 @@ const Matches = (props) => {
   )
 }
 
-export default Matches
+export default MatchesPageContainer

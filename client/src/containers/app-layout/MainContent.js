@@ -3,30 +3,30 @@ import { connect } from 'react-redux'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 // Profile Page Components
-import ProfilePage from '../page-containers/individual-pages/ProfilePage'
+import ProfilePageContainer from '../profile-page/ProfilePageContainer'
 import { updateCurrentUserInDatabase, updateCurrentUserPasswordInDatabase, deleteCurrentUserFromDatabase } from '../../actions/currentUser'
 
 // Home Page Components
-import HomePage from '../page-containers/individual-pages/HomePage'
+import HomePageContainer from '../home-page/HomePageContainer'
 import { getCurrentUser } from '../../actions/currentUser'
 
 // Matches Components
-import Matches from '../page-containers/index-pages/Matches'
-import MatchPage from '../page-containers/individual-pages/MatchPage'
-import MatchForm from '../../components/forms/MatchForm'
+import MatchesPageContainer from '../matches-page/MatchesPageContainer'
+import MatchPageContainer from '../match-page/MatchPageContainer'
+import MatchForm from '../match-page/components/MatchForm'
 import { fetchMatches } from '../../actions/matches'
 import { addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase } from '../../actions/matches'
 
 // Tournaments Components
-import Tournaments from '../page-containers/index-pages/Tournaments'
-import TournamentPage from '../page-containers/individual-pages/TournamentPage'
-import TournamentForm from '../../components/forms/TournamentForm'
+import TournamentsPageContainer from '../tournaments-page/TournamentsPageContainer'
+import TournamentPageContainer from '../tournament-page/TournamentPageContainer'
+import TournamentForm from '../tournament-page/components/TournamentForm'
 import { fetchTournaments } from '../../actions/tournaments'
 import { addTournamentToDatabase, editTournamentInDatabase, deleteTournamentFromDatabase } from '../../actions/tournaments'
 
 // Opponents Components
-import Opponents from '../page-containers/index-pages/Opponents'
-import OpponentPage from '../page-containers/individual-pages/OpponentPage'
+import OpponentsPageContainer from '../opponents-page/OpponentsPageContainer'
+import OpponentPageContainer from '../opponent-page/OpponentPageContainer'
 import { fetchOpponents, editOpponentInDatabase } from '../../actions/opponents'
 
 class MainContent extends Component {
@@ -77,14 +77,14 @@ class MainContent extends Component {
           )}/>
           <Route exact path='/tournaments/add' render={() => <TournamentForm sendTournamentToDatabase={this.props.addTournamentToDatabase} add="add"/>} />
           <Route exact path='/tournaments/:tournamentId/add' render={(urlData) => <MatchForm tournamentId={urlData.match.params.tournamentId} tournament={this.currentTournament(urlData.match.params.tournamentId)} addMatchToDatabase={this.props.addMatchToDatabase} matches={this.findTournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
-          <Route path='/tournaments/:tournamentId' render={(urlData) => <TournamentPage id={urlData.match.params.tournamentId} currentTournament={this.currentTournament} addMatchToDatabase={this.props.addMatchToDatabase} editTournamentInDatabase={this.props.editTournamentInDatabase} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase} matches={this.findTournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
-          <Route path='/tournaments' render={() => <Tournaments tournaments={this.props.tournaments} addTournamentToDatabase={this.props.addTournamentToDatabase} />} />
-          <Route path='/matches/:matchId' render={(urlData) => <MatchPage id={urlData.match.params.matchId} currentMatch={this.currentMatch} matches={this.props.matches} editMatchInDatabase={this.props.editMatchInDatabase} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase} findTournamentMatches={this.findTournamentMatches}/>}/>
-          <Route path='/matches' render={() => <Matches matches={this.props.matches} addMatchToDatabase={this.props.addMatchToDatabase}/>} />
-          <Route path='/opponents/:opponentId' render={(urlData) => <OpponentPage id={urlData.match.params.opponentId} currentOpponent={this.currentOpponent} editOpponentInDatabase={this.props.editOpponentInDatabase}/>}/>
-          <Route path='/opponents' render={() => <Opponents opponents={this.props.opponents}/>} />
-          <Route exact path='/profile/edit' render={() => <ProfilePage currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} updateCurrentUserPasswordInDatabase={this.props.updateCurrentUserPasswordInDatabase} deleteCurrentUserFromDatabase={this.props.deleteCurrentUserFromDatabase}/>}/>
-          <Route path='/home' render={() => <HomePage currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} getCurrentUser={this.props.getCurrentUser}/>}/>
+          <Route path='/tournaments/:tournamentId' render={(urlData) => <TournamentPageContainer id={urlData.match.params.tournamentId} currentTournament={this.currentTournament} addMatchToDatabase={this.props.addMatchToDatabase} editTournamentInDatabase={this.props.editTournamentInDatabase} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase} matches={this.findTournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
+          <Route path='/tournaments' render={() => <TournamentsPageContainer tournaments={this.props.tournaments} addTournamentToDatabase={this.props.addTournamentToDatabase} />} />
+          <Route path='/matches/:matchId' render={(urlData) => <MatchPageContainer id={urlData.match.params.matchId} currentMatch={this.currentMatch} matches={this.props.matches} editMatchInDatabase={this.props.editMatchInDatabase} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase} findTournamentMatches={this.findTournamentMatches}/>}/>
+          <Route path='/matches' render={() => <MatchesPageContainer matches={this.props.matches} addMatchToDatabase={this.props.addMatchToDatabase}/>} />
+          <Route path='/opponents/:opponentId' render={(urlData) => <OpponentPageContainer id={urlData.match.params.opponentId} currentOpponent={this.currentOpponent} editOpponentInDatabase={this.props.editOpponentInDatabase}/>}/>
+          <Route path='/opponents' render={() => <OpponentsPageContainer opponents={this.props.opponents}/>} />
+          <Route exact path='/profile/edit' render={() => <ProfilePageContainer currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} updateCurrentUserPasswordInDatabase={this.props.updateCurrentUserPasswordInDatabase} deleteCurrentUserFromDatabase={this.props.deleteCurrentUserFromDatabase}/>}/>
+          <Route path='/home' render={() => <HomePageContainer currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} getCurrentUser={this.props.getCurrentUser}/>}/>
         </Switch>
       </div>
     )

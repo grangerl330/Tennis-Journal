@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment'
 import { NavLink } from 'react-router-dom'
 
-const Tournaments = (props) => {
+const TournamentsPageContainer = (props) => {
     const sortedTournaments = props.tournaments.sort(function(a,b) {return moment(a.start_date) - moment(b.start_date)})
 
     const renderTournaments = sortedTournaments.map(tournament =>
@@ -48,4 +48,4 @@ const Tournaments = (props) => {
     )
 }
 
-export default Tournaments
+export default TournamentsPageContainer

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import UpdateSuccessModal from './UpdateSuccessModal'
+import UpdateSuccessModal from '../../../general-use-components/UpdateSuccessModal'
 import classNames from 'classnames'
 import zxcvbn from 'zxcvbn'
 import $ from "jquery";

@@ -1,15 +1,15 @@
 import React from 'react';
-import OpponentInfoModal from '../../../components/modals/Opponent/OpponentInfoModal'
-import OpponentNotesModal from '../../../components/modals/Opponent/OpponentNotesModal'
-import OpponentStrengthsModal from '../../../components/modals/Opponent/OpponentStrengthsModal'
-import OpponentWeaknessesModal from '../../../components/modals/Opponent/OpponentWeaknessesModal'
-import tournamentDrawIcon from '../../../images/tournament-draw-icon.png'
-import tennisBallIcon from '../../../images/tennis-ball-filled-icon.png'
-import birthdayIcon from '../../../images/birthday-cake-icon.png'
+import OpponentInfoModal from './components/modals/OpponentInfoModal'
+import OpponentNotesModal from './components/modals/OpponentNotesModal'
+import OpponentStrengthsModal from './components/modals/OpponentStrengthsModal'
+import OpponentWeaknessesModal from './components/modals/OpponentWeaknessesModal'
+import tournamentDrawIcon from '../../images/tournament-draw-icon.png'
+import tennisBallIcon from '../../images/tennis-ball-filled-icon.png'
+import birthdayIcon from '../../images/birthday-cake-icon.png'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
-const OpponentPage = (props) => {
+const OpponentPageContainer = (props) => {
   var opponentId = parseInt(props.id)
   var opponent = props.currentOpponent(opponentId)
 
@@ -188,4 +188,4 @@ const arrayDisplay = (array) => {
   return result
 }
 
-export default withRouter(OpponentPage)
+export default withRouter(OpponentPageContainer)

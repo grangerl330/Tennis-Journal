@@ -2,21 +2,20 @@ import React, { Component } from 'react'
 import $ from 'jquery'
 
 // Display Components
-// import PageTitleBar from '../../../components/PageTitleBar'
-import StatsOverviewDisplay from '../../../components/home-page/StatsOverviewDisplay'
-import AllMatchStatsDisplay from '../../../components/home-page/AllMatchStatsDisplay'
-import GoalsDisplay from '../../../components/home-page/GoalsDisplay'
-import SkillsDisplay from '../../../components/home-page/SkillsDisplay'
-import ImprovementDisplay from '../../../components/home-page/ImprovementDisplay'
-import RankingsHistoryDisplay from '../../../components/home-page/RankingsHistoryDisplay'
+import StatsOverviewDisplay from './components/displays/StatsOverviewDisplay'
+import AllMatchStatsDisplay from './components/displays/AllMatchStatsDisplay'
+import GoalsDisplay from './components/displays/GoalsDisplay'
+import SkillsDisplay from './components/displays/SkillsDisplay'
+import ImprovementDisplay from './components/displays/ImprovementDisplay'
+import RankingsHistoryDisplay from './components/displays/RankingsHistoryDisplay'
 
 // Modal Components
-import AllStatsModal from '../../../components/modals/Home/AllStatsModal'
-import GoalsModal from '../../../components/modals/Home/GoalsModal'
-import SkillsModal from '../../../components/modals/Home/SkillsModal'
-import NotesModal from '../../../components/modals/Home/NotesModal'
+import AllStatsModal from './components/modals/AllStatsModal'
+import GoalsModal from './components/modals/GoalsModal'
+import SkillsModal from './components/modals/SkillsModal'
+import NotesModal from './components/modals/NotesModal'
 
-class HomePage extends Component {
+class HomePageContainer extends Component {
   componentDidMount(){
     this.props.getCurrentUser()
     $('[data-toggle="tooltip"]').tooltip();
@@ -66,7 +65,7 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage
+export default HomePageContainer
 
 
 // currentRankingDisplay = () => {

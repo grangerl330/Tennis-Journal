@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 // App Layout Containers
 import MainContent from './containers/app-layout/MainContent'
-import Navbar from './containers/app-layout/Navbar'
+import NavbarContainer from './containers/app-layout/navbar/NavbarContainer'
 import Footer from './containers/app-layout/Footer'
 
 // Login Components and Functions
-import LoginPage from './containers/page-containers/individual-pages/LoginPage'
+import LoginPageContainer from './containers/login-page/LoginPageContainer'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 
@@ -21,7 +21,7 @@ class App extends Component {
       return (
         <>
         <div id="App">
-          <Navbar isLogin={false} currentUser={this.props.currentUser} />
+          <NavbarContainer isLogin={false} currentUser={this.props.currentUser} />
           <MainContent />
         </div>
           <Footer />
@@ -30,7 +30,7 @@ class App extends Component {
     } else {
       return (
         <div id="App">
-          <LoginPage />
+          <LoginPageContainer />
         </div>
       )
     }

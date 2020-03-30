@@ -1,16 +1,16 @@
 import React from 'react';
 import moment from 'moment'
-import MatchInfoModal from '../../../components/modals/Match/MatchInfoModal'
-import MatchNotesModal from '../../../components/modals/Match/MatchNotesModal'
-import MatchStatsModal from '../../../components/modals/Match/MatchStatsModal'
-import LiveStatsModal from '../../../components/modals/Match/LiveStatsModal'
-import DeleteMatchModal from '../../../components/modals/Delete/DeleteMatchModal'
-import headToHeadIcon from '../../../images/head-to-head.png'
-import scoreboardIcon from '../../../images/scoreboard.png'
+import MatchInfoModal from './components/modals/MatchInfoModal'
+import MatchNotesModal from './components/modals/MatchNotesModal'
+import MatchStatsModal from './components/modals/MatchStatsModal'
+import LiveStatsModal from './components/modals/LiveStatsModal'
+import DeleteMatchModal from './components/modals/DeleteMatchModal'
+import headToHeadIcon from '../../images/head-to-head.png'
+import scoreboardIcon from '../../images/scoreboard.png'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
-const MatchPage = (props) => {
+const MatchPageContainer = (props) => {
   let matchId = parseInt(props.id)
   let currentMatch = props.currentMatch(matchId)
 
@@ -248,4 +248,4 @@ const MatchPage = (props) => {
 
 
 
-export default withRouter(MatchPage)
+export default withRouter(MatchPageContainer)

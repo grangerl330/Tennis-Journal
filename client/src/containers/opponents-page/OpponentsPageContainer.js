@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
 
-const Opponents = (props) => {
+const OpponentsPageContainer = (props) => {
   const renderOpponents = props.opponents.map(opponent =>
     <div className="col-auto px-0 mb-3" key={opponent.id}>
       <div className="card card-tournament border border-secondary">
         <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/opponents/${opponent.id}`}>
           <div className="card-body h-100 text-center">
-              <h5 className="card-text">{opponent.first_name} {opponent.last_name}</h5>
+            <h5 className="card-text">{opponent.first_name} {opponent.last_name}</h5>
           </div>
         </NavLink>
       </div>
@@ -47,4 +47,4 @@ const Opponents = (props) => {
   )
 }
 
-export default Opponents
+export default OpponentsPageContainer

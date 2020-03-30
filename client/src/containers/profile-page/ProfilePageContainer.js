@@ -1,14 +1,11 @@
 import React from 'react'
-import PageTitleBar from '../../../components/PageTitleBar'
-import ProfileForm from '../../../components/forms/ProfileForm'
-import PasswordModal from '../../../components/modals/PasswordModal'
-import DeleteAccountModal from '../../../components/modals/Delete/DeleteAccountModal'
+import ProfileForm from './components/ProfileForm'
+import PasswordModal from './components/modals/PasswordModal'
+import DeleteAccountModal from './components/modals/DeleteAccountModal'
 
-const ProfilePage = (props) => {
+const ProfilePageContainer = (props) => {
   return (
     <section id="profile">
-      <PageTitleBar pageTitle="Edit Profile" />
-
       <div className="container mb-4">
         <div className="row justify-content-center">
           <div className="col-md-3">
@@ -44,4 +41,4 @@ const ProfilePage = (props) => {
   )
 }
 
-export default ProfilePage
+export default ProfilePageContainer
