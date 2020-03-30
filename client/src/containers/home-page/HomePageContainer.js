@@ -26,7 +26,7 @@ class HomePageContainer extends Component {
       <div id="home-page" className="container-fluid px-0">
         <div className="row mx-auto">
           <div id="home-page-left" className="col-8">
-            <div className="row pt-4 px-5">
+            <div className="row pt-5 px-5">
               <StatsOverviewDisplay currentUser={this.props.currentUser} />
             </div>
             <div className="row mt-3 mb-5 px-5">
@@ -44,7 +44,7 @@ class HomePageContainer extends Component {
             </div>
             <div className="row mt-3">
               <div className="col px-4 mt-5">
-                <SkillsDisplay currentUser={this.props.currentUser} />
+                <SkillsDisplay currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase}/>
               </div>
             </div>
             <div className="row mt-3">
