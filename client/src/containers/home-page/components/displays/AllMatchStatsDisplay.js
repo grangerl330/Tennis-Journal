@@ -43,6 +43,8 @@ const AllMatchStatsDisplay = (props) => {
     totalServiceWinners += calculateTotalServiceWinners(match)
   }
 
+  let aggressiveMargin = (totalWinners + totalForcedErrors - totalUnforcedErrors)
+
   return (
     <div id="Advanced-Stats-Display" className="container shadow-light-green">
       <div className="row justify-content-center border rounded-top text-white background-dark py-2">
@@ -107,7 +109,7 @@ const AllMatchStatsDisplay = (props) => {
                   <span className="my-auto">Aggressive Margin:</span>
                 </div>
                 <div className="col-2">
-                  <span className="my-auto text-green">0</span>
+                  <span className="my-auto text-green">{aggressiveMargin}</span>
                 </div>
               </div>
             </div>
