@@ -40,6 +40,12 @@ ul {
   }
 }
 
+.vh-50 {
+  min-height: 45vh;
+  max-height: 45vh;
+  overflow: auto;
+}
+
 .card-stats {
   height: 120px;
 }
