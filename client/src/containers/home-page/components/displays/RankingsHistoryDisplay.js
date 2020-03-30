@@ -56,9 +56,9 @@ class RankingsHistoryDisplay extends Component {
 
  render() {
    return (
-     <div id="Rankings-History-Display" className="container border rounded">
-       <div className="row justify-content-center text-white background-dark">
-        <h3>Rankings History</h3>
+     <div id="Rankings-History-Display" className="container shadow-light-green">
+       <div className="row justify-content-center border rounded-top text-white background-dark py-2">
+        <h4>Rankings History</h4>
        </div>
        <div className="row mt-2">
          <button className="ml-auto mr-3 rankings-chart-button" onClick={this.updateYear}>

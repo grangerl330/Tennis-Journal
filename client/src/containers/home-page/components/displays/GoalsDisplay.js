@@ -2,9 +2,9 @@ import React from 'react'
 
 const GoalsDisplay = (props) => {
   return (
-    <div id="Goals-Display" className="container border rounded bg-white">
+    <div id="Goals-Display" className="container border rounded shadow-green bg-white">
       <div className="row mt-3 justify-content-center">
-        <h3 className="mx-auto text-green">My Goals</h3>
+        <h4 className="mx-auto text-green">My Goals</h4>
         <span data-toggle="tooltip" data-placement="top" title="Edit Goals">
           <i className="fas fa-pencil-alt pr-2 my-auto fa-s text-green" data-toggle="modal" data-target="#goalsModal"></i>
         </span>

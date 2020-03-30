@@ -44,9 +44,9 @@ const AllMatchStatsDisplay = (props) => {
   }
 
   return (
-    <div id="Advanced-Stats-Display" className="container border rounded">
-      <div className="row justify-content-center text-white background-dark">
-        <h3>All Match Stats</h3>
+    <div id="Advanced-Stats-Display" className="container shadow-light-green">
+      <div className="row justify-content-center border rounded-top text-white background-dark py-2">
+        <h4>All Match Stats</h4>
       </div>
       <div className="row mt-4 justify-content-center">
         <div className="col-3 text-center">
@@ -71,6 +71,9 @@ const AllMatchStatsDisplay = (props) => {
         </div>
         <div className="col-3 text-center">
           <h5>Total Double Faults: {totalDoubleFaults}</h5>
+        </div>
+        <div className="col-3 text-center">
+          <h5>Aggressive Margin: {totalDoubleFaults}</h5>
         </div>
       </div>
     </div>

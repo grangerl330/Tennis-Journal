@@ -144,5 +144,15 @@ ul {
   border-radius: 1rem;
 }
 
+.shadow-green {
+  box-shadow: 0 0.5rem 1rem #AFD8B6;
+  // 0 0.5rem 1rem - shadow
+  // 0 1rem 3rem - shadow-lg
+}
+
+.shadow-light-green {
+  box-shadow: 0 0.5rem 1rem #DDE8DF;
+}
+
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
