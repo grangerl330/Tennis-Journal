@@ -161,7 +161,7 @@ class SkillsDisplay extends Component {
               </form>
             </div>
             <div className="col-2 p-0 pr-1">
-              <i className="fas fa-times fa-s text-white" onClick={this.removeWeaknessChipInput}></i>
+              <i className="fas fa-times fa-xs text-white" onClick={this.removeWeaknessChipInput}></i>
             </div>
           </div>
         </li>
