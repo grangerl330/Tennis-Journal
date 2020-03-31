@@ -96,15 +96,15 @@ ActiveRecord::Schema.define(version: 2020_03_26_232146) do
     t.string "email"
     t.string "password_digest"
     t.float "utr"
-    t.string "match_record"
+    t.string "match_record", default: ""
     t.integer "current_ranking"
-    t.integer "points"
-    t.string "short_term_goal"
-    t.string "mid_term_goal"
-    t.string "long_term_goal"
+    t.integer "points", default: 0
+    t.string "short_term_goal", default: ""
+    t.string "mid_term_goal", default: ""
+    t.string "long_term_goal", default: ""
     t.text "strengths", default: [], array: true
     t.text "weaknesses", default: [], array: true
-    t.text "notes"
+    t.text "notes", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
