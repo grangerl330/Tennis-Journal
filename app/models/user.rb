@@ -9,9 +9,14 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   def update_match_record
-    win_count = self.matches.select {|match| match.result === "Won" }.count
-    loss_count = self.matches.select {|match| match.result === "Lost" }.count
-    record = "#{win_count} - #{loss_count}"
+    if self.matches.length === 0
+      record = "0 - 0"
+    else
+      win_count = self.matches.select {|match| match.result === "Won" }.count
+      loss_count = self.matches.select {|match| match.result === "Lost" }.count
+      record = "#{win_count} - #{loss_count}"
+    end
+
     self.update(match_record: record)
   end
 
