@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 
-class NotesModal extends Component {
+class ImprovementModal extends Component {
   constructor(props){
     super(props)
 
@@ -32,22 +32,22 @@ class NotesModal extends Component {
       <div className="modal fade" id="notesModal">
         <div className="modal-dialog modal-lg w-50">
           <div className="modal-content">
-            <div className="modal-header bg-info text-white">
-              <h5 className="modal-title">Edit Things To Improve</h5>
+            <div className="modal-header border-0">
               <button className="close" data-dismiss="modal">
-                <i className="fas fa-times"></i>
+                <i className="fas fa-times fa-sm text-grey"></i>
               </button>
             </div>
             <div className="modal-body">
+              <h5 className="text-green mb-4">Edit Things To Improve</h5>
               <form>
                 <div className="form-group">
-                  <label htmlFor="Things To Improve">Notes</label>
                   <textarea className="form-control" type="text" rows="10" name="notes" value={this.state.notes || ''} onChange={this.handleOnChange} />
                 </div>
+                <div className="form-group text-right mt-5 mb-4">
+                  <button className="btn mr-4 text-grey" data-dismiss="modal">Cancel</button>
+                  <button className="btn btn-green" data-dismiss="modal" onClick={this.handleOnSubmit}>Update</button>
+                </div>
               </form>
-            </div>
-            <div className="modal-footer justify-content-center">
-              <button className="btn btn-dark" data-dismiss="modal" onClick={this.handleOnSubmit}>Update Notes</button>
             </div>
           </div>
         </div>
@@ -56,4 +56,4 @@ class NotesModal extends Component {
   }
 }
 
-export default withRouter(NotesModal)
+export default withRouter(ImprovementModal)

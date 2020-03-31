@@ -13,7 +13,7 @@ import RankingsHistoryDisplay from './components/displays/RankingsHistoryDisplay
 import StatsOverviewModal from './components/modals/StatsOverviewModal'
 import GoalsModal from './components/modals/GoalsModal'
 import SkillsModal from './components/modals/SkillsModal'
-import NotesModal from './components/modals/NotesModal'
+import ImprovementModal from './components/modals/ImprovementModal'
 
 class HomePageContainer extends Component {
   componentDidMount(){
@@ -59,7 +59,7 @@ class HomePageContainer extends Component {
         <StatsOverviewModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <SkillsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-        <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+        <ImprovementModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
       </div>
     )
   }
@@ -101,4 +101,4 @@ export default HomePageContainer
 // <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
 // <StrengthsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
 // <SkillsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-// <NotesModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
+// <ImprovementModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
