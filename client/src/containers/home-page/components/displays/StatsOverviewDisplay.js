@@ -26,7 +26,7 @@ const StatsOverviewDisplay = (props) => {
                   <h5 className="inline">Ranking:</h5> <span className="ml-3">{props.currentUser.current_ranking}</span>
                 </div>
                 <div className="col-2 text-right">
-                  <span className="ml-auto" data-toggle="tooltip" data-placement="top" title="Edit Stats">
+                  <span className="ml-auto" data-toggle="tooltip" data-placement="top" title="Edit UTR and Ranking">
                     <i className="fas fa-pencil-alt fa-s text-green" data-toggle="modal" data-target="#statsOverviewModal"></i>
                   </span>
                 </div>

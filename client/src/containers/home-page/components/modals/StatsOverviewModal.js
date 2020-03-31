@@ -6,7 +6,7 @@ class StatsOverviewModal extends Component {
     super(props)
 
     this.state = {
-      ranking: props.currentUser.ranking,
+      ranking: props.currentUser.current_ranking,
       utr: props.currentUser.utr,
       id: props.currentUser.id
     }
@@ -31,28 +31,29 @@ class StatsOverviewModal extends Component {
   render(){
     return(
       <div className="modal fade" id="statsOverviewModal">
-        <div className="modal-dialog modal-lg w-50">
+        <div className="modal-dialog modal-lg w-40">
           <div className="modal-content">
-            <div className="modal-header bg-info text-white">
-              <h5 className="modal-title">Edit Stats</h5>
+            <div className="modal-header border-0">
               <button className="close" data-dismiss="modal">
-                <i className="fas fa-times"></i>
+                <i className="fas fa-times fa-sm text-grey"></i>
               </button>
             </div>
-            <div className="modal-body">
+            <div className="modal-body px-5">
+              <h5 className="text-green mb-4">Edit Your Stats</h5>
               <form>
                 <div className="form-group">
-                  <label htmlFor="Current Ranking">Current Ranking</label>
-                  <input className="form-control" type="text" name="ranking" value={this.state.ranking || ''} onChange={this.handleOnChange} placeholder="Enter your current ranking"/>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Current UTR">Current UTR</label>
+                  <label htmlFor="UTR">UTR</label>
                   <input className="form-control" type="text" name="utr" value={this.state.utr || ''} onChange={this.handleOnChange} placeholder="Enter your current UTR"/>
                 </div>
+                <div className="form-group">
+                  <label htmlFor="Ranking">Ranking</label>
+                  <input className="form-control" type="text" name="ranking" value={this.state.ranking || ''} onChange={this.handleOnChange} placeholder="Enter your current ranking"/>
+                </div>
+                <div className="form-group text-right mt-5 mb-4">
+                  <button className="btn mr-4 text-grey" data-dismiss="modal">Cancel</button>
+                  <button className="btn btn-green" data-dismiss="modal" onClick={this.handleOnSubmit}>Update</button>
+                </div>
               </form>
-            </div>
-            <div className="modal-footer justify-content-center">
-              <button className="btn btn-dark" data-dismiss="modal" onClick={this.handleOnSubmit}>Update Stats</button>
             </div>
           </div>
         </div>
