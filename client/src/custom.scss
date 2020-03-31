@@ -11,6 +11,10 @@ ul {
   list-style-type: none;
 }
 
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none;
+}
+
 #App {
   min-height: 90vh;
   height: 100%
@@ -144,6 +148,30 @@ ul {
   background: #49A067;
   color: white;
   border-radius: 1rem;
+}
+
+.skills-li-input {
+  background: #49A067;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+  display: block;
+  width: 100%;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-clip: padding-box;
+}
+
+.hide-row {
+  .hide {
+    visibility: hidden;
+  }
+}
+
+.hide-row:hover {
+  .hide {
+    visibility: visible;
+  }
 }
 
 .shadow-green {

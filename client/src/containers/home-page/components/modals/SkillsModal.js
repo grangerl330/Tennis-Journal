@@ -203,7 +203,6 @@ class SkillsModal extends Component {
     })
   }
 
-
   render(){
     return(
       <div className="modal fade" id="skillsModal">
