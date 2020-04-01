@@ -31,7 +31,7 @@ class User < ApplicationRecord
     self.update(points: all_points.sum)
   end
 
-  def convert_month(month)
+  def convert_month_to_integer(month)
     case month
     when "Jan"
       1
@@ -60,11 +60,49 @@ class User < ApplicationRecord
     end
   end
 
+  def convert_month_to_string(num)
+    case num
+    when 1
+      "Jan"
+    when 2
+      "Feb"
+    when 3
+      "Mar"
+    when 4
+      "Apr"
+    when 5
+      "May"
+    when 6
+      "Jun"
+    when 7
+      "Jul"
+    when 8
+      "Aug"
+    when 9
+      "Sept"
+    when 10
+      "Oct"
+    when 11
+      "Nov"
+    when 12
+      "Dec"
+    end
+  end
+
   def set_current_ranking
-    filtered_by_current_year = self.rankings.select{|rank| rank.year === Date.current.year.to_s()}
-    sorted_by_month = filtered_by_current_year.sort_by{|rank| convert_month(rank.month)}
-    current_rank = sorted_by_month.last.rank
-    self.update(current_ranking: sorted_by_month.last.rank)
+    current_rank = self.find_current_rank
+
+    self.update(current_ranking: current_rank.rank)
+  end
+
+  def find_current_rank
+    rank = self.rankings.find{|rank| rank.year === Date.current.year.to_s() && rank.month === convert_month_to_string(Date.current.month)}
+
+    if rank
+      rank
+    else
+      self.rankings.new(month: convert_month_to_string(Date.current.month), year: Date.current.year.to_s())
+    end
   end
 
 end

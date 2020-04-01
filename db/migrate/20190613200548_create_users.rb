@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.float :utr
       t.string :match_record, default: ""
-      t.integer :current_ranking
+      t.integer :current_ranking, default: 0
       t.integer :points, default: 0
       t.string :short_term_goal, default: ""
       t.string :mid_term_goal, default: ""

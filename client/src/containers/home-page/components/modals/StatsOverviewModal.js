@@ -4,9 +4,9 @@ import { withRouter } from 'react-router';
 class StatsOverviewModal extends Component {
   constructor(props){
     super(props)
-
+    
     this.state = {
-      ranking: props.currentUser.current_ranking,
+      current_ranking: props.currentUser.current_ranking,
       utr: props.currentUser.utr,
       id: props.currentUser.id
     }
@@ -22,7 +22,14 @@ class StatsOverviewModal extends Component {
   handleOnSubmit = event => {
     event.preventDefault()
 
+    const date = new Date()
+    const month = date.getMonth()
+    const year = date.getFullYear().toString()
+
     const user = this.state
+    user.month = month
+    user.year = year
+
     this.props.updateCurrentUserInDatabase(user)
 
     this.props.history.push('/home')
@@ -47,7 +54,7 @@ class StatsOverviewModal extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="Ranking">Ranking</label>
-                  <input className="form-control" type="text" name="ranking" value={this.state.ranking || ''} onChange={this.handleOnChange} placeholder="Enter your current ranking"/>
+                  <input className="form-control" type="text" name="current_ranking" value={this.state.current_ranking || ''} onChange={this.handleOnChange} placeholder="Enter your current ranking"/>
                 </div>
                 <div className="form-group text-right mt-5 mb-4">
                   <button className="btn mr-4 text-grey" data-dismiss="modal">Cancel</button>

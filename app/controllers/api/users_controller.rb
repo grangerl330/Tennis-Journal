@@ -17,6 +17,10 @@ class Api::UsersController < ApplicationController
     @user.update_match_record
     @user.update_points
 
+    @rank = @user.find_current_rank
+
+    @rank.update(rank: params[:user][:current_ranking].to_i)
+
     if @user.update(user_params)
       render json:  @user
     else
@@ -52,6 +56,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :utr, :match_record, :ranking, :points, :short_term_goal, :mid_term_goal, :notes, :long_term_goal, strengths: [], weaknesses: [])
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :utr, :match_record, :current_ranking, :points, :short_term_goal, :mid_term_goal, :notes, :long_term_goal, strengths: [], weaknesses: [])
   end
 end
