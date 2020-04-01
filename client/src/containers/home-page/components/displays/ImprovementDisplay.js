@@ -9,7 +9,7 @@ const ImprovementDisplay = (props) => {
             <i className="fas fa-pencil-alt pr-2 my-auto fa-s text-green" data-toggle="modal" data-target="#notesModal"></i>
           </span>
       </div>
-      <div className="row mb-3 vh-45">
+      <div className="row my-3 vh-45">
         <div className="col text-center">
           {props.currentUser.notes}
         </div>

@@ -55,10 +55,10 @@ const AllMatchStatsDisplay = (props) => {
           <div className="row justify-content-center border-bottom py-4 mx-3">
             <div className="col-9">
               <div className="row">
-                <div className="col-10">
+                <div className="col-10 mx-auto mx-xl-0">
                   <span className="my-auto">Matches Played:</span>
                 </div>
-                <div className="col-2">
+                <div className="col-2 mt-3 mt-xl-0 mx-auto mx-xl-0">
                   <span className="my-auto text-green">{totalMatchesPlayed}</span>
                 </div>
               </div>
@@ -67,10 +67,10 @@ const AllMatchStatsDisplay = (props) => {
           <div className="row justify-content-center border-bottom py-4 mx-3">
             <div className="col-9">
               <div className="row">
-                <div className="col-10">
+                <div className="col-10 mx-auto mx-xl-0">
                   <span className="my-auto">Total Winners:</span>
                 </div>
-                <div className="col-2">
+                <div className="col-2 mt-3 mt-xl-0 mx-auto mx-xl-0">
                   <span className="my-auto text-green">{totalWinners}</span>
                 </div>
               </div>
@@ -79,10 +79,10 @@ const AllMatchStatsDisplay = (props) => {
           <div className="row justify-content-center border-bottom py-4 mx-3">
             <div className="col-9">
               <div className="row">
-                <div className="col-10">
+                <div className="col-10 mx-auto mx-xl-0">
                   <span className="my-auto">Total Forced Errors:</span>
                 </div>
-                <div className="col-2">
+                <div className="col-2 mt-3 mt-xl-0 mx-auto mx-xl-0">
                   <span className="my-auto text-green">{totalForcedErrors}</span>
                 </div>
               </div>
@@ -91,10 +91,10 @@ const AllMatchStatsDisplay = (props) => {
           <div className="row justify-content-center py-4 mx-3">
             <div className="col-9">
               <div className="row">
-                <div className="col-10">
+                <div className="col-10 mx-auto mx-xl-0">
                   <span className="my-auto">Total Unforced Errors:</span>
                 </div>
-                <div className="col-2">
+                <div className="col-2 mt-3 mt-xl-0 mx-auto mx-xl-0">
                   <span className="my-auto text-green">{totalUnforcedErrors}</span>
                 </div>
               </div>
@@ -105,10 +105,10 @@ const AllMatchStatsDisplay = (props) => {
           <div className="row justify-content-center border-bottom py-4 mx-3">
             <div className="col-9">
               <div className="row">
-                <div className="col-10">
+                <div className="col-10 mx-auto mx-xl-0">
                   <span className="my-auto">Aggressive Margin:</span>
                 </div>
-                <div className="col-2">
+                <div className="col-2 mt-3 mt-xl-0 mx-auto mx-xl-0">
                   <span className="my-auto text-green">{aggressiveMargin}</span>
                 </div>
               </div>
@@ -117,10 +117,10 @@ const AllMatchStatsDisplay = (props) => {
           <div className="row justify-content-center border-bottom py-4 mx-3">
             <div className="col-9">
               <div className="row">
-                <div className="col-10">
+                <div className="col-10 mx-auto mx-xl-0">
                   <span className="my-auto">Total Aces:</span>
                 </div>
-                <div className="col-2">
+                <div className="col-2 mt-3 mt-xl-0 mx-auto mx-xl-0">
                   <span className="my-auto text-green">{totalAces}</span>
                 </div>
               </div>
@@ -129,10 +129,10 @@ const AllMatchStatsDisplay = (props) => {
           <div className="row justify-content-center border-bottom py-4 mx-3">
             <div className="col-9">
               <div className="row">
-                <div className="col-10">
+                <div className="col-10 mx-auto mx-xl-0">
                   <span className="my-auto">Total Service Winners:</span>
                 </div>
-                <div className="col-2">
+                <div className="col-2 mt-3 mt-xl-0 mx-auto mx-xl-0">
                   <span className="my-auto text-green">{totalServiceWinners}</span>
                 </div>
               </div>
@@ -141,10 +141,10 @@ const AllMatchStatsDisplay = (props) => {
           <div className="row justify-content-center py-4 mx-3">
             <div className="col-9">
               <div className="row">
-                <div className="col-10">
+                <div className="col-10 mx-auto mx-xl-0">
                   <span className="my-auto">Total Double Faults:</span>
                 </div>
-                <div className="col-2">
+                <div className="col-2 mt-3 mt-xl-0 mx-auto mx-xl-0">
                   <span className="my-auto text-green">{totalDoubleFaults}</span>
                 </div>
               </div>

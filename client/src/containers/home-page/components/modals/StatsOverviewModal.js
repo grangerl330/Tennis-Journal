@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 class StatsOverviewModal extends Component {
   constructor(props){
     super(props)
-    
+
     this.state = {
       current_ranking: props.currentUser.current_ranking,
       utr: props.currentUser.utr,
@@ -38,7 +38,7 @@ class StatsOverviewModal extends Component {
   render(){
     return(
       <div className="modal fade" id="statsOverviewModal">
-        <div className="modal-dialog modal-lg w-40">
+        <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header border-0">
               <button className="close" data-dismiss="modal">

@@ -12,7 +12,6 @@ import RankingsHistoryDisplay from './components/displays/RankingsHistoryDisplay
 // Modal Components
 import StatsOverviewModal from './components/modals/StatsOverviewModal'
 import GoalsModal from './components/modals/GoalsModal'
-import SkillsModal from './components/modals/SkillsModal'
 import ImprovementModal from './components/modals/ImprovementModal'
 
 class HomePageContainer extends Component {
@@ -25,18 +24,18 @@ class HomePageContainer extends Component {
     return (
       <div id="home-page" className="container-fluid px-0">
         <div className="row mx-auto">
-          <div id="home-page-left" className="col-8">
-            <div className="row pt-5 px-5">
+          <div id="home-page-left" className="col col-xl-8">
+            <div className="row pt-5 px-0 px-xl-5">
               <StatsOverviewDisplay currentUser={this.props.currentUser} />
             </div>
-            <div className="row mt-3 mb-5 px-5">
+            <div className="row mt-4 mt-xl-3 mb-5 px-2 px-xl-5">
               <RankingsHistoryDisplay currentUser={this.props.currentUser} />
             </div>
-            <div className="row mt-3 px-5">
+            <div className="row mt-3 mb-5 px-2 px-xl-5">
               <AllMatchStatsDisplay currentUser={this.props.currentUser} />
             </div>
           </div>
-          <div id="home-page-right" className="col-4 background-light-green">
+          <div id="home-page-right" className="col col-xl-4 background-light-green">
             <div className="row">
               <div className="col px-4 mt-5">
                 <GoalsDisplay currentUser={this.props.currentUser} />
@@ -58,7 +57,6 @@ class HomePageContainer extends Component {
         {/* Modals */}
         <StatsOverviewModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <GoalsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
-        <SkillsModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
         <ImprovementModal currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} />
       </div>
     )

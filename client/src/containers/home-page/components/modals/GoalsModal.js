@@ -38,7 +38,7 @@ class GoalsModal extends Component {
   render(){
     return(
       <div className="modal fade" id="goalsModal">
-        <div className="modal-dialog modal-lg w-50">
+        <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header border-0">
               <button className="close" data-dismiss="modal">

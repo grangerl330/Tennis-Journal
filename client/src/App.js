@@ -19,13 +19,11 @@ class App extends Component {
   render() {
     if (this.props.currentUser && !this.props.currentUser.error) {
       return (
-        <>
         <div id="App">
           <NavbarContainer isLogin={false} currentUser={this.props.currentUser} />
           <MainContent />
-        </div>
           <Footer />
-        </>
+        </div>
       )
     } else {
       return (
