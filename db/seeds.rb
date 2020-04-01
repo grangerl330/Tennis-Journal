@@ -15,7 +15,7 @@ User.create(first_name: "Roger", last_name: "Federer", email: "rogerfederer@gmai
 Ranking.create(rank: 8, month: "Jan", year: "2020", user_id: 1)
 Ranking.create(rank: 8, month: "Feb", year: "2020", user_id: 1)
 Ranking.create(rank: 8, month: "Mar", year: "2020", user_id: 1)
-Ranking.create(rank: 7, month: "Apr", year: "2020", user_id: 1)
+
 #2019
 Ranking.create(rank: 20, month: "Jan", year: "2019", user_id: 1)
 Ranking.create(rank: 23, month: "Feb", year: "2019", user_id: 1)
