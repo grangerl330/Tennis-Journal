@@ -21,7 +21,7 @@ const StatsOverviewDisplay = (props) => {
     if (props.currentUser.utr === null){
       return (
         <span className="ml-auto" data-toggle="tooltip" data-placement="top" title="Please enter your current UTR">
-          <i class="fas fa-exclamation-triangle text-green"></i>
+          <i className="fas fa-exclamation-triangle text-green"></i>
         </span>
       )
     } else {
