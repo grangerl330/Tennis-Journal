@@ -32,7 +32,7 @@ const renderNavbarComponents = (props) => {
   } else if(props.isLogin === false) {
     return (
       <>
-        <NavbarLinks />
+        <NavbarLinks logout={props.logout} currentUser={props.currentUser}/>
         <NavbarRight logout={props.logout} currentUser={props.currentUser} />
       </>
     )
