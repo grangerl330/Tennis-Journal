@@ -2,7 +2,7 @@ import React from 'react'
 
 const ImprovementDisplay = (props) => {
   return (
-    <div id="Improvement-Display" className="container border rounded shadow-green bg-white">
+    <div id="Improvement-Display" className="container border rounded shadow-light-green bg-white">
       <div className="row mt-3 justify-content-center">
           <h4 className="mx-auto text-green">Things To Improve</h4>
           <span data-toggle="tooltip" data-placement="top" title="Edit Things To Improve">

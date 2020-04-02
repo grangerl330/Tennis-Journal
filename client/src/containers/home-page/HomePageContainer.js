@@ -35,7 +35,7 @@ class HomePageContainer extends Component {
               <AllMatchStatsDisplay currentUser={this.props.currentUser} />
             </div>
           </div>
-          <div id="home-page-right" className="col col-xl-4 background-light-green">
+          <div id="home-page-right" className="col col-xl-4 background-light-grey">
             <div className="row">
               <div className="col px-4 mt-5">
                 <GoalsDisplay currentUser={this.props.currentUser} />

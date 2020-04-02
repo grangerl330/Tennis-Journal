@@ -2,7 +2,7 @@ import React from 'react'
 
 const GoalsDisplay = (props) => {
   return (
-    <div id="Goals-Display" className="container border rounded shadow-green bg-white">
+    <div id="Goals-Display" className="container border rounded shadow-light-green bg-white">
       <div className="row mt-3 justify-content-center">
         <h4 className="mx-auto text-green">My Goals</h4>
         <span data-toggle="tooltip" data-placement="top" title="Edit Goals">
