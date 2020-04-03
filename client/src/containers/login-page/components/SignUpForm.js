@@ -19,21 +19,66 @@ class SignUpForm extends Component {
       password: "",
       passwordIsValid: true,
       passwordConfirmation: "",
-      passwordConfirmationIsValid: true
+      passwordConfirmationIsValid: true,
+      passwordFeedback: "",
+      passwordFeedbackColor: "",
+      feedbackIsValid: true,
+      showFeedback: false
     }
   }
 
   handleOnChange = event => {
     const {name, value} = event.target
+
+    if(name === "password" && value === "") {
+      this.setState({
+        passwordFeedback: ""
+      })
+    } else if(name === "password") {
+      switch (this.calculatePasswordStrength(value)) {
+      case 0:
+        this.setState({
+          showFeedback: true,
+          passwordFeedback: "Too Short",
+          passwordFeedbackColor: "input-group-text text-red"
+        })
+        break;
+      case 1:
+        this.setState({
+          showFeedback: true,
+          passwordFeedback: "Weak",
+          passwordFeedbackColor: "input-group-text text-red"
+        })
+        break;
+      case 2:
+        this.setState({
+          showFeedback: true,
+          passwordFeedback: "Good",
+          passwordFeedbackColor: "input-group-text text-orange"
+        })
+        break
+      case 3:
+        this.setState({
+          showFeedback: true,
+          passwordFeedback: "Strong",
+          passwordFeedbackColor: "input-group-text text-light-green"
+        })
+        break
+      case 4:
+        this.setState({
+          showFeedback: true,
+          passwordFeedback: "Very Strong",
+          passwordFeedbackColor: "input-group-text text-green"
+        })
+        break
+      default:
+        break
+      }
+    }
+
     this.setState({
       [name]: value
     })
-  }
-
-  calculatePasswordStrength = event => {
-    const evaluation = zxcvbn(this.state.password)
-
-    return evaluation.score
   }
 
   handleOnSubmit = event => {
@@ -51,6 +96,12 @@ class SignUpForm extends Component {
     }
   }
 
+  calculatePasswordStrength = event => {
+    const evaluation = zxcvbn(this.state.password)
+
+    return evaluation.score
+  }
+
   formIsValid = () => {
     let isValid = true;
 
@@ -60,15 +111,19 @@ class SignUpForm extends Component {
     })
 
     $('.invalid-feedback.email').text('Please enter a valid email address')
-
       isValid = false;
     }
 
-    if(this.calculatePasswordStrength() < 4 && this.state.password !== "") {
+    if(this.calculatePasswordStrength() < 2 && this.state.password !== "") {
       this.setState({
-        passwordIsValid: false
+        passwordIsValid: false,
+        feedbackIsValid: false
       })
         isValid = false;
+    } else {
+      this.setState({
+        feedbackIsValid: true
+      })
     }
 
     if(this.state.password !== this.state.passwordConfirmation) {
@@ -85,20 +140,53 @@ class SignUpForm extends Component {
     this.setState({
       emailIsValid: true,
       passwordIsValid: true,
-      passwordConfirmationIsValid: true
+      passwordConfirmationIsValid: true,
+      passwordFeedback: "",
+      passwordFeedbackColor: "",
+      showFeedback: false
     })
   }
 
+  renderPasswordInput = () => {
+
+    const passwordInputClass = classNames('signup-input form-control',
+      {'form-control is-invalid': !this.state.passwordIsValid, 'background-image-none': this.state.showFeedback, 'border-right-0': this.state.showFeedback}
+    );
+
+    const inputGroupTextClass = classNames(`input-group-text ${this.state.passwordFeedbackColor}`,
+      {'feedback-invalid': !this.state.feedbackIsValid}
+    )
+
+    if(this.state.passwordFeedback !== "") {
+      return (
+        <div className="input-group mb-3">
+          <input id="passwordInput" className={passwordInputClass} type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" autoFocus="autofocus"/>
+          <div className="input-group-append">
+            <span className={inputGroupTextClass} id="passwordAddon">{this.state.passwordFeedback}</span>
+          </div>
+          <div className="invalid-feedback text-white">
+            Password is too weak. Try adding some uppercase or non-letter characters.
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <>
+          <input id="passwordInput" className={passwordInputClass} type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" />
+          <div className="invalid-feedback text-white">
+            Password is too weak. Try adding some uppercase or non-letter characters.
+          </div>
+        </>
+      )
+    }
+  }
+
   render() {
-    const emailInputClass = classNames('signup-input',
+    const emailInputClass = classNames('signup-input form-control',
       {'form-control is-invalid': !this.state.emailIsValid }
     );
 
-    const passwordInputClass = classNames('signup-input',
-      {'form-control is-invalid': !this.state.passwordIsValid }
-    );
-
-    const passwordConfirmationInputClass = classNames('signup-input',
+    const passwordConfirmationInputClass = classNames('signup-input form-control',
       {'form-control is-invalid': !this.state.passwordConfirmationIsValid }
     );
 
@@ -125,10 +213,10 @@ class SignUpForm extends Component {
                 <div className="col-8">
                     <div className="form-row">
                       <div className="col">
-                        <input className="signup-input" type="text" name="first_name" onChange={this.handleOnChange} value={this.state.first_name} placeholder="First Name" />
+                        <input className="signup-input form-control" type="text" name="first_name" onChange={this.handleOnChange} value={this.state.first_name} placeholder="First Name" />
                       </div>
                       <div className="col">
-                        <input className="signup-input" type="text" name="last_name" onChange={this.handleOnChange} value={this.state.last_name} placeholder="Last Name" />
+                        <input className="signup-input form-control" type="text" name="last_name" onChange={this.handleOnChange} value={this.state.last_name} placeholder="Last Name" />
                       </div>
                     </div>
                     <div className="form-group text-center mt-4">
@@ -138,10 +226,7 @@ class SignUpForm extends Component {
                       </div>
                     </div>
                     <div className="form-group text-center mt-4">
-                      <input className={passwordInputClass} type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" />
-                      <div className="invalid-feedback text-white">
-                        Password is not strong enough
-                      </div>
+                      {this.renderPasswordInput()}
                     </div>
                     <div className="form-group text-center mt-4">
                       <input className={passwordConfirmationInputClass} type="password" name="passwordConfirmation" onChange={this.handleOnChange} value={this.state.passwordConfirmation} placeholder="Confirm Password" />

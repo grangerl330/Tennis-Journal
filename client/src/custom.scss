@@ -11,8 +11,22 @@ ul {
   list-style-type: none;
 }
 
-input:focus, select:focus, textarea:focus, button:focus {
-  outline: none;
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+  outline:0px !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -143,6 +157,22 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 .text-green {
   color: #49A067;
+}
+
+.input-group-text.text-red {
+  color: #dc3545;
+}
+
+.input-group-text.text-orange {
+  color: orange;
+}
+
+.input-group-text.text-light-green {
+  color: lightgreen;
+}
+
+.input-group-text.text-green {
+  color: green;
 }
 
 .text-grey {
@@ -277,7 +307,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.signup-input {
+.signup-input.form-control {
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -293,7 +323,13 @@ input:focus, select:focus, textarea:focus, button:focus {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.signup-input.is-invalid {
+.signup-input.form-control:focus{
+  border-color: #ced4da;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.signup-input.form-control.is-invalid {
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -304,9 +340,34 @@ input:focus, select:focus, textarea:focus, button:focus {
   color: #dc3545;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border: 1px solid #dc3545;
   border-radius: 2rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.background-image-none {
+  background-image: none !important;
+}
+
+// #passwordInput.signup-input.form-control {
+//   border-right: 0;
+// }
+
+#passwordInput.signup-input.form-control.is-invalid {
+  border: 1px solid #dc3545;
+}
+
+#passwordAddon {
+  border-top-right-radius: 2rem !important;
+  border-bottom-right-radius: 2rem !important;
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-left: 0;
+  padding-right: 2rem;
+}
+
+#passwordAddon.feedback-invalid {
+  border: 1px solid #dc3545;
 }
 
 // Import Bootstrap and its default variables
