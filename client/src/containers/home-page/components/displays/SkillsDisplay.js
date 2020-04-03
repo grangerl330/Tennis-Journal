@@ -200,7 +200,7 @@ class SkillsDisplay extends Component {
 
   render() {
     return (
-      <div id="Skills-Display" className="container border rounded shadow-light-green bg-white">
+      <div id="Skills-Display" className="container border rounded shadow-light-green border-white bg-white">
         <div className="row justify-content-center mt-3">
           <h4 className="text-green mx-auto">My Skills</h4>
         </div>
