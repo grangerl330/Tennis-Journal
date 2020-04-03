@@ -76,11 +76,11 @@ class LoginWindow extends Component {
   }
 
   render(){
-    const emailInputClass = classNames('login-input',
+    const emailInputClass = classNames('signup-input',
       {'form-control is-invalid': !this.state.emailIsValid }
     );
 
-    const passwordInputClass = classNames('login-input',
+    const passwordInputClass = classNames('signup-input mt-4',
       {'form-control is-invalid': !this.state.passwordIsValid }
     );
 
