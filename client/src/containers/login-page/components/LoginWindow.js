@@ -92,13 +92,17 @@ class LoginWindow extends Component {
         <form onSubmit={this.handleOnSubmit}>
           <div className="row justify-content-center mt-3">
             <div className="col-9">
-              <input className={emailInputClass} type="text" name="email" onChange={this.handleOnChange} value={this.state.email} placeholder="Email" />
-              <div className="invalid-feedback">
-                Please enter a valid email address
+              <div className="form-group">
+                <input className={emailInputClass} type="text" name="email" onChange={this.handleOnChange} value={this.state.email} placeholder="Email" />
+                <div className="invalid-feedback">
+                  Please enter a valid email address
+                </div>
               </div>
-              <input className={passwordInputClass} type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" />
-              <div className="invalid-feedback">
-                Password is incorrect
+              <div className="form-group">
+                <input className={passwordInputClass} type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" />
+                <div className="invalid-feedback">
+                  Password is incorrect
+                </div>
               </div>
             </div>
           </div>
