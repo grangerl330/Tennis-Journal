@@ -179,6 +179,10 @@ label:focus,
   color: #A8A8A8 !important;
 }
 
+.text-dark-grey {
+  color: #495057 !important;
+}
+
 .background-dark {
   background: #3A3A3A;
 }
@@ -348,10 +352,6 @@ label:focus,
 .background-image-none {
   background-image: none !important;
 }
-
-// #passwordInput.signup-input.form-control {
-//   border-right: 0;
-// }
 
 #passwordInput.signup-input.form-control.is-invalid {
   border: 1px solid #dc3545;

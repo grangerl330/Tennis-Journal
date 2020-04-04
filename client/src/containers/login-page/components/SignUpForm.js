@@ -23,12 +23,27 @@ class SignUpForm extends Component {
       passwordFeedback: "",
       passwordFeedbackColor: "",
       feedbackIsValid: true,
-      showFeedback: false
+      showFeedback: false,
+      textDark: true
     }
   }
 
   handleOnChange = event => {
     const {name, value} = event.target
+
+    if(name === "email"){
+      this.setState({
+        textDark: true
+      })
+    } else if(name === "password"){
+      this.setState({
+        textDark: true
+      })
+    } else if(name === "passwordConfirmation"){
+      this.setState({
+        textDark: true
+      })
+    }
 
     if(name === "password" && value === "") {
       this.setState({
@@ -107,7 +122,8 @@ class SignUpForm extends Component {
 
     if (!validator.isEmail(this.state.email)) {
     this.setState({
-      emailIsValid: false
+      emailIsValid: false,
+      textDark: false
     })
 
     $('.invalid-feedback.email').text('Please enter a valid email address')
@@ -117,7 +133,8 @@ class SignUpForm extends Component {
     if(this.calculatePasswordStrength() < 2 && this.state.password !== "") {
       this.setState({
         passwordIsValid: false,
-        feedbackIsValid: false
+        feedbackIsValid: false,
+        textDark: false
       })
         isValid = false;
     } else {
@@ -128,7 +145,8 @@ class SignUpForm extends Component {
 
     if(this.state.password !== this.state.passwordConfirmation) {
       this.setState({
-        passwordConfirmationIsValid: false
+        passwordConfirmationIsValid: false,
+        textDark: false
       })
       isValid = false;
     }
@@ -150,7 +168,7 @@ class SignUpForm extends Component {
   renderPasswordInput = () => {
 
     const passwordInputClass = classNames('signup-input form-control',
-      {'form-control is-invalid': !this.state.passwordIsValid, 'background-image-none': this.state.showFeedback, 'border-right-0': this.state.showFeedback}
+      {'form-control is-invalid': !this.state.passwordIsValid, 'background-image-none border-right-0 text-dark-grey': this.state.showFeedback}
     );
 
     const inputGroupTextClass = classNames(`input-group-text ${this.state.passwordFeedbackColor}`,
@@ -165,7 +183,7 @@ class SignUpForm extends Component {
             <span className={inputGroupTextClass} id="passwordAddon">{this.state.passwordFeedback}</span>
           </div>
           <div className="invalid-feedback text-white">
-            Password is too weak. Try adding some uppercase or non-letter characters.
+            Password is too weak. Please increase the length and add some uppercase or non-letter characters.
           </div>
         </div>
       )
@@ -174,7 +192,7 @@ class SignUpForm extends Component {
         <>
           <input id="passwordInput" className={passwordInputClass} type="password" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Password" />
           <div className="invalid-feedback text-white">
-            Password is too weak. Try adding some uppercase or non-letter characters.
+            Password is too weak. Please increase the length and add some uppercase or non-letter characters.
           </div>
         </>
       )
@@ -183,11 +201,11 @@ class SignUpForm extends Component {
 
   render() {
     const emailInputClass = classNames('signup-input form-control',
-      {'form-control is-invalid': !this.state.emailIsValid }
+      {'form-control is-invalid': !this.state.emailIsValid, 'text-dark-grey': this.state.textDark}
     );
 
     const passwordConfirmationInputClass = classNames('signup-input form-control',
-      {'form-control is-invalid': !this.state.passwordConfirmationIsValid }
+      {'form-control is-invalid': !this.state.passwordConfirmationIsValid, 'text-dark-grey': this.state.textDark}
     );
 
     return (
