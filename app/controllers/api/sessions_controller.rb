@@ -42,6 +42,22 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  def authenticate_email
+    @email = params[:email]
+
+    @user = User.find_by(email: params[:email])
+
+    if @user
+      render json: {
+        isValid: false
+      }
+    else
+      render json: {
+        isValid: true
+      }
+    end
+  end
+
   def destroy
     session.clear
     render json: {

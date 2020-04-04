@@ -101,8 +101,14 @@ class SignUpForm extends Component {
 
     this.resetValidations()
 
+
+    const user = {
+      email: this.state.email,
+      password: this.state.password
+    }
+
     if (this.formIsValid()) {
-      this.props.signup(this.state)
+      this.props.signup(user)
 
 
       this.props.history.push('/home')
@@ -119,6 +125,27 @@ class SignUpForm extends Component {
 
   formIsValid = () => {
     let isValid = true;
+
+    fetch('/api/authenticate_email', {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: this.state.email
+      })
+    })
+    .then(response => response.json())
+    .then(response => {
+      if(response.isValid === false) {
+        this.setState({
+          emailIsValid: false
+        })
+
+        $('.invalid-feedback.email').text('This email address is already taken')
+      }
+    })
 
     if (!validator.isEmail(this.state.email)) {
     this.setState({
@@ -239,7 +266,7 @@ class SignUpForm extends Component {
                     </div>
                     <div className="form-group text-center mt-4">
                       <input className={emailInputClass} type="text" name="email" onChange={this.handleOnChange} value={this.state.email} placeholder="Email" />
-                      <div className="invalid-feedback text-white">
+                      <div className="invalid-feedback email text-white">
                         Please enter a valid email address
                       </div>
                     </div>
