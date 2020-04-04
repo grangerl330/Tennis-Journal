@@ -90,9 +90,9 @@ class LoginWindow extends Component {
           <h1>Welcome!</h1>
         </div>
         <form onSubmit={this.handleOnSubmit}>
-          <div className="row justify-content-center mt-3">
+          <div className="row justify-content-center mt-4">
             <div className="col-9">
-              <div className="form-group">
+              <div className="form-group mb-3">
                 <input className={emailInputClass} type="text" name="email" onChange={this.handleOnChange} value={this.state.email} placeholder="Email" />
                 <div className="invalid-feedback">
                   Please enter a valid email address
@@ -106,7 +106,7 @@ class LoginWindow extends Component {
               </div>
             </div>
           </div>
-          <div className="row justify-content-center my-5">
+          <div className="row justify-content-center mt-4 mb-5">
             <div className="col-4">
               <input className="btn-login w-100 py-2" type="submit" value="Log In"/>
             </div>
