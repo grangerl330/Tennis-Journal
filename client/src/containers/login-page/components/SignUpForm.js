@@ -122,7 +122,7 @@ class SignUpForm extends Component {
 
     return evaluation.score
   }
-
+  
   formIsValid = () => {
     let isValid = true;
 
