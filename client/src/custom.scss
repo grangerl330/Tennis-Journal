@@ -205,6 +205,7 @@ label:focus,
   color: #fff !important;
   background-color: #49A067 !important;
   border-color: #49A067 !important;
+  border-radius: 2rem !important;
 }
 
 .btn-signup {
@@ -368,6 +369,14 @@ label:focus,
 
 #passwordAddon.feedback-invalid {
   border: 1px solid #dc3545;
+}
+
+.input-group-text.search-input-addon {
+  border-radius: 2rem;
+}
+
+.search-input.form-control {
+  border-radius: 2rem;
 }
 
 // Import Bootstrap and its default variables
