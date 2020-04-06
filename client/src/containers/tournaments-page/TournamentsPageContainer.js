@@ -1,4 +1,5 @@
 import React from 'react';
+import tournamentIcon from '../../images/tournament-icon.png'
 import moment from 'moment'
 import { NavLink } from 'react-router-dom'
 
@@ -20,21 +21,20 @@ const TournamentsPageContainer = (props) => {
 
     return (
       <section id="tournaments-page">
-        <div className="container-fluid py-2 bg-info text-white mb-4">
-          <div className="row">
-            <div className="col text-center">
-              <h1>Tournaments</h1>
+        <div className="container-fluid">
+          <div className="row py-4 background-light-grey text-green">
+            <div className="col-1 px-0 ml-4 text-center">
+              <img src={tournamentIcon} alt="tournament" />
+            </div>
+            <div className="col-5 px-0 ml-3 mr-auto my-auto">
+              <h2 className="text-green">Tournaments</h2>
             </div>
           </div>
-        </div>
-
-        <div className="container">
-          <div className="card-deck mt-4 d-flex justify-content-center">
-            {renderTournaments}
+          <div className="row justify-content-center">
+            <div className="card-deck mt-4 d-flex justify-content-center">
+              {renderTournaments}
+            </div>
           </div>
-        </div>
-
-        <div className="container">
           <div className="row justify-content-center mt-4">
             <div className="col-md-3">
               <NavLink to="/tournaments/add" className="btn btn-dark btn-block">
@@ -43,7 +43,6 @@ const TournamentsPageContainer = (props) => {
             </div>
           </div>
         </div>
-
       </section>
     )
 }
