@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import $ from 'jquery'
 import BootstrapTable from 'react-bootstrap-table-next';
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
@@ -9,22 +10,34 @@ import carpetCourtCircle from '../../../images/carpet.png'
 
 const TournamentsTable = (props) => {
 
+  useEffect(() => {
+    $('[data-toggle="tooltip"]').tooltip();
+  })
+
   const surfaceFormatter = (cell, row) => {
     if (cell === "Hard") {
       return (
-        <img src={hardCourtCircle} alt="logo" />
+        <span data-toggle="tooltip" data-placement="top" title="Hard">
+          <img src={hardCourtCircle} alt="logo" />
+        </span>
       )
     } else if(cell === "Clay") {
       return (
-        <img src={clayCourtCircle} alt="logo" />
+        <span data-toggle="tooltip" data-placement="top" title="Clay">
+          <img src={clayCourtCircle} alt="logo" />
+        </span>
       )
     } else if(cell === "Grass") {
       return (
-        <img src={grassCourtCircle} alt="logo" />
+        <span data-toggle="tooltip" data-placement="top" title="Grass">
+          <img src={grassCourtCircle} alt="logo" />
+        </span>
       )
     } else if(cell === "Carpet") {
       return (
-        <img src={carpetCourtCircle} alt="logo" />
+        <span data-toggle="tooltip" data-placement="top" title="Carpet">
+          <img src={carpetCourtCircle} alt="logo" />
+        </span>
       )
     }
   }

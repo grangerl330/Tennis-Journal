@@ -5,21 +5,6 @@ import TournamentsTable from './components/TournamentsTable'
 import { NavLink } from 'react-router-dom'
 
 const TournamentsPageContainer = (props) => {
-    const sortedTournaments = props.tournaments.sort(function(a,b) {return moment(a.start_date) - moment(b.start_date)})
-
-    const renderTournaments = sortedTournaments.map(tournament =>
-      <div className="col-auto px-0 mb-3" key={tournament.id}>
-        <div className="card card-tournament border border-secondary">
-          <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/tournaments/${tournament.id}`}>
-            <div className="card-body text-center">
-                <h5 className="card-text">{tournament.title}</h5>
-                <p className="card-text">{moment(tournament.start_date).format('MM/DD/YYYY')}</p>
-            </div>
-          </NavLink>
-        </div>
-      </div>
-    )
-
     return (
       <section id="tournaments-page">
         <div className="container-fluid">
