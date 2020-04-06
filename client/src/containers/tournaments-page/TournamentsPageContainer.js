@@ -1,6 +1,7 @@
 import React from 'react';
 import tournamentIcon from '../../images/tournament-icon.png'
 import moment from 'moment'
+import TournamentsTable from './components/TournamentsTable'
 import { NavLink } from 'react-router-dom'
 
 const TournamentsPageContainer = (props) => {
@@ -47,12 +48,8 @@ const TournamentsPageContainer = (props) => {
               </button>
             </div>
           </div>
-          <div className="row justify-content-center mt-5">
-            <div className="col-md-3">
-              <NavLink to="/tournaments/add" className="btn btn-dark btn-block">
-                <i className="fas fa-plus"></i> Add Tournament
-              </NavLink>
-            </div>
+          <div className="row mt-5">
+            <TournamentsTable tournaments={props.tournaments}/>
           </div>
         </div>
       </section>

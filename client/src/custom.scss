@@ -379,5 +379,9 @@ label:focus,
   border-radius: 2rem;
 }
 
+.table > tbody > tr > td {
+  padding: 1.3rem
+}
+
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
