@@ -155,10 +155,6 @@ label:focus,
   vertical-align: middle;
 }
 
-.text-green {
-  color: #49A067;
-}
-
 .input-group-text.text-red {
   color: #dc3545;
 }
@@ -181,6 +177,30 @@ label:focus,
 
 .text-dark-grey {
   color: #495057 !important;
+}
+
+.text-green {
+  color: #49A067;
+}
+
+.hard-court {
+  color: #4A66AF;
+}
+
+.clay-court {
+  color: #CA612C;
+}
+
+.grass-court {
+  color: #65994f;
+}
+
+.carpet-court {
+  color: #9B3535;
+}
+
+.orange {
+  color: orange;
 }
 
 .background-dark {

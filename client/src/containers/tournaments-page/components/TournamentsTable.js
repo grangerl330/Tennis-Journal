@@ -3,10 +3,6 @@ import $ from 'jquery'
 import BootstrapTable from 'react-bootstrap-table-next';
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
-import hardCourtCircle from '../../../images/hard.png'
-import clayCourtCircle from '../../../images/clay.png'
-import grassCourtCircle from '../../../images/grass.png'
-import carpetCourtCircle from '../../../images/carpet.png'
 
 const TournamentsTable = (props) => {
 
@@ -18,25 +14,25 @@ const TournamentsTable = (props) => {
     if (cell === "Hard") {
       return (
         <span data-toggle="tooltip" data-placement="top" title="Hard">
-          <img src={hardCourtCircle} alt="logo" />
+          <i class="fas fa-circle fa-lg hard-court"></i>
         </span>
       )
     } else if(cell === "Clay") {
       return (
         <span data-toggle="tooltip" data-placement="top" title="Clay">
-          <img src={clayCourtCircle} alt="logo" />
+          <i class="fas fa-circle fa-lg clay-court"></i>
         </span>
       )
     } else if(cell === "Grass") {
       return (
         <span data-toggle="tooltip" data-placement="top" title="Grass">
-          <img src={grassCourtCircle} alt="logo" />
+          <i class="fas fa-circle fa-lg grass-court"></i>
         </span>
       )
     } else if(cell === "Carpet") {
       return (
         <span data-toggle="tooltip" data-placement="top" title="Carpet">
-          <img src={carpetCourtCircle} alt="logo" />
+          <i class="fas fa-circle fa-lg carpet-court"></i>
         </span>
       )
     }
