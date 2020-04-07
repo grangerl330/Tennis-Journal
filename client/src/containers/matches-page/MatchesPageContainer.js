@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import $ from 'jquery'
-import tournamentIcon from '../../images/tournament-icon.png'
+import matchesIcon from '../../images/matches-icon.svg'
 import MatchesTable from './components/MatchesTable'
-import { NavLink } from 'react-router-dom'
 
 const MatchesPageContainer = (props) => {
 
@@ -43,9 +42,9 @@ const MatchesPageContainer = (props) => {
       <div className="container-fluid">
         <div className="row py-4 background-light-grey text-green">
           <div className="col-1 px-0 ml-4 text-center">
-            <img src={tournamentIcon} alt="tournament" />
+            <img className="icon" src={matchesIcon} alt="tournament" />
           </div>
-          <div className="col-5 px-0 ml-3 mr-auto my-auto">
+          <div className="col-5 px-0 ml-2 mr-auto my-auto">
             <h2 className="text-green">Matches</h2>
           </div>
         </div>
@@ -58,9 +57,9 @@ const MatchesPageContainer = (props) => {
               </span>
             </div>
           </div>
-          <div className="col-1 mr-5 ml-auto">
+          <div className="col-1 mr-5 ml-auto my-auto">
             <span data-toggle="tooltip" data-placement="top" title="Add a new match on a tournament's view page">
-              <i className="fas fa-info-circle text-green"></i>
+              <i className="fas fa-info-circle fa-lg text-green"></i>
             </span>
           </div>
         </div>

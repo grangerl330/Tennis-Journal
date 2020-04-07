@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import validator from 'validator'
 import zxcvbn from 'zxcvbn'
 import $ from 'jquery'
-import logo from '../../../images/Logo-White.png'
+import logo from '../../../images/Logo-White.svg'
 import { withRouter } from 'react-router';
 
 class SignUpForm extends Component {
@@ -122,7 +122,7 @@ class SignUpForm extends Component {
 
     return evaluation.score
   }
-  
+
   formIsValid = () => {
     let isValid = true;
 
@@ -244,7 +244,7 @@ class SignUpForm extends Component {
           <div className="col-8">
             <div className="row mt-3">
               <div className="col-1 p-0 text-center mr-2 ml-auto">
-                <img src={logo} alt="logo" />
+                <img className="logo" src={logo} alt="logo" />
               </div>
               <div className="col-4 p-0 mr-auto">
                 <h2 className="text-white">Tennis Journal</h2>

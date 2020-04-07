@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import tournamentIcon from '../../images/tournament-icon.png'
+import tournamentIcon from '../../images/tournament-icon.svg'
 import TournamentsTable from './components/TournamentsTable'
 import { NavLink } from 'react-router-dom'
 
@@ -30,9 +30,9 @@ const TournamentsPageContainer = (props) => {
         <div className="container-fluid">
           <div className="row py-4 background-light-grey text-green">
             <div className="col-1 px-0 ml-4 text-center">
-              <img src={tournamentIcon} alt="tournament" />
+              <img className="icon" src={tournamentIcon} alt="tournament" />
             </div>
-            <div className="col-5 px-0 ml-3 mr-auto my-auto">
+            <div className="col-5 px-0 ml-2 mr-auto my-auto">
               <h2 className="text-green">Tournaments</h2>
             </div>
           </div>
