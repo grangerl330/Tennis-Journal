@@ -70,7 +70,8 @@ const MatchesTable = (props) => {
       return null;
     },
     classes: 'text-green',
-    formatter: nameFormatter
+    formatter: nameFormatter,
+    sortValue: (cell, row) => row.round
   }, {
     dataField: 'tournament.title',
     text: 'Tournament',
