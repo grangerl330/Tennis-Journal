@@ -1,63 +1,71 @@
-import React from 'react';
-import moment from 'moment'
+import React, { useState, useEffect } from 'react';
+import $ from 'jquery'
+import tournamentIcon from '../../images/tournament-icon.png'
+import MatchesTable from './components/MatchesTable'
 import { NavLink } from 'react-router-dom'
 
 const MatchesPageContainer = (props) => {
-  const sortedMatches = props.matches.sort(function(a,b) {return moment(a.date) - moment(b.date)})
 
-  const match_round_display = (match) => {
-    if(match.round > 8){
-      return `Round of ${match.round}`
-    } else if(match.round === 8){
-      return "Quarterfinal"
-    } else if(match.round === 4){
-      return "Semifinal"
-    } else if(match.round === 2){
-      return "Final"
-    }
+  useEffect(() => {
+    $('[data-toggle="tooltip"]').tooltip();
+  })
+
+  const[search, setSearch] = useState("")
+
+  const handleOnChange = event => {
+    const {value} = event.target
+
+    setSearch(value)
   }
 
-  const renderMatches = sortedMatches.map(match =>
-    <div className="col-auto px-0 mb-3" key={match.id}>
-      <div className="card card-tournament border border-secondary">
-        <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/matches/${match.id}`}>
-          <div className="card-body text-center">
-              <h5 className="card-text">{match_round_display(match)}</h5>
-              <p className="card-text">{match.tournament.title}</p>
-              <h6 className="card-text">{match.result}</h6>
-          </div>
-        </NavLink>
-      </div>
-    </div>
-  )
+  const filteredMatches = () => {
+    const matches = []
 
-  const message = () => {
-    if(!props.matches.length > 0){
+    for(let match of props.matches) {
+      match.tournamentTitle = match.tournament.title
+
+      matches.push(match)
+    }
+
+    if(search === "") {
+      return matches
+    } else {
       return (
-        <div id="opponent-message" className="row mt-3">
-          <div className="col text-center">
-            <p className="card-title font-weight-bold ml-1">* This list will populate automatically when a new match is added</p>
-            <p className="card-title font-weight-bold ml-1">Add a new match by clicking the Add Match button under "Matches" on a Tournament's view page</p>
-          </div>
-        </div>
+        matches.filter(match =>
+          Object.keys(match).some(key => match[key].toString().toLowerCase().includes(search.toLowerCase().trim()))
+        )
       )
     }
   }
 
   return (
     <section id="matches-page">
-      <div className="container-fluid py-2 bg-info text-white mb-4">
-        <div className="row">
-          <div className="col text-center">
-            <h1>Matches</h1>
+      <div className="container-fluid">
+        <div className="row py-4 background-light-grey text-green">
+          <div className="col-1 px-0 ml-4 text-center">
+            <img src={tournamentIcon} alt="tournament" />
+          </div>
+          <div className="col-5 px-0 ml-3 mr-auto my-auto">
+            <h2 className="text-green">Matches</h2>
           </div>
         </div>
-      </div>
-
-      <div className="container">
-        <div className="card-deck mt-4 d-flex justify-content-center">
-          {message()}
-          {renderMatches}
+        <div className="row mt-4 pt-3 justify-content-center">
+          <div className="col-3 ml-5 mr-auto">
+            <div className="input-group">
+              <input className="search-input form-control py-2 pl-4 border-right-0 border" type="text" name="search" value={search} onChange={handleOnChange} placeholder="Search"/>
+              <span className="input-group-append">
+                <div className="input-group-text search-input-addon bg-transparent"><i className="fa fa-search"></i></div>
+              </span>
+            </div>
+          </div>
+          <div className="col-1 mr-5 ml-auto">
+            <span data-toggle="tooltip" data-placement="top" title="Add a new match on a tournament's view page">
+              <i className="fas fa-info-circle text-green"></i>
+            </span>
+          </div>
+        </div>
+        <div className="row mt-5">
+          <MatchesTable matches={filteredMatches()} />
         </div>
       </div>
     </section>
