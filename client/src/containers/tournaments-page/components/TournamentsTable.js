@@ -11,31 +11,11 @@ const TournamentsTable = (props) => {
   })
 
   const surfaceFormatter = (cell, row) => {
-    if (cell === "Hard") {
-      return (
-        <span data-toggle="tooltip" data-placement="top" title="Hard">
-          <i className="fas fa-circle fa-lg hard-court"></i>
-        </span>
-      )
-    } else if(cell === "Clay") {
-      return (
-        <span data-toggle="tooltip" data-placement="top" title="Clay">
-          <i className="fas fa-circle fa-lg clay-court"></i>
-        </span>
-      )
-    } else if(cell === "Grass") {
-      return (
-        <span data-toggle="tooltip" data-placement="top" title="Grass">
-          <i className="fas fa-circle fa-lg grass-court"></i>
-        </span>
-      )
-    } else if(cell === "Carpet") {
-      return (
-        <span data-toggle="tooltip" data-placement="top" title="Carpet">
-          <i className="fas fa-circle fa-lg carpet-court"></i>
-        </span>
-      )
-    }
+    return (
+      <span data-toggle="tooltip" data-placement="top" title={cell}>
+        <i className={`fas fa-circle fa-lg ${cell.toLowerCase()}-court`}></i>
+      </span>
+    )
   }
 
   const titleFormatter = (cell, row) => {
