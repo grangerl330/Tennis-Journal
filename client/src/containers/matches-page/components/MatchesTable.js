@@ -46,6 +46,18 @@ const MatchesTable = (props) => {
     )
   }
 
+  const customSortCaret = (order, column) => {
+    if (!order) {
+      return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
+    } else if (order === 'asc') {
+      return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
+    } else if (order === 'desc') {
+      return (<span className="ml-3 text-green"><i className="fas fa-chevron-down"></i></span>);
+    } else {
+      return null;
+    }
+  }
+
   const createMatchesData = () => {
     const result = []
 
@@ -63,12 +75,7 @@ const MatchesTable = (props) => {
     dataField: 'name',
     text: 'Name',
     sort: true,
-    sortCaret: (order, column) => {
-    if (!order) return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
-      else if (order === 'asc') return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
-      else if (order === 'desc') return (<span className="ml-3 text-green"><i className="fas fa-chevron-down"></i></span>);
-      return null;
-    },
+    sortCaret: customSortCaret,
     classes: 'text-green',
     formatter: nameFormatter,
     sortValue: (cell, row) => row.round
@@ -76,43 +83,23 @@ const MatchesTable = (props) => {
     dataField: 'tournament.title',
     text: 'Tournament',
     sort: true,
-    sortCaret: (order, column) => {
-    if (!order) return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
-      else if (order === 'asc') return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
-      else if (order === 'desc') return (<span className="ml-3 text-green"><i className="fas fa-chevron-down"></i></span>);
-      return null;
-    },
+    sortCaret: customSortCaret,
     formatter: tournamentFormatter
   }, {
     dataField: 'date',
     text: 'Date',
     sort: true,
-    sortCaret: (order, column) => {
-    if (!order) return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
-      else if (order === 'asc') return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
-      else if (order === 'desc') return (<span className="ml-3 text-green"><i className="fas fa-chevron-down"></i></span>);
-      return null;
-    }
+    sortCaret: customSortCaret
   }, {
     dataField: 'result',
     text: "Result",
     sort: true,
-    sortCaret: (order, column) => {
-    if (!order) return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
-      else if (order === 'asc') return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
-      else if (order === 'desc') return (<span className="ml-3 text-green"><i className="fas fa-chevron-down"></i></span>);
-      return null;
-    }
+    sortCaret: customSortCaret
   }, {
     dataField: 'opponentName',
     text: "Opponent",
     sort: true,
-    sortCaret: (order, column) => {
-    if (!order) return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
-      else if (order === 'asc') return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
-      else if (order === 'desc') return (<span className="ml-3 text-green"><i className="fas fa-chevron-down"></i></span>);
-      return null;
-    },
+    sortCaret: customSortCaret,
     formatter: opponentFormatter
   }];
 
