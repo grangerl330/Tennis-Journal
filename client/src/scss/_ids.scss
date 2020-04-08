@@ -1,0 +1,21 @@
+#App {
+  min-height: 90vh;
+  height: 100%
+}
+
+#passwordInput.signup-input.form-control.is-invalid {
+  border: 1px solid #dc3545;
+}
+
+#passwordAddon {
+  border-top-right-radius: 2rem !important;
+  border-bottom-right-radius: 2rem !important;
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-left: 0;
+  padding-right: 2rem;
+}
+
+#passwordAddon.feedback-invalid {
+  border: 1px solid #dc3545;
+}

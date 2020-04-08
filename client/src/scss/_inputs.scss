@@ -1,0 +1,108 @@
+.input-group-text.text-red {
+  color: #dc3545;
+}
+
+.input-group-text.text-orange {
+  color: orange;
+}
+
+.input-group-text.text-light-green {
+  color: lightgreen;
+}
+
+.input-group-text.text-green {
+  color: green;
+}
+
+.input-group-text.search-input-addon {
+  border-radius: 2rem;
+}
+
+
+.login-input {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 2rem 2rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 2rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.login-input.is-invalid {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 2rem 2rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #dc3545;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 2rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.signup-input.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 2rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.signup-input.form-control:focus{
+  border-color: #ced4da;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.signup-input.form-control.is-invalid {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #dc3545;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #dc3545;
+  border-radius: 2rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.search-input.form-control {
+  border-radius: 2rem;
+}
+
+.skills-li-input {
+  background: #49A067;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+  display: block;
+  width: 100%;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-clip: padding-box;
+}

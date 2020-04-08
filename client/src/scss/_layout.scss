@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+html, body {
+  min-height: 100vh;
+  height: 100%;
+  font-family: 'Muli', sans-serif !important;
+}
+
+ul {
+  list-style-type: none;
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+  outline:0px !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ced4da;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ced4da;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ced4da;
+}
+
+.table > tbody > tr > td {
+  padding: 1.3rem;
+  vertical-align: middle;
+}
+
+.vh-45 {
+  min-height: 45vh;
+  max-height: 45vh;
+  overflow: auto;
+}
+
+.w-40 {
+  width: 40% !important;
+}
+
+.inline {
+  display: inline;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.hide-row {
+  .hide {
+    visibility: hidden;
+  }
+}
+
+.hide-row:hover {
+  .hide {
+    visibility: visible;
+  }
+}
+
+.skills-li {
+  background: #49A067;
+  color: white;
+  border-radius: 1rem;
+}

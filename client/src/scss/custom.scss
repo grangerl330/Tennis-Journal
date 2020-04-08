@@ -1,0 +1,14 @@
+// Override default variables before the bootstrap import
+@import '_layout.scss';
+@import '_rankings-chart.scss';
+@import '_inputs.scss';
+@import '_text.scss';
+@import '_backgrounds.scss';
+@import '_ids.scss';
+@import '_buttons.scss';
+@import '_shadows.scss';
+@import '_icons.scss';
+@import '_borders.scss';
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
