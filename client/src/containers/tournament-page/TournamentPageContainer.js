@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import $ from 'jquery'
 import moment from 'moment'
-import TournamentStatDisplay from './components/TournamentStatDisplay'
+import TournamentMatchesTable from './components/TournamentMatchesTable'
 import TournamentInfoModal from './components/modals/TournamentInfoModal'
 import DeleteTournamentModal from './components/modals/DeleteTournamentModal'
-import tennisCourtIcon from '../../images/tennis-court-icon.png'
-import tournamentDrawIcon from '../../images/tournament-draw-icon.png'
+import tournamentIcon from '../../images/tournament-icon.svg'
+import menuDots from '../../images/menu-dots.svg'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
 const TournamentPageContainer = (props) => {
+
+  useEffect(() => {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover()
+  })
+
   var tournamentId = parseInt(props.id)
   var tournament = props.currentTournament(tournamentId)
 
@@ -29,77 +36,128 @@ const TournamentPageContainer = (props) => {
     }
   }
 
-  const renderMatches = props.matches.map(match =>
-    <div className="col-auto px-0 mb-3" key={match.id}>
-      <div className="card card-tournament border border-secondary">
-        <NavLink className="card-block stretched-link text-decoration-none text-dark h-100" to={`/matches/${match.id}`}>
-          <div className="card-body text-center">
-            <h6 className="card-text">{match_round_display(match)}</h6>
-          </div>
-        </NavLink>
-      </div>
-    </div>
-  )
+  const renderSurfaceIcon = (surface) => {
+    return (
+      <span data-toggle="tooltip" data-placement="top" title={surface}>
+        <i className={`fas fa-circle fa-lg ${surface.toLowerCase()}-court`}></i>
+      </span>
+    )
+  }
 
   if(tournament) {
     return (
-      <section id="tournament-card-page">
-        <div className="container-fluid py-2 bg-info mb-4">
-          <div className="row">
-            <div className="col text-white text-center">
-              <h1>{tournament.title}</h1>
+      <section id="tournament-view-page">
+        <div className="container-fluid p-0 background-light-grey">
+          <div className="row py-4 background-light-grey text-green">
+            <div className="col-1 px-0 ml-4 text-center">
+              <img className="icon" src={tournamentIcon} alt="tournament" />
+            </div>
+            <div className="col-5 px-0 ml-2 mr-auto my-auto">
+              <h2 className="text-green">Tournaments</h2>
+            </div>
+          </div>
+          <div className="row pb-4 background-light-grey text-green">
+            <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
+              <div className="row mt-5 justify-content-start ml-5">
+                <div className="col-1">
+                  <button className="border-0">
+                    <i className="fas fa-chevron-left fa-2x text-green" onClick={props.history.goBack}></i>
+                  </button>
+                </div>
+              </div>
+              <div className="row mt-5 justify-content-start ml-5">
+                <div className="col-10">
+                  <h3 className="text-black">{tournament.title}</h3>
+                </div>
+                <div className="col-1 ml-auto mr-5">
+                  <div className="dropdown text-center">
+                    <button id="tournament" type="button" className="border-0 dropdown-toggle" data-toggle="dropdown">
+                      <img className="icon-small" src={menuDots} alt="menu dots" />
+                    </button>
+                    <div className="dropdown-menu dropdown-menu-center border-white shadow-light-green rounded">
+                      <button className="border-0" data-toggle="modal" data-target="#tournamentInfoModal">
+                        <i className="fas fa-pencil-alt pr-2 my-auto fa-s text-green"></i> Edit
+                      </button>
+                      <button className="border-0 mt-3" data-toggle="modal" data-target="#deleteTournamentModal">
+                        <i className="fas fa-trash pr-2 my-auto fa-s text-green"></i> Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row mt-3 justify-content-start ml-5">
+                <div className='col-2'>
+                  <span className="text-green">{moment(tournament.start_date).format('MMMM D')} - {moment(tournament.end_date).format('D, YYYY')}</span>
+                </div>
+                <div className='col-3'>
+                  <span className="text-black">{tournament.location}</span>
+                </div>
+              </div>
+              <div className="row mt-3 ml-5 pr-0 justify-content-start">
+                <div className="col-2 text-grey">
+                  <div className="row mt-3">
+                    <div className="col">
+                      <span>Division</span>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col">
+                      <span>Surface</span>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col">
+                      <span>Draw Size</span>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col">
+                      <span>Points</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-2 pl-0 text-black">
+                  <div className="row mt-3">
+                    <div className="col">
+                      <span>{tournament.age_category}</span>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col">
+                      <span>{renderSurfaceIcon(tournament.surface)}</span>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col">
+                      <span>{tournament.draw_size}</span>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col">
+                      <span>{tournament.points}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row mt-3 ml-5 pr-0 justify-content-start">
+                <div className="col-11">
+                  <hr className="green-line" />
+                </div>
+              </div>
+              <div className="row mt-3 ml-5 pr-0 justify-content-start">
+                <div className="col-11">
+                  <h4 className="text-black">Matches</h4>
+                </div>
+              </div>
+              <div className="row mt-3 mb-5 ml-5 pr-0">
+                <TournamentMatchesTable matches={props.matches} />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="container-fluid px-4">
-          <div className="row justify-content-center mt-2">
-            <TournamentStatDisplay statName="Dates" stat={`${moment(tournament.start_date).format('MM/DD/YY')} - ${moment(tournament.end_date).format('MM/DD/YY')}`} icon="fas fa-calendar-alt fa-3x home-icon" dateClass="text-left" />
-            <TournamentStatDisplay statName="Location" stat={tournament.location} icon="fas fa-map-marker-alt fa-3x home-icon" />
-            <TournamentStatDisplay statName="Division" stat={tournament.age_category} icon="fas fa-folder-open fa-3x home-icon" />
-            <TournamentStatDisplay statName="Surface" stat={tournament.surface} image={tennisCourtIcon} />
-            <TournamentStatDisplay statName="Draw Size" stat={tournament.draw_size} image={tournamentDrawIcon} />
-            <TournamentStatDisplay statName="Points" stat={tournament.points} icon="far fa-dot-circle fa-3x home-icon" />
-          </div>
-        </div>
-
-        <div className="container-fluid">
-          <div className="row mt-3 mb-3 justify-content-center">
-            <div className="col-md-2">
-              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#tournamentInfoModal">
-                <i className="fas fa-edit"></i> Edit Info
-              </button>
-            </div>
-            <div className="col-md-2">
-              <button className="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteTournamentModal">
-                <i className="fas fa-trash"></i> Delete Tournament
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="container border rounded pb-4 mt-5 mb-4">
-          <div className="row justify-content-center text-white bg-secondary">
-            <div className="col-md-2">
-              <h1>Matches</h1>
-            </div>
-          </div>
-          <div className="row ml-2 justify-content-center">
-            <div className="card-deck mt-4">
-              {renderMatches}
-            </div>
-          </div>
-          <div className="row mt-4 justify-content-center">
-            <div className="col-md-2">
-              <NavLink to={`/tournaments/${tournament.id}/add`} className="btn btn-dark btn-block">
-                <i className="fas fa-plus"></i> Add Match
-              </NavLink>
-            </div>
-          </div>
-        </div>
-
-          <TournamentInfoModal tournamentId={tournament.id} sendTournamentToDatabase={props.editTournamentInDatabase} tournament={tournament} />
-          <DeleteTournamentModal tournamentId={tournament.id} deleteTournament={deleteTournament} />
+        <TournamentInfoModal tournament={tournament}/>
+        <DeleteTournamentModal tournamentId={tournament.id} deleteTournament={deleteTournament} />
       </section>
     )
   } else {

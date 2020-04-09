@@ -28,6 +28,10 @@ label:focus,
   box-shadow: none !important;
 }
 
+// button:hover {
+//   background: #A8A8A8;
+// }
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #ced4da;
   opacity: 1; /* Firefox */
@@ -46,10 +50,35 @@ label:focus,
   vertical-align: middle;
 }
 
+#tournament-matches-table.table > tbody > tr > td {
+  padding-left: 0;
+}
+
+#tournament-matches-table.table > thead > tr > th {
+  padding-left: 0;
+}
+
+#tournament.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu-center {
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+  top: 2rem !important;
+}
+
 .vh-45 {
   min-height: 45vh;
   max-height: 45vh;
   overflow: auto;
+}
+
+.vh-100 {
+  min-height: 100vh;
+  max-height: 100vh;
 }
 
 .w-40 {
