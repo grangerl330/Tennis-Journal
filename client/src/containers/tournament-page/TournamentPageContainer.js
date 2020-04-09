@@ -6,7 +6,6 @@ import TournamentInfoModal from './components/modals/TournamentInfoModal'
 import DeleteTournamentModal from './components/modals/DeleteTournamentModal'
 import tournamentIcon from '../../images/tournament-icon.svg'
 import menuDots from '../../images/menu-dots.svg'
-import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
 const TournamentPageContainer = (props) => {
@@ -22,18 +21,6 @@ const TournamentPageContainer = (props) => {
   const deleteTournament = event => {
     props.deleteTournamentFromDatabase(tournamentId)
     props.history.push('/tournaments')
-  }
-
-  const match_round_display = (match) => {
-    if(match.round > 8){
-      return `Round of ${match.round}`
-    } else if(match.round === 8){
-      return "Quarterfinal"
-    } else if(match.round === 4){
-      return "Semifinal"
-    } else if(match.round === 2){
-      return "Final"
-    }
   }
 
   const renderSurfaceIcon = (surface) => {

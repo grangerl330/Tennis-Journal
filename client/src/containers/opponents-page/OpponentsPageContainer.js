@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import OpponentsTable from './components/OpponentsTable'
 import tournamentIcon from '../../images/tournament-icon.svg'
-import { NavLink } from 'react-router-dom'
 
 const OpponentsPageContainer = (props) => {
   const[search, setSearch] = useState("")
