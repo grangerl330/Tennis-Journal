@@ -34,6 +34,9 @@ const NavbarLinks = (props) => {
       <li className="nav-item">
         <NavLink to="/matches" className="nav-link">Matches</NavLink>
       </li>
+      <li className="nav-item">
+        <NavLink to="/opponents" className="nav-link">Opponents</NavLink>
+      </li>
     </ul>
   )
 }
