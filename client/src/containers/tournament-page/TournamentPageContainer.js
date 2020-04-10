@@ -140,16 +140,18 @@ const TournamentPageContainer = (props) => {
                 <div className="col-8">
                   <h4 className="text-black">Matches</h4>
                 </div>
-                <div className="col-3 text-right mr-5 pr-5 ml-auto">
-                  <button className="btn btn-green px-4">
+              </div>
+              <div className="row mt-3 ml-5 pr-0">
+                <TournamentMatchesTable matches={props.matches} />
+              </div>
+              <div className="row mt-4 ml-5 justify-content-start mb-5">
+                <div className="col-2">
+                  <button className="btn btn-green btn-block">
                     <NavLink to={`/tournaments/${tournament.id}/add-match`} className="text-white">
                       Add Match
                     </NavLink>
                   </button>
                 </div>
-              </div>
-              <div className="row mt-3 mb-5 ml-5 pr-0">
-                <TournamentMatchesTable matches={props.matches} />
               </div>
             </div>
           </div>
