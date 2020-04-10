@@ -49,7 +49,7 @@ const OpponentsPageContainer = (props) => {
                   </span>
                 </div>
               </div>
-              <div className="col-1 mr-5 ml-auto">
+              <div className="col-1 mr-5 ml-auto my-auto">
                 <span data-toggle="tooltip" data-placement="top" title="Add a new opponent by adding a new match on a tournament's view page">
                   <i className="fas fa-info-circle fa-lg text-green"></i>
                 </span>
