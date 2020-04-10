@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom'
 import $ from 'jquery'
 import moment from 'moment'
 import TournamentMatchesTable from './components/TournamentMatchesTable'
@@ -57,10 +58,10 @@ const TournamentPageContainer = (props) => {
                 </div>
               </div>
               <div className="row mt-5 justify-content-start ml-5">
-                <div className="col-10">
+                <div className="col-9">
                   <h3 className="text-black">{tournament.title}</h3>
                 </div>
-                <div className="col-1 ml-auto mr-5">
+                <div className="col-2 ml-auto mr-5">
                   <div className="dropdown text-center">
                     <button id="tournament" type="button" className="border-0 dropdown-toggle" data-toggle="dropdown">
                       <img className="icon-small" src={menuDots} alt="menu dots" />
@@ -136,8 +137,15 @@ const TournamentPageContainer = (props) => {
                 </div>
               </div>
               <div className="row mt-3 ml-5 pr-0 justify-content-start">
-                <div className="col-11">
+                <div className="col-8">
                   <h4 className="text-black">Matches</h4>
+                </div>
+                <div className="col-3 text-right mr-5 pr-5 ml-auto">
+                  <button className="btn btn-green px-4">
+                    <NavLink to={`/tournaments/${tournament.id}/add-match`} className="text-white">
+                      Add Match
+                    </NavLink>
+                  </button>
                 </div>
               </div>
               <div className="row mt-3 mb-5 ml-5 pr-0">
