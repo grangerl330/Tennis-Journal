@@ -2,11 +2,14 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom'
 import $ from 'jquery'
 import moment from 'moment'
-import TournamentMatchesTable from './components/TournamentMatchesTable'
+import BackButtonRow from './components/BackButtonRow'
+import TournamentTitleRow from './components/TournamentTitleRow'
+import TournamentAttributeRow from './components/TournamentAttributeRow'
+import TournamentMatchList from './components/TournamentMatchList'
 import TournamentInfoModal from './components/modals/TournamentInfoModal'
 import DeleteTournamentModal from './components/modals/DeleteTournamentModal'
 import tournamentIcon from '../../images/tournament-icon.svg'
-import menuDots from '../../images/menu-dots.svg'
+
 import { withRouter } from 'react-router';
 
 const TournamentPageContainer = (props) => {
@@ -50,107 +53,24 @@ const TournamentPageContainer = (props) => {
           </div>
           <div className="row pb-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
-              <div className="row mt-5 justify-content-start ml-5">
-                <div className="col-1">
-                  <button className="border-0">
-                    <i className="fas fa-chevron-left fa-2x text-green" onClick={props.history.goBack}></i>
-                  </button>
-                </div>
-              </div>
-              <div className="row mt-5 justify-content-start ml-5">
+              <div className="row">
                 <div className="col-9">
-                  <h3 className="text-black">{tournament.title}</h3>
+                  <BackButtonRow goBack={props.history.goBack} />
+                  <TournamentTitleRow title={tournament.title} />
+                  <TournamentAttributeRow name={`${moment(tournament.start_date).format('MMMM D')} - ${moment(tournament.end_date).format('D, YYYY')}`} value={tournament.location} date={true} />
+                  <TournamentAttributeRow name="Division" value={tournament.age_category} />
+                  <TournamentAttributeRow name="Surface" value={renderSurfaceIcon(tournament.surface)} />
+                  <TournamentAttributeRow name="Draw Size" value={tournament.draw_size} />
+                  <TournamentAttributeRow name="Points" value={tournament.points} />
+                  <div className="row mt-3 ml-5 pr-0 justify-content-start">
+                    <div className="col-11">
+                      <hr className="light-grey-line" />
+                    </div>
+                  </div>
+                  <TournamentMatchList matches={props.matches} tournamentId={tournament.id} />
                 </div>
-                <div className="col-2 ml-auto mr-5">
-                  <div className="dropdown text-center">
-                    <button id="tournament" type="button" className="border-0 dropdown-toggle" data-toggle="dropdown">
-                      <img className="icon-small" src={menuDots} alt="menu dots" />
-                    </button>
-                    <div className="dropdown-menu dropdown-menu-center border-white shadow-light-green rounded">
-                      <button className="border-0" data-toggle="modal" data-target="#tournamentInfoModal">
-                        <i className="fas fa-pencil-alt pr-2 my-auto fa-s text-green"></i> Edit
-                      </button>
-                      <button className="border-0 mt-3" data-toggle="modal" data-target="#deleteTournamentModal">
-                        <i className="fas fa-trash pr-2 my-auto fa-s text-green"></i> Delete
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="row mt-3 justify-content-start ml-5">
-                <div className='col-2'>
-                  <span className="text-green">{moment(tournament.start_date).format('MMMM D')} - {moment(tournament.end_date).format('D, YYYY')}</span>
-                </div>
-                <div className='col-3'>
-                  <span className="text-black">{tournament.location}</span>
-                </div>
-              </div>
-              <div className="row mt-3 ml-5 pr-0 justify-content-start">
-                <div className="col-2 text-grey">
-                  <div className="row mt-3">
-                    <div className="col">
-                      <span>Division</span>
-                    </div>
-                  </div>
-                  <div className="row mt-3">
-                    <div className="col">
-                      <span>Surface</span>
-                    </div>
-                  </div>
-                  <div className="row mt-3">
-                    <div className="col">
-                      <span>Draw Size</span>
-                    </div>
-                  </div>
-                  <div className="row mt-3">
-                    <div className="col">
-                      <span>Points</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-2 pl-0 text-black">
-                  <div className="row mt-3">
-                    <div className="col">
-                      <span>{tournament.age_category}</span>
-                    </div>
-                  </div>
-                  <div className="row mt-3">
-                    <div className="col">
-                      <span>{renderSurfaceIcon(tournament.surface)}</span>
-                    </div>
-                  </div>
-                  <div className="row mt-3">
-                    <div className="col">
-                      <span>{tournament.draw_size}</span>
-                    </div>
-                  </div>
-                  <div className="row mt-3">
-                    <div className="col">
-                      <span>{tournament.points}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="row mt-3 ml-5 pr-0 justify-content-start">
-                <div className="col-11">
-                  <hr className="light-grey-line" />
-                </div>
-              </div>
-              <div className="row mt-3 ml-5 pr-0 justify-content-start">
-                <div className="col-8">
-                  <h4 className="text-black">Matches</h4>
-                </div>
-              </div>
-              <div className="row mt-3 ml-5 pr-0">
-                <TournamentMatchesTable matches={props.matches} />
-              </div>
-              <div className="row mt-4 ml-5 justify-content-start mb-5">
-                <div className="col-2">
-                  <button className="btn btn-green btn-block">
-                    <NavLink to={`/tournaments/${tournament.id}/add-match`} className="text-white">
-                      Add Match
-                    </NavLink>
-                  </button>
+                <div className="col-3">
+                  Hello
                 </div>
               </div>
             </div>
