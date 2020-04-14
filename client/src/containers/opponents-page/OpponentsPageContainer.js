@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import OpponentsTable from './components/OpponentsTable'
-import tournamentIcon from '../../images/tournament-icon.svg'
+import opponentsIcon from '../../images/opponents.svg'
 
 const OpponentsPageContainer = (props) => {
   const[search, setSearch] = useState("")
@@ -30,7 +30,7 @@ const OpponentsPageContainer = (props) => {
           <div className="col-10 px-0 mx-auto">
             <div className="row">
               <div className="col-1 px-0 text-center">
-                <img className="icon" src={tournamentIcon} alt="tournament" />
+                <img className="icon" src={opponentsIcon} alt="tournament" />
               </div>
               <div className="col-5 px-0 ml-2 mr-auto my-auto">
                 <h2 className="text-green">Opponents</h2>
