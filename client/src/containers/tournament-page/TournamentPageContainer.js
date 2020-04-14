@@ -133,7 +133,7 @@ const TournamentPageContainer = (props) => {
               </div>
               <div className="row mt-3 ml-5 pr-0 justify-content-start">
                 <div className="col-11">
-                  <hr className="green-line" />
+                  <hr className="light-grey-line" />
                 </div>
               </div>
               <div className="row mt-3 ml-5 pr-0 justify-content-start">
