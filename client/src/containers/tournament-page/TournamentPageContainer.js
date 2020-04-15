@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery'
 import moment from 'moment'
-import BackButtonRow from './components/BackButtonRow'
-import TournamentTitleRow from './components/TournamentTitleRow'
-import TournamentAttributeRow from './components/TournamentAttributeRow'
+import BackButtonRow from './components/displays/components/BackButtonRow'
+import TournamentTitleRow from './components/displays/components/TournamentTitleRow'
+import TournamentAttributeRow from './components/displays/components/TournamentAttributeRow'
 import TournamentMatchesList from './components/displays/TournamentMatchesList'
 import TournamentStatDisplay from './components/displays/TournamentStatDisplay'
 import TournamentInfoModal from './components/modals/TournamentInfoModal'

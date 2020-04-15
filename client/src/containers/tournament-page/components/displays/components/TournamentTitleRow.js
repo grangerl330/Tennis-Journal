@@ -1,5 +1,5 @@
 import React from 'react'
-import menuDots from '../../../images/menu-dots.svg'
+import menuDots from '../../../../../images/menu-dots.svg'
 
 const TournamentTitleRow = (props) => {
   return (
