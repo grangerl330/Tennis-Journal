@@ -4,8 +4,8 @@ import moment from 'moment'
 import BackButtonRow from './components/BackButtonRow'
 import TournamentTitleRow from './components/TournamentTitleRow'
 import TournamentAttributeRow from './components/TournamentAttributeRow'
-import TournamentMatchList from './components/TournamentMatchList'
-import TournamentStatDisplay from './components/TournamentStatDisplay'
+import TournamentMatchesList from './components/displays/TournamentMatchesList'
+import TournamentStatDisplay from './components/displays/TournamentStatDisplay'
 import TournamentInfoModal from './components/modals/TournamentInfoModal'
 import DeleteTournamentModal from './components/modals/DeleteTournamentModal'
 import tournamentIcon from '../../images/tournament-icon.svg'
@@ -67,7 +67,7 @@ const TournamentPageContainer = (props) => {
                       <hr className="light-grey-line" />
                     </div>
                   </div>
-                  <TournamentMatchList matches={props.matches} tournamentId={tournament.id} />
+                  <TournamentMatchesList matches={props.matches} tournamentId={tournament.id} />
                 </div>
                 <div id="tournament-page-right" className="col-4 pl-0 h-100">
                   <TournamentStatDisplay tournament={tournament} matches={props.matches} />

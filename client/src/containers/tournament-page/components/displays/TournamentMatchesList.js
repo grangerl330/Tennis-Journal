@@ -1,5 +1,5 @@
 import React from 'react'
-import TournamentMatchesTable from './TournamentMatchesTable'
+import TournamentMatchesTable from '../TournamentMatchesTable'
 import { NavLink } from 'react-router-dom'
 
 const TournamentMatchList = (props) => {
