@@ -5,6 +5,7 @@ import BackButtonRow from './components/BackButtonRow'
 import TournamentTitleRow from './components/TournamentTitleRow'
 import TournamentAttributeRow from './components/TournamentAttributeRow'
 import TournamentMatchList from './components/TournamentMatchList'
+import TournamentStatDisplay from './components/TournamentStatDisplay'
 import TournamentInfoModal from './components/modals/TournamentInfoModal'
 import DeleteTournamentModal from './components/modals/DeleteTournamentModal'
 import tournamentIcon from '../../images/tournament-icon.svg'
@@ -52,8 +53,8 @@ const TournamentPageContainer = (props) => {
           </div>
           <div className="row pb-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
-              <div className="row">
-                <div className="col-9">
+              <div className="row h-100">
+                <div id="tournament-page-left" className="col-8">
                   <BackButtonRow goBack={props.history.goBack} />
                   <TournamentTitleRow title={tournament.title} />
                   <TournamentAttributeRow name={`${moment(tournament.start_date).format('MMMM D')} - ${moment(tournament.end_date).format('D, YYYY')}`} value={tournament.location} date={true} />
@@ -68,8 +69,8 @@ const TournamentPageContainer = (props) => {
                   </div>
                   <TournamentMatchList matches={props.matches} tournamentId={tournament.id} />
                 </div>
-                <div className="col-3">
-                  Hello
+                <div id="tournament-page-right" className="col-4 pl-0 h-100">
+                  <TournamentStatDisplay tournament={tournament} matches={props.matches} />
                 </div>
               </div>
             </div>
