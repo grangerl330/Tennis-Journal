@@ -1,5 +1,4 @@
 import React from 'react'
-import menuDots from '../../../images/menu-dots.svg'
 
 const BackButtonRow = (props) => {
   return (
