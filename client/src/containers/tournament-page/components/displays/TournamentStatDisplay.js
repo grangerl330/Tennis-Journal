@@ -4,14 +4,13 @@ import StatRow from './components/StatRow'
 const TournamentStatDisplay = (props) => {
   const calculateStatTotal = (stat) => {
     let count = 0;
-    let keyMap = {}
 
     for(let match of props.matches) {
-      Object.keys(match).map(key => {
+      for(let key of Object.keys(match)) {
         if(key.includes(stat)) {
           count += match[key]
         }
-      })
+      }
     }
 
     return count
