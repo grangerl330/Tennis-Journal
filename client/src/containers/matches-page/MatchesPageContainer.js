@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import $ from 'jquery'
 import matchesIcon from '../../images/matches-icon.svg'
+import searchIcon from '../../images/search.svg'
 import MatchesTable from './components/MatchesTable'
 
 const MatchesPageContainer = (props) => {
@@ -59,7 +60,7 @@ const MatchesPageContainer = (props) => {
                 <div className="input-group">
                   <input className="search-input form-control py-2 pl-4 border-right-0 border" type="text" name="search" value={search} onChange={handleOnChange} placeholder="Search"/>
                   <span className="input-group-append">
-                    <div className="input-group-text search-input-addon bg-transparent"><i className="fa fa-search"></i></div>
+                    <div className="input-group-text search-input-addon bg-transparent"><img src={searchIcon} alt="search" /></div>
                   </span>
                 </div>
               </div>

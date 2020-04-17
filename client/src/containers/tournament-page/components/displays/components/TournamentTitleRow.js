@@ -1,5 +1,6 @@
 import React from 'react'
 import menuDots from '../../../../../images/menu-dots.svg'
+import editIcon from '../../../../../images/edit.svg'
 
 const TournamentTitleRow = (props) => {
   return (
@@ -14,7 +15,7 @@ const TournamentTitleRow = (props) => {
           </button>
           <div className="dropdown-menu dropdown-menu-center border-white shadow-light-green rounded">
             <button className="border-0" data-toggle="modal" data-target="#tournamentInfoModal">
-              <i className="fas fa-pencil-alt pr-2 my-auto fa-s text-green"></i> Edit
+              <img src={editIcon} className="pr-2 my-auto" alt="edit" /> <span className="mr-3">Edit</span>
             </button>
             <button className="border-0 mt-3" data-toggle="modal" data-target="#deleteTournamentModal">
               <i className="fas fa-trash pr-2 my-auto fa-s text-green"></i> Delete

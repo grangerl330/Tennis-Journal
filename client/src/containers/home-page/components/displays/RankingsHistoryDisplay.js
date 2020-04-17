@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import RankingsChart from './RankingsChart'
+import leftArrow from '../../../../images/left-arrow-green.svg'
+import rightArrow from '../../../../images/right-arrow-green.svg'
 
 class RankingsHistoryDisplay extends Component {
 
@@ -27,12 +29,12 @@ class RankingsHistoryDisplay extends Component {
 
     let currentYear = parseInt(this.state.chartDate)
 
-    if(event.target.classList.contains("fa-chevron-right")) {
+    if(event.target.classList.contains("right")) {
       this.setState({
         chartDate: (currentYear + 1).toString(),
         dataExists: this.props.currentUser.rankings.some(rank => rank.year === (currentYear + 1).toString())
       })
-    } else if(event.target.classList.contains("fa-chevron-left")) {
+    } else if(event.target.classList.contains("left")) {
       this.setState({
         chartDate: (currentYear - 1).toString(),
         dataExists: this.props.currentUser.rankings.some(rank => rank.year === (currentYear - 1).toString())
@@ -62,11 +64,11 @@ class RankingsHistoryDisplay extends Component {
        </div>
        <div className="row mt-2">
          <button className="ml-auto mr-3 rankings-chart-button" onClick={this.updateYear}>
-           <i className="fas fa-chevron-left"></i>
+           <img className="left mt-auto mb-1" src={leftArrow} alt="previous year" />
          </button>
          <span className="text-green">{this.state.chartDate}</span>
          <button className="mr-auto ml-3 rankings-chart-button" onClick={this.updateYear}>
-           <i className="fas fa-chevron-right"></i>
+           <img className="right mt-auto mb-1" src={rightArrow} alt="next year" />
          </button>
        </div>
        <div className="row w-100 h-100 text-center justify-content-center align-self-center">

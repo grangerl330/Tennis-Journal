@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react'
 import $ from 'jquery'
 import BootstrapTable from 'react-bootstrap-table-next';
+import upArrow from '../../../images/up-arrow-gray.svg'
+import downArrow from '../../../images/down-arrow-gray.svg'
+import hard from '../../../images/hard.svg'
+import clay from '../../../images/clay.svg'
+import grass from '../../../images/grass.svg'
+import carpet from '../../../images/carpet.svg'
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
 
@@ -11,9 +17,18 @@ const TournamentsTable = (props) => {
   })
 
   const surfaceFormatter = (cell, row) => {
+    const surfaceImages = {
+      Hard: hard,
+      Clay: clay,
+      Grass: grass,
+      Carpet: carpet
+    }
+
+    let icon = surfaceImages[cell]
+
     return (
       <span data-toggle="tooltip" data-placement="top" title={cell}>
-        <i className={`fas fa-circle fa-lg ${cell.toLowerCase()}-court`}></i>
+        <img src={icon} alt="surface"/>
       </span>
     )
   }
@@ -28,11 +43,11 @@ const TournamentsTable = (props) => {
 
   const customSortCaret = (order, column) => {
     if (!order) {
-      return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
+      return (<span className="ml-3"><img src={upArrow} alt="up arrow" /></span>);
     } else if (order === 'asc') {
-      return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
+      return (<span className="ml-3"><img src={upArrow} alt="up arrow" /></span>);
     } else if (order === 'desc') {
-      return (<span className="ml-3 text-green"><i className="fas fa-chevron-down"></i></span>);
+      return (<span className="ml-3"><img src={downArrow} alt="down arrow" /></span>);
     } else {
       return null;
     }
@@ -54,7 +69,7 @@ const TournamentsTable = (props) => {
     text: 'Name',
     sort: true,
     sortCaret: customSortCaret,
-    classes: 'text-green',
+    classes: 'text-grey',
     formatter: titleFormatter
   }, {
     dataField: 'dates',
@@ -86,7 +101,7 @@ const TournamentsTable = (props) => {
 
   return (
     <div className="col-12 text-center mx-auto">
-      <BootstrapTable keyField="id" data={createTournamentsData()} columns={columns} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-green border-0" rowClasses="border-bottom" />
+      <BootstrapTable keyField="id" data={createTournamentsData()} columns={columns} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-grey border-0" rowClasses="border-bottom" />
     </div>
   )
 }

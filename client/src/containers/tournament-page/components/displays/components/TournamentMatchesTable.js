@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import $ from 'jquery'
+import upArrow from '../../../../../images/up-arrow-gray.svg'
+import downArrow from '../../../../../images/down-arrow-gray.svg'
 import BootstrapTable from 'react-bootstrap-table-next';
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
@@ -40,11 +42,11 @@ const TournamentMatchesTable = (props) => {
 
   const customSortCaret = (order, column) => {
     if (!order) {
-      return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
+      return (<span className="ml-3"><img src={upArrow} alt="up arrow" /></span>);
     } else if (order === 'asc') {
-      return (<span className="ml-3 text-green"><i className="fas fa-chevron-up"></i></span>);
+      return (<span className="ml-3"><img src={upArrow} alt="up arrow" /></span>);
     } else if (order === 'desc') {
-      return (<span className="ml-3 text-green"><i className="fas fa-chevron-down"></i></span>);
+      return (<span className="ml-3"><img src={downArrow} alt="down arrow" /></span>);
     } else {
       return null;
     }
@@ -91,7 +93,7 @@ const TournamentMatchesTable = (props) => {
 
   return (
     <div className="col-11">
-      <BootstrapTable id="tournament-matches-table" keyField="id" data={createMatchesData()} columns={columns} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-green border-0" rowClasses="border-bottom" />
+      <BootstrapTable id="tournament-matches-table" keyField="id" data={createMatchesData()} columns={columns} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-grey border-0" rowClasses="border-bottom" />
     </div>
   )
 }

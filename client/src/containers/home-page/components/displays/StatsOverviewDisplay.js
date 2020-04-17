@@ -1,4 +1,5 @@
 import React from 'react'
+import editIcon from '../../../../images/edit.svg'
 // import ProfilePicture from './ProfilePicture'
 // import defaultProfile from '../../images/Default-Profile.jpeg'
 
@@ -7,7 +8,7 @@ const StatsOverviewDisplay = (props) => {
     if (props.currentUser.current_ranking === null){
       return (
         <span className="ml-auto" data-toggle="tooltip" data-placement="top" title="Please enter your current ranking for this month">
-          <i class="fas fa-exclamation-triangle text-green"></i>
+          <img src={editIcon} alt="edit" />
         </span>
       )
     } else {
@@ -55,7 +56,7 @@ const StatsOverviewDisplay = (props) => {
                 </div>
                 <div className="col-3 col-xl-2 text-right">
                   <span className="ml-auto" data-toggle="tooltip" data-placement="top" title="Edit UTR and Ranking">
-                    <i className="fas fa-pencil-alt fa-s text-green" data-toggle="modal" data-target="#statsOverviewModal"></i>
+                    <img src={editIcon} alt="edit" data-toggle="modal" data-target="#statsOverviewModal"/>
                   </span>
                 </div>
               </div>

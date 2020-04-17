@@ -1,4 +1,5 @@
 import React from 'react'
+import editIcon from '../../../../images/edit.svg'
 
 const GoalsDisplay = (props) => {
   return (
@@ -6,7 +7,7 @@ const GoalsDisplay = (props) => {
       <div className="row mt-3 justify-content-center">
         <h4 className="mx-auto text-green">My Goals</h4>
         <span data-toggle="tooltip" data-placement="top" title="Edit Goals">
-          <i className="fas fa-pencil-alt pr-2 my-auto fa-s text-green" data-toggle="modal" data-target="#goalsModal"></i>
+          <img src={editIcon} className="mr-3" alt="edit" data-toggle="modal" data-target="#goalsModal" />
         </span>
       </div>
       <div className="row mt-3">
