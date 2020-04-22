@@ -60,8 +60,10 @@ const TournamentsPageContainer = (props) => {
                   </button>
                 </div>
               </div>
-              <div className="row mt-5">
-                <TournamentsTable tournaments={filteredTournaments()} />
+              <div className="row mt-5 justify-content-center">
+                <div className="col-11">
+                  <TournamentsTable tournaments={filteredTournaments()} />
+                </div>
               </div>
             </div>
           </div>

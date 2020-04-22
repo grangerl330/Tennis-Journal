@@ -55,8 +55,10 @@ const OpponentsPageContainer = (props) => {
                 </span>
               </div>
             </div>
-            <div className="row mt-5">
-              <OpponentsTable opponents={filteredOpponents()} />
+            <div className="row mt-5 justify-content-center">
+              <div className="col-11">
+                <OpponentsTable opponents={filteredOpponents()} />
+              </div>  
             </div>
           </div>
         </div>

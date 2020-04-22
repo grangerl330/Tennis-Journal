@@ -70,8 +70,10 @@ const MatchesPageContainer = (props) => {
                 </span>
               </div>
             </div>
-            <div className="row mt-5">
-              <MatchesTable matches={filteredMatches()} />
+            <div className="row mt-5 justify-content-center">
+              <div className="col-11">
+                <MatchesTable matches={filteredMatches()} />
+              </div>  
             </div>
           </div>
         </div>
