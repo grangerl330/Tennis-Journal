@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 // App Layout Containers
-import MainContent from './containers/app-layout/MainContent'
-import NavbarContainer from './containers/app-layout/navbar/NavbarContainer'
-import Footer from './containers/app-layout/Footer'
+import MainContent from './containers/global/MainContent'
+import NavbarContainer from './containers/global/navbar/NavbarContainer'
+import Footer from './containers/global/Footer'
 
 // Login Components and Functions
 import LoginPageContainer from './containers/login-page/LoginPageContainer'
