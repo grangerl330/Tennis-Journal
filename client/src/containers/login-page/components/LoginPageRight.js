@@ -2,7 +2,6 @@ import React from "react"
 import LoginWindow from './LoginWindow'
 import classNames from 'classnames'
 import logo from "../../../images/Logo-Dark.svg"
-import backArrow from '../../../images/back-arrow.svg'
 
 const LoginPageRight = (props) => {
   const classes = classNames('col-md-8 d-md-flex flex-column',
