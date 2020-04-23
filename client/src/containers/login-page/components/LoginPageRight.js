@@ -18,7 +18,7 @@ const LoginPageRight = (props) => {
         <div className="col-1 p-0 text-md-right ml-auto">
           <img className="align-middle logo" src={logo} alt="logo" />
         </div>
-        <div className="col-7 col-md-3 p-0 text-left ml-3 mr-auto mr-md-5">
+        <div className="col-7 col-md-5 col-xl-3 p-0 text-left ml-3 mr-auto mr-md-1 mr-xl-5">
           <h2 className="text-green">Tennis Journal</h2>
         </div>
       </div>
