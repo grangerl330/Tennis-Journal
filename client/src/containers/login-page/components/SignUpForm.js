@@ -236,26 +236,28 @@ class SignUpForm extends Component {
     );
 
     return (
-      <div className="col-11 background-green d-flex flex-column">
+      <div className="col-12 col-md-11 background-green d-flex flex-column">
         <div className="row justify-content-end mt-4">
-          <i className="fa fa-times fa-lg text-white mr-5" onClick={this.props.toggleSignUp}></i>
+          <i className="fa fa-times fa-lg text-white mr-3 mr-md-5" onClick={this.props.toggleSignUp}></i>
         </div>
         <div className="row justify-content-center my-auto">
-          <div className="col-8">
-            <div className="row mt-3">
-              <div className="col-1 p-0 text-center mr-2 ml-auto">
+          <div className="col-12 col-md-8">
+            <div className="row mt-3 justify-content-center">
+              <div className="col-2 col-md-1 p-0 text-center mr-2 ">
                 <img className="logo" src={logo} alt="logo" />
               </div>
-              <div className="col-4 p-0 mr-auto">
+              <div className="col-8 col-md-4 p-0 ml-md-0 ">
                 <h2 className="text-white">Tennis Journal</h2>
               </div>
             </div>
-            <div className="row mt-4">
-              <span className="text-white mx-auto">Track your tennis match statistics, ranking, and more.</span>
+            <div className="row mt-4 justify-content-center">
+              <div className="col-10 text-center">
+                <span className="text-white">Track your tennis match statistics, ranking, and more.</span>
+              </div>
             </div>
             <form onSubmit={this.handleOnSubmit}>
               <div className="row justify-content-center mt-5">
-                <div className="col-8">
+                <div className="col-md-8">
                     <div className="form-row">
                       <div className="col">
                         <input className="signup-input form-control" type="text" name="first_name" onChange={this.handleOnChange} value={this.state.first_name} placeholder="First Name" />
@@ -282,7 +284,7 @@ class SignUpForm extends Component {
                 </div>
               </div>
               <div className="row mt-3">
-                <div className="col-3 mx-auto">
+                <div className="col-5 col-md-3 mx-auto">
                   <input className="btn-signup w-100 py-2" type="submit" value="Sign Up" />
                 </div>
               </div>
