@@ -5,7 +5,7 @@ import rankImage from '../../../images/rank.svg'
 
 const LoginPageLeft = (props) => {
   return (
-    <div className="col-md-4 background-green d-flex flex-column order-last order-md-first">
+    <div className="col-md-4 bg-green d-flex flex-column order-last order-md-first min-vh-100">
       <div className="row mt-5 mt-sm-auto justify-content-center">
         <div className="col-9 text-center">
           <h2 className="text-white">Get started with Tennis Journal!</h2>
