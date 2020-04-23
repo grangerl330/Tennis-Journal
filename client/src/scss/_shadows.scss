@@ -7,3 +7,9 @@
 .shadow-light-green {
   box-shadow: 0 0.5rem 1rem #DDE8DF;
 }
+
+.shadow-md-light-green {
+  @media (min-width: 768px) {
+    box-shadow: 0 0.5rem 1rem #DDE8DF;
+  }
+}

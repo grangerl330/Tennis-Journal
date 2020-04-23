@@ -5,7 +5,7 @@ import rankImage from '../../../images/rank.svg'
 
 const LoginPageLeft = (props) => {
   return (
-    <div className="col-4 background-green d-flex flex-column">
+    <div className="col-md-4 background-green d-flex flex-column order-last order-md-first">
       <div className="row mt-auto justify-content-center">
         <div className="col-9 text-center">
           <h2 className="text-white">Get started with Tennis Journal!</h2>
@@ -35,7 +35,13 @@ const LoginPageLeft = (props) => {
           <span className="text-white signup-text">Track advanced statistics like unforced errors, winners, double faults, and more!</span>
         </div>
       </div>
-      <div className="row mt-5 mb-auto justify-content-center">
+      <div className="row d-md-none mt-5 mb-3 justify-content-center">
+        <div className="col-7 text-center">
+          <button className="btn w-100 btn-signup" onClick={props.toggleShowOnlyLogin}>Login</button>
+          <h5 className="mt-3 text-white">or</h5>
+        </div>
+      </div>
+      <div className="row mt-md-5 mb-auto justify-content-center">
         <div className="col-7 text-center">
           <button className="btn w-100 btn-signup" onClick={props.toggleSignUp}>Signup</button>
         </div>

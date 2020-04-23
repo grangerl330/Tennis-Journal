@@ -85,7 +85,7 @@ class LoginWindow extends Component {
     );
 
     return (
-      <div className="container-fluid p-0 border-white rounded shadow-light-green">
+      <div className="container-fluid p-0 border-white rounded shadow-md-light-green">
         <div className="row justify-content-center mt-5">
           <h1>Welcome!</h1>
         </div>
@@ -106,11 +106,17 @@ class LoginWindow extends Component {
               </div>
             </div>
           </div>
-          <div className="row justify-content-center mt-4 mb-5">
+          <div className="row justify-content-center mt-4 mb-3 mb-md-5">
             <div className="col-4">
               <input className="btn-login w-100 py-2" type="submit" value="Log In"/>
             </div>
           </div>
+          {/* <div className="row d-md-none justify-content-center mb-5">
+            <div className="col-4">
+              <h5 className="mb-3">or</h5>
+              <input className="btn-login w-100 py-2" type="submit" value="Signup"/>
+            </div>
+          </div> */}
         </form>
       </div>
     )

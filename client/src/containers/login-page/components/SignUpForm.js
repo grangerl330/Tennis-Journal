@@ -240,7 +240,7 @@ class SignUpForm extends Component {
         <div className="row justify-content-end mt-4">
           <i className="fa fa-times fa-lg text-white mr-3 mr-md-5" onClick={this.props.toggleSignUp}></i>
         </div>
-        <div className="row justify-content-center my-auto">
+        <div className="row justify-content-center mt-5 my-md-auto">
           <div className="col-12 col-md-8">
             <div className="row mt-3 justify-content-center">
               <div className="col-2 col-md-1 p-0 text-center mr-2 ">

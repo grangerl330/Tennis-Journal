@@ -15,20 +15,25 @@ class LoginPageContainer extends Component {
     super(props)
 
     this.state = {
-      showSignup: false
+      showSignup: false,
+      showOnlyLogin: false
     }
   }
 
-  renderLeftPage = () => {
+  renderLoginComponents = () => {
     if(this.state.showSignup) {
       return (
         <SignUpForm toggleSignUp={this.toggleSignUp} signupFormData={this.props.signupFormData} updateSignupForm={this.props.updateSignupForm} signup={this.props.signup} welcome={this.props.welcome} />
       )
+    } else if(this.state.showOnlyLogin) {
+        return (
+          <LoginPageRight authenticatePassword={this.props.authenticatePassword} login={this.props.login} toggleShowOnlyLogin={this.toggleShowOnlyLogin} hideOnMobile={false} />
+        )
     } else {
       return (
         <>
-          <LoginPageLeft toggleSignUp={this.toggleSignUp}/>
-          <LoginPageRight authenticatePassword={this.props.authenticatePassword} login={this.props.login}/>
+          <LoginPageLeft toggleSignUp={this.toggleSignUp} toggleShowOnlyLogin={this.toggleShowOnlyLogin}/>
+          <LoginPageRight authenticatePassword={this.props.authenticatePassword} login={this.props.login} hideOnMobile={true} />
         </>
       )
     }
@@ -40,11 +45,17 @@ class LoginPageContainer extends Component {
     })
   }
 
+  toggleShowOnlyLogin = () => {
+    this.setState({
+      showOnlyLogin: !this.state.showOnlyLogin
+    })
+  }
+
   render() {
     return (
       <div className="container-fluid">
         <div className="row">
-          {this.renderLeftPage()}
+          {this.renderLoginComponents()}
         </div>
       </div>
     )
