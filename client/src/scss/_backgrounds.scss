@@ -8,8 +8,10 @@
 }
 
 .background-green {
+  @media(min-width: 576px) {
+    height: 100vh;
+  }
   background: #49A067;
-  height: 100vh;
 }
 
 .bg-green {

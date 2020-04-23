@@ -6,13 +6,13 @@ import rankImage from '../../../images/rank.svg'
 const LoginPageLeft = (props) => {
   return (
     <div className="col-md-4 background-green d-flex flex-column order-last order-md-first">
-      <div className="row mt-auto justify-content-center">
+      <div className="row mt-5 mt-sm-auto justify-content-center">
         <div className="col-9 text-center">
           <h2 className="text-white">Get started with Tennis Journal!</h2>
         </div>
       </div>
       <div className="row mt-4 justify-content-center">
-        <div className="col-2 p-0 ml-auto mr-3">
+        <div className="col-2 p-0 ml-auto mr-4 mr-sm-3">
           <img className="mx-auto icon" src={notesImage} alt="notes" />
         </div>
         <div className="col-6 p-0 mr-auto">
@@ -20,7 +20,7 @@ const LoginPageLeft = (props) => {
         </div>
       </div>
       <div className="row mt-5 justify-content-center">
-        <div className="col-2 p-0 ml-auto mr-3">
+        <div className="col-2 p-0 ml-auto mr-4 mr-sm-3">
           <img className="mx-auto icon" src={goalsImage} alt="goals" />
         </div>
         <div className="col-6 p-0 mr-auto">
@@ -28,7 +28,7 @@ const LoginPageLeft = (props) => {
         </div>
       </div>
       <div className="row mt-5 d-flex">
-        <div className="col-2 p-0 ml-auto mr-3">
+        <div className="col-2 p-0 ml-auto mr-4 mr-sm-3">
           <img className="mx-auto icon" src={rankImage} alt="rank" />
         </div>
         <div className="col-6 p-0 mr-auto">
@@ -41,7 +41,7 @@ const LoginPageLeft = (props) => {
           <h5 className="mt-3 text-white">or</h5>
         </div>
       </div>
-      <div className="row mt-md-5 mb-auto justify-content-center">
+      <div className="row mt-md-5 mb-5 mb-sm-auto justify-content-center">
         <div className="col-7 text-center">
           <button className="btn w-100 btn-signup" onClick={props.toggleSignUp}>Signup</button>
         </div>
