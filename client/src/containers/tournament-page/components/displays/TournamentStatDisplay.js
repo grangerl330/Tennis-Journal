@@ -25,8 +25,8 @@ const TournamentStatDisplay = (props) => {
   let doubleFaults = calculateStatTotal("double_faults")
 
   return (
-    <div className="row justify-content-center h-100">
-      <div className="col-10 mr-5 bg-light-green tournament-stats-chart rounded my-auto py-5">
+    <div className="row justify-content-center h-100 mb-5 mb-md-0">
+      <div className="col-10 ml-3 ml-md-0 mr-md-5 bg-light-green tournament-stats-chart rounded my-auto py-5">
         <div className="row justify-content-center">
           <div className="col-9 text-center pb-3 border-bottom">
             <h5 className="text-white" style={{fontSize: '25px'}}>Tournament Stats</h5>
