@@ -6,7 +6,7 @@ const GoalsDisplay = (props) => {
     <div id="Goals-Display" className="container border rounded shadow-light-green border-white bg-white">
       <div className="row mt-3 justify-content-center">
         <h4 className="mx-auto text-green">My Goals</h4>
-        <span data-toggle="tooltip" data-placement="top" title="Edit Goals">
+        <span data-toggle="tooltip" data-placement="top" title="Edit Goals" style={{position: 'absolute', left: '85%'}}>
           <img src={editIcon} className="mr-3" alt="edit" data-toggle="modal" data-target="#goalsModal" />
         </span>
       </div>
