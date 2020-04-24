@@ -28,10 +28,10 @@ class HomePageContainer extends Component {
             <div className="row pt-5 px-0 px-xl-5">
               <StatsOverviewDisplay currentUser={this.props.currentUser} />
             </div>
-            <div className="row mt-4 mt-xl-3 mb-5 px-2 px-xl-5">
+            <div className="row mt-4 mt-xl-3 mb-5 px-3 px-xl-5">
               <RankingsHistoryDisplay currentUser={this.props.currentUser} />
             </div>
-            <div className="row mt-3 mb-5 px-2 px-xl-5">
+            <div className="row mt-3 mb-5 px-3 px-xl-5">
               <AllMatchStatsDisplay currentUser={this.props.currentUser} />
             </div>
           </div>
