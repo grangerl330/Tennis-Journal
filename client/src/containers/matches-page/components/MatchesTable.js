@@ -73,41 +73,65 @@ const MatchesTable = (props) => {
     return result
   }
 
-  const columns = [{
-    dataField: 'name',
-    text: 'Name',
-    sort: true,
-    sortCaret: customSortCaret,
-    classes: 'text-green',
-    formatter: nameFormatter,
-    sortValue: (cell, row) => row.round
-  }, {
-    dataField: 'tournament.title',
-    text: 'Tournament',
-    sort: true,
-    sortCaret: customSortCaret,
-    formatter: tournamentFormatter
-  }, {
-    dataField: 'date',
-    text: 'Date',
-    sort: true,
-    sortCaret: customSortCaret
-  }, {
-    dataField: 'result',
-    text: "Result",
-    sort: true,
-    sortCaret: customSortCaret
-  }, {
-    dataField: 'opponentName',
-    text: "Opponent",
-    sort: true,
-    sortCaret: customSortCaret,
-    formatter: opponentFormatter
-  }];
+  const columns = () => {
+    if(props.mobile) {
+      return (
+        [{
+          dataField: 'name',
+          text: 'Name',
+          sort: true,
+          sortCaret: customSortCaret,
+          classes: 'text-green',
+          formatter: nameFormatter,
+          sortValue: (cell, row) => row.round
+        }, {
+          dataField: 'tournament.title',
+          text: 'Tournament',
+          sort: true,
+          sortCaret: customSortCaret,
+          formatter: tournamentFormatter
+        }]
+      )
+    } else {
+      return (
+        [{
+          dataField: 'name',
+          text: 'Name',
+          sort: true,
+          sortCaret: customSortCaret,
+          classes: 'text-green',
+          formatter: nameFormatter,
+          sortValue: (cell, row) => row.round
+        }, {
+          dataField: 'tournament.title',
+          text: 'Tournament',
+          sort: true,
+          sortCaret: customSortCaret,
+          formatter: tournamentFormatter
+        }, {
+          dataField: 'date',
+          text: 'Date',
+          sort: true,
+          sortCaret: customSortCaret
+        }, {
+          dataField: 'result',
+          text: "Result",
+          sort: true,
+          sortCaret: customSortCaret
+        }, {
+          dataField: 'opponentName',
+          text: "Opponent",
+          sort: true,
+          sortCaret: customSortCaret,
+          formatter: opponentFormatter
+        }]
+      )
+    }
+  }
 
   return (
     <div className="col-12 text-center mx-auto">
-      <BootstrapTable keyField="id" data={createMatchesData()} columns={columns} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-grey border-0" rowClasses="border-bottom" />
+      <BootstrapTable keyField="id" data={createMatchesData()} columns={columns()} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-grey border-0" rowClasses="border-bottom" />
     </div>
   )
 }
