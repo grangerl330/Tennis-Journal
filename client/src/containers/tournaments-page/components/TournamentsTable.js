@@ -64,44 +64,66 @@ const TournamentsTable = (props) => {
     return result
   }
 
-  const columns = [{
-    dataField: 'title',
-    text: 'Name',
-    sort: true,
-    sortCaret: customSortCaret,
-    classes: 'text-grey',
-    formatter: titleFormatter
-  }, {
-    dataField: 'dates',
-    text: 'Dates',
-    sort: true,
-    sortCaret: customSortCaret
-  }, {
-    dataField: 'age_category',
-    text: "Division",
-    sort: true,
-    sortCaret: customSortCaret
-  }, {
-    dataField: 'surface',
-    text: "Surface",
-    sort: true,
-    sortCaret: customSortCaret,
-    formatter: surfaceFormatter
-  }, {
-    dataField: 'draw_size',
-    text: "Draw Size",
-    sort: true,
-    sortCaret: customSortCaret
-  }, {
-    dataField: 'points',
-    text: "Points",
-    sort: true,
-    sortCaret: customSortCaret
-  }];
+  const columns = () => {
+    if(props.mobile) {
+      return (
+        [{
+          dataField: 'title',
+          text: 'Name',
+          sort: true,
+          sortCaret: customSortCaret,
+          classes: 'text-grey',
+          formatter: titleFormatter
+        }, {
+          dataField: 'dates',
+          text: 'Dates',
+          sort: true,
+          sortCaret: customSortCaret
+        }]
+      )
+    } else {
+      return (
+        [{
+          dataField: 'title',
+          text: 'Name',
+          sort: true,
+          sortCaret: customSortCaret,
+          classes: 'text-grey',
+          formatter: titleFormatter
+        }, {
+          dataField: 'dates',
+          text: 'Dates',
+          sort: true,
+          sortCaret: customSortCaret
+        }, {
+          dataField: 'age_category',
+          text: "Division",
+          sort: true,
+          sortCaret: customSortCaret
+        }, {
+          dataField: 'surface',
+          text: "Surface",
+          sort: true,
+          sortCaret: customSortCaret,
+          formatter: surfaceFormatter
+        }, {
+          dataField: 'draw_size',
+          text: "Draw Size",
+          sort: true,
+          sortCaret: customSortCaret
+        }, {
+          dataField: 'points',
+          text: "Points",
+          sort: true,
+          sortCaret: customSortCaret
+        }]
+      )
+    }
+  }
 
   return (
     <div className="col-12 text-center mx-auto">
-      <BootstrapTable keyField="id" data={createTournamentsData()} columns={columns} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-grey border-0" rowClasses="border-bottom" />
+      <BootstrapTable keyField="id" data={createTournamentsData()} columns={columns()} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-grey border-0" rowClasses="border-bottom" />
     </div>
   )
 }

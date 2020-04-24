@@ -32,10 +32,10 @@ const TournamentsPageContainer = (props) => {
           <div className="row py-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto">
               <div className="row">
-                <div className="col-1 px-0 text-center">
+                <div className="col-1 ml-3 ml-md-0 px-0 text-center">
                   <img className="icon" src={tournamentIcon} alt="tournament" />
                 </div>
-                <div className="col-5 px-0 ml-2 mr-auto my-auto">
+                <div className="col-5 px-0 ml-5 ml-md-2 mr-auto my-auto">
                   <h2 className="text-green">Tournaments</h2>
                 </div>
               </div>
@@ -44,7 +44,7 @@ const TournamentsPageContainer = (props) => {
           <div className="row pb-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
               <div className="row mt-4 pt-3 justify-content-center">
-                <div className="col-3 ml-5 mr-auto">
+                <div className="col-8 col-md-3 mt-4 mt-md-0 ml-md-5 mr-md-auto">
                   <div className="input-group">
                     <input className="search-input form-control py-2 pl-4 border-right-0 border" type="text" name="search" value={search} onChange={handleOnChange} placeholder="Search"/>
                     <span className="input-group-append">
@@ -52,7 +52,7 @@ const TournamentsPageContainer = (props) => {
                     </span>
                   </div>
                 </div>
-                <div className="col-3 text-right mr-5 ml-auto">
+                <div className="col-8 col-md-3 text-center text-md-right mx-auto mr-md-5 ml-md-auto order-first order-md-last">
                   <button className="btn btn-green px-4">
                     <NavLink to="/tournaments/add" className="text-white">
                       Add Tournament
@@ -60,9 +60,14 @@ const TournamentsPageContainer = (props) => {
                   </button>
                 </div>
               </div>
-              <div className="row mt-5 justify-content-center">
+              <div className="row mt-5 justify-content-center desktop-view">
                 <div className="col-11">
                   <TournamentsTable tournaments={filteredTournaments()} />
+                </div>
+              </div>
+              <div className="row mt-3 justify-content-center mobile-view">
+                <div className="col-11">
+                  <TournamentsTable tournaments={filteredTournaments()} mobile={true} />
                 </div>
               </div>
             </div>
