@@ -49,39 +49,62 @@ const OpponentsTable = (props) => {
     return result
   }
 
-  const columns = [{
-    dataField: 'name',
-    text: 'Name',
-    sort: true,
-    sortCaret: customSortCaret,
-    classes: 'text-green',
-    formatter: nameFormatter
-  }, {
-    dataField: 'age',
-    text: 'Age',
-    sort: true,
-    sortCaret: customSortCaret
-  }, {
-    dataField: 'plays',
-    text: "Plays",
-    sort: true,
-    sortCaret: customSortCaret
-  }, {
-    dataField: 'utr',
-    text: "UTR",
-    sort: true,
-    sortCaret: customSortCaret
-  }, {
-    dataField: 'match.tournament.title',
-    text: "Played In",
-    sort: true,
-    sortCaret: customSortCaret,
-    formatter: tournamentFormatter
-  }];
+  const columns = () => {
+    if(props.mobile) {
+      return (
+        [{
+          dataField: 'name',
+          text: 'Name',
+          sort: true,
+          sortCaret: customSortCaret,
+          classes: 'text-green',
+          formatter: nameFormatter
+        }, {
+          dataField: 'match.tournament.title',
+          text: "Played In",
+          sort: true,
+          sortCaret: customSortCaret,
+          formatter: tournamentFormatter
+        }]
+      )
+    } else {
+      return (
+        [{
+          dataField: 'name',
+          text: 'Name',
+          sort: true,
+          sortCaret: customSortCaret,
+          classes: 'text-green',
+          formatter: nameFormatter
+        }, {
+          dataField: 'age',
+          text: 'Age',
+          sort: true,
+          sortCaret: customSortCaret
+        }, {
+          dataField: 'plays',
+          text: "Plays",
+          sort: true,
+          sortCaret: customSortCaret
+        }, {
+          dataField: 'utr',
+          text: "UTR",
+          sort: true,
+          sortCaret: customSortCaret
+        }, {
+          dataField: 'match.tournament.title',
+          text: "Played In",
+          sort: true,
+          sortCaret: customSortCaret,
+          formatter: tournamentFormatter
+        }]
+      )
+    }
+  }
 
   return (
     <div className="col-12 text-center mx-auto">
-      <BootstrapTable keyField="id" data={createOpponentsData()} columns={columns} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-green border-0" rowClasses="border-bottom" />
+      <BootstrapTable keyField="id" data={createOpponentsData()} columns={columns()} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-green border-0" rowClasses="border-bottom" />
     </div>
   )
 }
