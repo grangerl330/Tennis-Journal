@@ -5,6 +5,7 @@ import MatchNotesModal from './components/modals/MatchNotesModal'
 import MatchStatsModal from './components/modals/MatchStatsModal'
 import LiveStatsModal from './components/modals/LiveStatsModal'
 import DeleteMatchModal from './components/modals/DeleteMatchModal'
+import NotFound from '../NotFound.js'
 import headToHeadIcon from '../../images/head-to-head.png'
 import scoreboardIcon from '../../images/scoreboard.png'
 import { NavLink } from 'react-router-dom'
@@ -30,7 +31,7 @@ const MatchPageContainer = (props) => {
     props.deleteMatchFromDatabase(matchId)
     props.history.push(`/tournaments/${currentMatch.tournament.id}`)
   }
-
+  
   if(currentMatch) {
     let tournamentMatches = props.findTournamentMatches(props.matches, currentMatch.tournament.id)
 
@@ -241,7 +242,7 @@ const MatchPageContainer = (props) => {
       </section>
     )
   } else {
-    return <h3>Loading...</h3>
+    return <NotFound />
   }
 
 }

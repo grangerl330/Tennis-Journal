@@ -8,6 +8,7 @@ import TournamentMatchesList from './components/displays/TournamentMatchesList'
 import TournamentStatDisplay from './components/displays/TournamentStatDisplay'
 import TournamentInfoModal from './components/modals/TournamentInfoModal'
 import DeleteTournamentModal from './components/modals/DeleteTournamentModal'
+import NotFound from '../NotFound.js'
 import tournamentIcon from '../../images/tournament-icon.svg'
 
 import { withRouter } from 'react-router';
@@ -83,11 +84,7 @@ const TournamentPageContainer = (props) => {
     )
   } else {
     return (
-      <section id="tournament-card-page">
-        <div className="container-fluid mt-4 text-danger">
-          <h3>Tournament Not Available</h3>
-        </div>
-      </section>
+      <NotFound />
     )
   }
 }
