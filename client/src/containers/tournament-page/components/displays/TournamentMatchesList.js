@@ -15,11 +15,9 @@ const TournamentMatchList = (props) => {
       </div>
       <div className="row mt-4 ml-md-5 justify-content-center justify-content-md-start mb-5">
         <div className="col-8 col-md-3">
-          <button className="btn btn-green btn-block">
-            <NavLink to={`/tournaments/${props.tournamentId}/add-match`} className="text-white">
-              Add Match
-            </NavLink>
-          </button>
+          <NavLink to={`/tournaments/${props.tournamentId}/add-match`} className="text-white btn btn-green btn-block">
+            Add Match
+          </NavLink>
         </div>
       </div>
     </div>

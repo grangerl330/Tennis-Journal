@@ -53,11 +53,9 @@ const TournamentsPageContainer = (props) => {
                   </div>
                 </div>
                 <div className="col-8 col-md-3 text-center text-md-right mx-auto mr-md-5 ml-md-auto order-first order-md-last">
-                  <button className="btn btn-green px-4">
-                    <NavLink to="/tournaments/add" className="text-white">
-                      Add Tournament
-                    </NavLink>
-                  </button>
+                  <NavLink to="/tournaments/add" className="text-white btn btn-green px-4">
+                    Add Tournament
+                  </NavLink>
                 </div>
               </div>
               <div className="row mt-5 justify-content-center desktop-view">
