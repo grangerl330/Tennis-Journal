@@ -8,7 +8,7 @@ const StatsOverviewDisplay = (props) => {
     if (props.currentUser.current_ranking === null){
       return (
         <span className="ml-auto" data-toggle="tooltip" data-placement="top" title="Please enter your current ranking for this month">
-          <img src={editIcon} alt="edit" />
+          <i className="fas fa-exclamation-triangle text-green"></i>
         </span>
       )
     } else {
