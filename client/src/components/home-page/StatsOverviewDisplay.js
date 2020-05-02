@@ -1,5 +1,5 @@
 import React from 'react'
-import editIcon from '../../../../images/edit.svg'
+import editIcon from '../../images/edit.svg'
 // import ProfilePicture from './ProfilePicture'
 // import defaultProfile from '../../images/Default-Profile.jpeg'
 

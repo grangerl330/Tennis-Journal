@@ -7,7 +7,7 @@ import ProfilePageContainer from '../containers/profile-page/ProfilePageContaine
 import { updateCurrentUserInDatabase, updateCurrentUserPasswordInDatabase, deleteCurrentUserFromDatabase } from '../actions/currentUser'
 
 // Home Page Components
-import HomePageContainer from '../containers/home-page/HomePageContainer'
+import HomePage from './HomePage'
 import { getCurrentUser } from '../actions/currentUser'
 
 // Matches Components
@@ -84,7 +84,7 @@ class MainContent extends Component {
           <Route path='/opponents/:opponentId' render={(urlData) => <OpponentPageContainer id={urlData.match.params.opponentId} currentOpponent={this.currentOpponent} editOpponentInDatabase={this.props.editOpponentInDatabase}/>}/>
           <Route path='/opponents' render={() => <OpponentsPageContainer opponents={this.props.opponents}/>} />
           <Route exact path='/profile/edit' render={() => <ProfilePageContainer currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} updateCurrentUserPasswordInDatabase={this.props.updateCurrentUserPasswordInDatabase} deleteCurrentUserFromDatabase={this.props.deleteCurrentUserFromDatabase}/>}/>
-          <Route path='/home' render={() => <HomePageContainer currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} getCurrentUser={this.props.getCurrentUser}/>}/>
+          <Route path='/home' render={() => <HomePage currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} getCurrentUser={this.props.getCurrentUser}/>}/>
         </Switch>
       </div>
     )

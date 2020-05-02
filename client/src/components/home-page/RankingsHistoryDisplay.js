@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import RankingsChart from './RankingsChart'
-import leftArrow from '../../../../images/left-arrow-green.svg'
-import rightArrow from '../../../../images/right-arrow-green.svg'
+import leftArrow from '../../images/left-arrow-green.svg'
+import rightArrow from '../../images/right-arrow-green.svg'
 
 class RankingsHistoryDisplay extends Component {
 

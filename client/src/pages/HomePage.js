@@ -2,19 +2,19 @@ import React, { Component } from 'react'
 import $ from 'jquery'
 
 // Display Components
-import StatsOverviewDisplay from './components/displays/StatsOverviewDisplay'
-import AllMatchStatsDisplay from './components/displays/AllMatchStatsDisplay'
-import GoalsDisplay from './components/displays/GoalsDisplay'
-import SkillsDisplay from './components/displays/SkillsDisplay'
-import ImprovementDisplay from './components/displays/ImprovementDisplay'
-import RankingsHistoryDisplay from './components/displays/RankingsHistoryDisplay'
+import StatsOverviewDisplay from '../components/home-page/StatsOverviewDisplay'
+import AllMatchStatsDisplay from '../components/home-page/AllMatchStatsDisplay'
+import GoalsDisplay from '../components/home-page/GoalsDisplay'
+import SkillsDisplay from '../components/home-page/SkillsDisplay'
+import ImprovementDisplay from '../components/home-page/ImprovementDisplay'
+import RankingsHistoryDisplay from '../components/home-page/RankingsHistoryDisplay'
 
 // Modal Components
-import StatsOverviewModal from './components/modals/StatsOverviewModal'
-import GoalsModal from './components/modals/GoalsModal'
-import ImprovementModal from './components/modals/ImprovementModal'
+import StatsOverviewModal from '../components/home-page/StatsOverviewModal'
+import GoalsModal from '../components/home-page/GoalsModal'
+import ImprovementModal from '../components/home-page/ImprovementModal'
 
-class HomePageContainer extends Component {
+class HomePage extends Component {
   componentDidMount(){
     this.props.getCurrentUser()
     $('[data-toggle="tooltip"]').tooltip();
@@ -63,7 +63,7 @@ class HomePageContainer extends Component {
   }
 }
 
-export default HomePageContainer
+export default HomePage
 
 
 // currentRankingDisplay = () => {
