@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import OpponentsTable from './components/OpponentsTable'
-import opponentsIcon from '../../images/opponents.svg'
-import searchIcon from '../../images/search.svg'
+import OpponentsTable from '../components/opponents-page/OpponentsTable'
+import opponentsIcon from '../images/opponents.svg'
+import searchIcon from '../images/search.svg'
 
-const OpponentsPageContainer = (props) => {
+const OpponentsPage = (props) => {
   const[search, setSearch] = useState("")
 
   const handleOnChange = event => {
@@ -73,4 +73,4 @@ const OpponentsPageContainer = (props) => {
   )
 }
 
-export default OpponentsPageContainer
+export default OpponentsPage
