@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import tournamentIcon from '../../images/tournament-icon.svg'
-import searchIcon from '../../images/search.svg'
-import TournamentsTable from './components/TournamentsTable'
+import tournamentIcon from '../images/tournament-icon.svg'
+import searchIcon from '../images/search.svg'
+import TournamentsTable from '../components/tournaments-page/TournamentsTable'
 import { NavLink } from 'react-router-dom'
 
-const TournamentsPageContainer = (props) => {
+const TournamentsPage = (props) => {
 
     const[search, setSearch] = useState("")
 
@@ -75,4 +75,4 @@ const TournamentsPageContainer = (props) => {
     )
 }
 
-export default TournamentsPageContainer
+export default TournamentsPage

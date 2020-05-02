@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import $ from 'jquery'
 import BootstrapTable from 'react-bootstrap-table-next';
-import upArrow from '../../../images/up-arrow-gray.svg'
-import downArrow from '../../../images/down-arrow-gray.svg'
-import hard from '../../../images/hard.svg'
-import clay from '../../../images/clay.svg'
-import grass from '../../../images/grass.svg'
-import carpet from '../../../images/carpet.svg'
+import upArrow from '../../images/up-arrow-gray.svg'
+import downArrow from '../../images/down-arrow-gray.svg'
+import hard from '../../images/hard.svg'
+import clay from '../../images/clay.svg'
+import grass from '../../images/grass.svg'
+import carpet from '../../images/carpet.svg'
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
 
