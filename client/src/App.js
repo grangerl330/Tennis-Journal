@@ -6,7 +6,7 @@ import Navbar from './pages/Navbar'
 import Footer from './pages/Footer'
 
 // Login Components and Functions
-import LoginPageContainer from './containers/login-page/LoginPageContainer'
+import LoginPage from './pages/LoginPage'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 
@@ -30,7 +30,7 @@ class App extends Component {
     } else {
       return (
         <div id="App">
-          <LoginPageContainer />
+          <LoginPage />
         </div>
       )
     }

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import validator from 'validator'
 import zxcvbn from 'zxcvbn'
 import $ from 'jquery'
-import logo from '../../../images/Logo-White.svg'
+import logo from '../../images/Logo-White.svg'
 import { withRouter } from 'react-router';
 
 class SignUpForm extends Component {

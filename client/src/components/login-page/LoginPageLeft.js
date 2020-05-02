@@ -1,7 +1,7 @@
 import React from 'react'
-import notesImage from '../../../images/notes.svg'
-import goalsImage from '../../../images/goals.svg'
-import rankImage from '../../../images/rank.svg'
+import notesImage from '../../images/notes.svg'
+import goalsImage from '../../images/goals.svg'
+import rankImage from '../../images/rank.svg'
 
 const LoginPageLeft = (props) => {
   return (

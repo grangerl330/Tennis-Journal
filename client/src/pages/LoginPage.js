@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import LoginPageLeft from './components/LoginPageLeft'
-import LoginPageRight from './components/LoginPageRight'
-import SignUpForm from './components/SignUpForm'
+import LoginPageLeft from '../components/login-page/LoginPageLeft'
+import LoginPageRight from '../components/login-page/LoginPageRight'
+import SignUpForm from '../components/login-page/SignUpForm'
 
-import { updateLoginForm, authenticatePassword } from '../../actions/loginForm'
-import { login } from '../../actions/currentUser'
-import { updateSignupForm } from '../../actions/signupForm'
-import { signup } from '../../actions/newUser'
+import { updateLoginForm, authenticatePassword } from '../actions/loginForm'
+import { login } from '../actions/currentUser'
+import { updateSignupForm } from '../actions/signupForm'
+import { signup } from '../actions/newUser'
 
 import { connect } from 'react-redux'
 
-class LoginPageContainer extends Component {
+class LoginPage extends Component {
   constructor(props) {
     super(props)
 
@@ -71,4 +71,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateLoginForm, login, updateSignupForm, signup, authenticatePassword })(LoginPageContainer)
+export default connect(mapStateToProps, { updateLoginForm, login, updateSignupForm, signup, authenticatePassword })(LoginPage)
