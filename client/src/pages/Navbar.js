@@ -1,12 +1,12 @@
 import React from 'react'
-import NavbarLogin from './components/NavbarLogin'
-import NavbarBrand from './components/NavbarBrand'
-import NavbarRight from './components/NavbarRight'
-import NavbarLinks from './components/NavbarLinks'
-import { logout } from '../../../actions/currentUser'
+import NavbarLogin from '../components/navbar/NavbarLogin'
+import NavbarBrand from '../components/navbar/NavbarBrand'
+import NavbarRight from '../components/navbar/NavbarRight'
+import NavbarLinks from '../components/navbar/NavbarLinks'
+import { logout } from '../actions/currentUser'
 import { connect } from 'react-redux'
 
-const NavbarContainer = (props) => {
+const Navbar = (props) => {
   return (
     <nav className="navbar navbar-expand-sm navbar-dark background-dark py-3">
       <div className="container-fluid">
@@ -45,4 +45,4 @@ const mapStateToProps = ({ currentUser }) => {
   }
 }
 
-export default connect(mapStateToProps, { logout })(NavbarContainer)
+export default connect(mapStateToProps, { logout })(Navbar)

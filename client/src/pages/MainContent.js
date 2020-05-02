@@ -3,31 +3,31 @@ import { connect } from 'react-redux'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 // Profile Page Components
-import ProfilePageContainer from '../profile-page/ProfilePageContainer'
-import { updateCurrentUserInDatabase, updateCurrentUserPasswordInDatabase, deleteCurrentUserFromDatabase } from '../../actions/currentUser'
+import ProfilePageContainer from '../containers/profile-page/ProfilePageContainer'
+import { updateCurrentUserInDatabase, updateCurrentUserPasswordInDatabase, deleteCurrentUserFromDatabase } from '../actions/currentUser'
 
 // Home Page Components
-import HomePageContainer from '../home-page/HomePageContainer'
-import { getCurrentUser } from '../../actions/currentUser'
+import HomePageContainer from '../containers/home-page/HomePageContainer'
+import { getCurrentUser } from '../actions/currentUser'
 
 // Matches Components
-import MatchesPageContainer from '../matches-page/MatchesPageContainer'
-import MatchPageContainer from '../match-page/MatchPageContainer'
-import MatchForm from '../match-page/components/MatchForm'
-import { fetchMatches } from '../../actions/matches'
-import { addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase } from '../../actions/matches'
+import MatchesPageContainer from '../containers/matches-page/MatchesPageContainer'
+import MatchPageContainer from '../containers/match-page/MatchPageContainer'
+import MatchForm from '../containers/match-page/components/MatchForm'
+import { fetchMatches } from '../actions/matches'
+import { addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase } from '../actions/matches'
 
 // Tournaments Components
-import TournamentsPageContainer from '../tournaments-page/TournamentsPageContainer'
-import TournamentPageContainer from '../tournament-page/TournamentPageContainer'
-import TournamentForm from '../tournament-page/components/TournamentForm'
-import { fetchTournaments } from '../../actions/tournaments'
-import { addTournamentToDatabase, editTournamentInDatabase, deleteTournamentFromDatabase } from '../../actions/tournaments'
+import TournamentsPageContainer from '../containers/tournaments-page/TournamentsPageContainer'
+import TournamentPageContainer from '../containers/tournament-page/TournamentPageContainer'
+import TournamentForm from '../containers/tournament-page/components/TournamentForm'
+import { fetchTournaments } from '../actions/tournaments'
+import { addTournamentToDatabase, editTournamentInDatabase, deleteTournamentFromDatabase } from '../actions/tournaments'
 
 // Opponents Components
-import OpponentPageContainer from '../opponent-page/OpponentPageContainer'
-import OpponentsPageContainer from '../opponents-page/OpponentsPageContainer'
-import { fetchOpponents, editOpponentInDatabase } from '../../actions/opponents'
+import OpponentPageContainer from '../containers/opponent-page/OpponentPageContainer'
+import OpponentsPageContainer from '../containers/opponents-page/OpponentsPageContainer'
+import { fetchOpponents, editOpponentInDatabase } from '../actions/opponents'
 
 class MainContent extends Component {
   componentDidMount() {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 // App Layout Containers
-import MainContent from './containers/global/MainContent'
-import NavbarContainer from './containers/global/navbar/NavbarContainer'
-import Footer from './containers/global/Footer'
+import MainContent from './pages/MainContent'
+import Navbar from './pages/Navbar'
+import Footer from './pages/Footer'
 
 // Login Components and Functions
 import LoginPageContainer from './containers/login-page/LoginPageContainer'
@@ -21,7 +21,7 @@ class App extends Component {
       return (
         <>
           <div id="App">
-            <NavbarContainer isLogin={false} currentUser={this.props.currentUser} />
+            <Navbar isLogin={false} currentUser={this.props.currentUser} />
             <MainContent />
           </div>
           <Footer />
