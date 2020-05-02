@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import $ from 'jquery'
-import matchesIcon from '../../images/matches-icon.svg'
-import searchIcon from '../../images/search.svg'
-import MatchesTable from './components/MatchesTable'
+import matchesIcon from '../images/matches-icon.svg'
+import searchIcon from '../images/search.svg'
+import MatchesTable from '../components/matches-page/MatchesTable'
 
 const MatchesPageContainer = (props) => {
 

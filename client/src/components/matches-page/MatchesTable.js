@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import $ from 'jquery'
-import upArrow from '../../../images/up-arrow-gray.svg'
-import downArrow from '../../../images/down-arrow-gray.svg'
+import upArrow from '../../images/up-arrow-gray.svg'
+import downArrow from '../../images/down-arrow-gray.svg'
 import BootstrapTable from 'react-bootstrap-table-next';
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
