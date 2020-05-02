@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery'
 import moment from 'moment'
-import BackButtonRow from './components/displays/components/BackButtonRow'
-import TournamentTitleRow from './components/displays/components/TournamentTitleRow'
-import TournamentAttributeRow from './components/displays/components/TournamentAttributeRow'
-import TournamentMatchesList from './components/displays/TournamentMatchesList'
-import TournamentStatDisplay from './components/displays/TournamentStatDisplay'
-import TournamentInfoModal from './components/modals/TournamentInfoModal'
-import DeleteTournamentModal from './components/modals/DeleteTournamentModal'
-import tournamentIcon from '../../images/tournament-icon.svg'
+import BackButtonRow from '../components/tournament-page/BackButtonRow'
+import TournamentTitleRow from '../components/tournament-page/TournamentTitleRow'
+import TournamentAttributeRow from '../components/tournament-page/TournamentAttributeRow'
+import TournamentMatchesList from '../components/tournament-page/TournamentMatchesList'
+import TournamentStatDisplay from '../components/tournament-page/TournamentStatDisplay'
+import TournamentInfoModal from '../components/tournament-page/TournamentInfoModal'
+import DeleteTournamentModal from '../components/tournament-page/DeleteTournamentModal'
+import tournamentIcon from '../images/tournament-icon.svg'
 
 import { withRouter } from 'react-router';
 
-const TournamentPageContainer = (props) => {
+const TournamentPage = (props) => {
 
   useEffect(() => {
     $('[data-toggle="tooltip"]').tooltip();
@@ -88,4 +88,4 @@ const TournamentPageContainer = (props) => {
   }
 }
 
-export default withRouter(TournamentPageContainer)
+export default withRouter(TournamentPage)

@@ -4,7 +4,7 @@ import matchesIcon from '../images/matches-icon.svg'
 import searchIcon from '../images/search.svg'
 import MatchesTable from '../components/matches-page/MatchesTable'
 
-const MatchesPageContainer = (props) => {
+const MatchesPage = (props) => {
 
   useEffect(() => {
     $('[data-toggle="tooltip"]').tooltip();
@@ -87,4 +87,4 @@ const MatchesPageContainer = (props) => {
   )
 }
 
-export default MatchesPageContainer
+export default MatchesPage

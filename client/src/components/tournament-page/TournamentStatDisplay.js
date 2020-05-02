@@ -1,5 +1,5 @@
 import React from 'react';
-import StatRow from './components/StatRow'
+import StatRow from './StatRow'
 
 const TournamentStatDisplay = (props) => {
   const calculateStatTotal = (stat) => {

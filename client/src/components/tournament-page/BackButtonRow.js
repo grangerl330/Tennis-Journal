@@ -1,5 +1,5 @@
 import React from 'react'
-import backArrow from '../../../../../images/back-arrow.svg'
+import backArrow from '../../images/back-arrow.svg'
 
 const BackButtonRow = (props) => {
   return (
