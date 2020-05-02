@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import UpdateSuccessModal from '../../multi-page-components/UpdateSuccessModal'
+import UpdateSuccessModal from '../UpdateSuccessModal'
 import $ from "jquery";
 import classNames from 'classnames'
 import validator from 'validator'

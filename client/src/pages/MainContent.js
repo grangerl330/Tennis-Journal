@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 // Profile Page Components
-import ProfilePageContainer from '../containers/profile-page/ProfilePageContainer'
+import ProfilePage from './ProfilePage'
 import { updateCurrentUserInDatabase, updateCurrentUserPasswordInDatabase, deleteCurrentUserFromDatabase } from '../actions/currentUser'
 
 // Home Page Components
@@ -83,7 +83,7 @@ class MainContent extends Component {
           <Route path='/matches' render={() => <MatchesPage matches={this.props.matches} addMatchToDatabase={this.props.addMatchToDatabase}/>} />
           <Route path='/opponents/:opponentId' render={(urlData) => <OpponentPageContainer id={urlData.match.params.opponentId} currentOpponent={this.currentOpponent} editOpponentInDatabase={this.props.editOpponentInDatabase}/>}/>
           <Route path='/opponents' render={() => <OpponentsPageContainer opponents={this.props.opponents}/>} />
-          <Route exact path='/profile/edit' render={() => <ProfilePageContainer currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} updateCurrentUserPasswordInDatabase={this.props.updateCurrentUserPasswordInDatabase} deleteCurrentUserFromDatabase={this.props.deleteCurrentUserFromDatabase}/>}/>
+          <Route exact path='/profile/edit' render={() => <ProfilePage currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} updateCurrentUserPasswordInDatabase={this.props.updateCurrentUserPasswordInDatabase} deleteCurrentUserFromDatabase={this.props.deleteCurrentUserFromDatabase}/>}/>
           <Route path='/home' render={() => <HomePage currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} getCurrentUser={this.props.getCurrentUser}/>}/>
         </Switch>
       </div>

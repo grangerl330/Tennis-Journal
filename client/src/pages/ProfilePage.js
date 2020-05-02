@@ -1,9 +1,9 @@
 import React from 'react'
-import ProfileForm from './components/ProfileForm'
-import PasswordModal from './components/modals/PasswordModal'
-import DeleteAccountModal from './components/modals/DeleteAccountModal'
+import ProfileForm from '../components/profile-page/ProfileForm'
+import PasswordModal from '../components/profile-page/PasswordModal'
+import DeleteAccountModal from '../components/profile-page/DeleteAccountModal'
 
-const ProfilePageContainer = (props) => {
+const ProfilePage = (props) => {
   return (
     <section id="profile">
       <div className="container mb-4">
@@ -41,4 +41,4 @@ const ProfilePageContainer = (props) => {
   )
 }
 
-export default ProfilePageContainer
+export default ProfilePage
