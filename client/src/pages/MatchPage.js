@@ -1,17 +1,17 @@
 import React from 'react';
 import moment from 'moment'
-import MatchInfoModal from './components/modals/MatchInfoModal'
-import MatchNotesModal from './components/modals/MatchNotesModal'
-import MatchStatsModal from './components/modals/MatchStatsModal'
-import LiveStatsModal from './components/modals/LiveStatsModal'
-import DeleteMatchModal from './components/modals/DeleteMatchModal'
-import NotFound from '../NotFound.js'
-import headToHeadIcon from '../../images/head-to-head.png'
-import scoreboardIcon from '../../images/scoreboard.png'
+import MatchInfoModal from '../components/match-page/MatchInfoModal'
+import MatchNotesModal from '../components/match-page/MatchNotesModal'
+import MatchStatsModal from '../components/match-page/MatchStatsModal'
+import LiveStatsModal from '../components/match-page/LiveStatsModal'
+import DeleteMatchModal from '../components/match-page/DeleteMatchModal'
+import NotFound from './NotFound.js'
+import headToHeadIcon from '../images/head-to-head.png'
+import scoreboardIcon from '../images/scoreboard.png'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
-const MatchPageContainer = (props) => {
+const MatchPage = (props) => {
   let matchId = parseInt(props.id)
   let currentMatch = props.currentMatch(matchId)
 
@@ -31,7 +31,7 @@ const MatchPageContainer = (props) => {
     props.deleteMatchFromDatabase(matchId)
     props.history.push(`/tournaments/${currentMatch.tournament.id}`)
   }
-  
+
   if(currentMatch) {
     let tournamentMatches = props.findTournamentMatches(props.matches, currentMatch.tournament.id)
 
@@ -249,4 +249,4 @@ const MatchPageContainer = (props) => {
 
 
 
-export default withRouter(MatchPageContainer)
+export default withRouter(MatchPage)

@@ -12,8 +12,8 @@ import { getCurrentUser } from '../actions/currentUser'
 
 // Matches Components
 import MatchesPageContainer from '../containers/matches-page/MatchesPageContainer'
-import MatchPageContainer from '../containers/match-page/MatchPageContainer'
-import MatchForm from '../containers/match-page/components/MatchForm'
+import MatchPage from './MatchPage'
+import MatchForm from '../components/match-page/MatchForm'
 import { fetchMatches } from '../actions/matches'
 import { addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase } from '../actions/matches'
 
@@ -79,7 +79,7 @@ class MainContent extends Component {
           <Route exact path='/tournaments/:tournamentId/add-match' render={(urlData) => <MatchForm tournamentId={urlData.match.params.tournamentId} tournament={this.currentTournament(urlData.match.params.tournamentId)} addMatchToDatabase={this.props.addMatchToDatabase} matches={this.findTournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
           <Route path='/tournaments/:tournamentId' render={(urlData) => <TournamentPageContainer id={urlData.match.params.tournamentId} currentTournament={this.currentTournament} addMatchToDatabase={this.props.addMatchToDatabase} editTournamentInDatabase={this.props.editTournamentInDatabase} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase} matches={this.findTournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
           <Route path='/tournaments' render={() => <TournamentsPageContainer tournaments={this.props.tournaments} addTournamentToDatabase={this.props.addTournamentToDatabase} />} />
-          <Route path='/matches/:matchId' render={(urlData) => <MatchPageContainer id={urlData.match.params.matchId} currentMatch={this.currentMatch} matches={this.props.matches} editMatchInDatabase={this.props.editMatchInDatabase} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase} findTournamentMatches={this.findTournamentMatches}/>}/>
+          <Route path='/matches/:matchId' render={(urlData) => <MatchPage id={urlData.match.params.matchId} currentMatch={this.currentMatch} matches={this.props.matches} editMatchInDatabase={this.props.editMatchInDatabase} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase} findTournamentMatches={this.findTournamentMatches}/>}/>
           <Route path='/matches' render={() => <MatchesPageContainer matches={this.props.matches} addMatchToDatabase={this.props.addMatchToDatabase}/>} />
           <Route path='/opponents/:opponentId' render={(urlData) => <OpponentPageContainer id={urlData.match.params.opponentId} currentOpponent={this.currentOpponent} editOpponentInDatabase={this.props.editOpponentInDatabase}/>}/>
           <Route path='/opponents' render={() => <OpponentsPageContainer opponents={this.props.opponents}/>} />

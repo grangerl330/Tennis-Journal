@@ -8,7 +8,6 @@ import TournamentMatchesList from './components/displays/TournamentMatchesList'
 import TournamentStatDisplay from './components/displays/TournamentStatDisplay'
 import TournamentInfoModal from './components/modals/TournamentInfoModal'
 import DeleteTournamentModal from './components/modals/DeleteTournamentModal'
-import NotFound from '../NotFound.js'
 import tournamentIcon from '../../images/tournament-icon.svg'
 
 import { withRouter } from 'react-router';
@@ -84,7 +83,7 @@ const TournamentPageContainer = (props) => {
     )
   } else {
     return (
-      <NotFound />
+      <div>Not Found</div>
     )
   }
 }
