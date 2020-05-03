@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import tournamentIcon from '../images/tournament-icon.svg'
-import searchIcon from '../images/search.svg'
-import TournamentsTable from '../components/tournaments-page/TournamentsTable'
 import SearchBarRow from '../components/SearchBarRow'
+import TableRow from '../components/TableRow'
 
 const TournamentsPage = (props) => {
 
@@ -44,16 +43,8 @@ const TournamentsPage = (props) => {
           <div className="row pb-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
               <SearchBarRow type="tournaments" search={search} onChange={handleOnChange} />
-              <div className="row mt-5 justify-content-center desktop-view">
-                <div className="col-11">
-                  <TournamentsTable tournaments={filteredTournaments()} />
-                </div>
-              </div>
-              <div className="row mt-3 justify-content-center mobile-view">
-                <div className="col-11">
-                  <TournamentsTable tournaments={filteredTournaments()} mobile={true} />
-                </div>
-              </div>
+              <TableRow type="tournaments" tournaments={filteredTournaments()} mobile={false} />
+              <TableRow type="tournaments" tournaments={filteredTournaments()} mobile={true} />
             </div>
           </div>
         </div>

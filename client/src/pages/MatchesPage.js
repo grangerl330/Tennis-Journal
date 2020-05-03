@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import $ from 'jquery'
 import matchesIcon from '../images/matches-icon.svg'
-import searchIcon from '../images/search.svg'
-import MatchesTable from '../components/matches-page/MatchesTable'
 import SearchBarRow from '../components/SearchBarRow'
+import TableRow from '../components/TableRow'
 
 const MatchesPage = (props) => {
 
@@ -57,16 +56,8 @@ const MatchesPage = (props) => {
         <div className="row pb-4 background-light-grey text-green">
           <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
             <SearchBarRow type="matches" search={search} onChange={handleOnChange} />
-            <div className="row mt-5 justify-content-center desktop-view">
-              <div className="col-11">
-                <MatchesTable matches={filteredMatches()} />
-              </div>
-            </div>
-            <div className="row mt-3 justify-content-center mobile-view">
-              <div className="col-11">
-                <MatchesTable matches={filteredMatches()} mobile={true}/>
-              </div>
-            </div>
+            <TableRow type="matches" matches={filteredMatches()} mobile={false}/>
+            <TableRow type="matches" matches={filteredMatches()} mobile={true}/>
           </div>
         </div>
       </div>

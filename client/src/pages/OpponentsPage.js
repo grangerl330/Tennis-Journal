@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import OpponentsTable from '../components/opponents-page/OpponentsTable'
 import opponentsIcon from '../images/opponents.svg'
-import searchIcon from '../images/search.svg'
 import SearchBarRow from '../components/SearchBarRow'
+import TableRow from '../components/TableRow'
 
 const OpponentsPage = (props) => {
   const[search, setSearch] = useState("")
@@ -43,16 +42,8 @@ const OpponentsPage = (props) => {
         <div className="row pb-4 background-light-grey text-green">
           <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
             <SearchBarRow type="opponents" search={search} onChange={handleOnChange} />
-            <div className="row mt-5 justify-content-center desktop-view">
-              <div className="col-11">
-                <OpponentsTable opponents={filteredOpponents()} />
-              </div>
-            </div>
-            <div className="row mt-5 justify-content-center mobile-view">
-              <div className="col-11">
-                <OpponentsTable opponents={filteredOpponents()} mobile={true}/>
-              </div>
-            </div>
+            <TableRow type="opponents" opponents={filteredOpponents()} mobile={false} />
+            <TableRow type="opponents" opponents={filteredOpponents()} mobile={true} />
           </div>
         </div>
       </div>
