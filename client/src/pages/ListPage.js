@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
-import matchesIcon from '../images/matches-icon.svg'
 import TitleRow from '../components/TitleRow'
 import ListContentRow from '../components/ListContentRow'
 
