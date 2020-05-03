@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import tournamentIcon from '../images/tournament-icon.svg'
 import searchIcon from '../images/search.svg'
 import TournamentsTable from '../components/tournaments-page/TournamentsTable'
-import { NavLink } from 'react-router-dom'
+import SearchBarRow from '../components/SearchBarRow'
 
 const TournamentsPage = (props) => {
 
@@ -43,21 +43,7 @@ const TournamentsPage = (props) => {
           </div>
           <div className="row pb-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
-              <div className="row mt-4 pt-3 justify-content-center">
-                <div className="col-8 col-md-3 mt-4 ml-md-5 mr-md-auto">
-                  <div className="input-group">
-                    <input className="search-input form-control py-2 pl-4 border-right-0 border" type="text" name="search" value={search} onChange={handleOnChange} placeholder="Search"/>
-                    <span className="input-group-append">
-                      <div className="input-group-text search-input-addon bg-transparent"><img src={searchIcon} alt="search" /></div>
-                    </span>
-                  </div>
-                </div>
-                <div className="col-8 col-md-3 text-center text-md-right mx-auto mr-md-5 ml-md-auto order-first order-md-last">
-                  <NavLink to="/tournaments/add" className="text-white btn btn-green px-4">
-                    Add Tournament
-                  </NavLink>
-                </div>
-              </div>
+              <SearchBarRow type="tournaments" search={search} onChange={handleOnChange} />
               <div className="row mt-5 justify-content-center desktop-view">
                 <div className="col-11">
                   <TournamentsTable tournaments={filteredTournaments()} />
