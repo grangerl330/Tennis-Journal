@@ -44,7 +44,7 @@ const TournamentsPage = (props) => {
           <div className="row pb-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
               <div className="row mt-4 pt-3 justify-content-center">
-                <div className="col-8 col-md-3 mt-4 mt-md-0 ml-md-5 mr-md-auto">
+                <div className="col-8 col-md-3 mt-4 ml-md-5 mr-md-auto">
                   <div className="input-group">
                     <input className="search-input form-control py-2 pl-4 border-right-0 border" type="text" name="search" value={search} onChange={handleOnChange} placeholder="Search"/>
                     <span className="input-group-append">
