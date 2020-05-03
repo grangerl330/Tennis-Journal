@@ -2,7 +2,7 @@ import React from 'react'
 import SearchBarRow from './SearchBarRow'
 import TableRow from './TableRow'
 
-const IndexContentRow = (props) => {
+const ListContentRow = (props) => {
   return (
     <div className="row pb-4 background-light-grey text-green">
       <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
@@ -14,4 +14,4 @@ const IndexContentRow = (props) => {
   )
 }
 
-export default IndexContentRow
+export default ListContentRow

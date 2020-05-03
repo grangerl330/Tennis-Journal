@@ -17,24 +17,26 @@ import { updateCurrentUserInDatabase, updateCurrentUserPasswordInDatabase, delet
 // Home Page Components
 import HomePage from './pages/HomePage';
 
+import ListPage from './pages/ListPage'
+
 // Matches Components
-import MatchesPage from './pages/MatchesPage';
 import MatchPage from './pages/MatchPage';
 import MatchForm from './components/match-page/MatchForm';
 import { fetchMatches } from './actions/matches';
 import { addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase } from './actions/matches';
+import matchesIcon from './images/matches-icon.svg';
 
 // Tournaments Components
-import TournamentsPage from './pages/TournamentsPage';
 import TournamentPage from './pages/TournamentPage';
 import TournamentForm from './components/tournament-page/TournamentForm';
 import { fetchTournaments } from './actions/tournaments';
 import { addTournamentToDatabase, editTournamentInDatabase, deleteTournamentFromDatabase } from './actions/tournaments';
+import tournamentIcon from './images/tournament-icon.svg'
 
 // Opponents Components
 import OpponentPage from './pages/OpponentPage';
-import OpponentsPage from './pages/OpponentsPage';
 import { fetchOpponents, editOpponentInDatabase } from './actions/opponents';
+import opponentsIcon from './images/opponents.svg';
 
 class App extends Component {
 
@@ -91,11 +93,11 @@ class App extends Component {
                 <Route exact path='/tournaments/add' render={() => <TournamentForm sendTournamentToDatabase={this.props.addTournamentToDatabase} add="add"/>} />
                 <Route exact path='/tournaments/:tournamentId/add-match' render={(urlData) => <MatchForm tournamentId={urlData.match.params.tournamentId} tournament={this.currentTournament(urlData.match.params.tournamentId)} addMatchToDatabase={this.props.addMatchToDatabase} matches={this.findTournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
                 <Route path='/tournaments/:tournamentId' render={(urlData) => <TournamentPage id={urlData.match.params.tournamentId} currentTournament={this.currentTournament} addMatchToDatabase={this.props.addMatchToDatabase} editTournamentInDatabase={this.props.editTournamentInDatabase} deleteTournamentFromDatabase={this.props.deleteTournamentFromDatabase} matches={this.findTournamentMatches(this.props.matches, urlData.match.params.tournamentId)}/>}/>
-                <Route path='/tournaments' render={() => <TournamentsPage tournaments={this.props.tournaments} addTournamentToDatabase={this.props.addTournamentToDatabase} />} />
+                <Route path='/tournaments' render={() => <ListPage title="tournaments" content={this.props.tournaments} icon={tournamentIcon} addTournamentToDatabase={this.props.addTournamentToDatabase} />} />
                 <Route path='/matches/:matchId' render={(urlData) => <MatchPage id={urlData.match.params.matchId} currentMatch={this.currentMatch} matches={this.props.matches} editMatchInDatabase={this.props.editMatchInDatabase} deleteMatchFromDatabase={this.props.deleteMatchFromDatabase} findTournamentMatches={this.findTournamentMatches}/>}/>
-                <Route path='/matches' render={() => <MatchesPage matches={this.props.matches} addMatchToDatabase={this.props.addMatchToDatabase}/>} />
+                <Route path='/matches' render={() => <ListPage title="matches" content={this.props.matches} icon={matchesIcon} addMatchToDatabase={this.props.addMatchToDatabase}/>} />
                 <Route path='/opponents/:opponentId' render={(urlData) => <OpponentPage id={urlData.match.params.opponentId} currentOpponent={this.currentOpponent} editOpponentInDatabase={this.props.editOpponentInDatabase}/>}/>
-                <Route path='/opponents' render={() => <OpponentsPage opponents={this.props.opponents}/>} />
+                <Route path='/opponents' render={() => <ListPage title="opponents" content={this.props.opponents} icon={opponentsIcon}/>} />
                 <Route exact path='/profile/edit' render={() => <ProfilePage currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} updateCurrentUserPasswordInDatabase={this.props.updateCurrentUserPasswordInDatabase} deleteCurrentUserFromDatabase={this.props.deleteCurrentUserFromDatabase}/>}/>
                 <Route path='/home' render={() => <HomePage currentUser={this.props.currentUser} updateCurrentUserInDatabase={this.props.updateCurrentUserInDatabase} getCurrentUser={this.props.getCurrentUser}/>}/>
               </Switch>

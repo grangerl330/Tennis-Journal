@@ -9,7 +9,7 @@ const TitleRow = (props) => {
             <img className="icon" src={props.icon} alt={`${props.title}`} />
           </div>
           <div className="col-5 px-0 ml-5 ml-md-2 mr-auto my-auto">
-            <h2 className="text-green">{props.title}</h2>
+            <h2 className="text-green uppercase">{props.title}</h2>
           </div>
         </div>
       </div>
