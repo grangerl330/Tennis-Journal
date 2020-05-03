@@ -7,11 +7,11 @@ const TableRow = (props) => {
 
   const renderTable = () => {
     if(props.type === "matches") {
-      return <MatchesTable matches={props.matches} mobile={props.mobile} />
+      return <MatchesTable matches={props.content} mobile={props.mobile} />
     } else if(props.type === "tournaments") {
-      return <TournamentsTable tournaments={props.tournaments} mobile={props.mobile} />
+      return <TournamentsTable tournaments={props.content} mobile={props.mobile} />
     } else if(props.type === "opponents") {
-      return <OpponentsTable opponents={props.opponents} mobile={props.mobile} />
+      return <OpponentsTable opponents={props.content} mobile={props.mobile} />
     }
   }
 

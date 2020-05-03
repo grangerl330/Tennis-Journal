@@ -32,8 +32,8 @@ const OpponentsPage = (props) => {
         <div className="row pb-4 background-light-grey text-green">
           <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
             <SearchBarRow type="opponents" search={search} onChange={handleOnChange} />
-            <TableRow type="opponents" opponents={filteredOpponents()} mobile={false} />
-            <TableRow type="opponents" opponents={filteredOpponents()} mobile={true} />
+            <TableRow type="opponents" content={filteredOpponents()} mobile={false} />
+            <TableRow type="opponents" content={filteredOpponents()} mobile={true} />
           </div>
         </div>
       </div>

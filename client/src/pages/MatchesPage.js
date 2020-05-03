@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import $ from 'jquery'
 import matchesIcon from '../images/matches-icon.svg'
 import TitleRow from '../components/TitleRow'
-import SearchBarRow from '../components/SearchBarRow'
-import TableRow from '../components/TableRow'
+import IndexContentRow from '../components/IndexContentRow'
 
 const MatchesPage = (props) => {
 
@@ -43,13 +42,7 @@ const MatchesPage = (props) => {
     <section id="matches-page">
       <div className="container-fluid p-0 background-light-grey">
         <TitleRow icon={matchesIcon} title="Matches" />
-        <div className="row pb-4 background-light-grey text-green">
-          <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
-            <SearchBarRow type="matches" search={search} onChange={handleOnChange} />
-            <TableRow type="matches" matches={filteredMatches()} mobile={false}/>
-            <TableRow type="matches" matches={filteredMatches()} mobile={true}/>
-          </div>
-        </div>
+        <IndexContentRow type="matches" search={search} content={filteredMatches()} onChange={handleOnChange} />
       </div>
     </section>
   )

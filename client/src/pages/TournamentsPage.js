@@ -33,8 +33,8 @@ const TournamentsPage = (props) => {
           <div className="row pb-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
               <SearchBarRow type="tournaments" search={search} onChange={handleOnChange} />
-              <TableRow type="tournaments" tournaments={filteredTournaments()} mobile={false} />
-              <TableRow type="tournaments" tournaments={filteredTournaments()} mobile={true} />
+              <TableRow type="tournaments" content={filteredTournaments()} mobile={false} />
+              <TableRow type="tournaments" content={filteredTournaments()} mobile={true} />
             </div>
           </div>
         </div>
