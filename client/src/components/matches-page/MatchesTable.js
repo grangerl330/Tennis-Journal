@@ -130,7 +130,7 @@ const MatchesTable = (props) => {
   }
 
   return (
-    <div className="col-12 p-1 p-md-3 text-center mx-auto">
+    <div className="col-12 text-center mx-auto">
       <BootstrapTable keyField="id" data={createMatchesData()} columns={columns()} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-grey border-0" rowClasses="border-bottom" />
     </div>
   )
