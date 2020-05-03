@@ -45,6 +45,38 @@ class App extends Component {
     this.props.fetchOpponents()
   }
 
+  currentTournament = (id) => {
+    let selectedTournament = this.props.tournaments.find(tournament => {
+      return tournament.id === parseInt(id)
+    })
+
+    return selectedTournament
+  }
+
+  currentMatch = (id) => {
+    let selectedMatch = this.props.matches.find(match => {
+      return match.id === id
+    })
+
+    return selectedMatch
+  }
+
+  currentOpponent = (id) => {
+    let selectedOpponent = this.props.opponents.find(opponent => {
+      return opponent.id === id
+    })
+
+    return selectedOpponent
+  }
+
+  findTournamentMatches = (matches, id) => {
+    let filteredMatches = matches.filter(match => {
+      return match.tournament_id === parseInt(id)
+    })
+
+    return filteredMatches
+  }
+
   render() {
     if (this.props.currentUser && !this.props.currentUser.error) {
       return (
@@ -91,23 +123,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addTournamentToDatabase: tournament => dispatch(addTournamentToDatabase(tournament)),
-    editTournamentInDatabase: tournament => dispatch(editTournamentInDatabase(tournament)),
-    addMatchToDatabase: match => dispatch(addMatchToDatabase(match)),
-    editMatchInDatabase: match => dispatch(editMatchInDatabase(match)),
-    deleteMatchFromDatabase: matchId => dispatch(deleteMatchFromDatabase(matchId)),
-    deleteTournamentFromDatabase: tournamentId => dispatch(deleteTournamentFromDatabase(tournamentId)),
-    editOpponentInDatabase: opponent => dispatch(editOpponentInDatabase(opponent)),
-    fetchMatches: () => {dispatch(fetchMatches())},
-    fetchTournaments: () => {dispatch(fetchTournaments())},
-    fetchOpponents: () => {dispatch(fetchOpponents())},
-    updateCurrentUserInDatabase: user => {dispatch(updateCurrentUserInDatabase(user))},
-    updateCurrentUserPasswordInDatabase: (user, newPassword) => {dispatch(updateCurrentUserPasswordInDatabase(user, newPassword))},
-    deleteCurrentUserFromDatabase: (user) => {dispatch(deleteCurrentUserFromDatabase(user))},
-    getCurrentUser: () => {dispatch(getCurrentUser())}
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, { addTournamentToDatabase, editTournamentInDatabase, deleteTournamentFromDatabase, addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase, editOpponentInDatabase, fetchMatches, fetchTournaments, fetchOpponents, updateCurrentUserInDatabase, updateCurrentUserPasswordInDatabase, deleteCurrentUserFromDatabase, getCurrentUser })(App);
