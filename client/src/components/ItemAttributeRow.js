@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TournamentAttributeRow = (props) => {
+const ItemAttributeRow = (props) => {
   if(props.date) {
     return (
       <div className="row mt-3 ml-3 ml-md-5 pr-0 justify-content-start">
@@ -26,4 +26,4 @@ const TournamentAttributeRow = (props) => {
   }
 }
 
-export default TournamentAttributeRow
+export default ItemAttributeRow
