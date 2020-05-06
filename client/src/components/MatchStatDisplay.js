@@ -5,11 +5,9 @@ const MatchStatDisplay = (props) => {
   const calculateStatTotal = (stat) => {
     let count = 0;
 
-    for(let match of props.matches) {
-      for(let key of Object.keys(match)) {
-        if(key.includes(stat)) {
-          count += match[key]
-        }
+    for(let key of Object.keys(props.match)) {
+      if(key.includes(stat)) {
+        count += props.match[key]
       }
     }
 
@@ -25,21 +23,19 @@ const MatchStatDisplay = (props) => {
   let doubleFaults = calculateStatTotal("double_faults")
 
   return (
-    <div className="row justify-content-center h-100 mb-5">
+    <div className="row justify-content-center my-5">
       <div className="col-10 ml-3 ml-md-0 mr-md-5 bg-light-green tournament-stats-chart rounded my-auto py-5">
         <div className="row justify-content-center">
           <div className="col-9 text-center pb-3 border-bottom">
-            <h5 className="text-white" style={{fontSize: '25px'}}>Tournament Stats</h5>
+            <h5 className="text-white" style={{fontSize: '25px'}}>Match Stats</h5>
           </div>
         </div>
-        <StatRow name="Matches Played" value={props.matches.length} />
-        <StatRow name="Total Winners" value={winners} />
-        <StatRow name="Total Forced Errors" value={forcedErrors} />
-        <StatRow name="Total Unforced Errors" value={unforcedErrors} />
-        <StatRow name="Aggressive Margin" value={aggressiveMargin}  />
-        <StatRow name="Total Aces" value={aces} />
-        <StatRow name="Total Service Winners" value={serviceWinners} />
-        <StatRow name="Total Double Faults" value={doubleFaults} />
+        <StatRow name="Unforced Errors" value={unforcedErrors} />
+        <StatRow name="Forced Errors" value={forcedErrors} />
+        <StatRow name="Winners" value={winners} />
+        <StatRow name="Double Faults" value={doubleFaults} />
+        <StatRow name="Service Winners" value={serviceWinners}  />
+        <StatRow name="Aces" value={aces} />
       </div>
     </div>
   )

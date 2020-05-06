@@ -14,6 +14,7 @@ import NotFound from './NotFound.js'
 import headToHeadIcon from '../images/head-to-head.png'
 import scoreboardIcon from '../images/scoreboard.png'
 import tournamentIcon from '../images/tournament-icon.svg'
+import matchesIcon from '../images/matches-icon.svg';
 import MatchStatDisplay from '../components/MatchStatDisplay'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
@@ -65,21 +66,22 @@ const MatchPage = (props) => {
     return (
       <section id="match-view-page">
         <div className="container-fluid p-0 background-light-grey">
-          <TitleRow icon={tournamentIcon} title="Tournaments" />
+          <TitleRow icon={matchesIcon} title="Matches" />
           <div className="row pb-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
+              <BackButtonRow goBack={props.history.goBack} />
               <div className="row h-100">
                 <div id="tournament-page-left" className="col-12 col-md-8">
-                  <BackButtonRow goBack={props.history.goBack} />
                   <ItemTitleRow title={matchRoundDisplay(currentMatch)} page="match" />
                   <ItemAttributeRow name={`${moment(currentMatch.tournament.start_date).format('MMMM D')} - ${moment(currentMatch.tournament.end_date).format('D, YYYY')}`} value="" date={true} />
+                  <ItemAttributeRow name="Time" value={moment.utc(currentMatch.time).format('hh:mm a')} />
                   <ItemAttributeRow name="Result" value={<span className={resultTextColor()}>{currentMatch.result}</span>} />
                   <ItemAttributeRow name="Score" value={currentMatch.score} />
                   <ItemAttributeRow name="Opponent" value={opponentFullName(currentMatch.opponent)} />
                   <NotesRow name="Notes" value={currentMatch.notes} />
                 </div>
                 <div id="tournament-page-right" className="col-12 col-md-4 pl-0 h-md-100">
-                  <MatchStatDisplay tournament={currentMatch.tournament} matches={props.matches} />
+                  <MatchStatDisplay match={currentMatch} />
                 </div>
               </div>
             </div>
