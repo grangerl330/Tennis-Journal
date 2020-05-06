@@ -1,5 +1,7 @@
 import React from 'react';
-import StatRow from './tournament-page/StatRow'
+import MatchStatRow from './match-page/MatchStatRow'
+import StatExpansion from './match-page/StatExpansion'
+import editIcon from '../images/edit-white.svg'
 
 const MatchStatDisplay = (props) => {
   const calculateStatTotal = (stat) => {
@@ -14,66 +16,182 @@ const MatchStatDisplay = (props) => {
     return count
   }
 
+  const addStats = (array) => {
+    let count = 0;
+
+    for(let stat of array) {
+      count += stat.value
+    }
+
+    return count
+  }
+
   // Winners
-  let forehandWinners = calculateStatTotal("forehand_winners")
-  let backhandWinners = calculateStatTotal("backhand_winners")
-  let sliceWinners = calculateStatTotal("slice_winners")
-  let forehandVolleyWinners = calculateStatTotal("forehand_volley_winners")
-  let backhandVolleyWinners = calculateStatTotal("backhand_volley_winners")
-  let overheadWinners = calculateStatTotal("overhead_winners")
+  const winnersArray = [
+    {
+      name: "Forehand",
+      value: calculateStatTotal("forehand_winners")
+    },
+    {
+      name: "Backhand",
+      value: calculateStatTotal("backhand_winners")
+    },
+    {
+      name: "Slice",
+      value: calculateStatTotal("slice_winners")
+    },
+    {
+      name: "Forehand Volley",
+      value: calculateStatTotal("forehand_volley_winners")
+    },
+    {
+      name: "Backhand Volley",
+      value: calculateStatTotal("backhand_volley_winners")
+    },
+    {
+      name: "Overhead",
+      value: calculateStatTotal("overhead_winners")
+    }
+  ]
 
   // Forced Errors
-  let forehandForcedErrors = calculateStatTotal("forehand_forced_errors")
-  let backhandForcedErrors = calculateStatTotal("backhand_forced_errors")
-  let sliceForcedErrors = calculateStatTotal("slice_forced_errors")
-  let forehandVolleyForcedErrors = calculateStatTotal("forehand_volley_forced_errors")
-  let backhandVolleyForcedErrors = calculateStatTotal("backhand_volley_forced_errors")
-  let overheadForcedErrors = calculateStatTotal("overhead_forced_errors")
+  const forcedErrorsArray = [
+    {
+      name: "Forehand",
+      value: calculateStatTotal("forehand_forced_errors")
+    },
+    {
+      name: "Backhand",
+      value: calculateStatTotal("backhand_forced_errors")
+    },
+    {
+      name: "Slice",
+      value: calculateStatTotal("slice_forced_errors")
+    },
+    {
+      name: "Forehand Volley",
+      value: calculateStatTotal("forehand_volley_forced_errors")
+    },
+    {
+      name: "Backhand Volley",
+      value: calculateStatTotal("backhand_volley_forced_errors")
+    },
+    {
+      name: "Overhead",
+      value: calculateStatTotal("overhead_forced_errors")
+    }
+  ]
 
   // Unforced Errors
-  let forehandUnforcedErrors = calculateStatTotal("forehand_unforced_errors")
-  let backhandUnforcedErrors = calculateStatTotal("backhand_unforced_errors")
-  let sliceUnforcedErrors = calculateStatTotal("slice_unforced_errors")
-  let forehandVolleyUnforcedErrors = calculateStatTotal("forehand_volley_unforced_errors")
-  let backhandVolleyUnforcedErrors = calculateStatTotal("backhand_volley_unforced_errors")
-  let overheadUnforcedErrors = calculateStatTotal("overhead_unforced_errors")
+  const unforcedErrorsArray = [
+    {
+      name: "Forehand",
+      value: calculateStatTotal("forehand_unforced_errors")
+    },
+    {
+      name: "Backhand",
+      value: calculateStatTotal("backhand_unforced_errors")
+    },
+    {
+      name: "Slice",
+      value: calculateStatTotal("slice_unforced_errors")
+    },
+    {
+      name: "Forehand Volley",
+      value: calculateStatTotal("forehand_volley_unforced_errors")
+    },
+    {
+      name: "Backhand Volley",
+      value: calculateStatTotal("backhand_volley_unforced_errors")
+    },
+    {
+      name: "Overhead",
+      value: calculateStatTotal("overhead_unforced_errors")
+    }
+  ]
+
 
   // Aces
-  let deuceSideAces = calculateStatTotal("deuce_side_aces")
-  let adSideAces = calculateStatTotal("ad_side_aces")
+  let acesArray = [
+    {
+      name: "Deuce Side",
+      value: calculateStatTotal("deuce_side_aces")
+    },
+    {
+      name: "Ad Side",
+      value: calculateStatTotal("ad_side_aces")
+    }
+  ]
 
   // Service Winners
-  let deuceSideServiceWinners = calculateStatTotal("deuce_side_service_winners")
-  let adSideServiceWinners = calculateStatTotal("ad_side_service_winners")
+  let serviceWinnersArray = [
+    {
+      name: "Deuce Side",
+      value: calculateStatTotal("deuce_side_service_winners")
+    },
+    {
+      name: "Ad Side",
+      value: calculateStatTotal("ad_side_service_winners")
+    }
+  ]
 
   // Double Faults
-  let deuceSideDoubleFaults = calculateStatTotal("deuce_side_double_faults")
-  let adSideDoubleFaults = calculateStatTotal("ad_side_double_faults")
+  let doubleFaultsArray = [
+    {
+      name: "Deuce Side",
+      value: calculateStatTotal("deuce_side_double_faults")
+    },
+    {
+      name: "Ad Side",
+      value: calculateStatTotal("ad_side_double_faults")
+    }
+  ]
 
   // Totals
-  let winners = forehandWinners + backhandWinners + sliceWinners + forehandVolleyWinners + backhandVolleyWinners + overheadWinners
-  let unforcedErrors = forehandUnforcedErrors + backhandUnforcedErrors + sliceUnforcedErrors + forehandVolleyUnforcedErrors + backhandVolleyUnforcedErrors + overheadUnforcedErrors
-  let forcedErrors = forehandForcedErrors + backhandForcedErrors + sliceForcedErrors + forehandVolleyForcedErrors + backhandVolleyForcedErrors + overheadForcedErrors
-  let aggressiveMargin = winners + forcedErrors - unforcedErrors
-  let aces = deuceSideAces + adSideAces
-  let serviceWinners = deuceSideServiceWinners + adSideServiceWinners
-  let doubleFaults = deuceSideDoubleFaults + adSideDoubleFaults
+  let winners = addStats(winnersArray)
+  let unforcedErrors = addStats(unforcedErrorsArray)
+  let forcedErrors = addStats(forcedErrorsArray)
+  let aces = addStats(acesArray)
+  let serviceWinners = addStats(serviceWinnersArray)
+  let doubleFaults = addStats(doubleFaultsArray)
 
   return (
     <div className="row justify-content-center my-5">
       <div className="col-10 ml-3 ml-md-0 mr-md-5 bg-light-green tournament-stats-chart rounded my-auto py-5">
         <div className="row justify-content-center">
-          <div className="col-9 text-center pb-3 border-bottom">
+          <div className="col-8 text-left px-0 pb-3 border-bottom">
             <h5 className="text-white" style={{fontSize: '25px'}}>Match Stats</h5>
           </div>
+          <div className="col-1 border-bottom">
+            <span data-toggle="tooltip" data-placement="top" title="Edit Match Stats">
+              <img src={editIcon} alt="edit" data-toggle="modal" data-target="#matchStatsModal" />
+            </span>
+          </div>
         </div>
-        <StatRow name="Unforced Errors" value={unforcedErrors} />
-        <StatRow name="Forced Errors" value={forcedErrors} />
-        <StatRow name="Winners" value={winners} />
-        <StatRow name="Aggressive Margin" value={aggressiveMargin} />
-        <StatRow name="Double Faults" value={doubleFaults} />
-        <StatRow name="Service Winners" value={serviceWinners}  />
-        <StatRow name="Aces" value={aces} />
+
+        {/* Unforced Errors */}
+        <MatchStatRow name="Unforced Errors" value={unforcedErrors} expansionId="unforcedErrors"/>
+        <StatExpansion stats={unforcedErrorsArray} expansionId="unforcedErrors"/>
+
+        {/* Forced Errors */}
+        <MatchStatRow name="Forced Errors" value={forcedErrors} expansionId="forcedErrors"/>
+        <StatExpansion stats={forcedErrorsArray} expansionId="forcedErrors"/>
+
+        {/* Winners */}
+        <MatchStatRow name="Winners" value={winners} expansionId="winners"/>
+        <StatExpansion stats={winnersArray} expansionId="winners"/>
+
+        {/* Double Faults */}
+        <MatchStatRow name="Double Faults" value={doubleFaults} expansionId="doubleFaults"/>
+        <StatExpansion stats={doubleFaultsArray} expansionId="doubleFaults"/>
+
+        {/* Service Winners */}
+        <MatchStatRow name="Service Winners" value={serviceWinners} expansionId="serviceWinners"/>
+        <StatExpansion stats={serviceWinnersArray} expansionId="serviceWinners"/>
+
+        {/* Aces */}
+        <MatchStatRow name="Aces" value={aces} expansionId="aces"/>
+        <StatExpansion stats={acesArray} expansionId="aces"/>
       </div>
     </div>
   )

@@ -46,7 +46,7 @@ const TournamentPage = (props) => {
               <div className="row h-100">
                 <div id="tournament-page-left" className="col-12 col-md-8">
                   <BackButtonRow goBack={props.history.goBack} />
-                  <ItemTitleRow title={tournament.title} />
+                  <ItemTitleRow title={tournament.title} page="tournament"/>
                   <ItemAttributeRow name={`${moment(tournament.start_date).format('MMMM D')} - ${moment(tournament.end_date).format('D, YYYY')}`} value={tournament.location} date={true} />
                   <ItemAttributeRow name="Division" value={tournament.age_category} />
                   <ItemAttributeRow name="Surface" value={renderSurfaceIcon(tournament.surface)} />

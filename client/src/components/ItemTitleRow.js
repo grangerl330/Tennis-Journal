@@ -17,7 +17,7 @@ const ItemTitleRow = (props) => {
             <button className="border-0" data-toggle="modal" data-target={`#${props.page}InfoModal`}>
               <img src={editIcon} className="pr-2 my-auto" alt="edit" /> <span className="mr-3">Edit</span>
             </button>
-            <button className="border-0 mt-3" data-toggle="modal" data-target={`delete${props.page}Modal`}>
+            <button className="border-0 mt-3" data-toggle="modal" data-target={`#delete${props.page.charAt(0).toUpperCase() + props.page.slice(1)}Modal`}>
               <i className="fas fa-trash pr-2 my-auto fa-s text-green"></i> Delete
             </button>
           </div>

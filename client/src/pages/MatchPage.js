@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import moment from 'moment';
+import $ from 'jquery'
 import TitleRow from '../components/TitleRow';
 import BackButtonRow from '../components/BackButtonRow';
 import ItemTitleRow from '../components/ItemTitleRow';
@@ -17,6 +18,10 @@ import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 const MatchPage = (props) => {
+  useEffect(() => {
+    $('[data-toggle="tooltip"]').tooltip();
+  })
+
   let matchId = parseInt(props.id)
   let currentMatch = props.currentMatch(matchId)
 
@@ -55,11 +60,10 @@ const MatchPage = (props) => {
     return (
       <section id="match-view-page">
         <div className="container-fluid p-0 background-light-grey">
-          <TitleRow icon={matchesIcon} title="Matches" />
+          <TitleRow icon={matchesIcon} title="Matches" page="match" />
           <div className="row pb-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
               <BackButtonRow goBack={props.history.goBack} />
-              <button data-toggle="modal" data-target="#matchStatsModal">Stats</button>
               <div className="row h-100">
                 <div id="tournament-page-left" className="col-12 col-md-8">
                   <ItemTitleRow title={matchRoundDisplay(currentMatch)} page="match" />
