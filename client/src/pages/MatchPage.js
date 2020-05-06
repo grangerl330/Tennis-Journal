@@ -1,23 +1,20 @@
 import React from 'react';
-import moment from 'moment'
-import TitleRow from '../components/TitleRow'
-import BackButtonRow from '../components/BackButtonRow'
-import ItemTitleRow from '../components/ItemTitleRow'
-import ItemAttributeRow from '../components/ItemAttributeRow'
-import NotesRow from '../components/NotesRow'
-import MatchInfoModal from '../components/match-page/MatchInfoModal'
-import MatchNotesModal from '../components/match-page/MatchNotesModal'
-import MatchStatsModal from '../components/match-page/MatchStatsModal'
-import LiveStatsModal from '../components/match-page/LiveStatsModal'
-import DeleteMatchModal from '../components/match-page/DeleteMatchModal'
-import NotFound from './NotFound.js'
-import headToHeadIcon from '../images/head-to-head.png'
-import scoreboardIcon from '../images/scoreboard.png'
-import tournamentIcon from '../images/tournament-icon.svg'
+import moment from 'moment';
+import TitleRow from '../components/TitleRow';
+import BackButtonRow from '../components/BackButtonRow';
+import ItemTitleRow from '../components/ItemTitleRow';
+import ItemAttributeRow from '../components/ItemAttributeRow';
+import NotesRow from '../components/NotesRow';
+import MatchInfoModal from '../components/match-page/MatchInfoModal';
+import MatchNotesModal from '../components/match-page/MatchNotesModal';
+import MatchStatsModal from '../components/match-page/MatchStatsModal';
+import LiveStatsModal from '../components/match-page/LiveStatsModal';
+import DeleteMatchModal from '../components/match-page/DeleteMatchModal';
+import NotFound from './NotFound.js';
 import matchesIcon from '../images/matches-icon.svg';
-import MatchStatDisplay from '../components/MatchStatDisplay'
-import { NavLink } from 'react-router-dom'
-import { withRouter } from 'react-router'
+import MatchStatDisplay from '../components/MatchStatDisplay';
+import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 const MatchPage = (props) => {
   let matchId = parseInt(props.id)
@@ -43,14 +40,6 @@ const MatchPage = (props) => {
     }
   }
 
-  const renderSurfaceIcon = (surface) => {
-    return (
-      <span data-toggle="tooltip" data-placement="top" title={surface}>
-        <i className={`fas fa-circle fa-lg ${surface.toLowerCase()}-court`}></i>
-      </span>
-    )
-  }
-
   const opponentFullName = (opponent) => {
     return `${opponent.first_name} ${opponent.last_name}`
   }
@@ -70,6 +59,7 @@ const MatchPage = (props) => {
           <div className="row pb-4 background-light-grey text-green">
             <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
               <BackButtonRow goBack={props.history.goBack} />
+              <button data-toggle="modal" data-target="#matchStatsModal">Stats</button>
               <div className="row h-100">
                 <div id="tournament-page-left" className="col-12 col-md-8">
                   <ItemTitleRow title={matchRoundDisplay(currentMatch)} page="match" />
