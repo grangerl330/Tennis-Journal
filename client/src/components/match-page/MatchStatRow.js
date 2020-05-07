@@ -3,16 +3,9 @@ import upArrow from '../../images/up-arrow-white.svg'
 import downArrow from '../../images/down-arrow-white.svg'
 
 const MatchStatRow = (props) => {
-  const [border, setBorder] = useState('border-bottom');
-  const [arrowIcon, setArrowIcon] = useState(upArrow)
+  const [arrowIcon, setArrowIcon] = useState(upArrow);
 
-  const toggleBorderAndArrow = () => {
-    if(border === 'border-bottom') {
-      setBorder("")
-    } else if(border === '') {
-      setBorder('border-bottom')
-    }
-
+  const toggleArrow = () => {
     if(arrowIcon === upArrow) {
       setArrowIcon(downArrow)
     } else if(arrowIcon === downArrow) {
@@ -22,13 +15,15 @@ const MatchStatRow = (props) => {
 
   return (
     <div className="row justify-content-center">
-      <div className={`col-1 ${border} text-left pl-0 py-3`}>
-        <img src={arrowIcon} alt="edit" data-toggle="collapse" data-target={`#${props.expansionId}`} onClick={toggleBorderAndArrow}/>
+      <div className={`col-1 border-top text-left py-3 pl-0`}>
+        {!props.noIcon && (
+          <img src={arrowIcon} alt="edit" data-toggle="collapse" data-target={`#${props.expansionId}`} onClick={toggleArrow}/>
+          )}
       </div>
-      <div className={`col-7 ${border} py-3 pl-0`}>
+      <div className={`col-7 border-top py-3 pl-0`}>
         <span className="text-white">{props.name}</span>
       </div>
-      <div className={`col-1 ${border} pt-3`}>
+      <div className={`col-1 border-top pt-3`}>
         <span className="text-white">{props.value}</span>
       </div>
     </div>

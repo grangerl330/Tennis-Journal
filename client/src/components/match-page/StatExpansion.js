@@ -22,7 +22,7 @@ const StatExpansion = (props) => {
 
   return (
     <div className="row justify-content-center collapse" id={props.expansionId}>
-      <div className="col-9 pb-3 text-white border-bottom">
+      <div className="col-9 pb-3 text-white">
         {renderStatRows()}
       </div>
     </div>

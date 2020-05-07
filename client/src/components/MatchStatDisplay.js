@@ -157,12 +157,12 @@ const MatchStatDisplay = (props) => {
 
   return (
     <div className="row justify-content-center my-5">
-      <div className="col-10 ml-3 ml-md-0 mr-md-5 bg-light-green tournament-stats-chart rounded my-auto py-5">
+      <div className="col-10 ml-3 ml-md-0 mr-md-5 bg-light-green tournament-stats-chart rounded my-auto pt-5 pb-4">
         <div className="row justify-content-center">
-          <div className="col-8 text-left px-0 pb-3 border-bottom">
+          <div className="col-8 text-left px-0 pb-3">
             <h5 className="text-white" style={{fontSize: '25px'}}>Match Stats</h5>
           </div>
-          <div className="col-1 border-bottom">
+          <div className="col-1">
             <span data-toggle="tooltip" data-placement="top" title="Edit Match Stats">
               <img src={editIcon} alt="edit" data-toggle="modal" data-target="#matchStatsModal" />
             </span>
@@ -170,28 +170,31 @@ const MatchStatDisplay = (props) => {
         </div>
 
         {/* Unforced Errors */}
-        <MatchStatRow name="Unforced Errors" value={unforcedErrors} expansionId="unforcedErrors"/>
+        <MatchStatRow name="Unforced Errors" value={unforcedErrors} expansionId="unforcedErrors" />
         <StatExpansion stats={unforcedErrorsArray} expansionId="unforcedErrors"/>
 
         {/* Forced Errors */}
-        <MatchStatRow name="Forced Errors" value={forcedErrors} expansionId="forcedErrors"/>
+        <MatchStatRow name="Forced Errors" value={forcedErrors} expansionId="forcedErrors" />
         <StatExpansion stats={forcedErrorsArray} expansionId="forcedErrors"/>
 
         {/* Winners */}
-        <MatchStatRow name="Winners" value={winners} expansionId="winners"/>
+        <MatchStatRow name="Winners" value={winners} expansionId="winners" />
         <StatExpansion stats={winnersArray} expansionId="winners"/>
 
         {/* Double Faults */}
-        <MatchStatRow name="Double Faults" value={doubleFaults} expansionId="doubleFaults"/>
+        <MatchStatRow name="Double Faults" value={doubleFaults} expansionId="doubleFaults" />
         <StatExpansion stats={doubleFaultsArray} expansionId="doubleFaults"/>
 
         {/* Service Winners */}
-        <MatchStatRow name="Service Winners" value={serviceWinners} expansionId="serviceWinners"/>
+        <MatchStatRow name="Service Winners" value={serviceWinners} expansionId="serviceWinners" />
         <StatExpansion stats={serviceWinnersArray} expansionId="serviceWinners"/>
 
         {/* Aces */}
-        <MatchStatRow name="Aces" value={aces} expansionId="aces"/>
+        <MatchStatRow name="Aces" value={aces} expansionId="aces" />
         <StatExpansion stats={acesArray} expansionId="aces"/>
+
+        {/* Bottom Border */}
+        <MatchStatRow name="" value="" expansionId="" noIcon={true} />
       </div>
     </div>
   )
