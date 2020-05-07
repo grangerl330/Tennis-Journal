@@ -8,9 +8,9 @@ const SearchBarRow = (props) => {
     if(props.type === 'tournaments') {
       return (
         <div className="col-8 col-md-3 text-center text-md-right mx-auto mr-md-5 ml-md-auto order-first order-md-last">
-          <NavLink to="/tournaments/add" className="text-white btn btn-green px-4">
+          <button data-toggle="modal" data-target="#tournamentModal" className="text-white btn btn-green px-4">
             Add Tournament
-          </NavLink>
+          </button>
         </div>
       )
     } else {

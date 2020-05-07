@@ -14,7 +14,7 @@ const ItemTitleRow = (props) => {
             <img className="icon-small" src={menuDots} alt="menu dots" />
           </button>
           <div className="dropdown-menu dropdown-menu-center border-white shadow-light-green rounded">
-            <button className="border-0" data-toggle="modal" data-target={`#${props.page}InfoModal`}>
+            <button className="border-0" data-toggle="modal" data-target={`#${props.page}Modal`}>
               <img src={editIcon} className="pr-2 my-auto" alt="edit" /> <span className="mr-3">Edit</span>
             </button>
             <button className="border-0 mt-3" data-toggle="modal" data-target={`#delete${props.page.charAt(0).toUpperCase() + props.page.slice(1)}Modal`}>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
 import TitleRow from '../components/TitleRow'
 import ListContentRow from '../components/ListContentRow'
+import TournamentModal from '../components/tournament-page/TournamentModal'
 
 const ListPage = (props) => {
   useEffect(() => {
@@ -49,6 +50,8 @@ const ListPage = (props) => {
         <TitleRow icon={props.icon} title={props.title} />
         <ListContentRow type={props.title} search={search} content={filteredContent()} onChange={handleOnChange} />
       </div>
+
+      <TournamentModal addTournamentToDatabase={props.addTournamentToDatabase} type="Add" />
     </section>
   )
 }

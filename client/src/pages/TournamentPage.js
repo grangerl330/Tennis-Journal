@@ -7,7 +7,7 @@ import ItemTitleRow from '../components/ItemTitleRow'
 import ItemAttributeRow from '../components/ItemAttributeRow'
 import TournamentMatchesList from '../components/tournament-page/TournamentMatchesList'
 import TournamentStatDisplay from '../components/tournament-page/TournamentStatDisplay'
-import EditTournamentModal from '../components/tournament-page/EditTournamentModal'
+import TournamentModal from '../components/tournament-page/TournamentModal'
 import DeleteTournamentModal from '../components/tournament-page/DeleteTournamentModal'
 import tournamentIcon from '../images/tournament-icon.svg'
 
@@ -67,7 +67,7 @@ const TournamentPage = (props) => {
           </div>
         </div>
 
-        <EditTournamentModal tournament={tournament} editTournamentInDatabase={props.editTournamentInDatabase}/>
+        <TournamentModal tournament={tournament} type="Edit" editTournamentInDatabase={props.editTournamentInDatabase}/>
         <DeleteTournamentModal tournamentId={tournament.id} deleteTournament={deleteTournament} />
       </section>
     )
