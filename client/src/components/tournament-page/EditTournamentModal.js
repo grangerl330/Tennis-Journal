@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 
-class TournamentAllStatsModal extends Component {
+class EditTournamentModal extends Component {
   constructor(props){
     super(props)
 
@@ -51,7 +51,7 @@ class TournamentAllStatsModal extends Component {
       tournament.title = this.props.tournament.title
     }
 
-    this.props.sendTournamentToDatabase(tournament)
+    this.props.editTournamentInDatabase(tournament)
     this.setState({
       title: tournament.title,
       start_date: tournament.start_date,
@@ -80,9 +80,21 @@ class TournamentAllStatsModal extends Component {
               <h5 className="text-green mb-4">Edit Tournament</h5>
               <form>
                 <div className="row mt-3">
-                  <div className="col">
+                  <div className="col-6">
                     <label htmlFor="Tournament Title">Title</label>
                     <input className="form-control" type="text" name="title" value={this.state.title || ''} onChange={this.handleOnChange} placeholder="Title"/>
+                  </div>
+                  <div className="col-6">
+                    <label htmlFor="Draw Size">Draw Size</label>
+                    <select className="form-control" name="draw_size" onChange={this.handleOnChange} value={this.state.draw_size || ''}>
+                      <option value="128">128</option>
+                      <option value="64">64</option>
+                      <option value="32">32</option>
+                      <option value="16">16</option>
+                      <option value="8">8</option>
+                      <option value="4">4</option>
+                      <option value="2">2</option>
+                    </select>
                   </div>
                 </div>
                 <div className="row mt-3">
@@ -140,4 +152,4 @@ class TournamentAllStatsModal extends Component {
   }
 }
 
-export default withRouter(TournamentAllStatsModal)
+export default withRouter(EditTournamentModal)
