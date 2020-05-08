@@ -28,7 +28,7 @@ const TournamentsTable = (props) => {
 
     return (
       <span data-toggle="tooltip" data-placement="top" title={cell}>
-        <img src={icon} alt="surface"/>
+        <img src={icon} alt="surface" style={{width: "22px"}}/>
       </span>
     )
   }
