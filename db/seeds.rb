@@ -8,14 +8,13 @@
 
 # Users
 User.create(first_name: "User", last_name: "1", email: "user1@gmail.com", password: "password", utr: 10, match_record: "", points: 0, short_term_goal: "Improve forehand consistency", mid_term_goal: "Get ranked inside top 20", long_term_goal: "Get recruited to D1 school", strengths: ["Forehand", "Serve"], weaknesses: ["Backhand"], notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta in, fugiat fugit saepe necessitatibus, rem. Explicabo quis doloribus dolores soluta harum a minima tempora nemo perferendis quia dolorem porro autem minus sequi repellat veniam unde, quae eligendi possimus asperiores fuga nihil reprehenderit assumenda natus molestias. Impedit, aperiam enim laudantium")
-User.create(first_name: "Roger", last_name: "Federer", email: "rogerfederer@gmail.com", password: "password", utr: 16, match_record: "", points: 0)
 
 #Rankings
 #2020
 Ranking.create(rank: 8, month: "Jan", year: "2020", user_id: 1)
 Ranking.create(rank: 8, month: "Feb", year: "2020", user_id: 1)
 Ranking.create(rank: 8, month: "Mar", year: "2020", user_id: 1)
-
+Ranking.create(rank: 5, month: "Apr", year: "2020", user_id: 1)
 #2019
 Ranking.create(rank: 20, month: "Jan", year: "2019", user_id: 1)
 Ranking.create(rank: 23, month: "Feb", year: "2019", user_id: 1)
@@ -50,12 +49,11 @@ Tournament.create(title: "Tournament 3", start_date: Date.new(2019,3,1), end_dat
 Tournament.create(title: "L5 Westchester Tennis Center Eastern January Championships", start_date: Date.new(2020,1,3), end_date: Date.new(2019,1,5), location: "Westchester Tennis Center", surface: "Hard", age_category: "16 and Under", draw_size: 64, points: 200, user_id: 1)
 Tournament.create(title: "L6 Bethpage Park Winter Challenger", start_date: Date.new(2020,1,10), end_date: Date.new(2019,1,12), location: "BethPage Park Tennis Center", surface: "Hard", age_category: "16 and Under", draw_size: 128, points: 300, user_id: 1)
 Tournament.create(title: "*L6 Eastern Challenger at CourtSense in Bogota", start_date: Date.new(2020,1,17), end_date: Date.new(2019,1,20), location: "Bogota Racquet Club", surface: "Hard", age_category: "16 and Under", draw_size: 32, points: 400, user_id: 1)
-Tournament.create(title: "Wimbledon", start_date: Date.new(2019,7,1), end_date: Date.new(2019,7,14), location: "All England Lawn Tennis and Croquet Club", surface: "Grass", age_category: "Men's Division", draw_size: 128, points: 1000, user_id: 2)
 
 #Matches
 
 #Tournament 1
-Match.create(round: 128, result: "Won", score: "6-0, 6-0", date: Date.new(2019,1,1), time: Time.new(2019,1,1,10,0,0), notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta in, fugiat fugit saepe necessitatibus, rem. Explicabo quis doloribus dolores soluta harum a minima tempora nemo perferendis quia dolorem porro autem minus sequi repellat veniam unde, quae eligendi possimus asperiores fuga nihil reprehenderit assumenda natus molestias. Impedit, aperiam enim laudantium delectus!", tournament_id: "1", user_id: "1")
+Match.create(round: 128, result: "Won", score: "6-0, 6-0", date: Date.new(2019,1,1), time: Time.new(2019,1,1,10,0,0), notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta in, fugiat fugit saepe necessitatibus, rem. Explicabo quis doloribus dolores soluta harum a minima tempora nemo perferendis quia dolorem porro autem minus sequi repellat veniam unde, quae eligendi possimus asperiores fuga nihil reprehenderit assumenda natus molestias. Impedit, aperiam enim laudantium delectus!", forehand_unforced_errors: 5, forehand_winners: 10, tournament_id: "1", user_id: "1")
 Match.create(round: 64, result: "Won", score: "6-2, 6-3", date: Date.new(2019,1,2), time: Time.new(2019,1,2,14,30,0), notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta in, fugiat fugit saepe necessitatibus, rem. Explicabo quis doloribus dolores soluta harum a minima tempora nemo perferendis quia dolorem porro autem minus sequi repellat veniam unde, quae eligendi possimus asperiores fuga nihil reprehenderit assumenda natus molestias. Impedit, aperiam enim laudantium delectus!", tournament_id: "1", user_id: "1")
 Match.create(round: 32, result: "Won", score: "6-4, 6-1", date: Date.new(2019,1,3), time: Time.new(2019,1,3,13,45,0), notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta in, fugiat fugit saepe necessitatibus, rem. Explicabo quis doloribus dolores soluta harum a minima tempora nemo perferendis quia dolorem porro autem minus sequi repellat veniam unde, quae eligendi possimus asperiores fuga nihil reprehenderit assumenda natus molestias. Impedit, aperiam enim laudantium delectus!", tournament_id: "1", user_id: "1")
 
