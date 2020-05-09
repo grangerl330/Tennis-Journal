@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import $ from 'jquery'
 import TitleRow from '../components/TitleRow'
 import ListContentRow from '../components/ListContentRow'
@@ -7,6 +7,8 @@ import TournamentModal from '../components/tournament-page/TournamentModal'
 const ListPage = (props) => {
   useEffect(() => {
     $('[data-toggle="tooltip"]').tooltip();
+
+    props.fetchContent()
   })
 
   const[search, setSearch] = useState("")
