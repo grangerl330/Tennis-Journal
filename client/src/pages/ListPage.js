@@ -7,8 +7,6 @@ import TournamentModal from '../components/tournament-page/TournamentModal'
 const ListPage = (props) => {
   useEffect(() => {
     $('[data-toggle="tooltip"]').tooltip();
-
-    props.fetchContent()
   })
 
   const[search, setSearch] = useState("")
