@@ -6,7 +6,7 @@ import BackButtonRow from '../components/BackButtonRow';
 import ItemTitleRow from '../components/ItemTitleRow';
 import ItemAttributeRow from '../components/ItemAttributeRow';
 import NotesRow from '../components/NotesRow';
-import MatchInfoModal from '../components/match-page/MatchInfoModal';
+import MatchModal from '../components/match-page/MatchModal';
 import MatchNotesModal from '../components/match-page/MatchNotesModal';
 import MatchStatsModal from '../components/match-page/MatchStatsModal';
 import LiveStatsModal from '../components/match-page/LiveStatsModal';
@@ -82,7 +82,7 @@ const MatchPage = (props) => {
           </div>
         </div>
 
-        <MatchInfoModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
+        <MatchModal currentMatch={currentMatch} tournament={currentMatch.tournament} editMatchInDatabase={props.editMatchInDatabase} matches={tournamentMatches} type="Edit"/>
         <MatchStatsModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
         <LiveStatsModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
         <MatchNotesModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>

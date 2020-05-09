@@ -15,9 +15,9 @@ const TournamentMatchList = (props) => {
       </div>
       <div className="row mt-4 ml-md-5 justify-content-center justify-content-md-start mb-5">
         <div className="col-8 col-md-3">
-          <NavLink to={`/tournaments/${props.tournamentId}/add-match`} className="text-white btn btn-green btn-block">
+          <button data-toggle="modal" data-target="#matchModal" className="text-white btn btn-green btn-block">
             Add Match
-          </NavLink>
+          </button>
         </div>
       </div>
     </div>
