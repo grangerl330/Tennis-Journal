@@ -97,6 +97,18 @@ class TournamentModal extends Component {
     return isValid
   }
 
+  resetValidations = () => {
+    this.setState({
+      titleIsValid: true,
+      startDateIsValid: true,
+      locationIsValid: true,
+      surfaceIsValid: true,
+      ageCategoryIsValid: true,
+      drawSizeIsValid: true,
+      formIsValid: false,
+    })
+  }
+
   handleOnChange = event => {
     const {name, value} = event.target
     this.setState({
@@ -201,14 +213,14 @@ class TournamentModal extends Component {
                 <div className="row mt-3">
                   <div className="col-6">
                     <label htmlFor="Name">Name:</label>
-                    <input className={titleInputClass} type="text" name="title" value={this.state.title} onChange={this.handleOnChange} required/>
+                    <input className={titleInputClass} type="text" name="title" value={this.state.title} onChange={this.handleOnChange} />
                     <div className="invalid-feedback">
                       Please enter a name
                     </div>
                   </div>
                   <div className="col-6">
                     <label htmlFor="Draw Size">Draw Size</label>
-                    <select className={drawSizeInputClass} name="draw_size" onChange={this.handleOnChange} value={this.state.draw_size} required>
+                    <select className={drawSizeInputClass} name="draw_size" onChange={this.handleOnChange} value={this.state.draw_size} >
                       <option disabled hidden></option>
                       <option value="128">128</option>
                       <option value="64">64</option>
@@ -226,7 +238,7 @@ class TournamentModal extends Component {
                 <div className="row mt-3">
                   <div className="col-6">
                     <label htmlFor="Start Date">Start Date:</label>
-                    <input className={startDateInputClass} type="date" name="start_date" value={this.state.start_date} onChange={this.handleOnChange} required/>
+                    <input className={startDateInputClass} type="date" name="start_date" value={this.state.start_date} onChange={this.handleOnChange} />
                     <div className="invalid-feedback">
                       Please select a start date
                     </div>
@@ -239,7 +251,7 @@ class TournamentModal extends Component {
                 <div className="row mt-3">
                   <div className="col-6">
                     <label htmlFor="Tournament Age Category">Division: </label>
-                    <select className={ageCategoryInputClass} name="age_category" onChange={this.handleOnChange} value={this.state.age_category} required>
+                    <select className={ageCategoryInputClass} name="age_category" onChange={this.handleOnChange} value={this.state.age_category} >
                       <option disabled hidden></option>
                       <option value="12 and Under">12 and Under</option>
                       <option value="14 and Under">14 and Under</option>
@@ -280,7 +292,7 @@ class TournamentModal extends Component {
                   </div>
                 </div>
                 <div className="form-group text-right mt-5 mb-4">
-                  <button className="btn mr-4 text-grey" data-dismiss="modal">Cancel</button>
+                  <button className="btn mr-4 text-grey" data-dismiss="modal" onClick={this.resetValidations}>Cancel</button>
                   <button className="btn btn-green" onClick={this.handleOnSubmit}>{this.props.type === "Edit" ? "Update" : "Add"}</button>
                 </div>
               </form>
