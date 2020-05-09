@@ -201,7 +201,7 @@ class TournamentModal extends Component {
                 <div className="row mt-3">
                   <div className="col-6">
                     <label htmlFor="Name">Name:</label>
-                    <input className={titleInputClass} type="text" name="title" value={this.state.title} onChange={this.handleOnChange} placeholder="Tournament Name" required/>
+                    <input className={titleInputClass} type="text" name="title" value={this.state.title} onChange={this.handleOnChange} required/>
                     <div className="invalid-feedback">
                       Please enter a name
                     </div>
@@ -226,14 +226,14 @@ class TournamentModal extends Component {
                 <div className="row mt-3">
                   <div className="col-6">
                     <label htmlFor="Start Date">Start Date:</label>
-                    <input className={startDateInputClass} type="date" name="start_date" value={this.state.start_date} onChange={this.handleOnChange} placeholder="Start Date" required/>
+                    <input className={startDateInputClass} type="date" name="start_date" value={this.state.start_date} onChange={this.handleOnChange} required/>
                     <div className="invalid-feedback">
                       Please select a start date
                     </div>
                   </div>
                   <div className="col-6">
                     <label htmlFor="Tournament End Date">End Date: </label>
-                    <input className="form-control" type="date" name="end_date" value={this.state.end_date} onChange={this.handleOnChange} placeholder="End Date"/>
+                    <input className="form-control" type="date" name="end_date" value={this.state.end_date} onChange={this.handleOnChange} />
                   </div>
                 </div>
                 <div className="row mt-3">
@@ -269,14 +269,14 @@ class TournamentModal extends Component {
                 <div className="row mt-3">
                   <div className="col-6">
                     <label htmlFor="Tournament Location">Location: </label>
-                    <input className={locationInputClass} type="text" name="location" value={this.state.location || ''} onChange={this.handleOnChange} placeholder="Location"/>
+                    <input className={locationInputClass} type="text" name="location" value={this.state.location || ''} onChange={this.handleOnChange} />
                     <div className="invalid-feedback">
                       Please enter a location
                     </div>
                   </div>
                   <div className="col-6">
                     <label htmlFor="Tournament Points">Points: </label>
-                    <input className="form-control" type="text" name="points" value={this.state.points || ''} onChange={this.handleOnChange} placeholder="Points"/>
+                    <input className="form-control" type="text" name="points" value={this.state.points || ''} onChange={this.handleOnChange} />
                   </div>
                 </div>
                 <div className="form-group text-right mt-5 mb-4">
