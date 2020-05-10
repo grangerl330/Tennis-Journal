@@ -8,8 +8,8 @@ class OpponentStatModal extends Component {
     super(props)
 
     this.state = {
-      strengths: [],
-      weaknesses: [],
+      strengths: "",
+      weaknesses: "",
       id: ""
     }
   }
@@ -34,9 +34,7 @@ class OpponentStatModal extends Component {
   handleOnSubmit = event => {
     event.preventDefault()
 
-    const opponent = this.props.opponent
-    
-    opponent[`${this.props.type.toLowerCase()}`].push(this.state[`${this.props.type.toLowerCase()}`])
+    const opponent = this.state
 
     this.props.editOpponentInDatabase(opponent)
   }

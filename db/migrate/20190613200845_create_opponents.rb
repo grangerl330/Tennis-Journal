@@ -6,8 +6,8 @@ class CreateOpponents < ActiveRecord::Migration[5.2]
       t.integer :age
       t.string :handedness
       t.text :notes
-      t.text :strengths, array: true, default: []
-      t.text :weaknesses, array: true, default: []
+      t.string :strengths
+      t.string :weaknesses
       t.float :utr
       t.integer :match_id
 

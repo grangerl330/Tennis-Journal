@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 2020_03_26_232146) do
     t.integer "age"
     t.string "handedness"
     t.text "notes"
-    t.text "strengths", default: [], array: true
-    t.text "weaknesses", default: [], array: true
+    t.string "strengths"
+    t.string "weaknesses"
     t.float "utr"
     t.integer "match_id"
     t.datetime "created_at", null: false
