@@ -5,7 +5,7 @@ import editIcon from '../../images/edit.svg'
 
 const StatsOverviewDisplay = (props) => {
   const renderRanking = () => {
-    if (props.currentUser.current_ranking === null){
+    if (props.currentUser.current_ranking === null || props.currentUser.current_ranking === 0){
       return (
         <span className="ml-auto" data-toggle="tooltip" data-placement="top" title="Please enter your current ranking for this month">
           <i className="fas fa-exclamation-triangle text-green"></i>

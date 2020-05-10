@@ -17,9 +17,13 @@ class RankingsHistoryDisplay extends Component {
   setChartData = () => {
     const filteredRankings = this.props.currentUser.rankings.filter(rank => rank.year === this.state.chartDate)
 
-    const data = filteredRankings.map(rank =>
-      Object.create({month: rank.month, Rank: rank.rank})
-    )
+    const data = filteredRankings.map(rank => {
+      if(rank.rank > 0) {
+        return Object.create({month: rank.month, Rank: rank.rank})
+      } else {
+        return {}
+      }
+    })
 
     return data
   }
