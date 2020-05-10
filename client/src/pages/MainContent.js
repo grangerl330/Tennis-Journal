@@ -27,7 +27,7 @@ import tournamentIcon from '../images/tournament-icon.svg'
 // Opponents Components
 import OpponentPage from './OpponentPage';
 import { fetchOpponents, editOpponentInDatabase } from '../actions/opponents';
-import opponentsIcon from '../images/opponents.svg';
+import opponentsIcon from '../images/opponents-icon.svg';
 
 class MainContent extends Component {
   componentDidMount(props){

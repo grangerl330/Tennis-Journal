@@ -119,6 +119,9 @@ const MatchesTable = (props) => {
           sort: true,
           sortCaret: customSortCaret
         }, {
+          dataField: 'score',
+          text: "Score"
+        }, {
           dataField: 'opponentName',
           text: "Opponent",
           sort: true,

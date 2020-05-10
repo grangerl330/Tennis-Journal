@@ -1,13 +1,18 @@
-import React from 'react';
-import OpponentInfoModal from '../components/opponent-page/OpponentInfoModal'
-import OpponentNotesModal from '../components/opponent-page/OpponentNotesModal'
-import OpponentStrengthsModal from '../components/opponent-page/OpponentStrengthsModal'
-import OpponentWeaknessesModal from '../components/opponent-page/OpponentWeaknessesModal'
-import tournamentDrawIcon from '../images/tournament-draw-icon.png'
-import tennisBallIcon from '../images/tennis-ball-filled-icon.png'
-import birthdayIcon from '../images/birthday-cake-icon.png'
-import { NavLink } from 'react-router-dom'
-import { withRouter } from 'react-router'
+import React, { useEffect } from 'react';
+import moment from 'moment';
+import $ from 'jquery'
+import TitleRow from '../components/TitleRow';
+import BackButtonRow from '../components/BackButtonRow';
+import ItemTitleRow from '../components/ItemTitleRow';
+import ItemAttributeRow from '../components/ItemAttributeRow';
+import NotesRow from '../components/NotesRow';
+import OpponentModal from '../components/opponent-page/OpponentModal';
+import OpponentStatDisplay from '../components/OpponentStatDisplay';
+import OpponentMatchesList from '../components/opponent-page/OpponentMatchesList';
+import NotFound from './NotFound.js';
+import opponentsIcon from '../images/opponents-icon.svg';
+import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 const OpponentPage = (props) => {
   var opponentId = parseInt(props.id)
@@ -15,177 +20,40 @@ const OpponentPage = (props) => {
 
   if(opponent) {
     return (
-      <section id="opponent-card-page">
-        <div className="container-fluid py-2 bg-info text-white mb-4">
-          <div className="row">
-            <button className="btn w-100 shadow-none px-0 text-white" data-toggle="modal" data-target="#opponentNameModal">
-              <div className="col text-center">
-                <h1>{opponent.first_name} {opponent.last_name}</h1>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <div className="container px-0">
-          <div className="row justify-content-center mt-2">
-            <div className="col-md-3">
-              <NavLink to={`/matches/${opponent.match.id}`} className="btn shadow-none btn-block shadow-none">
-                <div className="row justify-content-center">
-                  <div className="col-5">
-                    <img src={tournamentDrawIcon} alt="age-icon"/>
-                  </div>
-                  <div className="col-7">
-                    <div className="row">
-                      <h6 className="font-italic text-info">Played In</h6>
-                    </div>
-                    <div className="row">
-                      <h5>{opponent.match.tournament.title}</h5>
+      <section id="opponent-view-page">
+        <div className="container-fluid p-0 background-light-grey">
+          <TitleRow icon={opponentsIcon} title="Opponents" page="opponent" />
+          <div className="row pb-4 background-light-grey text-green">
+            <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
+              <BackButtonRow goBack={props.history.goBack} />
+              <div className="row h-100">
+                <div id="tournament-page-left" className="col-12 col-md-8">
+                  <ItemTitleRow title={`${opponent.first_name} ${opponent.last_name}`} page="opponent" />
+                  <ItemAttributeRow name="UTR" value={opponent.utr} />
+                  <ItemAttributeRow name="Age" value={opponent.age} />
+                  <ItemAttributeRow name="Plays" value={`${opponent.handedness} Handed`} />
+                  <NotesRow name="Notes" value={opponent.notes} />
+                  <div className="row mt-3 ml-3 ml-md-5 pr-0 justify-content-start">
+                    <div className="col-11">
+                      <hr className="light-grey-line" />
                     </div>
                   </div>
+                  <OpponentMatchesList matches={[opponent.match]} opponent={opponent}/>
                 </div>
-              </NavLink>
-            </div>
-            <div className="col-md-3 pl-md-5 pr-md-0 text-center">
-              <div className="row justify-content-center">
-                <div className="col-5">
-                  <img src={birthdayIcon} alt="age-icon"/>
-                </div>
-                <div className="col-7">
-                  <div className="row">
-                    <h6 className="font-italic text-info">Age</h6>
-                  </div>
-                  <div className="row">
-                    <h5>{opponent.age}</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 pr-md-5 pl-md-0 text-center">
-              <div className="row justify-content-center">
-                <div className="col-5">
-                  <i className="fas fa-hand-paper fa-3x home-icon"></i>
-                </div>
-                <div className="col-7">
-                  <div className="row">
-                    <h6 className="font-italic text-info">Plays</h6>
-                  </div>
-                  <div className="row">
-                    <h5>{opponent.handedness} Handed</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 text-center">
-              <div className="row justify-content-center">
-                <div className="col-5">
-                  <img src={tennisBallIcon} alt="utr-icon"/>
-                </div>
-                <div className="col-7">
-                  <div className="row">
-                    <h6 className="font-italic text-info">UTR</h6>
-                  </div>
-                  <div className="row">
-                    <h5>{opponent.utr}</h5>
-                  </div>
+                <div id="tournament-page-right" className="col-12 col-md-4 pl-0 h-md-100">
+                  <OpponentStatDisplay />
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="container-fluid">
-          <div className="row mt-3 mb-3 justify-content-center">
-            <div className="col-md-2">
-              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentInfoModal">
-                <i className="fas fa-edit"></i> Edit Info
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="container border rounded pb-4 mt-5 mb-4">
-          <div className="row justify-content-center text-white bg-secondary">
-            <h1>Skills</h1>
-          </div>
-          <div className="row mt-5">
-            <div className="col-6 text-center">
-              <div className="row justify-content-center mb-3">
-                <h3 className="mb-0">Strengths</h3>
-              </div>
-              <div className="row justify-content-center">
-                <ul className="mr-5">
-                  {arrayDisplay(opponent.strengths)}
-                </ul>
-              </div>
-              <div className="row justify-content-center mt-3 text-center">
-                <div className="col-md-4">
-                  <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentStrengthsModal">
-                    <i className="fas fa-edit"></i> Edit Strengths
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-6 text-center">
-              <div className="row justify-content-center mb-3">
-                <h3 className="mb-0">Weaknesses</h3>
-              </div>
-              <div className="row justify-content-center text-center">
-                <ul className="mr-5">
-                  {arrayDisplay(opponent.weaknesses)}
-                </ul>
-              </div>
-              <div className="row justify-content-center mt-3 text-center">
-                <div className="col-md-5">
-                  <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentWeaknessesModal">
-                    <i className="fas fa-edit"></i> Edit Weaknesses
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="container border rounded pb-4 mt-5 mb-4">
-          <div className="row justify-content-center bg-secondary mb-3">
-            <div className="col text-center text-white">
-              <h1>Notes</h1>
-            </div>
-          </div>
-          <div className="row mt-1">
-            <div className="col">
-              {opponent.notes}
-            </div>
-          </div>
-          <div className="row mt-5 mb-0 justify-content-center">
-            <div className="col-md-2">
-              <button className="btn btn-info btn-block" data-toggle="modal" data-target="#opponentNotesModal">
-                <i className="fas fa-edit"></i> Edit Notes
-              </button>
-            </div>
-          </div>
-        </div>
-
-          <OpponentInfoModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
-          <OpponentNotesModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
-          <OpponentStrengthsModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
-          <OpponentWeaknessesModal editOpponentInDatabase={props.editOpponentInDatabase} opponent={opponent} />
+        <OpponentModal opponent={opponent} editOpponentInDatabase={props.editOpponentInDatabase} type="Edit"/>
       </section>
     )
   } else {
     return <h3>Opponent Does Not Exist</h3>
   }
-}
-
-const arrayDisplay = (array) => {
-  const result = []
-
-  array.forEach((item, index) =>
-    result.push(
-      <li key={index+1}>{item}</li>
-    )
-  )
-
-  return result
 }
 
 export default withRouter(OpponentPage)
