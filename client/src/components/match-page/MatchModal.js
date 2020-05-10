@@ -203,22 +203,24 @@ class MatchModal extends Component {
                     <input className="form-control" name="date" type="date" onChange={this.handleOnChange} value={this.state.date || ''} />
                   </div>
                 </div>
-                <div className="row justify-content-center mt-3">
-                  <div className="col-6">
-                    <label htmlFor="First Name">Opponent: </label>
-                    <input className={opponentFirstNameInputClass} type="text" name="opponent_first_name" value={this.state.opponent_first_name} onChange={this.handleOnChange} placeholder="First Name" required/>
-                    <div className="invalid-feedback">
-                      Please enter First Name
+                {this.props.type === "Add" && (
+                  <div className="row justify-content-center mt-3">
+                    <div className="col-6">
+                      <label htmlFor="First Name">Opponent: </label>
+                      <input className={opponentFirstNameInputClass} type="text" name="opponent_first_name" value={this.state.opponent_first_name} onChange={this.handleOnChange} placeholder="First Name" required/>
+                      <div className="invalid-feedback">
+                        Please enter First Name
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <label htmlFor="LastName"></label>
+                      <input className={opponentLastNameInputClass} type="text" name="opponent_last_name" value={this.state.opponent_last_name} onChange={this.handleOnChange} placeholder="Last Name" required/>
+                      <div className="invalid-feedback">
+                        Please enter Last Name
+                      </div>
                     </div>
                   </div>
-                  <div className="col-6">
-                    <label htmlFor="LastName"></label>
-                    <input className={opponentLastNameInputClass} type="text" name="opponent_last_name" value={this.state.opponent_last_name} onChange={this.handleOnChange} placeholder="Last Name" required/>
-                    <div className="invalid-feedback">
-                      Please enter Last Name
-                    </div>
-                  </div>
-                </div>
+                )}
                 <div className="row justify-content-center mt-3">
                   <div className="col-6">
                     <label htmlFor="Match Time">Time: </label>
