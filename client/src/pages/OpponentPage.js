@@ -7,6 +7,7 @@ import ItemTitleRow from '../components/ItemTitleRow';
 import ItemAttributeRow from '../components/ItemAttributeRow';
 import NotesRow from '../components/NotesRow';
 import OpponentModal from '../components/opponent-page/OpponentModal';
+import OpponentStatModal from '../components/opponent-page/OpponentStatModal'
 import OpponentStatDisplay from '../components/OpponentStatDisplay';
 import OpponentMatchesList from '../components/opponent-page/OpponentMatchesList';
 import NotFound from './NotFound.js';
@@ -41,7 +42,7 @@ const OpponentPage = (props) => {
                   <OpponentMatchesList matches={[opponent.match]} opponent={opponent}/>
                 </div>
                 <div id="tournament-page-right" className="col-12 col-md-4 pl-0 h-md-100">
-                  <OpponentStatDisplay />
+                  <OpponentStatDisplay opponent={opponent}/>
                 </div>
               </div>
             </div>
@@ -49,6 +50,8 @@ const OpponentPage = (props) => {
         </div>
 
         <OpponentModal opponent={opponent} editOpponentInDatabase={props.editOpponentInDatabase} type="Edit"/>
+        <OpponentStatModal opponent={opponent} editOpponentInDatabase={props.editOpponentInDatabase} type="Strengths"/>
+        <OpponentStatModal opponent={opponent} editOpponentInDatabase={props.editOpponentInDatabase} type="Weaknesses"/>
       </section>
     )
   } else {
