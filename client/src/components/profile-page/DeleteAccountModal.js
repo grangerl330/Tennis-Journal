@@ -73,7 +73,7 @@ class DeleteAccountModal extends Component {
             <div className="modal-body px-5">
               <h5 className="text-green mb-4">Delete Account</h5>
               <p>Are you sure you want to delete your account?</p>
-              <p>Once this action is performed your data cannot be recovered.</p>
+              <p>This action cannot be undone. This will permanently delete your account and all associated data.</p>
               <form>
                 <div className="row mt-3">
                   <div className="col-12">
