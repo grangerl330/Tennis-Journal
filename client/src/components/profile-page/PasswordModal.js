@@ -76,6 +76,17 @@ class PasswordModal extends Component {
     })
   }
 
+  resetForm = () => {
+    this.setState({
+      currentPassword: "",
+      currentPasswordIsValid: true,
+      newPassword: "",
+      newPasswordIsValid: true,
+      passwordConfirmation: "",
+      passwordConfirmationIsValid: true
+    })
+  }
+
   calculatePasswordStrength = event => {
     const evaluation = zxcvbn(this.state.newPassword)
 
@@ -93,7 +104,7 @@ class PasswordModal extends Component {
         })
 
         isValid = false;
-      } else if(this.calculatePasswordStrength() < 4) {
+      } else if(this.calculatePasswordStrength() < 2) {
         this.setState({
           newPasswordIsValid: false,
           newPasswordInvalidFeedback: "Password is not strong enough"
@@ -136,49 +147,56 @@ class PasswordModal extends Component {
     );
 
     return(
-      <div className="section" id="password-modals">
-        <div className="modal fade" id="changePasswordModal">
-          <div className="modal-dialog modal-lg">
+      <>
+        <div className="modal fade mt-3" id="changePasswordModal">
+          <div className="modal-dialog">
             <div className="modal-content">
-              <div className="modal-header bg-info text-white">
-                <h5 className="modal-title">Change Password</h5>
-                <button className="close" data-dismiss="modal">
-                  <i className="fas fa-times"></i>
+              <div className="modal-header border-0">
+                <button className="close" data-dismiss="modal" onClick={this.resetForm}>
+                  <i className="fas fa-times fa-sm text-grey"></i>
                 </button>
               </div>
-              <div className="modal-body">
+              <div className="modal-body px-5">
+                <h5 className="text-green mb-4">Change Password</h5>
                 <form>
-                  <div className="form-group">
-                    <label htmlFor="Current Password">Current Password</label>
-                    <input className={currentPasswordInputClass} type="password" name="currentPassword" value={this.state.currentPassword} onChange={this.handleOnChange} placeholder="Current Password"/>
-                    <div className="invalid-feedback">
-                      Password is incorrect
+                  <div className="row mt-3">
+                    <div className="col-12">
+                      <label htmlFor="Current Password">Current Password: </label>
+                      <input type="password" className={currentPasswordInputClass} name="currentPassword" value={this.state.currentPassword} onChange={this.handleOnChange} />
+                      <div className="invalid-feedback">
+                        Password is incorrect. Please try again.
+                      </div>
                     </div>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="New Password">New Password</label>
-                    <input className={newPasswordInputClass} type="password" name="newPassword" value={this.state.newPassword} onChange={this.handleOnChange} placeholder="New Password"/>
-                    <div className="invalid-feedback">
-                      {this.state.newPasswordInvalidFeedback}
+                  <div className="row mt-3">
+                    <div className="col-12">
+                      <label htmlFor="New Password">New Password: </label>
+                      <input type="password" className={newPasswordInputClass} name="newPassword" value={this.state.newPassword} onChange={this.handleOnChange} />
+                      <div className="invalid-feedback">
+                        Password is not strong enough. Try increasing the length and adding more uppercase letters or symbols.
+                      </div>
                     </div>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="Password Confirmation">Confirm Password</label>
-                    <input className={passwordConfirmationInputClass} type="password" name="passwordConfirmation" value={this.state.passwordConfirmation} onChange={this.handleOnChange} placeholder="Confirm Password"/>
-                    <div className="invalid-feedback">
-                      {this.state.passwordConfirmationInvalidFeedback}
+                  <div className="row mt-3">
+                    <div className="col-12">
+                      <label htmlFor="Password Confirmation">Password Confirmation: </label>
+                      <input type="password" className={passwordConfirmationInputClass} name="passwordConfirmation" value={this.state.passwordConfirmation} onChange={this.handleOnChange} />
+                      <div className="invalid-feedback">
+                        Password does not match.
+                      </div>
                     </div>
+                  </div>
+                  <div className="form-group text-right mt-5 mb-4">
+                    <button className="btn mr-4 text-grey" data-dismiss="modal" onClick={this.resetForm}>Cancel</button>
+                    <button className="btn btn-green" onClick={this.handleOnSubmit}>Update</button>
                   </div>
                 </form>
-              </div>
-              <div className="modal-footer border-0 justify-content-center">
-                <button className="btn btn-dark shadow-none" onClick={this.handleOnSubmit}>Update Password</button>
               </div>
             </div>
           </div>
         </div>
         <UpdateSuccessModal attribute="Password" />
-      </div>
+      </>
     )
   }
 }
