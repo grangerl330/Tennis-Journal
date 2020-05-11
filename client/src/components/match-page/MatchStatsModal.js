@@ -112,37 +112,37 @@ class MatchStatsModal extends Component {
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Forehand Unforced Errors">Forehand</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="forehand_unforced_errors" value={this.state.forehand_unforced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="forehand_unforced_errors" value={this.state.forehand_unforced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Backhand Unforced Errors">Backhand</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="backhand_unforced_errors" value={this.state.backhand_unforced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="backhand_unforced_errors" value={this.state.backhand_unforced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Slice Unforced Errors">Slice</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="slice_unforced_errors" value={this.state.slice_unforced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="slice_unforced_errors" value={this.state.slice_unforced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Forehand Volley Unforced Errors">Forehand Volley</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="forehand_volley_unforced_errors" value={this.state.forehand_volley_unforced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="forehand_volley_unforced_errors" value={this.state.forehand_volley_unforced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Backhand Volley Unforced Errors">Backhand Volley</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="backhand_volley_unforced_errors" value={this.state.backhand_volley_unforced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="backhand_volley_unforced_errors" value={this.state.backhand_volley_unforced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Overhead Unforced Errors">Overhead</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="overhead_unforced_errors" value={this.state.overhead_unforced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="overhead_unforced_errors" value={this.state.overhead_unforced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                   </div>
@@ -152,37 +152,37 @@ class MatchStatsModal extends Component {
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Forehand Forced Errors">Forehand</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="forehand_forced_errors" value={this.state.forehand_forced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="forehand_forced_errors" value={this.state.forehand_forced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Backhand Forced Errors">Backhand</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="backhand_forced_errors" value={this.state.backhand_forced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="backhand_forced_errors" value={this.state.backhand_forced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Slice Forced Errors">Slice</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="slice_forced_errors" value={this.state.slice_forced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="slice_forced_errors" value={this.state.slice_forced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Forehand Volley Forced Errors">Forehand Volley</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="forehand_volley_forced_errors" value={this.state.forehand_volley_forced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="forehand_volley_forced_errors" value={this.state.forehand_volley_forced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Backhand Volley Forced Errors">Backhand Volley</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="backhand_volley_forced_errors" value={this.state.backhand_volley_forced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="backhand_volley_forced_errors" value={this.state.backhand_volley_forced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Overhead Forced Errors">Overhead</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="overhead_volley_forced_errors" value={this.state.overhead_forced_errors || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="overhead_volley_forced_errors" value={this.state.overhead_forced_errors || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                   </div>
@@ -192,37 +192,37 @@ class MatchStatsModal extends Component {
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Forehand Winners">Forehand</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="forehand_winners" value={this.state.forehand_winners || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="forehand_winners" value={this.state.forehand_winners || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Backhand Winners">Backhand</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="backhand_winners" value={this.state.backhand_winners || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="backhand_winners" value={this.state.backhand_winners || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Slice Winners">Slice</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="slice_winners" value={this.state.slice_winners || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="slice_winners" value={this.state.slice_winners || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Forehand Volley Winners">Forehand Volley</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="forehand_volley_winners" value={this.state.forehand_volley_winners || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="forehand_volley_winners" value={this.state.forehand_volley_winners || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Backhand Volley Winners">Backhand Volley</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="backhand_volley_winners" value={this.state.backhand_volley_winners || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="backhand_volley_winners" value={this.state.backhand_volley_winners || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Overhead Winners">Overhead</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="overhead_volley_winners" value={this.state.overhead_winners || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="overhead_volley_winners" value={this.state.overhead_winners || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                   </div>
@@ -246,13 +246,13 @@ class MatchStatsModal extends Component {
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Deuce Side Service Winners">Deuce Side</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="deuce_side_service_winners" value={this.state.deuce_side_service_winners || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="deuce_side_service_winners" value={this.state.deuce_side_service_winners || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Ad Side Service Winners">Ad Side</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="ad_side_service_winners" value={this.state.ad_side_service_winners || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="ad_side_service_winners" value={this.state.ad_side_service_winners || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                   </div>
@@ -262,13 +262,13 @@ class MatchStatsModal extends Component {
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Deuce Side Aces">Deuce Side</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="deuce_side_aces" value={this.state.deuce_side_aces || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="deuce_side_aces" value={this.state.deuce_side_aces || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Ad Side Aces">Ad Side</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="ad_side_aces" value={this.state.ad_side_aces || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="ad_side_aces" value={this.state.ad_side_aces || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                   </div>
@@ -278,13 +278,13 @@ class MatchStatsModal extends Component {
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Deuce Side Double Faults">Deuce Side</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="deuce_side_double_faults" value={this.state.deuce_side_double_faults || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="deuce_side_double_faults" value={this.state.deuce_side_double_faults || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
                       <div className="col-10 text-center px-0">
                         <label htmlFor="Ad Side Double Faults">Ad Side</label>
-                        <input type="number" className="form-control w-25 mx-auto" name="ad_side_double_faults" value={this.state.ad_side_double_faults || ''} onChange={this.handleOnChange} />
+                        <input type="number" className="form-control w-40 mx-auto" name="ad_side_double_faults" value={this.state.ad_side_double_faults || ''} onChange={this.handleOnChange} />
                       </div>
                     </div>
                   </div>
