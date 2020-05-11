@@ -69,7 +69,7 @@ const MatchPage = (props) => {
                   <ItemAttributeRow name="Time" value={moment.utc(currentMatch.time).format('hh:mm a')} />
                   <ItemAttributeRow name="Result" value={<span className={resultTextColor()}>{currentMatch.result}</span>} />
                   <ItemAttributeRow name="Score" value={currentMatch.score} />
-                  <ItemAttributeRow name="Opponent" value={opponentFullName(currentMatch.opponent)} />
+                  <ItemAttributeRow name="Opponent" value={opponentFullName(currentMatch.opponent)} link={`/opponents/${currentMatch.opponent.id}`}/>
                   <NotesRow name="Notes" value={currentMatch.notes} />
                 </div>
                 <div id="tournament-page-right" className="col-12 col-md-4 pl-0 h-md-100">
