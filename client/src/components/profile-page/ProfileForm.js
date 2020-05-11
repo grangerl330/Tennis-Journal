@@ -29,7 +29,7 @@ class ProfileForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-
+    debugger
     this.resetValidations()
 
     if(this.formIsValid()) {
@@ -92,7 +92,7 @@ class ProfileForm extends Component {
 
     return(
       <div id="profile-form">
-        <form onSubmit={this.handleOnSubmit}>
+        <form>
           <div className="form-group">
             <label htmlFor="First Name">First Name:</label>
             <input className={firstNameInputClass} type="text" name="first_name" value={this.state.first_name} onChange={this.handleOnChange}/>
@@ -114,7 +114,21 @@ class ProfileForm extends Component {
               Please enter a valid email address
             </div>
           </div>
-          <button className="btn btn-dark mt-2">Update Profile</button>
+          <div className="row">
+            <div className="col-4">
+              <button className="btn btn-black btn-block mt-2" onClick={this.handleOnSubmit}>Update Profile</button>
+            </div>
+            <div className="col-4">
+              <button className="btn btn-green btn-block mt-2" data-toggle="modal" data-target="#changePasswordModal" onClick={(e) => e.preventDefault()}>
+                <i className="fas fa-lock"></i> Change Password
+              </button>
+            </div>
+            <div className="col-4">
+              <button className="btn btn-red btn-block mt-2" data-toggle="modal" data-target="#deleteAccountModal" onClick={(e) => e.preventDefault()}>
+                <i className="fas fa-trash"></i> Delete Account
+              </button>
+            </div>
+          </div>
         </form>
         <UpdateSuccessModal attribute="Profile" />
       </div>
