@@ -32,14 +32,6 @@ const OpponentMatchesTable = (props) => {
     )
   }
 
-  const opponentFormatter = (cell, row) => {
-    return (
-      <NavLink className="text-black" to={`/opponents/${row.opponent.id}`}>
-        {cell}
-      </NavLink>
-    )
-  }
-
   const tournamentFormatter = (cell, row) => {
     return (
       <NavLink className="text-black" to={`/tournaments/${row.tournament.id}`}>

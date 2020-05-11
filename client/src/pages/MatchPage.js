@@ -7,14 +7,12 @@ import ItemTitleRow from '../components/ItemTitleRow';
 import ItemAttributeRow from '../components/ItemAttributeRow';
 import NotesRow from '../components/NotesRow';
 import MatchModal from '../components/match-page/MatchModal';
-import MatchNotesModal from '../components/match-page/MatchNotesModal';
 import MatchStatsModal from '../components/match-page/MatchStatsModal';
 import LiveStatsModal from '../components/match-page/LiveStatsModal';
 import DeleteMatchModal from '../components/match-page/DeleteMatchModal';
 import NotFound from './NotFound.js';
 import matchesIcon from '../images/matches-icon.svg';
 import MatchStatDisplay from '../components/MatchStatDisplay';
-import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 const MatchPage = (props) => {
@@ -85,7 +83,6 @@ const MatchPage = (props) => {
         <MatchModal currentMatch={currentMatch} tournament={currentMatch.tournament} editMatchInDatabase={props.editMatchInDatabase} matches={tournamentMatches} type="Edit"/>
         <MatchStatsModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
         <LiveStatsModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
-        <MatchNotesModal currentMatch={currentMatch} sendMatchToDatabase={props.editMatchInDatabase} matches={tournamentMatches} edit="edit"/>
         <DeleteMatchModal matchId={currentMatch.id} deleteMatch={deleteMatch} />
       </section>
     )

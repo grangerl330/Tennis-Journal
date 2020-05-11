@@ -1,6 +1,5 @@
 import React from 'react'
 import OpponentMatchesTable from '../tables/OpponentMatchesTable'
-import { NavLink } from 'react-router-dom'
 
 const OpponentMatchesList = (props) => {
   return (

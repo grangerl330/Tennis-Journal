@@ -13,7 +13,6 @@ import ListPage from './ListPage';
 
 // Matches Components
 import MatchPage from './MatchPage';
-import MatchForm from '../components/match-page/MatchForm';
 import { fetchMatches } from '../actions/matches';
 import { addMatchToDatabase, editMatchInDatabase, deleteMatchFromDatabase } from '../actions/matches';
 import matchesIcon from '../images/matches-icon.svg';

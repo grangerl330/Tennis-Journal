@@ -1,6 +1,5 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import searchIcon from '../images/search.svg'
+import React from 'react';
+import searchIcon from '../images/search.svg';
 
 const SearchBarRow = (props) => {
 

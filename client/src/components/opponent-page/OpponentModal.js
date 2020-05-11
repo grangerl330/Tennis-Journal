@@ -77,15 +77,13 @@ class OpponentModal extends Component {
   handleOnSubmit = event => {
     event.preventDefault()
 
-    const opponent = Object.assign({}, this.state)
-
     if(this.formIsValid()) {
-      const match = this.state
+      const opponent = this.state
 
       if(this.props.type === "Edit") {
-        this.props.editOpponentInDatabase(match)
+        this.props.editOpponentInDatabase(opponent)
       } else {
-        this.props.addOpponentToDatabase(match)
+        this.props.addOpponentToDatabase(opponent)
         this.props.history.push(`/opponents`)
       }
 

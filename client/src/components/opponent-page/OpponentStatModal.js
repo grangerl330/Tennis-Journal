@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import $ from 'jquery'
-import classNames from 'classnames'
 import { withRouter } from 'react-router';
 
 class OpponentStatModal extends Component {

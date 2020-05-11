@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import moment from 'moment';
-import $ from 'jquery'
+import React from 'react';
 import TitleRow from '../components/TitleRow';
 import BackButtonRow from '../components/BackButtonRow';
 import ItemTitleRow from '../components/ItemTitleRow';
@@ -12,7 +10,6 @@ import OpponentStatDisplay from '../components/OpponentStatDisplay';
 import OpponentMatchesList from '../components/opponent-page/OpponentMatchesList';
 import NotFound from './NotFound.js';
 import opponentsIcon from '../images/opponents-icon.svg';
-import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 const OpponentPage = (props) => {
@@ -55,7 +52,7 @@ const OpponentPage = (props) => {
       </section>
     )
   } else {
-    return <h3>Opponent Does Not Exist</h3>
+    return <NotFound />
   }
 }
 
