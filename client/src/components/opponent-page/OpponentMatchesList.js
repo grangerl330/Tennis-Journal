@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 const OpponentMatchesList = (props) => {
   return (
-    <div id="match-list">
+    <div id="match-list" className="mb-5">
       <div className="row mt-3 ml-3 ml-md-5 pr-0 justify-content-start">
         <div className="col-8">
           <h4 className="text-black">Matches Played</h4>
