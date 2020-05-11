@@ -13,6 +13,7 @@ class MatchModal extends Component {
       result: "",
       date: "",
       time: "",
+      notes: "",
       id: "",
       opponent_first_name: "",
       firstNameIsValid: true,
@@ -31,6 +32,7 @@ class MatchModal extends Component {
         result: this.props.currentMatch.result,
         date: this.props.currentMatch.date,
         time: this.props.currentMatch.time,
+        notes: this.props.currentMatch.notes,
         id: this.props.currentMatch.id,
         opponent_first_name: this.props.currentMatch.opponent.first_name,
         opponent_last_name: this.props.currentMatch.opponent.last_name
@@ -225,6 +227,12 @@ class MatchModal extends Component {
                   <div className="col-6">
                     <label htmlFor="Match Time">Time: </label>
                     <input className="form-control" name="time" type="time" onChange={this.handleOnChange} value={this.state.time || ''} />
+                  </div>
+                </div>
+                <div className="row justify-content-center mt-3">
+                  <div className="col-12">
+                    <label htmlFor="Match Notes">Notes: </label>
+                    <textarea className="form-control" rows="8" name="notes" onChange={this.handleOnChange} value={this.state.notes || ''} />
                   </div>
                 </div>
                 <div className="form-group text-right mt-5 mb-4">
