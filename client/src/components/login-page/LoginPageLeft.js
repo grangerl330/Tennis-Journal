@@ -2,11 +2,20 @@ import React from 'react'
 import notesImage from '../../images/notes.svg'
 import goalsImage from '../../images/goals.svg'
 import rankImage from '../../images/rank.svg'
+import logo from "../../images/Logo-White.svg"
 
 const LoginPageLeft = (props) => {
   return (
     <div className="col-md-4 bg-green d-flex flex-column order-last order-md-first min-vh-100">
-      <div className="row mt-5 mt-sm-auto justify-content-center">
+      <div className="row d-md-none mt-5 mb-4 mt-sm-auto justify-content-center">
+        <div className="col-1 p-0 text-md-right ml-auto">
+          <img className="align-middle logo" src={logo} alt="logo" />
+        </div>
+        <div className="col-7 col-md-5 col-xl-3 p-0 text-left ml-4 mr-auto mr-md-1 mr-xl-5">
+          <h2 className="text-white">Tennis Journal</h2>
+        </div>
+      </div>
+      <div className="row d-none d-md-flex mt-5 mt-sm-auto justify-content-center">
         <div className="col-9 text-center">
           <h2 className="text-white">Get started with Tennis Journal!</h2>
         </div>
