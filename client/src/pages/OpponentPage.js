@@ -22,10 +22,10 @@ const OpponentPage = (props) => {
         <div className="container-fluid p-0 background-light-grey">
           <TitleRow icon={opponentsIcon} title="Opponents" page="opponent" />
           <div className="row pb-4 background-light-grey text-green">
-            <div className="col-10 px-0 mx-auto bg-white shadow-light-green rounded">
+            <div className="col-10 px-0 mx-auto pb-4 pb-md-0 bg-white shadow-light-green rounded">
               <BackButtonRow goBack={props.history.goBack} />
               <div className="row h-100">
-                <div id="tournament-page-left" className="col-12 col-md-8">
+                <div id="opponent-page-left" className="col-12 col-md-8">
                   <ItemTitleRow title={`${opponent.first_name} ${opponent.last_name}`} page="opponent" />
                   <ItemAttributeRow name="UTR" value={opponent.utr} />
                   <ItemAttributeRow name="Age" value={opponent.age} />
@@ -38,7 +38,7 @@ const OpponentPage = (props) => {
                   </div>
                   <OpponentMatchesList matches={[opponent.match]} opponent={opponent}/>
                 </div>
-                <div id="tournament-page-right" className="col-12 col-md-4 pl-0 h-md-100">
+                <div id="opponent-page-right" className="col-12 col-md-4 pl-0 h-md-100">
                   <OpponentStatDisplay opponent={opponent}/>
                 </div>
               </div>

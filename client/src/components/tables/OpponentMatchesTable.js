@@ -64,32 +64,54 @@ const OpponentMatchesTable = (props) => {
     return result
   }
 
-  const columns = [{
-    dataField: 'name',
-    text: 'Name',
-    sort: true,
-    sortCaret: customSortCaret,
-    classes: 'text-green',
-    formatter: nameFormatter,
-    sortValue: (cell, row) => row.round
-  }, {
-    dataField: 'tournament.title',
-    text: 'Tournament',
-    formatter: tournamentFormatter
-  }, {
-    dataField: 'date',
-    text: 'Date'
-  }, {
-    dataField: 'result',
-    text: "Result"
-  }, {
-    dataField: 'score',
-    text: "Score"
-  }];
+  const columns = () => {
+    if(props.mobile) {
+      return (
+        [{
+          dataField: 'name',
+          text: 'Name',
+          sort: true,
+          sortCaret: customSortCaret,
+          classes: 'text-green',
+          formatter: nameFormatter,
+          sortValue: (cell, row) => row.round
+        }, {
+          dataField: 'tournament.title',
+          text: 'Tournament',
+          formatter: tournamentFormatter
+        }]
+      )
+    } else {
+      return (
+        [{
+          dataField: 'name',
+          text: 'Name',
+          sort: true,
+          sortCaret: customSortCaret,
+          classes: 'text-green',
+          formatter: nameFormatter,
+          sortValue: (cell, row) => row.round
+        }, {
+          dataField: 'tournament.title',
+          text: 'Tournament',
+          formatter: tournamentFormatter
+        }, {
+          dataField: 'date',
+          text: 'Date'
+        }, {
+          dataField: 'result',
+          text: "Result"
+        }, {
+          dataField: 'score',
+          text: "Score"
+        }]
+      )
+    }
+  }
 
   return (
     <div className="col-12 px-0">
-      <BootstrapTable id="opponent-matches-table" keyField="id" data={createMatchesData()} columns={columns} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-grey border-0" rowClasses="border-bottom" />
+      <BootstrapTable id="opponent-matches-table" keyField="id" data={createMatchesData()} columns={columns()} bootstrap4={true} bordered={false} classes="table-borderless" headerClasses="text-grey border-0" rowClasses="border-bottom" />
     </div>
   )
 }

@@ -28,7 +28,7 @@ const ItemAttributeRow = (props) => {
   } else {
     return (
       <div className="row mt-3 ml-3 ml-md-5 pr-0 justify-content-start">
-        <div className='col-6 col-md-2 text-grey'>
+        <div className='col-4 col-md-2 text-grey'>
           <span>{props.name}</span>
         </div>
         <div className='col-6 col-md-3 text-black'>

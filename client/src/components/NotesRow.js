@@ -6,7 +6,7 @@ const NotesRow = (props) => {
       <div className='col-3 col-md-2 text-grey'>
         <span>{props.name}</span>
       </div>
-      <div className='col-6 col-md-9 text-black'>
+      <div className='col-8 col-md-9 text-black'>
         <span>{props.value}</span>
       </div>
     </div>
