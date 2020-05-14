@@ -1,7 +1,7 @@
 import React from 'react'
-import MatchesTable from './tables/MatchesTable'
-import OpponentsTable from './tables/OpponentsTable'
-import TournamentsTable from './tables/TournamentsTable'
+import MatchesTable from '../tables/MatchesTable'
+import OpponentsTable from '../tables/OpponentsTable'
+import TournamentsTable from '../tables/TournamentsTable'
 
 const TableRow = (props) => {
 

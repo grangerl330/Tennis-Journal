@@ -1,5 +1,5 @@
 import React from 'react';
-import editIcon from '../images/edit-white.svg'
+import editIcon from '../../images/edit-white.svg'
 
 const OpponentStatDisplay = (props) => {
   return(

@@ -1,6 +1,6 @@
 import React from 'react'
-import menuDots from '../images/menu-dots.svg'
-import editIcon from '../images/edit.svg'
+import menuDots from '../../images/menu-dots.svg'
+import editIcon from '../../images/edit.svg'
 
 const ItemTitleRow = (props) => {
   return (

@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import moment from 'moment';
 import $ from 'jquery'
-import TitleRow from '../components/TitleRow';
-import BackButtonRow from '../components/BackButtonRow';
-import ItemTitleRow from '../components/ItemTitleRow';
-import ItemAttributeRow from '../components/ItemAttributeRow';
-import NotesRow from '../components/NotesRow';
+import TitleRow from '../components/general/TitleRow';
+import BackButtonRow from '../components/general/BackButtonRow';
+import ItemTitleRow from '../components/general/ItemTitleRow';
+import ItemAttributeRow from '../components/general/ItemAttributeRow';
+import NotesRow from '../components/general/NotesRow';
 import MatchModal from '../components/match-page/MatchModal';
 import MatchStatsModal from '../components/match-page/MatchStatsModal';
 import LiveStatsModal from '../components/match-page/LiveStatsModal';
 import DeleteMatchModal from '../components/match-page/DeleteMatchModal';
 import NotFound from './NotFound.js';
 import matchesIcon from '../images/matches-icon.svg';
-import MatchStatDisplay from '../components/MatchStatDisplay';
+import MatchStatDisplay from '../components/match-page/MatchStatDisplay';
 import { withRouter } from 'react-router';
 
 const MatchPage = (props) => {

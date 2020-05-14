@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import $ from 'jquery'
-import TitleRow from '../components/TitleRow'
-import ListContentRow from '../components/ListContentRow'
+import TitleRow from '../components/general/TitleRow'
+import ListContentRow from '../components/general/ListContentRow'
 import TournamentModal from '../components/tournament-page/TournamentModal'
 
 const ListPage = (props) => {
