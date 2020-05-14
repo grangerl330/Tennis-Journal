@@ -6,7 +6,7 @@ const StatExpansion = (props) => {
 
     for(let stat of props.stats) {
       result.push(
-        <div className="row mt-2">
+        <div className="row mt-2" key={props.stats.indexOf(stat)}>
           <div className="col-9 ml-3">
             <span className="font-italic">{stat.name}</span>
           </div>
