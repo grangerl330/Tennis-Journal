@@ -6,7 +6,7 @@ const SearchBarRow = (props) => {
   const renderRightColumn = () => {
     if(props.type === 'tournaments') {
       return (
-        <div className="col-8 col-md-3 text-center text-md-right mx-auto mr-md-5 ml-md-auto order-first order-md-last">
+        <div className="col-8 col-md-3 text-center text-md-right mx-auto mr-md-5 ml-md-auto mb-4 mb-md-0 order-first order-md-last">
           <button data-toggle="modal" data-target="#tournamentModal" className="text-white btn btn-green px-4">
             Add Tournament
           </button>
